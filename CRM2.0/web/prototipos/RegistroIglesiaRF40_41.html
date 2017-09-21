@@ -68,61 +68,55 @@ and open the template in the editor.
                         <div class="col s12 m12 accent-4">
                             <div class="row">
                                 <div class="col s12 m4">
-                                        <div class="col">
-                                            <!-- Modal Trigger -->
-                                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-                                        </div>
+                                    <div class="center">
+                                        <!-- Modal Trigger -->
+                                        <a href="#modal1" class="btn blue btn modal-trigger waves-effect waves-light center waves-effect"><i class="mdi-action-account-balance left"></i>Registrar Nueva Iglesia</a>
+                                    </div>
                                     <!-- Modal Structure -->
                                     <div id="modal1" class="modal">
                                         <div class="modal-content">
+                                            <h4 class="header2">Registro de Iglesia</h4>
+                                            <!--add .left-alert to show messages left side-->
+                                            <div class="divider"></div>
+                                            <br/>
                                             <div class="row">
-                            <form class="col s12 left-alert">
-                              <div class="row">
-                                  <div class="input-field col s12">
-                                    <input id="first_input1" type="text" class="validate" placeholder="John Doe">
-                                    <label for="first_input1" data-error="Please enter first name." class="active">First Name</label>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="input-field col s12">
-                                    <input id="age_input1" type="number" class="validate" placeholder="25">
-                                    <label for="age_input1" data-error="Please enter your age." class="active">Age</label>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <input id="email_input1" type="email" class="validate" placeholder="john@domainname.com">
-                                  <label for="email_input1" class="active" data-error="Please enter valid email." data-success="I Like it!">Email</label>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <input id="url_input1" type="url" class="validate" placeholder="http://geekslabs.com/">
-                                  <label for="url_input1" class="active" data-error="Please enter valid url.">URL</label>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <input id="password1" type="password" class="validate" placeholder="MonKey&amp;420@">
-                                  <label for="password1" class="active">Password</label>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <textarea id="message1" class="materialize-textarea validate" length="120" placeholder="Oh WoW! Let me check this one too."></textarea>
-                                  <label for="message1" class="active">Message</label>
-                                <span class="character-counter" style="float: right; font-size: 12px; height: 1px;"></span></div>
-                             </div>                  
-                           
-                        </form>
-                        </div>
-                                            
-                                            
+                                                <form class="col s12 left-alert">
+
+                                                    <div class="row">
+
+                                                        <div class="input-field col s12">
+
+                                                            <div class="initialized">
+                                                                <label>Distrito Misionero</label> 
+                                                                <br/>
+                                                                <select class="initialized">
+                                                                    <option value="" disabled="" selected="">Seleccione Distrito</option>
+                                                                    <option value="1">Distrito 1</option>
+                                                                    <option value="2">Distrito 2</option>
+                                                                    <option value="3">Distrito 3</option>
+                                                                    <option value="4">Distrito 4</option>
+                                                                    <option value="5">Distrito 5</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="input-field col s12">
+                                                            <input id="first_input1" type="text" class="validate" placeholder="Iglesia">
+                                                            <label for="first_input1" data-error="Please enter first name." class="active">Nombre de la Iglesia</label>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <a href="#" class="btn cyan waves-effect waves-light right"><i class="mdi-content-send right"></i>Registrar</a>
+
+                                                <a href="#" class="btn waves-effect right modal-close"><i class="mdi-navigation-cancel right"></i>Cancelar</a>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                           <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close"><i class="mdi-navigation-cancel"></i>Cancelar</a>
-                                           <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close"><i class="mdi-content-send"></i>Registrar</a>
-                                        </div>
+                                        <br/>
                                     </div>                                    
                                     <br/>
                                     <br/>
@@ -176,9 +170,9 @@ and open the template in the editor.
                                                 <div class="col s12 m8 l9">
                                                     <div class="row">
                                                         <div class="col s12 m4 right">
-                                                            <a href="!#"> <i style="font-size: 25px; color: #333333;" class="mdi-editor-border-color"></i></a>
-                                                            <a href="!#"> <i style="font-size: 25px; color: #333333;" class="mdi-action-delete"></i></a>
-                                                            <a href="!#"><i style="font-size: 25px; color: #333333;" class="mdi-navigation-more-vert"></i></a>
+                                                            <a href="!#"><i style="font-size: 25px; color: #333333;" class="mdi-navigation-more-vert right"></i></a>
+                                                            <a href="!#"> <i style="font-size: 25px; color: #333333;" class="mdi-action-delete right"></i></a>
+                                                            <a href="!#"> <i style="font-size: 25px; color: #333333;" class="mdi-editor-border-color right"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
