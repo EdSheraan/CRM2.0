@@ -75,12 +75,53 @@ and open the template in the editor.
                                     <!-- Modal Structure -->
                                     <div id="modal1" class="modal">
                                         <div class="modal-content">
-                                            <h4>Modal Header</h4>
-                                            <p>A bunch of text</p>
+                                            <div class="row">
+                            <form class="col s12 left-alert">
+                              <div class="row">
+                                  <div class="input-field col s12">
+                                    <input id="first_input1" type="text" class="validate" placeholder="John Doe">
+                                    <label for="first_input1" data-error="Please enter first name." class="active">First Name</label>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="input-field col s12">
+                                    <input id="age_input1" type="number" class="validate" placeholder="25">
+                                    <label for="age_input1" data-error="Please enter your age." class="active">Age</label>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="email_input1" type="email" class="validate" placeholder="john@domainname.com">
+                                  <label for="email_input1" class="active" data-error="Please enter valid email." data-success="I Like it!">Email</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="url_input1" type="url" class="validate" placeholder="http://geekslabs.com/">
+                                  <label for="url_input1" class="active" data-error="Please enter valid url.">URL</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="password1" type="password" class="validate" placeholder="MonKey&amp;420@">
+                                  <label for="password1" class="active">Password</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <textarea id="message1" class="materialize-textarea validate" length="120" placeholder="Oh WoW! Let me check this one too."></textarea>
+                                  <label for="message1" class="active">Message</label>
+                                <span class="character-counter" style="float: right; font-size: 12px; height: 1px;"></span></div>
+                             </div>                  
+                           
+                        </form>
+                        </div>
+                                            
+                                            
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Registrar</a>
+                                           <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close"><i class="mdi-navigation-cancel"></i>Cancelar</a>
+                                           <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close"><i class="mdi-content-send"></i>Registrar</a>
                                         </div>
                                     </div>                                    
                                     <br/>
