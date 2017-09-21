@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+        <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+        <!-- Favicons-->
+        <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+        <!-- Favicons-->
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+        <!-- For iPhone -->
+        <meta name="msapplication-TileColor" content="#00bcd4">
+        <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+        <!-- For Windows Phone -->
+
+
+        <!-- CORE CSS-->
+
+        <link href="../template/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../template/css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <!-- Custome CSS-->    
+        <link href="../template/css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+
+        <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+        <link href="../template/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../template/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../template/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    </head>
+    <body>
+        <div class="row valign-wrapper">
+            <div class="col s10 offset-s1">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Iglesias por Distrito</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div id="input-select" class="row">
+                                <div class="row">
+                                    <label>Distrito</label>
+                                    <select>
+                                        <option value="" disabled selected>Seleccionar Distrito</option>
+                                        <option value="1">Distrito 1</option>
+                                        <option value="2">Distrito 2</option>
+                                        <option value="3">Distrito 3</option>
+                                        <option value="4">Distrito 4</option>
+                                        <option value="5">Distrito 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col s12 m12 accent-4">
+                            <div class="row">
+                                <div class="col s12 m4">
+                                        <div class="col">
+                                            <!-- Modal Trigger -->
+                                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+                                        </div>
+                                    <!-- Modal Structure -->
+                                    <div id="modal1" class="modal">
+                                        <div class="modal-content">
+                                            <h4>Modal Header</h4>
+                                            <p>A bunch of text</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Registrar</a>
+                                        </div>
+                                    </div>                                    
+                                    <br/>
+                                    <br/>
+                                    <div id="email-list">
+                                        <ul class="collection">
+                                            <li class="collection-item avatar selected">
+                                                <span class="circle blue lighten-1">I</span>
+                                                <span class="email-title">Iglesia 1</span>
+                                                <p class="truncate grey-text ultra-small">Summer sale is now going on.</p>
+                                                <a href="#!" class="secondary-content email-time"><span class="new badge yellow darken-3">2</span></a>
+                                            </li>
+                                            <li class="collection-item avatar email-unread">
+                                                <img src="../template/images/login-logo.png" alt="" class="circle">
+                                                <span class="email-title">Iglesia 2</span>
+                                                <p class="truncate grey-text ultra-small">Hay Joe, we have next project for this summer.</p>
+                                                <a href="#!" class="secondary-content email-time"> <span class="new badge green darken-3">2</span></a>
+                                            </li>
+                                            <li class="collection-item avatar email-unread">
+                                                <span class="circle red lighten-1">I</span>
+                                                <span class="email-title">Iglesia 3</span>
+                                                <p class="truncate grey-text ultra-small">Summer sale is now going on.</p>
+                                                <a href="#!" class="secondary-content email-time"><span class="new badge yellow darken-3">2</span></a>
+                                            </li>
+                                            <li class="collection-item avatar email-unread">
+                                                <span class="circle green lighten-1">I</span>
+                                                <span class="email-title">Iglesia 4</span>
+                                                <p class="truncate grey-text ultra-small">Summer sale is now going on.</p>
+                                                <a href="#!" class="secondary-content email-time"><span class="new badge darken-1 darken-3">2</span></a>
+                                            </li>
+                                        </ul>  
+                                    </div>
+
+                                    <div class="col s12 m12">
+                                        <div class="card">
+                                            <div class="card-content  blue darken-2 white-text">
+                                                <p class="center-align"><i class="mdi-action-account-balance"></i> IGLESIAS</p>
+                                                <h4 class="card-stats-number center-align">4</h4>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s12 m8">
+                                    <div class="card-panel">
+                                        <!--Floating Buttton-->
+                                        <div id="floating-button" class="">
+                                            <div class="row">
+                                                <div class="col s12 m4 l3">
+                                                    <h4 class="header" style="color: #0033ff;">Iglesia 1</h4>
+                                                </div>
+                                                <div class="col s12 m8 l9">
+                                                    <div class="row">
+                                                        <div class="col s12 m4 right">
+                                                            <a href="!#"> <i style="font-size: 25px; color: #333333;" class="mdi-editor-border-color"></i></a>
+                                                            <a href="!#"> <i style="font-size: 25px; color: #333333;" class="mdi-action-delete"></i></a>
+                                                            <a href="!#"><i style="font-size: 25px; color: #333333;" class="mdi-navigation-more-vert"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="divider"></div>
+                                        <br/>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="last_name" type="text" class="validate">
+                                                <label for="last_name">Lider de Iglesia</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="last_name" type="text" class="validate">
+                                                <label for="last_name">Coordinador de MIPES</label>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="last_name" type="text" class="validate">
+                                                <label for="last_name">Coordinador Misionero</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="last_name" type="text" class="validate">
+                                                <label for="last_name">Coordinador de Escuela Sabatica</label>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Guardar Cambios
+                                                    <i class="mdi-content-send right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================================
+        Scripts
+        ================================================ -->
+
+        <!-- jQuery Library -->
+        <script type="text/javascript" src="../template/js/plugins/jquery-1.11.2.min.js"></script>    
+        <!--materialize js-->
+        <script type="text/javascript" src="../template/js/materialize.min.js"></script>
+        <!--prism-->
+        <script type="text/javascript" src="../template/js/plugins/prism/prism.js"></script>
+        <!--scrollbar-->
+        <script type="text/javascript" src="../template/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <!-- chartist -->
+        <script type="text/javascript" src="../template/js/plugins/chartist-js/chartist.min.js"></script>   
+
+        <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+        <script type="text/javascript" src="../template/js/plugins.min.js"></script>
+        <!--custom-script.js - Add your own theme custom JS-->
+        <script type="text/javascript" src="../template/js/custom-script.js"></script>
+    </body>
+</html>
