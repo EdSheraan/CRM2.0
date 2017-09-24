@@ -26,16 +26,6 @@
         <link href="../template/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
 
         <link href="../template/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-        <style>
-            .circulo {
-                width: 37px;
-                height: 37px;
-                -moz-border-radius: 50%;
-                -webkit-border-radius: 50%;
-                border-radius: 50%;
-                background: #5cb85c;
-            }
-        </style>
     </head>
 
     <body>
@@ -74,6 +64,9 @@
                                                         <img src="../template/images/avatar2.png" alt="Contact Person">
                                                         Leandro Burgos Robles
                                                     </div>
+                                                    <div class="chip">
+                                                        963258741
+                                                    </div>
                                                 </div>
                                                 <div class="col s3">                                                    
                                                     <p class="collections-content"><span class="task-cat light-green accent-3">Mipes de G.P.</span></p>
@@ -102,6 +95,9 @@
                                                         <img src="../template/images/avatar3.png" alt="Contact Person">
                                                         Arnold Morales Gomez
                                                     </div>
+                                                    <div class="chip">
+                                                        963258741
+                                                    </div>
                                                 </div>
                                                 <div class="col s3">
                                                     <span class="task-cat grey darken-1">Miembro</span>
@@ -129,6 +125,9 @@
                                                         <img src="../template/images/avatar.jpg" alt="Contact Person">
                                                         Andrés Rosas Huamán
                                                     </div>
+                                                    <div class="chip">
+                                                        963258741
+                                                    </div>
                                                 </div>
                                                 <div class="col s3">
                                                     <span class="task-cat grey darken-1">Miembro</span>
@@ -154,7 +153,10 @@
                                                 <div class="col s5">
                                                     <div class="chip">
                                                         <img src="../template/images/avatar4.png" alt="Contact Person">
-                                                        Micaela Bastidas xd
+                                                        Micaela Bastidas Asdfghj
+                                                    </div>
+                                                    <div class="chip">
+                                                        963258741
                                                     </div>
                                                 </div>
                                                 <div class="col s3">
@@ -181,11 +183,28 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>                    
                 </div>
             </div>
+            <div class="row">
+                <div class="col s12 m12 l6 offset-l3">
+                    <div id="container">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l6 offset-l3">
+                    <div class="card-panel">
+                        <div class="sample-chart-wrapper">
+                            <canvas id="line-chart-sample" height="268" width="672" style="width: 672px; height: 268px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
         </div>
 
 
@@ -200,11 +219,108 @@
 
         <script type="text/javascript" src="../template/js/plugins/chartist-js/chartist.min.js"></script>  
         <!-- chartist -->
+        <script type="text/javascript" src="../template/js/plugins/chartjs/chart.min.js"></script>
 
+        <script src="../template/js/highcharts.js"></script>
+        <script src="../template/js/exporting.js"></script>
+        <script>
+            var LineChartSampleData = {
+                labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"],
+                datasets: [{
+                        label: "holaa",
+                        fillColor: "rgba(30,136,229,0.4)",
+                        strokeColor: "rgba(30,136,229,1)",
+                        pointColor: "rgba(30,136,229,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [5, 4, 5, 4, 4, 5, 4]
+                    }, {
+                        label: "My Second dataset",
+                        fillColor: "rgba(55,71,79,0.4)",
+                        strokeColor: "rgba(55,71,79,1)",
+                        pointColor: "rgba(55,71,79,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [2, 3, 2, 3, 3, 2, 3]
+                    }]
+            };
+            window.onload = function () {
+
+                window.LineChartSample = new Chart(document.getElementById("line-chart-sample").getContext("2d")).Line(LineChartSampleData, {
+                    responsive: true
+                });
+            };
+            Highcharts.chart('container', {
+                title: {
+                    text: 'Asistencia del Grupo Pequeño'
+                },
+                xAxis: {
+                    categories: ['Marzo', 'Abril', 'Mayo', 'Junio', 'Julio']
+                },
+                labels: {
+                    items: [{
+                            html: 'Asistencia del Grupo Pequeño',
+                            style: {
+                                left: '50px',
+                                top: '18px',
+                                color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                            }
+                        }]
+                },
+                series: [{
+                        type: 'column',
+                        name: 'Presente',
+                        data: [4, 5, 3, 3, 4]
+                    }, {
+                        type: 'column',
+                        name: 'Falta',
+                        data: [3, 2, 4, 4, 3]
+                    }, {
+                        type: 'column',
+                        name: 'Visita',
+                        data: [2, 1, 2, 3, 0]
+                    }, {
+                        type: 'spline',
+                        name: 'Promedio',
+                        data: [3, 2.67, 3, 6.33, 3.33],
+                        marker: {
+                            lineWidth: 2,
+                            lineColor: Highcharts.getOptions().colors[3],
+                            fillColor: 'white'
+                        }
+                    }, {
+                        type: 'pie',
+                        name: 'Total consumption',
+                        data: [{
+                                name: 'Presente',
+                                y: 13,
+                                color: Highcharts.getOptions().colors[0] // Jane's color
+                            }, {
+                                name: 'Falta',
+                                y: 23,
+                                color: Highcharts.getOptions().colors[1] // John's color
+                            }, {
+                                name: 'Visitas',
+                                y: 19,
+                                color: Highcharts.getOptions().colors[2] // Joe's color
+                            }],
+                        center: [100, 80],
+                        size: 100,
+                        showInLegend: false,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }]
+            });
+
+        </script>
 
         <!--plugins.js - Some Specific JS codes for Plugin Settings-->
         <script type="text/javascript" src="../template/js/plugins.min.js"></script>
         <!--custom-script.js - Add your own theme custom JS-->
         <script type="text/javascript" src="../template/js/custom-script.js"></script>
+        <script type="text/javascript" src="../template/js/plugins/raphael/raphael-min.js"></script>
     </body>
 </html>
