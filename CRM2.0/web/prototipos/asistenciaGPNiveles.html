@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+        <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+        <title>RF08 - Reporte de Asistencia</title>
+        <link href="../template/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../template/css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <!-- Custome CSS-->    
+        <link href="../template/css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+
+        <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+        <link href="../template/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../template/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+        <link href="../template/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    </head>
+
+    <body>
+        <!-- Start Page Loading -->
+        <div id="loader-wrapper">
+            <div id="loader"></div>        
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+        <header id="header" class="page-topbar">
+            <!-- start header nav-->
+            <div class="navbar-fixed">
+                <nav class="navbar-color">
+                    <div class="nav-wrapper">
+                        <ul class="left">                      
+                            <li><h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="../template/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1></li>
+                        </ul>
+                        <div class="header-search-wrapper hide-on-med-and-down">
+                            <i class="mdi-action-search"></i>
+                            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize"/>
+                        </div>
+                        <ul class="right hide-on-med-and-down">
+                            
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light notification-button" data-activates="notifications-dropdown"><i class="mdi-social-notifications"><small class="notification-badge blue darken-1">5</small></i>
+
+                                </a>
+                            </li> 
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
+                            </li>  
+                        </ul>
+                        <!-- notifications-dropdown -->
+                        <ul id="notifications-dropdown" class="dropdown-content">
+                            <li>
+                                <h5>NOTIFICATIONS <span class="new badge">5</span></h5>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-add-shopping-cart"></i> A new order has been placed!</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-stars"></i> Completed the task</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">3 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-settings"></i> Settings updated</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">4 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-editor-insert-invitation"></i> Director meeting started</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">6 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-trending-up"></i> Generate monthly report</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- end header nav-->
+        </header>
+        <!-- END HEADER -->
+
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- START MAIN -->
+        <div id="main">
+            <!-- START WRAPPER -->
+            <div class="wrapper">
+
+                <!-- START LEFT SIDEBAR NAV-->
+                <aside id="left-sidebar-nav">
+                    <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                        <li class="user-details cyan darken-2">
+                            <div class="row">
+                                <div class="col col s4 m4 l4">
+                                    <img src="../template/images/avatar2.png" alt="" class="circle responsive-img valign profile-image">
+                                </div>
+                                <div class="col col s8 m8 l8">
+                                    <ul id="profile-dropdown" class="dropdown-content">
+                                        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Leandro Burgos<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                    <p class="user-roal">Mipes de G.P.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Layouts</a>
+                                    <div class="collapsible-body">
+                                        <ul>
+                                            <li><a href="layout-fullscreen.html">Full Screen</a>
+                                            </li>
+                                            <li><a href="layout-horizontal-menu.html">Horizontal Menu</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
+                </aside>
+                <!-- END LEFT SIDEBAR NAV-->
+
+                <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+                <!-- START CONTENT -->
+                <section id="content">
+                    <div class="container">
+                        <div class="section">
+
+                            <div class="col s12 m12 l12">
+                                <div class="row">
+                                    <div class="col s12 m12 l10 offset-l1">
+                                        <div class="card-panel">
+                                            <div class="col s12 m8 l9">
+                  <input type="text" class="datepicker picker__input" readonly="" id="P740281952" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="P740281952_root"><div class="picker" id="P740281952_root" tabindex="0" aria-hidden="true"><div class="picker__holder"><div class="picker__frame"><div class="picker__wrap"><div class="picker__box"><div class="picker__date-display"><div class="picker__weekday-display">Tuesday</div><div class="picker__month-display"><div>Sep</div></div><div class="picker__day-display"><div>26</div></div><div class="picker__year-display"><div>2017</div></div></div><div class="picker__calendar-container"><div class="picker__header"><select class="picker__select--month browser-default" aria-controls="P740281952_table" title="Select a month" disabled="disabled"><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8" selected="">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select><select class="picker__select--year browser-default" aria-controls="P740281952_table" title="Select a year" disabled="disabled"><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017" selected="">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option></select><div class="picker__nav--prev" data-nav="-1" role="button" aria-controls="P740281952_table" title="Previous month"> </div><div class="picker__nav--next" data-nav="1" role="button" aria-controls="P740281952_table" title="Next month"> </div></div><table class="picker__table" id="P740281952_table" role="grid" aria-controls="P740281952" aria-readonly="true"><thead><tr><th class="picker__weekday" scope="col" title="Sunday">S</th><th class="picker__weekday" scope="col" title="Monday">M</th><th class="picker__weekday" scope="col" title="Tuesday">T</th><th class="picker__weekday" scope="col" title="Wednesday">W</th><th class="picker__weekday" scope="col" title="Thursday">T</th><th class="picker__weekday" scope="col" title="Friday">F</th><th class="picker__weekday" scope="col" title="Saturday">S</th></tr></thead><tbody><tr><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1503810000000" role="gridcell" aria-label="27 August, 2017">27</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1503896400000" role="gridcell" aria-label="28 August, 2017">28</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1503982800000" role="gridcell" aria-label="29 August, 2017">29</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1504069200000" role="gridcell" aria-label="30 August, 2017">30</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1504155600000" role="gridcell" aria-label="31 August, 2017">31</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504242000000" role="gridcell" aria-label="1 September, 2017">1</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504328400000" role="gridcell" aria-label="2 September, 2017">2</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504414800000" role="gridcell" aria-label="3 September, 2017">3</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504501200000" role="gridcell" aria-label="4 September, 2017">4</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504587600000" role="gridcell" aria-label="5 September, 2017">5</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504674000000" role="gridcell" aria-label="6 September, 2017">6</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504760400000" role="gridcell" aria-label="7 September, 2017">7</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504846800000" role="gridcell" aria-label="8 September, 2017">8</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1504933200000" role="gridcell" aria-label="9 September, 2017">9</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505019600000" role="gridcell" aria-label="10 September, 2017">10</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505106000000" role="gridcell" aria-label="11 September, 2017">11</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505192400000" role="gridcell" aria-label="12 September, 2017">12</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505278800000" role="gridcell" aria-label="13 September, 2017">13</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505365200000" role="gridcell" aria-label="14 September, 2017">14</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505451600000" role="gridcell" aria-label="15 September, 2017">15</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505538000000" role="gridcell" aria-label="16 September, 2017">16</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505624400000" role="gridcell" aria-label="17 September, 2017">17</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505710800000" role="gridcell" aria-label="18 September, 2017">18</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505797200000" role="gridcell" aria-label="19 September, 2017">19</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505883600000" role="gridcell" aria-label="20 September, 2017">20</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1505970000000" role="gridcell" aria-label="21 September, 2017">21</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1506056400000" role="gridcell" aria-label="22 September, 2017">22</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1506142800000" role="gridcell" aria-label="23 September, 2017">23</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1506229200000" role="gridcell" aria-label="24 September, 2017">24</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1506315600000" role="gridcell" aria-label="25 September, 2017">25</div></td><td role="presentation"><div class="picker__day picker__day--infocus picker__day--today picker__day--highlighted" data-pick="1506402000000" role="gridcell" aria-label="26 September, 2017" aria-activedescendant="true">26</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1506488400000" role="gridcell" aria-label="27 September, 2017">27</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1506574800000" role="gridcell" aria-label="28 September, 2017">28</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1506661200000" role="gridcell" aria-label="29 September, 2017">29</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1506747600000" role="gridcell" aria-label="30 September, 2017">30</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1506834000000" role="gridcell" aria-label="1 October, 2017">1</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1506920400000" role="gridcell" aria-label="2 October, 2017">2</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1507006800000" role="gridcell" aria-label="3 October, 2017">3</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1507093200000" role="gridcell" aria-label="4 October, 2017">4</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1507179600000" role="gridcell" aria-label="5 October, 2017">5</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1507266000000" role="gridcell" aria-label="6 October, 2017">6</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1507352400000" role="gridcell" aria-label="7 October, 2017">7</div></td></tr></tbody></table></div><div class="picker__footer"><button class="btn-flat picker__today" type="button" data-pick="1506402000000" aria-controls="P740281952" disabled="disabled">Today</button><button class="btn-flat picker__clear" type="button" data-clear="1" aria-controls="P740281952" disabled="disabled">Clear</button><button class="btn-flat picker__close" type="button" data-close="true" aria-controls="P740281952" disabled="disabled">Close</button></div></div></div></div></div></div>
+                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12 m12 l10 offset-l1">
+                                        <div id="container">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+                        <!-- Floating Action Button -->
+                        <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+                            <a class="btn-floating btn-large blue darken-1">
+                                <i class="mdi-action-print"></i>
+                            </a>
+                        </div>
+                        <!-- Floating Action Button -->
+                    </div>
+                    <!--end container-->
+                </section>
+
+            </div>
+            <!-- END WRAPPER -->
+
+        </div>
+        <!-- END MAIN -->
+
+
+
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- START FOOTER -->
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    <span>Copyright © Alpha Team 2017 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
+                    <span class="right"> Design and Developed by <a class="grey-text text-lighten-4">Alpha Team 2017</a></span>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="../template/js/plugins/jquery-1.11.2.min.js"></script>    
+        <!--materialize js-->
+        <script type="text/javascript" src="../template/js/materialize.min.js"></script>
+        <!--scrollbar-->
+        <script type="text/javascript" src="../template/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script type="text/javascript" src="../template/js/plugins/prism/prism.js"></script>
+
+        <script type="text/javascript" src="../template/js/plugins/chartist-js/chartist.min.js"></script>  
+        <!-- chartist -->
+
+        <script src="../template/js/highcharts.js"></script>
+        <script src="../template/js/exporting.js"></script>
+        <script>
+
+            Highcharts.chart('container', {
+                title: {
+                    text: 'Asistencia del Grupo Pequeño'
+                },
+                xAxis: {
+                    categories: ['Marzo', 'Abril', 'Mayo', 'Junio', 'Julio']
+                },
+                labels: {
+                    items: [{
+                            html: 'Asistencia del Grupo Pequeño',
+                            style: {
+                                left: '50px',
+                                top: '18px',
+                                color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                            }
+                        }]
+                },
+                series: [{
+                        type: 'column',
+                        name: 'Presente',
+                        data: [4, 5, 3, 3, 4]
+                    }, {
+                        type: 'column',
+                        name: 'Falta',
+                        data: [3, 2, 4, 4, 3]
+                    }, {
+                        type: 'column',
+                        name: 'Visita',
+                        data: [2, 1, 2, 3, 0]
+                    }, {
+                        type: 'spline',
+                        name: 'Promedio',
+                        data: [3.5, 3.5, 3.5, 3.5, 3.5],
+                        marker: {
+                            lineWidth: 2,
+                            lineColor: Highcharts.getOptions().colors[3],
+                            fillColor: 'white'
+                        }
+                    }, {
+                        type: 'pie',
+                        name: 'Total consumption',
+                        data: [{
+                                name: 'Presente',
+                                y: 13,
+                                color: Highcharts.getOptions().colors[0] // Jane's color
+                            }, {
+                                name: 'Falta',
+                                y: 23,
+                                color: Highcharts.getOptions().colors[1] // John's color
+                            }, {
+                                name: 'Visitas',
+                                y: 19,
+                                color: Highcharts.getOptions().colors[2] // Joe's color
+                            }],
+                        center: [100, 80],
+                        size: 100,
+                        showInLegend: false,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }]
+            });
+
+        </script>
+
+        <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+        <script type="text/javascript" src="../template/js/plugins.min.js"></script>
+        <!--custom-script.js - Add your own theme custom JS-->
+    </body>
+</html>
