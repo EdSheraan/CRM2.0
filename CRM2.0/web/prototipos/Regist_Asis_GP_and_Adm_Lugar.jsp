@@ -201,12 +201,8 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-
             $('.modal-trigger').leanModal();
         });
-
-
-
     </script>
 
 </html>
