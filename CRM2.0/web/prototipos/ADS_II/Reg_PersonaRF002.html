@@ -20,7 +20,7 @@ and open the template in the editor.
                 position: fixed;
                 bottom: 0;
             }
-
+            .modal4{ width: 75%; height: 80%;}                
         </style>
     </head>
     <body>
@@ -186,17 +186,83 @@ and open the template in the editor.
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-                <a class="modal-trigger waves-effect waves-light btn" href="#modal4">Registrsr Persona</a>
+                <a class="modal-trigger waves-effect waves-light btn" href="#modal4">Registrar Persona</a>
             </div>
         </div>
         <!-- Modal Structure -->
         <div id="modal4" class="modal modal-fixed-footer">
             <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
+                <h5>Registrar Nuevo Miembro</h5>
+                <form class="col s16">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="mdi-action-account-circle prefix"></i>
+                            <input id="name4" type="text" class="validate">
+                            <label for="first_name">Nombres</label>
+                        </div>
+                        <div class="input-field col s6">
+
+                            <input id="name4" type="text" class="validate">
+                            <label for="first_name">Apellidos</label>
+                        </div>
+
+
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="mdi-action-credit-card circle prefix"></i>
+                            <input id="name4" type="number" class="validate">
+                            <label for="first_name">N°Documento</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <i class="mdi-communication-call circle prefix"></i>
+                            <input id="name4" type="number" class="validate">
+                            <label for="first_name">Teléfono</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <i class="mdi-communication-email prefix"></i>
+                            <input id="email4" type="email" class="validate">
+                            <label for="email">Correo</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="mdi-maps-place circle prefix"></i>
+                            <input id="name4" type="text" class="validate">
+                            <label for="text">Dirección</label>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input type="date" class="datepicker">
+                            <label for="dob">Fecha de nacimiento</label>
+                        </div>
+                        <label for="genter_select">Género</label>
+
+                        <p>
+                            <input name="group1" type="radio" id="test1" />
+                            <label for="test1">Masculino</label>
+
+                            <input name="group1" type="radio" id="test2" />
+                            <label for="test2">Femenino</label>
+                            
+                            <input id = "married" type = "checkbox" checked = "checked" />
+                            <label for = "married">Bautizado</label>
+                        </p>
+                    </div>
+
+
+                </form>
+
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+                <button class="btn blue waves-effect waves-light right" type="submit" name="action">Registrar
+
+                </button>
             </div>
         </div>
         <footer class="page-footer">
