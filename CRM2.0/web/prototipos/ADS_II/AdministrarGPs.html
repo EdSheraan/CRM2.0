@@ -153,7 +153,7 @@
                                                                     <p class="collections-content"><span class="task-cat amber darken-1">Fecha de Creación</span></p>
                                                                 </div>
                                                                 <div class="col l3">
-                                                                    <a class="btn-floating waves-effect btn-large waves-light blue darken-1"><i class="mdi-content-create"></i></a>
+                                                                    <a class="btn-floating waves-effect btn-large waves-light blue darken-1 btn modal-trigger" href="#modal2"><i class="mdi-content-create"></i></a>
                                                                     <a class="btn-floating waves-effect btn-large waves-light red"><i class="mdi-content-clear"></i></a>
                                                                 </div>
                                                             </li>
@@ -171,11 +171,11 @@
                                                                     <p class="collections-content"><span class="task-cat blue darken-1">MIPES de G.P.</span></p>
                                                                 </div>
                                                                 <div class="col l3">        
-                                                                    <p class="collections-content">17-09-2017</p>
+                                                                    <p class="collections-content">12-09-2017</p>
                                                                     <p class="collections-content"><span class="task-cat amber darken-1">Fecha de Creación</span></p>
                                                                 </div>
                                                                 <div class="col l3">
-                                                                    <a class="btn-floating waves-effect btn-large waves-light blue darken-1"><i class="mdi-content-create"></i></a>
+                                                                    <a class="btn-floating waves-effect btn-large waves-light blue darken-1  btn modal-trigger" href="#modal3"><i class="mdi-content-create"></i></a>
                                                                     <a class="btn-floating waves-effect btn-large waves-light red"><i class="mdi-content-clear"></i></a>
                                                                 </div>
                                                             </li>
@@ -193,11 +193,11 @@
                                                                     <p class="collections-content"><span class="task-cat grey">MIPES de G.P.</span></p>
                                                                 </div>
                                                                 <div class="col l3">        
-                                                                    <p class="collections-content">17-09-2017</p>
+                                                                    <p class="collections-content">17-06-2017</p>
                                                                     <p class="collections-content"><span class="task-cat amber darken-1">Fecha de Creación</span></p>
                                                                 </div>
                                                                 <div class="col l3">
-                                                                    <a class="btn-floating waves-effect btn-large waves-light blue darken-1"><i class="mdi-content-create"></i></a>
+                                                                    <a class="btn-floating waves-effect btn-large waves-light blue darken-1  btn modal-trigger" href="#modal4"><i class="mdi-content-create"></i></a>
                                                                     <a class="btn-floating waves-effect btn-large waves-light red"><i class="mdi-content-clear"></i></a>
                                                                 </div>
                                                             </li>
@@ -228,30 +228,148 @@
         </div>
         <div id="modal1" class="modal">
             <div class="modal-content">
-                <h5>Grupo Pequeño</h5>
-                <div class="input-field col l6">
-                    <i class="mdi-social-people prefix"></i>
-                    <input id="icon_prefix3" type="text" class="validate">
-                    <label for="icon_prefix3" class="">Nombre del Grupo Pequeño</label>
-                </div>
-                <div class="input-field col l6">
-                    <i class="mdi-action-home prefix"></i>
-                    <input id="icon_prefix3" type="text" class="validate">
-                    <label for="icon_prefix3" class="">Lugar de Reunión</label>
+                <h5>Nuevo Grupo Pequeño</h5>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="mdi-social-people prefix"></i>
+                        <input id="icon_prefix3" type="text" class="validate">
+                        <label for="icon_prefix3" class="">Nombre del Grupo Pequeño</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input id="icon_prefix3" type="text" class="validate">
+                        <label for="icon_prefix2" class="">Mipes GP</label>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                      <i class="mdi-editor-mode-edit prefix"></i>
-                      <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                      <label for="icon_prefix2" class="">Descipción</label>
+                        <i class="mdi-action-home prefix"></i>
+                        <input id="icon_prefix3" type="text" class="validate">
+                        <label for="icon_prefix3" class="">Lugar de Reunión</label>
                     </div>
-                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-editor-mode-edit prefix"></i>
+                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                        <label for="icon_prefix2" class="">Descipción</label>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Guardar Cambios</a>
-                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Cerrar</a>
+            <div class="modal-footer" style="margin-top: -15px;">
+                <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Agregar</a>
+                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
             </div>
         </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h5>Modificar Grupo Pequeño</h5>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="mdi-social-people prefix"></i>
+                        <input value="Betania" id="first_name2" type="text" class="validate">
+                        <label class="active" for="first_name2">Nombre del Grupo Pequeño</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input value="Arnold Danilo Morales Gomes" id="first_name3" type="text" class="validate">
+                        <label class="active" for="first_name3">Mipes GP</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-home prefix"></i>
+                        <input value="Salon 303-Pabellón E. Universidad Peruana Unión" id="first_name4" type="text" class="validate">
+                        <label class="active" for="first_name4">Lugar de Reunión</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-editor-mode-edit prefix"></i>
+                        <input value="Grupo Pequeño perteneciente a la E.S DAMASCO...." id="first_name5" type="text" class="validate">
+                        <label class="active" for="first_name5">Descipción</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="margin-top: -15px;">
+                <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Guardar</a>
+                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <h5>Modificar Grupo Pequeño</h5>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="mdi-social-people prefix"></i>
+                        <input value="Samaria" id="first_name2" type="text" class="validate">
+                        <label class="active" for="first_name2">Nombre del Grupo Pequeño</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input value="Arnold Danilo Morales Gomes" id="first_name3" type="text" class="validate">
+                        <label class="active" for="first_name3">Mipes GP</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-home prefix"></i>
+                        <input value="Salon 305-Pabellón E. Universidad Peruana Unión" id="first_name4" type="text" class="validate">
+                        <label class="active" for="first_name4">Lugar de Reunión</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-editor-mode-edit prefix"></i>
+                        <input value="Grupo Pequeño perteneciente a la E.S DAMASCO...." id="first_name5" type="text" class="validate">
+                        <label class="active" for="first_name5">Descipción</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="margin-top: -15px;">
+                <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Guardar</a>
+                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
+            </div>
+        </div>
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <h5>Modificar Grupo Pequeño</h5>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="mdi-social-people prefix"></i>
+                        <input value="Israel" id="first_name2" type="text" class="validate">
+                        <label class="active" for="first_name2">Nombre del Grupo Pequeño</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input value="Arnold Danilo Morales Gomes" id="first_name3" type="text" class="validate">
+                        <label class="active" for="first_name3">Mipes GP</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-home prefix"></i>
+                        <input value="Salon 405-Pabellón E. Universidad Peruana Unión" id="first_name4" type="text" class="validate">
+                        <label class="active" for="first_name4">Lugar de Reunión</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-editor-mode-edit prefix"></i>
+                        <input value="Grupo Pequeño perteneciente a la E.S DAMASCO...." id="first_name5" type="text" class="validate">
+                        <label class="active" for="first_name5">Descipción</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="margin-top: -15px;">
+                <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Guardar</a>
+                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
+            </div>
+        </div>
+
+
         <footer class="page-footer">
             <div class="footer-copyright">
                 <div class="container">
