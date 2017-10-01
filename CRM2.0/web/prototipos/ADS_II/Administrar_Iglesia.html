@@ -137,27 +137,27 @@
                                                     <div class="col s12 m12 l12">
                                                         <ul id="projects-collection" class="collection">                                                        
                                                             <li class="collection-item avatar">
-                                                                <div class="col l3"><!--Nombre-->
+                                                                <div class="col s2">
+                                                                   
+                                                                </div>
+                                                                <div class="col s4"><!--Nombre-->
                                                                     <i class="mdi-action-account-balance circle yellow darken-4"></i>
                                                                     <strong><span class="title">Villa Unión</span></strong>
                                                                     <p class="collections-content"><span class="task-cat green accent-3">Activo</span></p>
                                                                 </div>
-                                                                <div class="col l3">        
+                                                                <div class="col s4">        
                                                                     <p class="collections-content">Jose Albornoz Sauce</p>
                                                                     <p class="collections-content"><span class="task-cat blue darken-1">Mipes Iglesia</span></p>
                                                                 </div>
-                                                                <div class="col l3">        
-                                                                    <p class="collections-content">Carlos Figueroa Rivera</p>
-                                                                    <p class="collections-content"><span class="task-cat grey darken-1">Consejero</span></p>
-                                                                </div>
-                                                                <div class="col l3">
+                                                               
+                                                                <div class="col s2">
                                                                     <a class="btn-floating waves-effect waves-light amber  btn modal-trigger" href="#modal2"><i class="mdi-content-create"></i></a>
                                                                     <a class="btn-floating waves-effect waves-light red"><i class="mdi-content-clear"></i></a>
-                                                                    <a class="btn-floating waves-effect waves-light  light-blue"><i class="mdi-action-info"></i></a>
+                                                                  
                                                                 </div>
                                                             </li>
-                                                          
-                                                          
+
+
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -189,36 +189,26 @@
                 <div class="row">
                     <form class="col s12">
                         <div class="row">
-                            <div class="input-field col s4">
+                            <div class="input-field col s6">
                                 <i class="mdi-action-account-balance prefix"></i>
                                 <input id="name4" type="text" class="validate">
                                 <label for="first_name">Nombre de la Iglesia</label>
                             </div>
-                            <div class="input-field col s4">
-                                <i class="mdi-action-account-circle prefix"></i>
-                                <input id="name4" type="text" class="validate">
-                                <label for="first_name">Mipes Iglesia</label>
-                            </div>
-                            <div class="input-field col s4">
-                                <i class="mdi-action-account-circle prefix"></i>
-                                <input id="name4" type="text" class="validate">
-                                <label for="first_name">Consejero</label>
-                            </div>
-                        </div>
-                        <div class="row">
+
                             <div class="input-field col s6">
-                                <i class="mdi-maps-place circle prefix"></i>
-                                <input id="name4" type="text" class="validate">
-                                <label for="text">Ubicación Iglesia</label>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="mdi-editor-mode-edit prefix"></i>
-                                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                                    <label for="icon_prefix2" class="">Descipción</label>
+                                <i class="mdi-action-account-circle prefix"></i>
+                                <div class="input-field col s10" style="margin-top: -5px; float: right;">
+                                    <select>
+                                        <option value="" disabled selected>Mipes Iglesia</option>
+                                        <option value="1">Jose Albornoz Sauce</option>
+                                        <option value="2">Victor Mendoza Flores</option>
+
+                                    </select>
                                 </div>
                             </div>
+
                         </div>
+
                         <div class="input-field col s3"></div>
                     </form>
                 </div>
@@ -233,36 +223,19 @@
             <div class="modal-content">
                 <h5>Modificar Iglesia</h5>
                 <div class="row">
-                    <div class="input-field col s4">
+                    <div class="input-field col s6">
                         <i class="mdi-social-people prefix"></i>
                         <input value="Villa Unión" id="first_name2" type="text" class="validate">
                         <label class="active" for="first_name2">Nombre Iglesia</label>
                     </div>
-                    <div class="input-field col s4">
+                    <div class="input-field col s6">
                         <i class="mdi-action-account-circle prefix"></i>
                         <input value="Jose Albornoz Sauce" id="first_name3" type="text" class="validate">
                         <label class="active" for="first_name3">Mipes Iglesia</label>
                     </div>
-                    <div class="input-field col s4">
-                        <i class="mdi-action-account-circle prefix"></i>
-                        <input value="Carlos FIgueroa Rivera" id="first_name3" type="text" class="validate">
-                        <label class="active" for="first_name3">Consejero</label>
-                    </div>
+                   
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="mdi-action-home prefix"></i>
-                        <input value="Carpa dentro de la Universidad Peruana Unión" id="first_name4" type="text" class="validate">
-                        <label class="active" for="first_name4">Ubicación de la Iglesia</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="mdi-editor-mode-edit prefix"></i>
-                        <input value="Iglesia Adventista del Séptimo día..." id="first_name5" type="text" class="validate">
-                        <label class="active" for="first_name5">Descipción</label>
-                    </div>
-                </div>
+             
             </div>
             <div class="modal-footer" style="margin-top: -15px;">
                 <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Guardar</a>
@@ -270,8 +243,8 @@
             </div>
         </div>
 
-    
-         
+
+
 
 
         <footer class="page-footer">

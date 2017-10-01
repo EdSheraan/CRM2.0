@@ -16,7 +16,7 @@
                 position: fixed;
                 bottom: 0;
             }
-         
+
         </style>
     </head>
 
@@ -160,7 +160,7 @@
                                                                 <div class="col l3">
                                                                     <a class="btn-floating waves-effect btn-large waves-light yellow accent-2 btn modal-trigger" href="#modal2"><i class="mdi-content-create"></i></a>
                                                                     <a class="btn-floating waves-effect btn-large waves-light red darken-1"><i class="mdi-content-clear"></i></a>
-                                                                    <a class="btn-floating waves-effect btn-large waves-light cyan darken-1"><i class="mdi-toggle-radio-button-off"></i></a>
+                                                                  
                                                                 </div>
                                                             </li>
 
@@ -187,7 +187,7 @@
                                                                 <div class="col l3">
                                                                     <a class="btn-floating waves-effect btn-large waves-light yellow accent-2 btn modal-trigger" href="#modal3"><i class="mdi-content-create"></i></a>
                                                                     <a class="btn-floating waves-effect btn-large waves-light red darken-1"><i class="mdi-content-clear"></i></a>
-                                                                    <a class="btn-floating waves-effect btn-large waves-light cyan darken-1"><i class="mdi-toggle-radio-button-off"></i></a>
+                                                                 
                                                                 </div>
                                                             </li>
 
@@ -214,7 +214,7 @@
                                                                 <div class="col l3">
                                                                     <a class="btn-floating waves-effect btn-large waves-light yellow accent-2 btn modal-trigger" href="#modal3"><i class="mdi-content-create"></i></a>
                                                                     <a class="btn-floating waves-effect btn-large waves-light red darken-1"><i class="mdi-content-clear"></i></a>
-                                                                    <a class="btn-floating waves-effect btn-large waves-light cyan darken-1"><i class="mdi-toggle-radio-button-off"></i></a>
+                                                                    
                                                                 </div>
                                                             </li>
 
@@ -254,37 +254,25 @@
                                 <label for="first_name">Nombre de Escuela Sabática</label>
                             </div>
                             <div class="input-field col s6">
-                                <ul id="dropdown1" class="dropdown-content">
-                                    <li><a href="#!" class="-text">Villa Unión</a>
-                                    </li>
-                                    <li><a href="#!" class="-text">Villa Unión2</a>
-                                    </li>
-                                </ul>
-                                <a class="btn dropdown-button waves-effect waves-light blue darken-1" href="#!" data-activates="dropdown1">Iglesia<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                <div class="input-field col s12" style="margin-top: -5px;">
+                                    <select>
+                                        <option value="" disabled selected>Lider</option>
+                                        <option value="1">Jeiner Castro Manuel</option>
+                                        <option value="2">Arnold Danilo Morales</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="mdi-action-face-unlock prefix"></i>
-                                <input id="name4" type="text" class="validate">
-                                <label for="first_name">Nombre del Lider E.S</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <a class="btn-floating waves-effect btn-large waves-light cyan darken-1"><i class="mdi-toggle-radio-button-off"></i></a>
-                            </div>
-
                         </div>
                     </form>
                 </div>
-            </div>
 
-            <div class="modal-footer" style="margin-top: -20px;">
-                <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Agregar</a>
-                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
-            </div>
+                <div class="modal-footer" style="margin-top: -20px;">
+                    <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Agregar</a>
+                    <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
+                </div>
 
+            </div>
         </div>
-
 
         <div id="modal2" class="modal">
             <div class="modal-content">
@@ -296,32 +284,20 @@
                         <label class="active" for="first_name2">Nombre de la E.S</label>
                     </div>
                     <div class="input-field col s6">
-                        <i class="mdi-action-account-circle prefix"></i>
+                        <i class="mdi-action-face-unlock prefix"></i>
                         <input value="Jeiner Manuel Castro Vasquez" id="first_name3" type="text" class="validate">
                         <label class="active" for="first_name3">Lider E.S</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="mdi-action-home prefix"></i>
-                        <input value="Pabellón E. Universidad Peruana Unión" id="first_name4" type="text" class="validate">
-                        <label class="active" for="first_name4">Lugar de Reunión</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="mdi-editor-mode-edit prefix"></i>
-                        <input value="Escuela Sabática perteneciente  al Distrito Misionero..." id="first_name5" type="text" class="validate">
-                        <label class="active" for="first_name5">Descipción</label>
-                    </div>
-                </div>
+
+
             </div>
             <div class="modal-footer" style="margin-top: -15px;">
                 <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Guardar</a>
                 <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
             </div>
         </div>
-        
+
         <div id="modal3" class="modal">
             <div class="modal-content">
                 <h5>Modificar Escuela Sabática</h5>
@@ -337,29 +313,16 @@
                         <label class="active" for="first_name3">Lider E.S</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="mdi-action-home prefix"></i>
-                        <input value="Pabellón E. Universidad Peruana Unión" id="first_name4" type="text" class="validate">
-                        <label class="active" for="first_name4">Lugar de Reunión</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="mdi-editor-mode-edit prefix"></i>
-                        <input value="Escuela Sabática perteneciente al Distrito Misionero...." id="first_name5" type="text" class="validate">
-                        <label class="active" for="first_name5">Descipción</label>
-                    </div>
-                </div>
+             
             </div>
             <div class="modal-footer" style="margin-top: -15px;">
                 <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Guardar</a>
                 <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
             </div>
         </div>
-        
-        
-        
+
+
+
 
         <footer class="page-footer">
             <div class="footer-copyright">
