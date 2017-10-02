@@ -10,6 +10,12 @@
         <link href="../../template/css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="../../template/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="../../template/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+
         <style>
             footer {
                 width: 100%;
@@ -153,7 +159,7 @@
                                                                     <p class="collections-content"><span class="task-cat amber darken-1">Fecha de Creación</span></p>
                                                                 </div>
                                                                 <div class="col l3">
-                                                                    <a class="btn-floating waves-effect btn-large waves-light blue darken-1 btn modal-trigger" href="#modal2"><i class="mdi-content-create"></i></a>
+                                                                    <a class="btn-floating waves-effect btn-large waves-light blue darken-1 btn modal-trigger tooltipped blue darken-2" href="#modal2" data-tooltip="Editar"><i class="mdi-content-create"></i></a>
                                                                     <a class="btn-floating waves-effect btn-large waves-light red"><i class="mdi-content-clear"></i></a>
                                                                 </div>
                                                             </li>
@@ -186,7 +192,7 @@
                                                                         <h5 style="display: table-cell;vertical-align: middle;text-align: center;color: white">I</h5>
                                                                     </div>
                                                                     <strong><span class="title">ISRAEL</span></strong>
-                                                                    <p class="collections-content"><span class="task-cat green accent-3">Inactivo</span></p>
+                                                                    <p class="collections-content"><span class="task-cat green accent-3">Activo</span></p>
                                                                 </div>
                                                                 <div class="col l4">        
                                                                     <p class="collections-content">Arnold Danilo Morales Gomez</p>
@@ -215,8 +221,8 @@
                             </div>
 
                         </div>
-                        <div class="fixed-action-btn" style="bottom: 10%; right: 19px;">
-                            <a class="btn-floating btn-large green accent-3 btn modal-trigger" href="#modal1">
+                        <div class="fixed-action-btn " style="bottom: 10%; right: 19px;" >
+                            <a class="btn-floating btn-large green accent-3 btn modal-trigger tooltipped green darken-2" href="#modal1" data-tooltip="Añadir"  >
                                 <i class="mdi-content-add"></i>
                             </a>
                         </div>
@@ -266,16 +272,12 @@
             <div class="modal-content">
                 <h5>Modificar Grupo Pequeño</h5>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="mdi-social-people prefix"></i>
                         <input value="Betania" id="first_name2" type="text" class="validate">
                         <label class="active" for="first_name2">Nombre del Grupo Pequeño</label>
                     </div>
-                    <div class="input-field col s6">
-                        <i class="mdi-action-account-circle prefix"></i>
-                        <input value="Arnold Danilo Morales Gomes" id="first_name3" type="text" class="validate">
-                        <label class="active" for="first_name3">Mipes GP</label>
-                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
@@ -302,16 +304,12 @@
             <div class="modal-content">
                 <h5>Modificar Grupo Pequeño</h5>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="mdi-social-people prefix"></i>
                         <input value="Samaria" id="first_name2" type="text" class="validate">
                         <label class="active" for="first_name2">Nombre del Grupo Pequeño</label>
                     </div>
-                    <div class="input-field col s6">
-                        <i class="mdi-action-account-circle prefix"></i>
-                        <input value="Arnold Danilo Morales Gomes" id="first_name3" type="text" class="validate">
-                        <label class="active" for="first_name3">Mipes GP</label>
-                    </div>
+                   
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
@@ -337,16 +335,12 @@
             <div class="modal-content">
                 <h5>Modificar Grupo Pequeño</h5>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="mdi-social-people prefix"></i>
                         <input value="Israel" id="first_name2" type="text" class="validate">
                         <label class="active" for="first_name2">Nombre del Grupo Pequeño</label>
                     </div>
-                    <div class="input-field col s6">
-                        <i class="mdi-action-account-circle prefix"></i>
-                        <input value="Arnold Danilo Morales Gomes" id="first_name3" type="text" class="validate">
-                        <label class="active" for="first_name3">Mipes GP</label>
-                    </div>
+                   
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
@@ -378,6 +372,7 @@
                 </div>
             </div>
         </footer>
+    
 
         <script type="text/javascript" src="../../template/js/plugins/jquery-1.11.2.min.js"></script>    
         <script type="text/javascript" src="../../template/js/materialize.min.js"></script>
