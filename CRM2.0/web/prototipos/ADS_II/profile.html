@@ -6,11 +6,297 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <title>Registrar Asistencia GP</title>
+        <link href="../../template/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <style>
+            footer {
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+            }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="loader-wrapper">
+            <div id="loader"></div>        
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+        <!-- End Page Loading -->
+
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- START HEADER -->
+        <header id="header" class="page-topbar">
+            <!-- start header nav-->
+            <div class="navbar-fixed">
+                <nav class="navbar-color">
+                    <div class="nav-wrapper">
+                        <ul class="left">                      
+                            <li><h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="../../template/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1></li>
+                        </ul>
+                        <div class="header-search-wrapper hide-on-med-and-down">
+                            <i class="mdi-action-search"></i>
+                            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize"/>
+                        </div>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light translation-button"  data-activates="translation-dropdown"><img src="images/flag-icons/United-States.png" alt="USA" /></a>
+                            </li>
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
+                            </li>
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light notification-button" data-activates="notifications-dropdown"><i class="mdi-social-notifications"><small class="notification-badge">5</small></i>
+
+                                </a>
+                            </li>                        
+                            <li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
+                            </li>
+                        </ul>
+                        <!-- translation-button -->
+                        <ul id="translation-dropdown" class="dropdown-content">
+                            <li>
+                                <a href="#!"><img src="images/flag-icons/United-States.png" alt="English" />  <span class="language-select">English</span></a>
+                            </li>
+                            <li>
+                                <a href="#!"><img src="images/flag-icons/France.png" alt="French" />  <span class="language-select">French</span></a>
+                            </li>
+                            <li>
+                                <a href="#!"><img src="images/flag-icons/China.png" alt="Chinese" />  <span class="language-select">Chinese</span></a>
+                            </li>
+                            <li>
+                                <a href="#!"><img src="images/flag-icons/Germany.png" alt="German" />  <span class="language-select">German</span></a>
+                            </li>
+
+                        </ul>
+                        <!-- notifications-dropdown -->
+                        <ul id="notifications-dropdown" class="dropdown-content">
+                            <li>
+                                <h5>NOTIFICATIONS <span class="new badge">5</span></h5>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-add-shopping-cart"></i> A new order has been placed!</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-stars"></i> Completed the task</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">3 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-settings"></i> Settings updated</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">4 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-editor-insert-invitation"></i> Director meeting started</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">6 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-trending-up"></i> Generate monthly report</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- end header nav-->
+        </header>
+        <!-- END HEADER -->
+
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- START MAIN -->
+        <div id="main">
+            <!-- START WRAPPER -->
+            <div class="wrapper">
+
+                <!-- START LEFT SIDEBAR NAV-->
+                <aside id="left-sidebar-nav">
+                    <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                        <li class="user-details cyan darken-2">
+                            <div class="row">
+                                <div class="col col s4 m4 l4">
+                                    <img src="../../template/images/avatar3.png" alt="" class="circle responsive-img valign profile-image">
+                                </div>
+                                <div class="col col s8 m8 l8">
+                                    <ul id="profile-dropdown" class="dropdown-content">
+                                        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Arnold<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                    <p class="user-roal">Administrador</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Layouts</a>
+                                    <div class="collapsible-body">
+                                        <ul>
+                                            <li><a href="layout-fullscreen.html">Full Screen</a>
+                                            </li>
+                                            <li><a href="layout-horizontal-menu.html">Horizontal Menu</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
+                </aside>
+                <!-- END LEFT SIDEBAR NAV-->
+
+                <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+                <!-- START CONTENT -->
+                <section id="content">        
+
+                    <!--start container-->
+                    <div class="container">
+
+                        <div id="profile-page" class="section">
+                            <!-- profile-page-header -->
+                            <div id="profile-page-header" class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="../../template/images/blog04.jpg" alt="user background">                    
+                                </div>
+                                <figure class="card-profile-image">
+                                    <img src="../../template/images/avatar3.png" alt="profile image" class="circle z-depth-2 responsive-img activator">
+                                </figure>
+                                <div class="card-content">
+                                    <div class="row">                    
+                                        <div class="col s3 offset-s2">                        
+                                            <h4 class="card-title grey-text text-darken-4">Arnold Morales</h4>
+                                            <p class="medium-small grey-text">Lider de Grupo Pequeño</p>                        
+                                        </div>
+               
+                                        <div class="col s2 center-align">
+                                             <i class="mdi-maps-local-library prefix" style="font-size: 40px;"></i>
+                                            <p class="medium-small grey-text">E.S Damasco</p>                        
+                                        </div>
+                                        <div class="col s2 center-align">
+                                             <i class="mdi-maps-local-library prefix" style="font-size: 40px;"></i>
+                                            <p class="medium-small grey-text">E.S Damasco</p>                        
+                                        </div>
+                                                 
+                                        <div class="col s1 right-align">
+                                            <a class="btn-floating activator waves-effect waves-light darken-2 right">
+                                                <i class="mdi-action-perm-identity"></i>
+                                            </a>
+                                        </div>
+                                         <div class="col s1 right-align">
+                                            <a class="btn-floating activator waves-effect waves-light  red darken-1">
+                                                <i class="mdi-editor-mode-edit"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-reveal">
+                                    <p>
+                                        <span class="card-title grey-text text-darken-4">Roger Waters <i class="mdi-navigation-close right"></i></span>
+                                        <span><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</span>
+                                    </p>
+
+                                    <p>Hola.</p>
+
+                                    <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> 123 456 789</p>
+                                    <p><i class="mdi-communication-email cyan-text text-darken-2"></i> arnold@gmail.com</p>
+                                    <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 18th June 1990</p>
+                                    <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i> BAR - AUS</p>
+                                </div>
+                            </div>
+                            <!--/ profile-page-header -->
+
+                            <!-- profile-page-content -->
+                            <div id="profile-page-content" class="row">
+                                <!-- profile-page-sidebar-->
+                                <div id="profile-page-sidebar" class="col s12 m4">
+                                    <!-- Profile About  -->
+                                    <div class="card light-blue">
+                                        <div class="card-content white-text">
+                                            <span class="card-title">About Me!</span>
+                                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                        </div>                  
+                                    </div>
+                                    <!-- Profile About  -->
+
+                                    <!-- Profile About Details  -->
+                                    <ul id="profile-page-about-details" class="collection z-depth-1">
+                                        <li class="collection-item">
+                                            <div class="row">
+                                                <div class="col s5 grey-text darken-1"><i class="mdi-action-wallet-travel"></i> Project</div>
+                                                <div class="col s7 grey-text text-darken-4 right-align">ABC Name</div>
+                                            </div>
+                                        </li>
+                                        <li class="collection-item">
+                                            <div class="row">
+                                                <div class="col s5 grey-text darken-1"><i class="mdi-social-poll"></i> Skills</div>
+                                                <div class="col s7 grey-text text-darken-4 right-align">HTML, CSS</div>
+                                            </div>
+                                        </li>
+                                        <li class="collection-item">
+                                            <div class="row">
+                                                <div class="col s5 grey-text darken-1"><i class="mdi-social-domain"></i> Lives in</div>
+                                                <div class="col s7 grey-text text-darken-4 right-align">NY, USA</div>
+                                            </div>
+                                        </li>
+                                        <li class="collection-item">
+                                            <div class="row">
+                                                <div class="col s5 grey-text darken-1"><i class="mdi-social-cake"></i> Birth date</div>
+                                                <div class="col s7 grey-text text-darken-4 right-align">18th June, 1991</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!--end container-->
+
+        </div>
+
+        <!-- END CONTENT -->
+
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    <span>Copyright ©  <a class="grey-text text-lighten-4">Alpha Team 2017 </a> All rights reserved.</span>
+                    <span class="right"> Design and Developed by <a class="grey-text text-lighten-4">Alpha Team 2017</a></span>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="../../template/js/plugins/jquery-1.11.2.min.js"></script>    
+        <script type="text/javascript" src="../../template/js/materialize.min.js"></script>
+        <script type="text/javascript" src="../../template/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script type="text/javascript" src="../../template/js/plugins/prism/prism.js"></script>
+        <script src="../../template/js/highcharts.js"></script>
+        <script src="../../template/js/exporting.js"></script>
+
+
+        <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+        <script type="text/javascript" src="../../template/js/plugins.min.js"></script>
+        <!--custom-script.js - Add your own theme custom JS-->
+
+
     </body>
+
 </html>
