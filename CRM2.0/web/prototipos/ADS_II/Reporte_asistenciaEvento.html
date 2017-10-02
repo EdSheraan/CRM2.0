@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <title>Registrar Asistencia GP</title>
+        <link href="../../template/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="../../template/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    
+    </head>
+    <body>
+        <div id="loader-wrapper">
+            <div id="loader"></div>        
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+        <header id="header" class="page-topbar">
+            <div class="navbar-fixed">
+                <nav class="navbar-color">
+                    <div class="nav-wrapper">
+                        <ul class="left">                      
+                            <li><h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="../template/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1></li>
+                        </ul>
+                        <div class="header-search-wrapper hide-on-med-and-down">
+                            <i class="mdi-action-search"></i>
+                            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize"/>
+                        </div>
+                        <ul class="right hide-on-med-and-down">
+
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light notification-button" data-activates="notifications-dropdown"><i class="mdi-social-notifications"><small class="notification-badge blue darken-1">5</small></i>
+
+                                </a>
+                            </li> 
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
+                            </li>  
+                        </ul>
+                        <ul id="notifications-dropdown" class="dropdown-content">
+                            <li>
+                                <h5>NOTIFICATIONS <span class="new badge">5</span></h5>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-add-shopping-cart"></i> A new order has been placed!</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-stars"></i> Completed the task</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">3 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-settings"></i> Settings updated</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">4 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-editor-insert-invitation"></i> Director meeting started</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">6 days ago</time>
+                            </li>
+                            <li>
+                                <a href="#!"><i class="mdi-action-trending-up"></i> Generate monthly report</a>
+                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div id="main">
+            <div class="wrapper">
+                <aside id="left-sidebar-nav">
+                    <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                        <li class="user-details cyan darken-2">
+                            <div class="row">
+                                <div class="col col s4 m4 l4">
+                                    <img src="../template/images/avatar2.png" alt="" class="circle responsive-img valign profile-image">
+                                </div>
+                                <div class="col col s8 m8 l8">
+                                    <ul id="profile-dropdown" class="dropdown-content">
+                                        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Leandro Burgos<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                    <p class="user-roal">Mipes de G.P.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Layouts</a>
+                                    <div class="collapsible-body">
+                                        <ul>
+                                            <li><a href="layout-fullscreen.html">Full Screen</a>
+                                            </li>
+                                            <li><a href="layout-horizontal-menu.html">Horizontal Menu</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
+                </aside>
+                <section id="content">
+                    <div class="container">
+                        <div class="section">
+
+                            <div class="col s12 m12 l12">
+                                <div class="row">
+                                    <div class="col s12 m12 l10 offset-l1">
+                                        <h5>Reporte de Asistencia al Grupo Pequeño</h5>
+                                        <div id="work-collections">
+                                            <div class="row">
+                                                <div class="col s12 m12 l12">
+                                                    <ul id="projects-collection" class="collection">
+                                                        <li class="collection-item avatar">
+                                                            <i class="mdi-social-group circle blue darken-1"></i>
+                                                            <span class="collection-header blue-text darken-1">Damasco I</span>
+                                                            <p>Del 05 de junio al 12 de septiembre</p>
+                                                            <a href="#" class="secondary-content amber-text darken-1"><i class="mdi-action-grade"></i>
+                                                                <i class="mdi-action-grade"></i>
+                                                                <i class="mdi-action-grade"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="collection-item avatar">
+                                                            <div class="col s4">
+                                                                <img src="../template/images/avatar2.png" alt="" class="circle">
+                                                                <span class="title">Leandro Burgos Robles</span>
+                                                                <p>asdadasdas</p>
+                                                            </div>
+                                                            <div class="col s3">                                                    
+                                                                <p class="collections-content"><span class="task-cat light-green accent-3">Mipes de G.P.</span></p>
+                                                                <p class="collections-content"><span class="task-cat grey darken-1">Miembro</span></p>
+                                                            </div>
+                                                            <div class="col s4">
+                                                                <div class="progress">
+                                                                    <div class="determinate green accent-3" style="width: 100%"></div>   
+                                                                </div>                                                
+                                                            </div>
+                                                            <div class="col s1">
+                                                                <a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown1">
+                                                                    <i class="mdi-navigation-more-vert right"></i>
+                                                                </a>
+                                                                <ul id="dropdown1" class="dropdown-content">
+                                                                    <li><a href="#!" class="-text">Ver Perfil</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="collection-item avatar">
+                                                            <div class="col s4">
+                                                                <img src="../template/images/avatar3.png" alt="" class="circle">
+                                                                <span class="title">Arnold Morales Gomez</span>
+                                                                <p>asdadasdas</p>
+                                                            </div>
+                                                            <div class="col s3">
+                                                                <span class="task-cat grey darken-1">Miembro</span>
+                                                            </div>
+                                                            <div class="col s4">
+                                                                <div class="progress">
+                                                                    <div class="determinate amber darken-1" style="width: 30%"></div>   
+                                                                </div>                                                
+                                                            </div>
+                                                            <div class="col s1">
+                                                                <a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown2">
+                                                                    <i class="mdi-navigation-more-vert right"></i>
+                                                                </a>
+                                                                <ul id="dropdown2" class="dropdown-content">
+                                                                    <li><a href="#!" class="-text">Ver Perfil</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+
+                                                        <li class="collection-item avatar">
+                                                            <div class="row">
+                                                                <div class="col s4">
+                                                                    <img src="../template/images/avatar4.png" alt="" class="circle">
+                                                                    <span class="title">Arnalda Aguilar Aranda</span>
+                                                                    <p>asdadasdas</p>
+                                                                </div>
+                                                                <div class="col s3">
+                                                                    <span class="task-cat grey darken-1">Miembro</span>
+                                                                </div>
+                                                                <div class="col s4">
+                                                                    <div class="progress">
+                                                                        <div class="determinate red darken-1" style="width: 10%"></div>   
+                                                                    </div>                                                
+                                                                </div>
+                                                                <div class="col s1">
+                                                                    <a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown3">
+                                                                        <i class="mdi-navigation-more-vert right"></i>
+                                                                    </a>
+                                                                    <ul id="dropdown3" class="dropdown-content">
+                                                                        <li><a href="#!" class="-text">Ver Perfil</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </li> 
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12 m12 l10 offset-l1">
+                                        <div id="container">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+                            <a class="btn-floating btn-large blue darken-1">
+                                <i class="mdi-action-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    <span>Copyright ©  <a class="grey-text text-lighten-4">Alpha Team 2017 </a> All rights reserved.</span>
+                    <span class="right"> Design and Developed by <a class="grey-text text-lighten-4">Alpha Team 2017</a></span>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="../../template/js/plugins/jquery-1.11.2.min.js"></script>    
+        <script type="text/javascript" src="../../template/js/materialize.min.js"></script>
+        <script type="text/javascript" src="../../template/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script type="text/javascript" src="../../template/js/plugins/prism/prism.js"></script>
+        <script src="../../template/js/highcharts.js"></script>
+        <script src="../../template/js/exporting.js"></script>
+        <script>
+
+            Highcharts.chart('container', {
+                title: {
+                    text: 'Asistencia del Grupo Pequeño'
+                },
+                xAxis: {
+                    categories: ['Marzo', 'Abril', 'Mayo', 'Junio', 'Julio']
+                },
+                labels: {
+                    items: [{
+                            html: 'Asistencia del Grupo Pequeño',
+                            style: {
+                                left: '50px',
+                                top: '18px',
+                                color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                            }
+                        }]
+                },
+                series: [{
+                        type: 'column',
+                        name: 'Presente',
+                        data: [4, 5, 3, 3, 4]
+                    }, {
+                        type: 'column',
+                        name: 'Falta',
+                        data: [3, 2, 4, 4, 3]
+                    }, {
+                        type: 'column',
+                        name: 'Visita',
+                        data: [2, 1, 2, 3, 0]
+                    }, {
+                        type: 'spline',
+                        name: 'Promedio',
+                        data: [3.5, 3.5, 3.5, 3.5, 3.5],
+                        marker: {
+                            lineWidth: 2,
+                            lineColor: Highcharts.getOptions().colors[3],
+                            fillColor: 'white'
+                        }
+                    }, {
+                        type: 'pie',
+                        name: 'Total consumption',
+                        data: [{
+                                name: 'Presente',
+                                y: 13,
+                                color: Highcharts.getOptions().colors[0] // Jane's color
+                            }, {
+                                name: 'Falta',
+                                y: 23,
+                                color: Highcharts.getOptions().colors[1] // John's color
+                            }, {
+                                name: 'Visitas',
+                                y: 19,
+                                color: Highcharts.getOptions().colors[2] // Joe's color
+                            }],
+                        center: [100, 80],
+                        size: 100,
+                        showInLegend: false,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }]
+            });
+
+        </script>
+
+        <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+        <script type="text/javascript" src="../../template/js/plugins.min.js"></script>
+        <!--custom-script.js - Add your own theme custom JS-->
+    </body>
+</html>
