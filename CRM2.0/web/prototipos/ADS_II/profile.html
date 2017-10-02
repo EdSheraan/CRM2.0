@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-        <title>Registrar Asistencia GP</title>
+        <title>Perfil Usuario</title>
         <link href="../../template/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="../../template/css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="../../template/css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -186,31 +186,29 @@ and open the template in the editor.
                                             <h4 class="card-title grey-text text-darken-4">Arnold Morales</h4>
                                             <p class="medium-small grey-text">Lider de Grupo Pequeño</p>                        
                                         </div>
-               
+
                                         <div class="col s2 center-align">
-                                             <i class="mdi-maps-local-library prefix" style="font-size: 40px;"></i>
+                                            <i class="mdi-maps-local-library prefix" style="font-size: 40px;"></i>
                                             <p class="medium-small grey-text">E.S Damasco</p>                        
                                         </div>
                                         <div class="col s2 center-align">
-                                             <i class="mdi-maps-local-library prefix" style="font-size: 40px;"></i>
+                                            <i class="mdi-maps-local-library prefix" style="font-size: 40px;"></i>
                                             <p class="medium-small grey-text">E.S Damasco</p>                        
                                         </div>
-                                                 
+
                                         <div class="col s1 right-align">
                                             <a class="btn-floating activator waves-effect waves-light darken-2 right">
                                                 <i class="mdi-action-perm-identity"></i>
                                             </a>
                                         </div>
-                                         <div class="col s1 right-align">
-                                            <a class="btn-floating activator waves-effect waves-light  red darken-1">
-                                                <i class="mdi-editor-mode-edit"></i>
-                                            </a>
+                                        <div class="col s1 right-align">
+                                            <a class="btn-floating waves-effect waves-light amber btn modal-trigger" href="#modal3"><i class="mdi-content-create"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-reveal">
                                     <p>
-                                        <span class="card-title grey-text text-darken-4">Roger Waters <i class="mdi-navigation-close right"></i></span>
+                                        <span class="card-title grey-text text-darken-4">Arnod  Morales<i class="mdi-navigation-close right"></i></span>
                                         <span><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</span>
                                     </p>
 
@@ -220,6 +218,76 @@ and open the template in the editor.
                                     <p><i class="mdi-communication-email cyan-text text-darken-2"></i> arnold@gmail.com</p>
                                     <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 18th June 1990</p>
                                     <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i> BAR - AUS</p>
+                                </div>
+
+                                <div id="modal3" class="modal">
+                                    <div class="modal-content">
+                                        <h5>Modificar Datos Personales</h5>
+                                        <div class="row">
+
+                                            <div class="input-field col s6">
+                                                <i class="mdi-action-account-circle prefix"></i>
+                                                <input value="Arnold Danilo" id="first_name3" type="text" class="validate">
+                                                <label for="first_name">Nombres</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value="Morales Gomez" id="first_name3" type="text" class="validate">
+                                                <label for="first_name">Apellidos</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s4">
+                                                <i class="mdi-action-credit-card circle prefix"></i>
+                                                <input value="12345678" id="first_name3" type="text" class="validate">
+                                                <label for="first_name">N°Documento</label>
+
+                                            </div>
+                                            <div class="input-field col s2">
+                                                
+                                                <div class="input-field col s10" style="margin-top: -5px; float: right;">
+                                                    <select>
+                                                        <option value="" disabled selected>Tipo</option>
+                                                        <option value="1">Cédula</option>
+                                                        <option value="2">DNI</option>
+                                                        <option value="2">...</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="input-field col s6">
+                                                <i class="mdi-communication-call circle prefix"></i>
+                                                <input value="999 252 111" id="first_name3" type="text" class="validate">
+                                                <label for="first_name">Teléfono</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <i class="mdi-communication-email prefix"></i>
+                                                <input value="arnoldmorales@upeu.edu.pe" id="first_name3" type="text" class="validate">
+                                                <label for="email">Correo</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <i class="mdi-maps-place circle prefix"></i>
+                                                <input value="Residencia Patmos" id="first_name3" type="text" class="validate">
+                                                <label for="text">Dirección</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <p>
+                                                <input id = "married" type = "checkbox" checked = "checked" />
+                                                <label for = "married">Bautizado</label>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer" style="margin-top: -15px;">
+                                        <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close" style="background:#1e88e5;margin-right: 20px;color: white;">Modificar</a>
+                                        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" style="background:#e53935;margin-right: 10px;color: white;">Cancelar</a>
+                                    </div>
                                 </div>
                             </div>
                             <!--/ profile-page-header -->
@@ -233,11 +301,10 @@ and open the template in the editor.
                                         <div class="card-content white-text">
                                             <span class="card-title">About Me!</span>
                                             <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                                        </div>                  
+                                        </div>
+
                                     </div>
                                     <!-- Profile About  -->
-
-                                    <!-- Profile About Details  -->
                                     <ul id="profile-page-about-details" class="collection z-depth-1">
                                         <li class="collection-item">
                                             <div class="row">
@@ -265,15 +332,18 @@ and open the template in the editor.
                                         </li>
                                     </ul>
 
+                                    <!-- Profile About Details  -->
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
-            </div>
-            <!--end container-->
+                    <!--end container-->
 
+            </div>
         </div>
-        </div>
-       
+
 
         <!-- END CONTENT -->
 
