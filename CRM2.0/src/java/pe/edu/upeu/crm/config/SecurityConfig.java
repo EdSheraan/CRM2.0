@@ -9,6 +9,6 @@ package pe.edu.upeu.crm.config;
  *
  * @author Leandro Burgos
  */
-public class borrar {
+public class SecurityConfig {
     
 }
