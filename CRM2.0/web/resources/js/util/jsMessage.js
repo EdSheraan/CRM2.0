@@ -9,7 +9,7 @@ function errorMessage(params) {
     showMessage(params);
 }
 
-function ifoMessage(params) {
+function infoMessage(params) {
     params.type ="info";
     showMessage(params);
 }

@@ -44,4 +44,3 @@ function connect(type, url, data, _callback) {
         }
     });
 }
-;
