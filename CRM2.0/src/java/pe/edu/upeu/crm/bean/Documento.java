@@ -1,7 +1,8 @@
 package pe.edu.upeu.crm.bean;
-// Generated 05/10/2017 11:55:25 AM by Hibernate Tools 4.3.1
+// Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -26,19 +27,22 @@ public class Documento  implements java.io.Serializable {
      private Integer idDocumento;
      private String docDescripcion;
      private String docNombreCorto;
+     private String docEstado;
      private Set<Persona> personas = new HashSet<Persona>(0);
 
     public Documento() {
     }
 
 	
-    public Documento(String docDescripcion, String docNombreCorto) {
+    public Documento(String docDescripcion, String docNombreCorto, String docEstado) {
         this.docDescripcion = docDescripcion;
         this.docNombreCorto = docNombreCorto;
+        this.docEstado = docEstado;
     }
-    public Documento(String docDescripcion, String docNombreCorto, Set<Persona> personas) {
+    public Documento(String docDescripcion, String docNombreCorto, String docEstado, Set<Persona> personas) {
        this.docDescripcion = docDescripcion;
        this.docNombreCorto = docNombreCorto;
+       this.docEstado = docEstado;
        this.personas = personas;
     }
    
@@ -54,7 +58,6 @@ public class Documento  implements java.io.Serializable {
         this.idDocumento = idDocumento;
     }
 
-    
     @Column(name="DOC_DESCRIPCION", nullable=false, length=64)
     public String getDocDescripcion() {
         return this.docDescripcion;
@@ -74,7 +77,18 @@ public class Documento  implements java.io.Serializable {
         this.docNombreCorto = docNombreCorto;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="documento")
+    
+    @Column(name="DOC_ESTADO", nullable=false, length=1)
+    public String getDocEstado() {
+        return this.docEstado;
+    }
+    
+    public void setDocEstado(String docEstado) {
+        this.docEstado = docEstado;
+    }
+    
+    @JsonIgnore
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="documento")
     public Set<Persona> getPersonas() {
         return this.personas;
     }

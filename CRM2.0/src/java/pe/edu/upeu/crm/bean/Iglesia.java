@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 05/10/2017 11:55:25 AM by Hibernate Tools 4.3.1
+// Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -34,6 +34,12 @@ public class Iglesia  implements java.io.Serializable {
      private Date iglFechaCreacion;
      private String iglEstado;
      private String iglDireccion;
+     private int iglUsuAdd;
+     private Integer iglUsuUpd;
+     private Integer iglUpdDel;
+     private Date iglFechaAdd;
+     private Date iglFechaUpd;
+     private Date iglFechaDel;
      private Set<Ministerio> ministerios = new HashSet<Ministerio>(0);
      private Set<Escuela> escuelas = new HashSet<Escuela>(0);
 
@@ -41,18 +47,26 @@ public class Iglesia  implements java.io.Serializable {
     }
 
 	
-    public Iglesia(Distrito distrito, String iglNombre, Date iglFechaCreacion, String iglEstado) {
+    public Iglesia(Distrito distrito, String iglNombre, Date iglFechaCreacion, String iglEstado, int iglUsuAdd, Date iglFechaAdd) {
         this.distrito = distrito;
         this.iglNombre = iglNombre;
         this.iglFechaCreacion = iglFechaCreacion;
         this.iglEstado = iglEstado;
+        this.iglUsuAdd = iglUsuAdd;
+        this.iglFechaAdd = iglFechaAdd;
     }
-    public Iglesia(Distrito distrito, String iglNombre, Date iglFechaCreacion, String iglEstado, String iglDireccion, Set<Ministerio> ministerios, Set<Escuela> escuelas) {
+    public Iglesia(Distrito distrito, String iglNombre, Date iglFechaCreacion, String iglEstado, String iglDireccion, int iglUsuAdd, Integer iglUsuUpd, Integer iglUpdDel, Date iglFechaAdd, Date iglFechaUpd, Date iglFechaDel, Set<Ministerio> ministerios, Set<Escuela> escuelas) {
        this.distrito = distrito;
        this.iglNombre = iglNombre;
        this.iglFechaCreacion = iglFechaCreacion;
        this.iglEstado = iglEstado;
        this.iglDireccion = iglDireccion;
+       this.iglUsuAdd = iglUsuAdd;
+       this.iglUsuUpd = iglUsuUpd;
+       this.iglUpdDel = iglUpdDel;
+       this.iglFechaAdd = iglFechaAdd;
+       this.iglFechaUpd = iglFechaUpd;
+       this.iglFechaDel = iglFechaDel;
        this.ministerios = ministerios;
        this.escuelas = escuelas;
     }
@@ -117,6 +131,66 @@ public class Iglesia  implements java.io.Serializable {
     
     public void setIglDireccion(String iglDireccion) {
         this.iglDireccion = iglDireccion;
+    }
+
+    
+    @Column(name="IGL_USU_ADD", nullable=false)
+    public int getIglUsuAdd() {
+        return this.iglUsuAdd;
+    }
+    
+    public void setIglUsuAdd(int iglUsuAdd) {
+        this.iglUsuAdd = iglUsuAdd;
+    }
+
+    
+    @Column(name="IGL_USU_UPD")
+    public Integer getIglUsuUpd() {
+        return this.iglUsuUpd;
+    }
+    
+    public void setIglUsuUpd(Integer iglUsuUpd) {
+        this.iglUsuUpd = iglUsuUpd;
+    }
+
+    
+    @Column(name="IGL_UPD_DEL")
+    public Integer getIglUpdDel() {
+        return this.iglUpdDel;
+    }
+    
+    public void setIglUpdDel(Integer iglUpdDel) {
+        this.iglUpdDel = iglUpdDel;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="IGL_FECHA_ADD", nullable=false, length=19)
+    public Date getIglFechaAdd() {
+        return this.iglFechaAdd;
+    }
+    
+    public void setIglFechaAdd(Date iglFechaAdd) {
+        this.iglFechaAdd = iglFechaAdd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="IGL_FECHA_UPD", length=19)
+    public Date getIglFechaUpd() {
+        return this.iglFechaUpd;
+    }
+    
+    public void setIglFechaUpd(Date iglFechaUpd) {
+        this.iglFechaUpd = iglFechaUpd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="IGL_FECHA_DEL", length=19)
+    public Date getIglFechaDel() {
+        return this.iglFechaDel;
+    }
+    
+    public void setIglFechaDel(Date iglFechaDel) {
+        this.iglFechaDel = iglFechaDel;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="iglesia")

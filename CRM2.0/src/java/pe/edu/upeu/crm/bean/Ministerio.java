@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 05/10/2017 11:55:25 AM by Hibernate Tools 4.3.1
+// Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -37,21 +37,29 @@ public class Ministerio  implements java.io.Serializable {
      private String minDiaTrabajo;
      private String minEstado;
      private Date minFechaCreacion;
+     private int minUsuAdd;
+     private Integer minUsuUpd;
+     private Integer minUsuDel;
+     private Date minFechaAdd;
+     private Date minFechaUpd;
+     private Date minFechaDel;
      private Set<Miembromin> miembromins = new HashSet<Miembromin>(0);
 
     public Ministerio() {
     }
 
 	
-    public Ministerio(Iglesia iglesia, String minNombre, String minNombreCorto, String minDiaTrabajo, String minEstado, Date minFechaCreacion) {
+    public Ministerio(Iglesia iglesia, String minNombre, String minNombreCorto, String minDiaTrabajo, String minEstado, Date minFechaCreacion, int minUsuAdd, Date minFechaAdd) {
         this.iglesia = iglesia;
         this.minNombre = minNombre;
         this.minNombreCorto = minNombreCorto;
         this.minDiaTrabajo = minDiaTrabajo;
         this.minEstado = minEstado;
         this.minFechaCreacion = minFechaCreacion;
+        this.minUsuAdd = minUsuAdd;
+        this.minFechaAdd = minFechaAdd;
     }
-    public Ministerio(Iglesia iglesia, String minNombre, String minDescripcion, String minLugarReunion, String minNombreCorto, String minDiaTrabajo, String minEstado, Date minFechaCreacion, Set<Miembromin> miembromins) {
+    public Ministerio(Iglesia iglesia, String minNombre, String minDescripcion, String minLugarReunion, String minNombreCorto, String minDiaTrabajo, String minEstado, Date minFechaCreacion, int minUsuAdd, Integer minUsuUpd, Integer minUsuDel, Date minFechaAdd, Date minFechaUpd, Date minFechaDel, Set<Miembromin> miembromins) {
        this.iglesia = iglesia;
        this.minNombre = minNombre;
        this.minDescripcion = minDescripcion;
@@ -60,6 +68,12 @@ public class Ministerio  implements java.io.Serializable {
        this.minDiaTrabajo = minDiaTrabajo;
        this.minEstado = minEstado;
        this.minFechaCreacion = minFechaCreacion;
+       this.minUsuAdd = minUsuAdd;
+       this.minUsuUpd = minUsuUpd;
+       this.minUsuDel = minUsuDel;
+       this.minFechaAdd = minFechaAdd;
+       this.minFechaUpd = minFechaUpd;
+       this.minFechaDel = minFechaDel;
        this.miembromins = miembromins;
     }
    
@@ -153,6 +167,66 @@ public class Ministerio  implements java.io.Serializable {
     
     public void setMinFechaCreacion(Date minFechaCreacion) {
         this.minFechaCreacion = minFechaCreacion;
+    }
+
+    
+    @Column(name="MIN_USU_ADD", nullable=false)
+    public int getMinUsuAdd() {
+        return this.minUsuAdd;
+    }
+    
+    public void setMinUsuAdd(int minUsuAdd) {
+        this.minUsuAdd = minUsuAdd;
+    }
+
+    
+    @Column(name="MIN_USU_UPD")
+    public Integer getMinUsuUpd() {
+        return this.minUsuUpd;
+    }
+    
+    public void setMinUsuUpd(Integer minUsuUpd) {
+        this.minUsuUpd = minUsuUpd;
+    }
+
+    
+    @Column(name="MIN_USU_DEL")
+    public Integer getMinUsuDel() {
+        return this.minUsuDel;
+    }
+    
+    public void setMinUsuDel(Integer minUsuDel) {
+        this.minUsuDel = minUsuDel;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="MIN_FECHA_ADD", nullable=false, length=19)
+    public Date getMinFechaAdd() {
+        return this.minFechaAdd;
+    }
+    
+    public void setMinFechaAdd(Date minFechaAdd) {
+        this.minFechaAdd = minFechaAdd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="MIN_FECHA_UPD", length=19)
+    public Date getMinFechaUpd() {
+        return this.minFechaUpd;
+    }
+    
+    public void setMinFechaUpd(Date minFechaUpd) {
+        this.minFechaUpd = minFechaUpd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="MIN_FECHA_DEL", length=19)
+    public Date getMinFechaDel() {
+        return this.minFechaDel;
+    }
+    
+    public void setMinFechaDel(Date minFechaDel) {
+        this.minFechaDel = minFechaDel;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="ministerio")

@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 05/10/2017 11:55:25 AM by Hibernate Tools 4.3.1
+// Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -34,24 +34,38 @@ public class Escuela  implements java.io.Serializable {
      private Date escFechaCreacion;
      private String escEstado;
      private String escLugarReunion;
+     private int escUsuAdd;
+     private Integer escUsuUpd;
+     private Integer escUsuDel;
+     private Date escFechaAdd;
+     private Date escFechaUpd;
+     private Date escFechaDel;
      private Set<Grupo> grupos = new HashSet<Grupo>(0);
 
     public Escuela() {
     }
 
 	
-    public Escuela(Iglesia iglesia, String escNombre, Date escFechaCreacion, String escEstado) {
+    public Escuela(Iglesia iglesia, String escNombre, Date escFechaCreacion, String escEstado, int escUsuAdd, Date escFechaAdd) {
         this.iglesia = iglesia;
         this.escNombre = escNombre;
         this.escFechaCreacion = escFechaCreacion;
         this.escEstado = escEstado;
+        this.escUsuAdd = escUsuAdd;
+        this.escFechaAdd = escFechaAdd;
     }
-    public Escuela(Iglesia iglesia, String escNombre, Date escFechaCreacion, String escEstado, String escLugarReunion, Set<Grupo> grupos) {
+    public Escuela(Iglesia iglesia, String escNombre, Date escFechaCreacion, String escEstado, String escLugarReunion, int escUsuAdd, Integer escUsuUpd, Integer escUsuDel, Date escFechaAdd, Date escFechaUpd, Date escFechaDel, Set<Grupo> grupos) {
        this.iglesia = iglesia;
        this.escNombre = escNombre;
        this.escFechaCreacion = escFechaCreacion;
        this.escEstado = escEstado;
        this.escLugarReunion = escLugarReunion;
+       this.escUsuAdd = escUsuAdd;
+       this.escUsuUpd = escUsuUpd;
+       this.escUsuDel = escUsuDel;
+       this.escFechaAdd = escFechaAdd;
+       this.escFechaUpd = escFechaUpd;
+       this.escFechaDel = escFechaDel;
        this.grupos = grupos;
     }
    
@@ -115,6 +129,66 @@ public class Escuela  implements java.io.Serializable {
     
     public void setEscLugarReunion(String escLugarReunion) {
         this.escLugarReunion = escLugarReunion;
+    }
+
+    
+    @Column(name="ESC_USU_ADD", nullable=false)
+    public int getEscUsuAdd() {
+        return this.escUsuAdd;
+    }
+    
+    public void setEscUsuAdd(int escUsuAdd) {
+        this.escUsuAdd = escUsuAdd;
+    }
+
+    
+    @Column(name="ESC_USU_UPD")
+    public Integer getEscUsuUpd() {
+        return this.escUsuUpd;
+    }
+    
+    public void setEscUsuUpd(Integer escUsuUpd) {
+        this.escUsuUpd = escUsuUpd;
+    }
+
+    
+    @Column(name="ESC_USU_DEL")
+    public Integer getEscUsuDel() {
+        return this.escUsuDel;
+    }
+    
+    public void setEscUsuDel(Integer escUsuDel) {
+        this.escUsuDel = escUsuDel;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="ESC_FECHA_ADD", nullable=false, length=19)
+    public Date getEscFechaAdd() {
+        return this.escFechaAdd;
+    }
+    
+    public void setEscFechaAdd(Date escFechaAdd) {
+        this.escFechaAdd = escFechaAdd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="ESC_FECHA_UPD", length=19)
+    public Date getEscFechaUpd() {
+        return this.escFechaUpd;
+    }
+    
+    public void setEscFechaUpd(Date escFechaUpd) {
+        this.escFechaUpd = escFechaUpd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="ESC_FECHA_DEL", length=19)
+    public Date getEscFechaDel() {
+        return this.escFechaDel;
+    }
+    
+    public void setEscFechaDel(Date escFechaDel) {
+        this.escFechaDel = escFechaDel;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="escuela")

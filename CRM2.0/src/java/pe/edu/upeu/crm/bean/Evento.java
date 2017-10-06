@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 05/10/2017 11:55:25 AM by Hibernate Tools 4.3.1
+// Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -8,8 +8,6 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -28,7 +26,7 @@ import javax.persistence.TemporalType;
 public class Evento  implements java.io.Serializable {
 
 
-     private Integer idEvento;
+     private int idEvento;
      private Periodo periodo;
      private Tipoevento tipoevento;
      private String evtNombre;
@@ -39,21 +37,31 @@ public class Evento  implements java.io.Serializable {
      private int evtDistrito;
      private int evtIglesia;
      private String evtEstado;
+     private int evtUsuAdd;
+     private Integer evtUsuUpd;
+     private Integer evtUsuEli;
+     private Date evtFechaAdd;
+     private Date evtFechaUpd;
+     private Date evtFechaEli;
      private Set<Asistenciaevt> asistenciaevts = new HashSet<Asistenciaevt>(0);
 
     public Evento() {
     }
 
 	
-    public Evento(Periodo periodo, Tipoevento tipoevento, String evtNombre, Date evtFecha, int evtDistrito, int evtIglesia) {
+    public Evento(int idEvento, Periodo periodo, Tipoevento tipoevento, String evtNombre, Date evtFecha, int evtDistrito, int evtIglesia, int evtUsuAdd, Date evtFechaAdd) {
+        this.idEvento = idEvento;
         this.periodo = periodo;
         this.tipoevento = tipoevento;
         this.evtNombre = evtNombre;
         this.evtFecha = evtFecha;
         this.evtDistrito = evtDistrito;
         this.evtIglesia = evtIglesia;
+        this.evtUsuAdd = evtUsuAdd;
+        this.evtFechaAdd = evtFechaAdd;
     }
-    public Evento(Periodo periodo, Tipoevento tipoevento, String evtNombre, String evtDescripcion, String evtLugar, Date evtFecha, Date evtFechaLimite, int evtDistrito, int evtIglesia, String evtEstado, Set<Asistenciaevt> asistenciaevts) {
+    public Evento(int idEvento, Periodo periodo, Tipoevento tipoevento, String evtNombre, String evtDescripcion, String evtLugar, Date evtFecha, Date evtFechaLimite, int evtDistrito, int evtIglesia, String evtEstado, int evtUsuAdd, Integer evtUsuUpd, Integer evtUsuEli, Date evtFechaAdd, Date evtFechaUpd, Date evtFechaEli, Set<Asistenciaevt> asistenciaevts) {
+       this.idEvento = idEvento;
        this.periodo = periodo;
        this.tipoevento = tipoevento;
        this.evtNombre = evtNombre;
@@ -64,18 +72,24 @@ public class Evento  implements java.io.Serializable {
        this.evtDistrito = evtDistrito;
        this.evtIglesia = evtIglesia;
        this.evtEstado = evtEstado;
+       this.evtUsuAdd = evtUsuAdd;
+       this.evtUsuUpd = evtUsuUpd;
+       this.evtUsuEli = evtUsuEli;
+       this.evtFechaAdd = evtFechaAdd;
+       this.evtFechaUpd = evtFechaUpd;
+       this.evtFechaEli = evtFechaEli;
        this.asistenciaevts = asistenciaevts;
     }
    
-     @Id @GeneratedValue(strategy=IDENTITY)
+     @Id 
 
     
     @Column(name="idEVENTO", unique=true, nullable=false)
-    public Integer getIdEvento() {
+    public int getIdEvento() {
         return this.idEvento;
     }
     
-    public void setIdEvento(Integer idEvento) {
+    public void setIdEvento(int idEvento) {
         this.idEvento = idEvento;
     }
 
@@ -177,6 +191,66 @@ public class Evento  implements java.io.Serializable {
     
     public void setEvtEstado(String evtEstado) {
         this.evtEstado = evtEstado;
+    }
+
+    
+    @Column(name="EVT_USU_ADD", nullable=false)
+    public int getEvtUsuAdd() {
+        return this.evtUsuAdd;
+    }
+    
+    public void setEvtUsuAdd(int evtUsuAdd) {
+        this.evtUsuAdd = evtUsuAdd;
+    }
+
+    
+    @Column(name="EVT_USU_UPD")
+    public Integer getEvtUsuUpd() {
+        return this.evtUsuUpd;
+    }
+    
+    public void setEvtUsuUpd(Integer evtUsuUpd) {
+        this.evtUsuUpd = evtUsuUpd;
+    }
+
+    
+    @Column(name="EVT_USU_ELI")
+    public Integer getEvtUsuEli() {
+        return this.evtUsuEli;
+    }
+    
+    public void setEvtUsuEli(Integer evtUsuEli) {
+        this.evtUsuEli = evtUsuEli;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="EVT_FECHA_ADD", nullable=false, length=19)
+    public Date getEvtFechaAdd() {
+        return this.evtFechaAdd;
+    }
+    
+    public void setEvtFechaAdd(Date evtFechaAdd) {
+        this.evtFechaAdd = evtFechaAdd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="EVT_FECHA_UPD", length=19)
+    public Date getEvtFechaUpd() {
+        return this.evtFechaUpd;
+    }
+    
+    public void setEvtFechaUpd(Date evtFechaUpd) {
+        this.evtFechaUpd = evtFechaUpd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="EVT_FECHA_ELI", length=19)
+    public Date getEvtFechaEli() {
+        return this.evtFechaEli;
+    }
+    
+    public void setEvtFechaEli(Date evtFechaEli) {
+        this.evtFechaEli = evtFechaEli;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="evento")

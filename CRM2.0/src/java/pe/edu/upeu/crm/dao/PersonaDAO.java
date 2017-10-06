@@ -6,47 +6,45 @@
 package pe.edu.upeu.crm.dao;
 
 import java.util.List;
+import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Persona;
 
 /**
  *
  * @author Leandro Burgos
  */
-public class PersonaDAO implements CrudDAO<Persona>{
-
-    @Override
-    public Object add(Persona bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int update(Persona bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+@Repository
+public class PersonaDAO extends CrudDAO<Persona>{
 
     @Override
     public int delete(Persona bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setPerEstado("1");
+        return update(bean);
     }
 
     @Override
     public List<Persona> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Persona", (Object[]) null);
     }
 
     @Override
     public List<Persona> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","1"};
+        return executeHQLQuery("From Persona p join fetch p.documento as doc where p.perEstado = :estado", estado);
     }
 
     @Override
     public List<Persona> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","0"};
+        return executeHQLQuery("From Persona p join fetch p.documento as doc where p.perEstado = :estado", estado);
     }
 
     @Override
     public List<Persona> search(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Persona p join fetch p.documento as doc where "
+                + "UPPER(p.perNombres) like UPPER('%'|| :nombres ||'%') "
+                + "AND UPPER(p.perApellidos) like UPPER('%'|| :apellidos || '%') "
+                + "AND UPPER(p.perDocumento) like UPPER('%'|| :documento ||'%')", param);
     }
 
     @Override

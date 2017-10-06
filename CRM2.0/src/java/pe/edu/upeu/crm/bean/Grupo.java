@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 05/10/2017 11:55:25 AM by Hibernate Tools 4.3.1
+// Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -34,23 +34,37 @@ public class Grupo  implements java.io.Serializable {
      private String gpoLugarReunion;
      private Date gpoFechaCreacion;
      private String gpoEstado;
+     private int gpoUsuAdd;
+     private Integer gpoUsuUpd;
+     private Integer gpoUsuDel;
+     private Date gpoFechaAdd;
+     private Date gpoFechaUpd;
+     private Date gpoFechaDel;
      private Set<Miembrogp> miembrogps = new HashSet<Miembrogp>(0);
 
     public Grupo() {
     }
 
 	
-    public Grupo(Escuela escuela, String gpoNombre, String gpoEstado) {
+    public Grupo(Escuela escuela, String gpoNombre, String gpoEstado, int gpoUsuAdd, Date gpoFechaAdd) {
         this.escuela = escuela;
         this.gpoNombre = gpoNombre;
         this.gpoEstado = gpoEstado;
+        this.gpoUsuAdd = gpoUsuAdd;
+        this.gpoFechaAdd = gpoFechaAdd;
     }
-    public Grupo(Escuela escuela, String gpoNombre, String gpoLugarReunion, Date gpoFechaCreacion, String gpoEstado, Set<Miembrogp> miembrogps) {
+    public Grupo(Escuela escuela, String gpoNombre, String gpoLugarReunion, Date gpoFechaCreacion, String gpoEstado, int gpoUsuAdd, Integer gpoUsuUpd, Integer gpoUsuDel, Date gpoFechaAdd, Date gpoFechaUpd, Date gpoFechaDel, Set<Miembrogp> miembrogps) {
        this.escuela = escuela;
        this.gpoNombre = gpoNombre;
        this.gpoLugarReunion = gpoLugarReunion;
        this.gpoFechaCreacion = gpoFechaCreacion;
        this.gpoEstado = gpoEstado;
+       this.gpoUsuAdd = gpoUsuAdd;
+       this.gpoUsuUpd = gpoUsuUpd;
+       this.gpoUsuDel = gpoUsuDel;
+       this.gpoFechaAdd = gpoFechaAdd;
+       this.gpoFechaUpd = gpoFechaUpd;
+       this.gpoFechaDel = gpoFechaDel;
        this.miembrogps = miembrogps;
     }
    
@@ -114,6 +128,66 @@ public class Grupo  implements java.io.Serializable {
     
     public void setGpoEstado(String gpoEstado) {
         this.gpoEstado = gpoEstado;
+    }
+
+    
+    @Column(name="GPO_USU_ADD", nullable=false)
+    public int getGpoUsuAdd() {
+        return this.gpoUsuAdd;
+    }
+    
+    public void setGpoUsuAdd(int gpoUsuAdd) {
+        this.gpoUsuAdd = gpoUsuAdd;
+    }
+
+    
+    @Column(name="GPO_USU_UPD")
+    public Integer getGpoUsuUpd() {
+        return this.gpoUsuUpd;
+    }
+    
+    public void setGpoUsuUpd(Integer gpoUsuUpd) {
+        this.gpoUsuUpd = gpoUsuUpd;
+    }
+
+    
+    @Column(name="GPO_USU_DEL")
+    public Integer getGpoUsuDel() {
+        return this.gpoUsuDel;
+    }
+    
+    public void setGpoUsuDel(Integer gpoUsuDel) {
+        this.gpoUsuDel = gpoUsuDel;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="GPO_FECHA_ADD", nullable=false, length=19)
+    public Date getGpoFechaAdd() {
+        return this.gpoFechaAdd;
+    }
+    
+    public void setGpoFechaAdd(Date gpoFechaAdd) {
+        this.gpoFechaAdd = gpoFechaAdd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="GPO_FECHA_UPD", length=19)
+    public Date getGpoFechaUpd() {
+        return this.gpoFechaUpd;
+    }
+    
+    public void setGpoFechaUpd(Date gpoFechaUpd) {
+        this.gpoFechaUpd = gpoFechaUpd;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="GPO_FECHA_DEL", length=19)
+    public Date getGpoFechaDel() {
+        return this.gpoFechaDel;
+    }
+    
+    public void setGpoFechaDel(Date gpoFechaDel) {
+        this.gpoFechaDel = gpoFechaDel;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="grupo")

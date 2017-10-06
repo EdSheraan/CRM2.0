@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 05/10/2017 11:55:25 AM by Hibernate Tools 4.3.1
+// Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -29,7 +29,7 @@ public class Campo  implements java.io.Serializable {
 
 
      private Integer idCampo;
-     private Upn upn;
+     private Unionp unionp;
      private String cmpNombre;
      private Date cmpFechaCreacion;
      private String cmpEstado;
@@ -39,14 +39,14 @@ public class Campo  implements java.io.Serializable {
     }
 
 	
-    public Campo(Upn upn, String cmpNombre, Date cmpFechaCreacion, String cmpEstado) {
-        this.upn = upn;
+    public Campo(Unionp unionp, String cmpNombre, Date cmpFechaCreacion, String cmpEstado) {
+        this.unionp = unionp;
         this.cmpNombre = cmpNombre;
         this.cmpFechaCreacion = cmpFechaCreacion;
         this.cmpEstado = cmpEstado;
     }
-    public Campo(Upn upn, String cmpNombre, Date cmpFechaCreacion, String cmpEstado, Set<Distrito> distritos) {
-       this.upn = upn;
+    public Campo(Unionp unionp, String cmpNombre, Date cmpFechaCreacion, String cmpEstado, Set<Distrito> distritos) {
+       this.unionp = unionp;
        this.cmpNombre = cmpNombre;
        this.cmpFechaCreacion = cmpFechaCreacion;
        this.cmpEstado = cmpEstado;
@@ -67,12 +67,12 @@ public class Campo  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="idUNION", nullable=false)
-    public Upn getUpn() {
-        return this.upn;
+    public Unionp getUnionp() {
+        return this.unionp;
     }
     
-    public void setUpn(Upn upn) {
-        this.upn = upn;
+    public void setUnionp(Unionp unionp) {
+        this.unionp = unionp;
     }
 
     
