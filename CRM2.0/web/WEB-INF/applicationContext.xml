@@ -28,21 +28,26 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
-    <!--<security:http auto-config="true" use-expressions="true">
+    <security:http auto-config="true" use-expressions="true">
+        <security:intercept-url pattern="/login" access="permitAll" />
+        <security:intercept-url pattern="/resources/**" access="permitAll" />
+        <security:intercept-url pattern="/**" access="isFullyAuthenticated()" />
+         
+         <security:form-login login-page="/login"
+                             default-target-url="/index"
+                             login-processing-url="/j_spring_security_check"
+                             authentication-failure-url="/login?error"
+                             username-parameter="username"
+                             password-parameter="password"
+        />
+         <security:logout logout-success-url="/login?logout" logout-url="/j_spring_security_logout" />
         <security:csrf/>
-    </security:http>-->
-    <security:http>
-        <security:intercept-url pattern="/**" access="hasRole('USER')" />
-        <security:form-login />
-        <security:logout />
     </security:http>
+    
     <security:authentication-manager>
-    <security:authentication-provider>
-      <security:user-service>
-        <security:user name="user" password="password" authorities="ROLE_USER, ROLE_ADMIN" />
-      </security:user-service>
-    </security:authentication-provider>
-  </security:authentication-manager>
+        <security:authentication-provider user-service-ref="loginService">
+        </security:authentication-provider>
+    </security:authentication-manager>
     <!--<security:authentication-manager>
         <security:authentication-provider user-service-ref="userDetailsService">
         </security:authentication-provider>
