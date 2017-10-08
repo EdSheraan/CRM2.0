@@ -14,5 +14,13 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <form name="f" action="/login" method="POST">
+            <table>
+                <tbody><tr><td>User:</td><td><input type="text" name="username" value=""></td></tr>
+                    <tr><td>Password:</td><td><input type="password" name="password"></td></tr>
+                    <tr><td colspan="2"><input name="submit" type="submit" value="Login"></td></tr>
+                <input name="_csrf" type="hidden" value="8f3d1d37-48b1-4997-bd1f-e01f94e18051">
+                </tbody></table>
+        </form>
     </body>
 </html>
