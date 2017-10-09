@@ -9,60 +9,60 @@ import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upeu.crm.bean.Persona;
-import pe.edu.upeu.crm.dao.PersonaDAO;
+import pe.edu.upeu.crm.bean.Privilegio;
+import pe.edu.upeu.crm.dao.PrivilegioDAO;
 
 /**
  *
  * @author Leandro Burgos
  */
 @Service
-public class PersonaService implements CRUDService<Persona>{
-    
+public class PrivilegioService implements CRUDService<Privilegio>{
+
     @Autowired
-    private PersonaDAO personaDAO;
-
+    private PrivilegioDAO privilegioDAO;
+    
     @Override
-    public Object add(Persona bean) {
-        Logger.info("Registrando persona");
-        return personaDAO.add(bean);
+    public Object add(Privilegio bean) {
+        Logger.info("Registrando Privilegio");
+        return privilegioDAO.add(bean);
     }
 
     @Override
-    public int update(Persona bean) {
-        Logger.info("Actualizando persona");
-        return personaDAO.update(bean);
+    public int update(Privilegio bean) {
+        Logger.info("Actualizando Privilegio");
+        return privilegioDAO.update(bean);
     }
 
     @Override
-    public int delete(Persona bean) {
-        Logger.info("Eliminando persona");
-        return personaDAO.update(bean);
+    public int delete(Privilegio bean) {
+        Logger.info("Eliminando Privilegio");
+        return privilegioDAO.update(bean);
     }
 
     @Override
-    public List<Persona> list(Object... param) {
-        Logger.info("Listando todas las personas");
-        return personaDAO.list(param);
+    public List<Privilegio> list(Object... param) {
+        Logger.info("Listando todos los privilegios");
+        return privilegioDAO.list(param);
     }
 
     @Override
-    public List<Persona> listEnabled(Object... param) {
+    public List<Privilegio> listEnabled(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Persona> listDisabled(Object... param) {
+    public List<Privilegio> listDisabled(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Persona> search(Object... param) {
+    public List<Privilegio> search(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Persona get(Object... id) {
+    public Privilegio get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
