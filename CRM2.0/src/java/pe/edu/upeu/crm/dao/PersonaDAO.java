@@ -18,7 +18,7 @@ public class PersonaDAO extends CrudDAO<Persona>{
 
     @Override
     public int delete(Persona bean) {
-        bean.setPerEstado("1");
+        bean.setPerEstado("0");
         return update(bean);
     }
 

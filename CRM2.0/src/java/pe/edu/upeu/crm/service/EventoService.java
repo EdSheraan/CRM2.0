@@ -9,60 +9,60 @@ import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upeu.crm.bean.Persona;
-import pe.edu.upeu.crm.dao.PersonaDAO;
+import pe.edu.upeu.crm.bean.Evento;
+import pe.edu.upeu.crm.dao.EventoDAO;
 
 /**
  *
  * @author Leandro Burgos
  */
 @Service
-public class PersonaService implements CRUDService<Persona>{
-    
+public class EventoService implements CRUDService<Evento>{
+
     @Autowired
-    private PersonaDAO personaDAO;
-
+    private EventoDAO eventoDAO;
+    
     @Override
-    public Object add(Persona bean) {
-        Logger.info("Registrando persona");
-        return personaDAO.add(bean);
+    public Object add(Evento bean) {
+        Logger.info("Registrando Evento");
+        return eventoDAO.add(bean);
     }
 
     @Override
-    public int update(Persona bean) {
-        Logger.info("Actualizando persona");
-        return personaDAO.update(bean);
+    public int update(Evento bean) {
+        Logger.info("Actualizando Evento");
+        return eventoDAO.update(bean);
     }
 
     @Override
-    public int delete(Persona bean) {
-        Logger.info("Eliminando persona");
-        return personaDAO.update(bean);
+    public int delete(Evento bean) {
+        Logger.info("Eliminando Evento");
+        return eventoDAO.update(bean);
     }
 
     @Override
-    public List<Persona> list(Object... param) {
-        Logger.info("Listando todas las personas");
-        return personaDAO.list(param);
+    public List<Evento> list(Object... param) {
+        Logger.info("Listando todas los eventos");
+        return eventoDAO.list(param);
     }
 
     @Override
-    public List<Persona> listEnabled(Object... param) {
+    public List<Evento> listEnabled(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Persona> listDisabled(Object... param) {
+    public List<Evento> listDisabled(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Persona> search(Object... param) {
+    public List<Evento> search(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Persona get(Object... id) {
+    public Evento get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
