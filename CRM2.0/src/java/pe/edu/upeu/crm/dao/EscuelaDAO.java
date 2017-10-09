@@ -5,26 +5,29 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Escuela;
 
 @Repository
-public class EscuelaDAO extends CrudDAO<Escuela>{
+public class EscuelaDAO extends CrudDAO<Escuela> {
 
     @Override
     public int delete(Escuela bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setEscEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Escuela> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Escuela", (Object[]) null);
     }
 
     @Override
     public List<Escuela> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado", "1"};
+        return executeHQLQuery("From Escuela e where e.escEstado = :estado", estado);
     }
 
     @Override
     public List<Escuela> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado", "0"};
+        return executeHQLQuery("From Escuela e where e.escEstado = :estado", estado);
     }
 
     @Override
@@ -36,5 +39,5 @@ public class EscuelaDAO extends CrudDAO<Escuela>{
     public Escuela get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

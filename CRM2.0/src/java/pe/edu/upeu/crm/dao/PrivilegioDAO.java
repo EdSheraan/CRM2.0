@@ -5,26 +5,29 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Privilegio;
 
 @Repository
-public class PrivilegioDAO extends CrudDAO<Privilegio>{
+public class PrivilegioDAO extends CrudDAO<Privilegio> {
 
     @Override
     public int delete(Privilegio bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setPrvEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Privilegio> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Privilegio", (Object[]) null);
     }
 
     @Override
     public List<Privilegio> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado", "1"};
+        return executeHQLQuery("From Privilegio p where p.prvEstado = :estado", estado);
     }
 
     @Override
     public List<Privilegio> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado", "0"};
+        return executeHQLQuery("From Privilegio p where p.prvEstado = :estado", estado);
     }
 
     @Override
@@ -36,5 +39,5 @@ public class PrivilegioDAO extends CrudDAO<Privilegio>{
     public Privilegio get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

@@ -9,22 +9,25 @@ public class GrupoDAO extends CrudDAO<Grupo>{
 
     @Override
     public int delete(Grupo bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setGpoEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Grupo> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Grupo", (Object[]) null);
     }
 
     @Override
     public List<Grupo> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","1"};
+        return executeHQLQuery("From Grupo g where g.gpoEstado = :estado", estado);
     }
 
     @Override
     public List<Grupo> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","0"};
+        return executeHQLQuery("From Grupo g where g.gpoEstado = :estado", estado);
     }
 
     @Override

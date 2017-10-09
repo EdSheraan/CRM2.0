@@ -9,22 +9,25 @@ public class PeriodoDAO extends CrudDAO<Periodo>{
 
     @Override
     public int delete(Periodo bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setPrdEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Periodo> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Periodo", (Object[]) null);
     }
 
     @Override
     public List<Periodo> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado", "1"};
+        return executeHQLQuery("From Periodo p where p.prdEstado = :estado", estado);
     }
 
     @Override
     public List<Periodo> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado", "0"};
+        return executeHQLQuery("From Periodo p where p.prdEstado = :estado", estado);
     }
 
     @Override

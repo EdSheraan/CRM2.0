@@ -9,22 +9,25 @@ public class CampoDAO extends CrudDAO<Campo>{
 
     @Override
     public int delete(Campo bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setCmpEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Campo> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Campo", (Object[]) null);
     }
 
     @Override
     public List<Campo> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","1"};
+        return executeHQLQuery("From Campo c where c.cmpEstado = :estado", estado);
     }
 
     @Override
     public List<Campo> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","0"};
+        return executeHQLQuery("From Campo c where c.cmpEstado = :estado", estado);
     }
 
     @Override

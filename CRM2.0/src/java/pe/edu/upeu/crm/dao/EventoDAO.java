@@ -9,22 +9,25 @@ public class EventoDAO extends CrudDAO<pe.edu.upeu.crm.bean.Evento>{
 
     @Override
     public int delete(Evento bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setEvtEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Evento> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Evento", (Object[]) null);
     }
 
     @Override
     public List<Evento> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado", "1"};
+        return executeHQLQuery("From Evento e where e.evtEstado = :estado", estado);
     }
 
     @Override
     public List<Evento> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado", "0"};
+        return executeHQLQuery("From Evento e where e.evtEstado = :estado", estado);
     }
 
     @Override

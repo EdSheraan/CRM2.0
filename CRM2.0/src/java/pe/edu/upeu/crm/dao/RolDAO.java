@@ -20,12 +20,14 @@ public class RolDAO extends CrudDAO<Rol>{
 
     @Override
     public List<Rol> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","1"};
+        return executeHQLQuery("From Rol r where r.rolEstado = :estado", estado);
     }
 
     @Override
     public List<Rol> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","0"};
+        return executeHQLQuery("From Rol r where r.rolEstado = :estado", estado);
     }
 
     @Override
