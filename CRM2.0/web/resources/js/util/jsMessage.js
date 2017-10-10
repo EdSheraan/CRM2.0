@@ -61,5 +61,26 @@ var message = {
         title:"Sistema CRM Digital 2.0",
         error: "Ocurrió un error al momento de enviar la información, asegurese de que tiene conexión a internet. " +
                 "De lo contrario, comuníquese con el administrador del sistema."
+    },
+    grupo: {
+        add: {
+            title:"Registro de Grupo Pequeño",
+            success: "Grupo Pequeño registrado con éxito.",
+            error: "Hubo un error al momento de registrar al Grupo Pequeño."
+        },
+        update: {
+            title:"Actualización de Grupo Pequeño",
+            success: "Los datos del Grupo Pequeño han sido actualizados con éxito.",
+            error: "Hubo un error al momento de actualizar los datos del Grupo Pequeño."
+        },
+        delete: {
+            title:"Eliminación de Grupo Pequeño",
+            success: "Grupo Pequeño eliminado con éxito.",
+            error: "Hubo un error al momento de eliminar al Grupo Pequeño."
+        },
+        list: {
+            title:"Listado de Grupos Pequeños",
+            empty: "Aún no hay Grupos Pequeños registrados en el sistema"
+        }
     }
 };
