@@ -9,22 +9,25 @@ public class IglesiaDAO extends CrudDAO<Iglesia>{
 
     @Override
     public int delete(Iglesia bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setIglEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Iglesia> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Iglesia", (Object[]) null);
     }
 
     @Override
     public List<Iglesia> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","1"};
+        return executeHQLQuery("From Iglesia i where i.iglEstado = :estado", estado);
     }
 
     @Override
     public List<Iglesia> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","0"};
+        return executeHQLQuery("From Iglesia i where i.iglEstado = :estado", estado);
     }
 
     @Override

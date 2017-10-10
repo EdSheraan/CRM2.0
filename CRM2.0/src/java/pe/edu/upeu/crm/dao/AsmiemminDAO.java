@@ -14,7 +14,7 @@ public class AsmiemminDAO extends CrudDAO<Asmiemmin>{
 
     @Override
     public List<Asmiemmin> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Asmiemmin", (Object[]) null);
     }
 
     @Override

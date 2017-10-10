@@ -9,22 +9,25 @@ public class TipoeventoDAO extends CrudDAO<Tipoevento>{
 
     @Override
     public int delete(Tipoevento bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setTipEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Tipoevento> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Tipoevento", (Object[]) null);
     }
 
     @Override
     public List<Tipoevento> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","1"};
+        return executeHQLQuery("From Tipoevento t where t.tipEstado = :estado", estado);
     }
 
     @Override
     public List<Tipoevento> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","0"};
+        return executeHQLQuery("From Tipoevento t where t.tipEstado = :estado", estado);
     }
 
     @Override

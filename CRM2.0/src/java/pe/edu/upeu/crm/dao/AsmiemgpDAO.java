@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Asmiemgp;
 
 @Repository
-public class AsmiemgpDAO extends CrudDAO<Asmiemgp>{
+public class AsmiemgpDAO extends CrudDAO<Asmiemgp> {
 
     @Override
     public int delete(Asmiemgp bean) {
@@ -14,7 +14,7 @@ public class AsmiemgpDAO extends CrudDAO<Asmiemgp>{
 
     @Override
     public List<Asmiemgp> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Asmiemgp", (Object[]) null);
     }
 
     @Override
@@ -36,5 +36,5 @@ public class AsmiemgpDAO extends CrudDAO<Asmiemgp>{
     public Asmiemgp get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

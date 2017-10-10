@@ -9,22 +9,25 @@ public class MinisterioDAO extends CrudDAO<Ministerio>{
 
     @Override
     public int delete(Ministerio bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bean.setMinEstado("0");
+        return update(bean);
     }
 
     @Override
     public List<Ministerio> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Ministerio", (Object[]) null);
     }
 
     @Override
     public List<Ministerio> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","1"};
+        return executeHQLQuery("From Ministerio m where m.minEstado = :estado", estado);
     }
 
     @Override
     public List<Ministerio> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object[] estado = {"estado","0"};
+        return executeHQLQuery("From Ministerio m where m.minEstado = :estado", estado);
     }
 
     @Override
