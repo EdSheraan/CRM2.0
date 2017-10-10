@@ -59,64 +59,9 @@
 
         </style>
     </head>
+    <%@include file="../jspf/header.jspf" %>
     <body>
-
-        <header id="header" class="page-topbar">
-            <div class="navbar-fixed">
-                <nav class="navbar-color blue-grey darken-3">
-                    <div class="nav-wrapper">
-                        <ul class="left">
-                        </ul>
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a href="sass.html">Sass</a></li>
-                            <li><a href="badges.html">Components</a></li>
-                            <li><a href="collapsible.html">Javascript</a></li>
-                            <li><a href="mobile.html">Mobile</a></li>
-                        </ul>
-                        <ul class="right hide-on-med-and-down">
-                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <aside id="left-sidebar-nav">
-            <ul id="slide-out" class="side-nav leftside-navigation">
-                <li class="user-details blue darken-1">
-                    <div class="row">
-                        <div class="col col s4 m4 l4">
-                            <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
-                        </div>
-                        <div class="col col s8 m8 l8">
-                            <ul id="profile-dropdown" class="dropdown-content">
-                                <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
-                                </li>
-                                <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
-                                </li>
-                                <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
-                                </li>
-                                <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
-                                </li>
-                            </ul>
-                            <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">John Doe<i class="mdi-navigation-arrow-drop-down right"></i></a>
-                            <p class="user-roal">Administrator</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="bold active"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
-                </li>
-                <li class="bold"><a href="app-email.html" class="waves-effect waves-cyan"><i class="mdi-communication-email"></i> Mailbox <span class="new badge">4</span></a>
-                </li>
-                <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calender</a>
-                </li>  
-            </ul>
-            <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light  blue darken-1"><i class="mdi-navigation-menu"></i></a>
-        </aside>
+        
         <div class="seaction" style="display: table;margin: auto;padding: 1%;">
             <!--ADECUAR LAS SECCIONES DEPENDIENDO DEL ROL Y SUS PRIVILEGIOS-->
             <div style="margin-top: 20%">
