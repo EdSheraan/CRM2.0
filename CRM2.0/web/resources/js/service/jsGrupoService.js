@@ -76,11 +76,12 @@ function grupoService(){
         }
     };
     
-    this.listGrupo = function (_callback) {
+    this.listGrupo = function (escuela,_callback) {
+        console.log("holaa");
         var connectionUrl = "/grupo/list";
         var connector = new jsConnector();
         try {
-            connector.post(connectionUrl, null, function (result) {
+            connector.post(connectionUrl, JSON.stringify(escuela), function (result) {
                 if (result !== undefined && result !== null && result.length>0) {
                     _callback(result);
                 }else{

@@ -27,6 +27,18 @@ var url ={
         update:"/asmiemgp/update",
         delete:"/asmiemgp/delete",
         list:"/asmiemgp/list"
+    },
+    periodo :{
+        add:"/periodo/add",
+        update:"/periodo/update",
+        delete:"/periodo/delete",
+        list:"/periodo/list"
+    },
+    escuela :{
+        add:"/escuela/add",
+        update:"/escuela/update",
+        delete:"/escuela/delete",
+        list:"/escuela/list"
     }
 };
 
