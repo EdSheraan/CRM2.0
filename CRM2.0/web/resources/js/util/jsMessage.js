@@ -82,5 +82,26 @@ var message = {
             title:"Listado de Grupos Pequeños",
             empty: "Aún no hay Grupos Pequeños registrados en el sistema"
         }
+    },
+    evento: {
+        add: {
+            title:"Registro de Evento",
+            success: "Evento registrado con éxito.",
+            error: "Hubo un error al momento de registrar el Evento"
+        },
+        update: {
+            title:"Actualización del Evento",
+            success: "Los datos del Evento han sido actualizados con éxito.",
+            error: "Hubo un error al momento de actualizar los datos del Evento"
+        },
+        delete: {
+            title:"Eliminación del Evento",
+            success: "Evento eliminado con éxito.",
+            error: "Hubo un error al momento de eliminar el Evento."
+        },
+        list: {
+            title:"Listado de Eventos",
+            empty: "Aún no hay Eventos registrados en el sistema"
+        }
     }
 };

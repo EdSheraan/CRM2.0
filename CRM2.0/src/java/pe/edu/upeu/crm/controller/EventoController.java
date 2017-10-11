@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import pe.edu.upeu.crm.bean.Persona;
-import pe.edu.upeu.crm.service.PersonaService;
+import pe.edu.upeu.crm.bean.Evento;
+import pe.edu.upeu.crm.service.EventoService;
 
 /**
  *
@@ -24,43 +24,42 @@ import pe.edu.upeu.crm.service.PersonaService;
  */
 @Controller
 @Scope("request")
-@RequestMapping("persona")
-public class PersonaController {
-
+@RequestMapping("evento")
+public class EventoController {
     @Autowired
-    private PersonaService personaService;
+    private EventoService eventoService;
 
     private ModelAndView modelAndView;
 
     //Aqui van los métodos que muestran las vistas
     @RequestMapping(value = "/main", method = RequestMethod.GET)
-    public ModelAndView showJspPersona(ModelMap model) {
-        modelAndView = new ModelAndView("persona/jspPersonaMain", model);
+    public ModelAndView showJspEvento(ModelMap model) {
+        modelAndView = new ModelAndView("evento/jspEventoMain", model);
         return modelAndView;
     }
 
     //Aqui van los métodos del CRUD.
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addPersona(@RequestBody Persona persona) {
-        return (Integer) personaService.add(persona);
+    Integer addEvento(@RequestBody Evento evento) {
+        return (Integer) eventoService.add(evento);
     }
 
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer updatePersona(@RequestBody Persona persona) {
-        return personaService.update(persona);
+    Integer updateEvento(@RequestBody Evento evento) {
+        return eventoService.update(evento);
     }
 
     @RequestMapping(value = "/delete", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer deletePersona(@RequestBody Persona persona) {
-        return personaService.delete(persona);
+    Integer deleteEvento(@RequestBody Evento evento) {
+        return eventoService.delete(evento);
     }
 
     @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Persona> listPersona() {
-        return personaService.list((Object[]) null);
+    List<Evento> listEvento() {
+        return eventoService.list((Object[]) null);
     }
 }

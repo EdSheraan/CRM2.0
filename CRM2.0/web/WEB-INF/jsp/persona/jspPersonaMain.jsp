@@ -35,6 +35,6 @@
             </tbody>
         </table>
         <script src="<c:url value="/resources/js/service/jsPersonaService.js"></c:url>" type="text/javascript"></script>
-        <script src="<c:url value="/resources/js/cliente/jsPersona.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/vista/jsPersona.js"></c:url>" type="text/javascript"></script>
     </body>
 </html>

@@ -14,5 +14,7 @@
     <body>
         <%@include file="../../jspf/header.jspf" %>
         <h1>Hello World!</h1>
+        <script src="<c:url value="/resources/js/service/jsGrupoService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/vista/jsGrupo.js"></c:url>" type="text/javascript"></script>
     </body>
 </html>

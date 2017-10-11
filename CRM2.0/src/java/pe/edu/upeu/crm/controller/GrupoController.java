@@ -31,9 +31,9 @@ public class GrupoController {
     private GrupoService grupoService;
     private ModelAndView modelAndView;
     
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspGrupo(ModelMap model) {
-        modelAndView = new ModelAndView("grupo/grupoView", model);
+        modelAndView = new ModelAndView("grupo/jspGrupoMain", model);
         return modelAndView;
     }
     
