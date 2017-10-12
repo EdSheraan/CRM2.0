@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,8 +67,7 @@ public abstract class CrudDAO<T> {
     public abstract List<T> search(Object... param);
 
     public abstract T get(Object... id);
-
-    @Transactional
+    
     public List<T> executeHQLQuery(String query, Object[]... params) {
         Session session = sessionFactory.openSession();
         List<T> list = new ArrayList<>();

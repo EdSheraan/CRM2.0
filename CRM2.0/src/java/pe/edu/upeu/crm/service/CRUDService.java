@@ -10,6 +10,7 @@ import java.util.List;
 /**
  *
  * @author Leandro Burgos
+ * @param <T>
  */
 public interface CRUDService<T> {
     

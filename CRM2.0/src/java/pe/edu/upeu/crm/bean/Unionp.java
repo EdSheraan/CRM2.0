@@ -92,7 +92,6 @@ public class Unionp  implements java.io.Serializable {
     public void setUniEstado(String uniEstado) {
         this.uniEstado = uniEstado;
     }
-@JsonIgnore
 @OneToMany(fetch=FetchType.LAZY, mappedBy="unionp")
     public Set<Campo> getCampos() {
         return this.campos;

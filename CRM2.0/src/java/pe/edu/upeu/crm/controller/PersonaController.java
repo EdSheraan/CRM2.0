@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.crm.bean.Persona;
-import pe.edu.upeu.crm.service.PersonaService;
+import pe.edu.upeu.crm.service.impl.PersonaService;
 
 /**
  *

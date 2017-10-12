@@ -20,8 +20,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.CustomUserDetails;
+import pe.edu.upeu.crm.bean.Detrol;
+import pe.edu.upeu.crm.bean.Rol;
 import pe.edu.upeu.crm.bean.Usuario;
-import pe.edu.upeu.crm.service.UsuarioService;
+import pe.edu.upeu.crm.service.impl.UsuarioService;
 
 /**
  *
@@ -48,11 +50,11 @@ public class LoginService implements UserDetailsService {
 
     private List<SimpleGrantedAuthority> buildSimpleGrantedAuthorities(final Usuario usuario) {
         List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();
-        /*if (usuario.getDetrols()!= null) {
-            for (Rol rol : usuario.getRols()) {
-                simpleGrantedAuthorities.add(new SimpleGrantedAuthority(rol.getNombre()));
+        if (usuario.getDetrols()!= null) {
+            for (Detrol rol : usuario.getDetrols()) {
+                simpleGrantedAuthorities.add(new SimpleGrantedAuthority(rol.getRol().getRolCodigo()));
             }
-        }*/
+        }
         return simpleGrantedAuthorities;
     }
     

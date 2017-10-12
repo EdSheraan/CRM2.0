@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.crm.bean.Grupo;
-import pe.edu.upeu.crm.service.GrupoService;
+import pe.edu.upeu.crm.service.impl.GrupoService;
 
 /**
  *

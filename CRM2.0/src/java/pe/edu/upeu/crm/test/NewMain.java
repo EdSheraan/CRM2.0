@@ -6,7 +6,7 @@
 package pe.edu.upeu.crm.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import pe.edu.upeu.crm.dao.UsuarioDAO;
+import pe.edu.upeu.crm.dao.impl.UsuarioDAO;
 
 /**
  *
