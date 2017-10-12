@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function grupoService(){
+function unionpService(){
     
-    this.addGrupo = function(grupo,_callback){
-        var connectionUrl ="/grupo/add";
+    this.addUnionp = function(unionp,_callback){
+        var connectionUrl ="/unionp/add";
         var connector = new jsConnector();
         try {
-            connector.post(connectionUrl, grupo, function (result) {
+            connector.post(connectionUrl, unionp, function (result) {
                 //Aqui va la validación de la respuesta del servidor
                 if (result !== undefined && result !== null) {
                     successMessage({
-                        title: message.grupo.add.title,
-                        content: message.grupo.add.success
+                        title: message.unionp.add.title,
+                        content: message.unionp.add.success
                     });
                     _callback(result);
                 }else{
                     errorMessage({
-                       title:message.grupo.add.title,
-                       content:message.grupo.add.error
+                       title:message.unionp.add.title,
+                       content:message.unionp.add.error
                     });
                 }
             });
@@ -29,21 +29,21 @@ function grupoService(){
         }
 
     };
-    this.updateGrupo = function(grupo, _callback){
-        var connectionUrl = "/grupo/update";
+    this.updateUnionp = function(unionp, _callback){
+        var connectionUrl = "/unionp/update";
         var connector = new jsConnector();
         try {
-            connector.post(connectionUrl,grupo,function(result){
+            connector.post(connectionUrl,unionp,function(result){
                 if (result!== undefined && result!==null && result === 1) {
                     successMessage({
-                        title:message.grupo.update.title,
-                        content:message.grupo.update.success
+                        title:message.unionp.update.title,
+                        content:message.unionp.update.success
                     });
                     _callback(result);
                 }else{
                     errorMessage({
-                       title:message.grupo.update.title,
-                       content:message.grupo.update.error
+                       title:message.unionp.update.title,
+                       content:message.unionp.update.error
                     });
                 }
             });
@@ -53,21 +53,21 @@ function grupoService(){
 
     };
     
-    this.deleteGrupo = function(grupo, _callback){
-        var connectionUrl = "/grupo/delete";
+    this.deleteUnionp = function(unionp, _callback){
+        var connectionUrl = "/unionp/delete";
         var connector = new jsConnector();
         try {
-            connector.post(connectionUrl,grupo,function(result){
+            connector.post(connectionUrl,unionp,function(result){
                 if (result!== undefined && result!==null && result === 1) {
                     successMessage({
-                        title:message.grupo.delete.title,
-                        content:message.grupo.delete.success
+                        title:message.unionp.delete.title,
+                        content:message.unionp.delete.success
                     });
                     _callback(result);
                 }else{
                     errorMessage({
-                       title:message.grupo.delete.title,
-                       content:message.grupo.delete.error
+                       title:message.unionp.delete.title,
+                       content:message.unionp.delete.error
                     });
                 }
             });
@@ -76,19 +76,17 @@ function grupoService(){
         }
     };
     
-    this.listGrupo = function (escuela,_callback) {
-        console.log(escuela);
-        console.log("holaa");
-        var connectionUrl = "/grupo/list";
+    this.listUnionp = function (_callback) {
+        var connectionUrl = "/unionp/list";
         var connector = new jsConnector();
         try {
-            connector.post(connectionUrl, JSON.stringify(escuela), function (result) {
+            connector.post(connectionUrl, JSON.stringify({id:1}), function (result) {
                 if (result !== undefined && result !== null && result.length>0) {
                     _callback(result);
                 }else{
                     infoMessage({
-                       title:message.grupo.list.title,
-                       content:message.grupo.list.empty
+                       title:message.unionp.list.title,
+                       content:message.unionp.list.empty
                     });
                 }
             });

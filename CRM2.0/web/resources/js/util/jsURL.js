@@ -39,6 +39,30 @@ var url ={
         update:"/escuela/update",
         delete:"/escuela/delete",
         list:"/escuela/list"
+    },
+    iglesia :{
+        add:"/iglesia/add",
+        update:"/iglesia/update",
+        delete:"/iglesia/delete",
+        list:"/iglesia/list"
+    },
+    distrito :{
+        add:"/distrito/add",
+        update:"/distrito/update",
+        delete:"/distrito/delete",
+        list:"/distrito/list"
+    },
+    campo :{
+        add:"/campo/add",
+        update:"/campo/update",
+        delete:"/campo/delete",
+        list:"/campo/list"
+    },
+    unionp :{
+        add:"/unionp/add",
+        update:"/unionp/update",
+        delete:"/unionp/delete",
+        list:"/unionp/list"
     }
 };
 

@@ -1,10 +1,11 @@
 <%-- 
-    Document   : grupoView
-    Created on : 09/10/2017, 11:40:42 PM
+    Document   : jspUnionpMain
+    Created on : 11/10/2017, 02:32:50 PM
     Author     : Leandro Burgos
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +17,7 @@
         <div class="col s12 m12 l12">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5>Lista de Grupos Pequeños - <strong>DAMASCO</strong></h5>
+                    <h5>Lista de <strong>UNIONES</strong></h5>
                     <div id="work-collections">
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1">
@@ -32,8 +33,7 @@
                 <i class="mdi-content-add"></i>
             </a>
         </div>
-
-        <script src="<c:url value="/resources/js/service/jsGrupoService.js"></c:url>" type="text/javascript"></script>
-        <script src="<c:url value="/resources/js/vista/jsGrupo.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/service/jsUnionpService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/vista/jsUnionp.js"></c:url>" type="text/javascript"></script>
     </body>
 </html>

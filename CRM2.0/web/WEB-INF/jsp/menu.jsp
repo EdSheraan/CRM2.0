@@ -67,7 +67,7 @@
             <div style="margin-top: 20%">
                 <div class="row">
                     <div class="circulo waves-effect waves-light green accent-3" style="display: table-cell;
-                         vertical-align: middle;" >
+                         vertical-align: middle;" onclick="redirect()" >
                         <div class='circulo2'>
                             <i class="mdi-action-home large icon-demo size-icon"></i>
                             <h6 style="text-align: center" class="white-text regular">Grupos Pequeños</h6>
@@ -106,11 +106,10 @@
                 </div>
             </div>
         </footer>
-
         <script>
-            $(document).ready(function () {
-                $(".button-collapse").sideNav();
-            });
+            function redirect(){ //POR MIENTRAS HASTA TENER LOS LINKS EN LA DB
+                location.href="privilegios";
+            }
         </script>
     </body>
 </html>

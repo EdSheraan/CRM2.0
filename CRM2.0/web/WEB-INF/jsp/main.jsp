@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CRM Digital</title>
         <%@include file="../jspf/general.jspf" %>
+        <script src="<c:url value='/resources/js/plugins.min.js'></c:url>" type="text/javascript"></script>
     </head>
     <body>        
         <div id="loader-wrapper">
@@ -80,7 +81,6 @@
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <div class="row">
-                    <h1>Hello World!</h1>
                     <form name="f" action="<c:url value="/j_spring_security_check"/>" method="POST">
                         <div class="col s6 l6 m6 offset-s3 offset-l3 offset-m3">
                             <center><h5 class="thin">Iniciar Sesión</h5></center>
@@ -100,27 +100,6 @@
                             </div>
                         </div>
                     </form>
-                    <!--<div class="col s6 l6 m6">
-                        <center><h5 class="thin">Registrarse</h5></center>
-                        <div class="input-field">
-                          <i class="mdi-action-account-circle prefix"></i>
-                          <input id="icon_prefix3" type="text" class="validate">
-                          <label for="icon_prefix3" class="">First Name</label>
-                        </div>
-                        <div class="input-field">
-                          <i class="mdi-action-account-circle prefix"></i>
-                          <input id="icon_prefix3" type="text" class="validate">
-                          <label for="icon_prefix3" class="">First Name</label>
-                        </div>
-                        <div class="input-field">
-                          <i class="mdi-action-account-circle prefix"></i>
-                          <input id="icon_prefix3" type="text" class="validate">
-                          <label for="icon_prefix3" class="">First Name</label>
-                        </div>
-                        <div class="input-field">
-                        <a class="waves-effect waves-light btn green accent-3 col l12 m12 s12">Ingresar</a>
-                        </div>
-                    </div>-->
                 </div>
             </div>
             <div class="modal-footer" style="margin-top: -15px;">
