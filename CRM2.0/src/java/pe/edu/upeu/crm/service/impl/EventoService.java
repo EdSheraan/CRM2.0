@@ -44,7 +44,7 @@ public class EventoService implements CRUDService<Evento>{
     @Override
     public List<Evento> list(Object... param) {
         Logger.info("Listando todas los eventos");
-        return eventoDAO.list(param);
+        return eventoDAO.list();
     }
 
     @Override

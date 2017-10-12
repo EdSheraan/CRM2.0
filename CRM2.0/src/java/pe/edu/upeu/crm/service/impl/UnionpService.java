@@ -44,7 +44,7 @@ public class UnionpService implements CRUDService<Unionp>{
     @Override
     public List<Unionp> list(Object... param) {
         Logger.info("Listando todos los unionps");
-        return unionpDAO.list(param);
+        return unionpDAO.list();
     }
 
     @Override

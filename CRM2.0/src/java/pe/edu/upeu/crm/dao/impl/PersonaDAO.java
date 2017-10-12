@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Persona;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 /**
  *
@@ -24,24 +25,24 @@ public class PersonaDAO extends CrudDAO<Persona>{
     }
 
     @Override
-    public List<Persona> list(Object... param) {
-        return executeHQLQuery("From Persona", (Object[]) null);
+    public List<Persona> list(HibernateParam... param) {
+        return executeHQLQuery("From Persona");
     }
 
     @Override
-    public List<Persona> listEnabled(Object... param) {
-        Object[] estado = {"estado","1"};
-        return executeHQLQuery("From Persona p join fetch p.documento as doc where p.perEstado = :estado", estado);
+    public List<Persona> listEnabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Persona p join fetch p.documento as doc where p.perEstado = '1'");
     }
 
     @Override
-    public List<Persona> listDisabled(Object... param) {
-        Object[] estado = {"estado","0"};
-        return executeHQLQuery("From Persona p join fetch p.documento as doc where p.perEstado = :estado", estado);
+    public List<Persona> listDisabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Persona p join fetch p.documento as doc where p.perEstado = '1'");
     }
 
     @Override
-    public List<Persona> search(Object... param) {
+    public List<Persona> search(HibernateParam... param) {
         return executeHQLQuery("From Persona p join fetch p.documento as doc where "
                 + "UPPER(p.perNombres) like UPPER('%'|| :nombres ||'%') "
                 + "AND UPPER(p.perApellidos) like UPPER('%'|| :apellidos || '%') "
@@ -49,7 +50,7 @@ public class PersonaDAO extends CrudDAO<Persona>{
     }
 
     @Override
-    public Persona get(Object... id) {
+    public Persona get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

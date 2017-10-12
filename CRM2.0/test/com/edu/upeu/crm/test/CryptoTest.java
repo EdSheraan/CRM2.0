@@ -3,24 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.edu.upeu.crm.test;
+package com.edu.upeu.crm.test;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import pe.edu.upeu.crm.dao.impl.UsuarioDAO;
+import pe.edu.upeu.crm.util.Crypto;
 
 /**
  *
- * @author Leandro Burgos
+ * @author Andres
  */
-public class NewMain {
-@Autowired
-        private static UsuarioDAO usuarioDAO;
+public class CryptoTest {
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(usuarioDAO.get("leandro").getUsuClave());
+        String m ="mi password con % / &";
+        System.out.println(m);
+        String en = Crypto.encrypt(m);
+        System.out.println(en);
+        String de = Crypto.decrypt(en);
+        System.out.println(de);
     }
     
 }

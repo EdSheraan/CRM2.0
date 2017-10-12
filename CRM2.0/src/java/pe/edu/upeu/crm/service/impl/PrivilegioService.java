@@ -44,7 +44,7 @@ public class PrivilegioService implements CRUDService<Privilegio>{
     @Override
     public List<Privilegio> list(Object... param) {
         Logger.info("Listando todos los privilegios");
-        return privilegioDAO.list(param);
+        return privilegioDAO.list();
     }
 
     @Override

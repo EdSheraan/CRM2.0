@@ -44,7 +44,7 @@ public class RolService implements CRUDService<Rol>{
     @Override
     public List<Rol> list(Object... param) {
         Logger.info("Listando todos los roles");
-        return rolDAO.list(param);
+        return rolDAO.list();
     }
 
     @Override

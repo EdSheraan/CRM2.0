@@ -1,9 +1,12 @@
 package pe.edu.upeu.crm.dao.impl;
 
 import java.util.List;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Usuario;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class UsuarioDAO extends CrudDAO<Usuario> {
@@ -15,33 +18,31 @@ public class UsuarioDAO extends CrudDAO<Usuario> {
     }
 
     @Override
-    public List<Usuario> list(Object... param) {
-        return executeHQLQuery("From Usuario", (Object[]) null);
+    public List<Usuario> list(HibernateParam... param) {
+        return executeHQLQuery("From Usuario");
     }
 
     @Override
-    public List<Usuario> listEnabled(Object... param) {
-        Object[] estado = {"estado","1"};
-        return executeHQLQuery("From Usuario u where u.usuEstado = :estado", estado);
+    public List<Usuario> listEnabled(HibernateParam... param) {
+        return executeHQLQuery("From Usuario u where u.usuEstado = '1'");
     }
 
     @Override
-    public List<Usuario> listDisabled(Object... param) {
-        Object[] estado = {"estado","0"};
-        return executeHQLQuery("From Usuario u where u.usuEstado = :estado", estado);
+    public List<Usuario> listDisabled(HibernateParam... param) {
+        return executeHQLQuery("From Usuario u where u.usuEstado = '0'");
     }
 
     @Override
-    public List<Usuario> search(Object... param) {
+    public List<Usuario> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Usuario get(Object... id) {
+    public Usuario get(HibernateParam... ids) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Usuario get(String name) {
-        return listUnique("FROM Usuario u join fetch u.detrols as rols join fetch u.persona as per where u.usuUsuario='" + name + "'");
+    public Usuario getByName(HibernateParam param) {
+        return listUnique("FROM Usuario u where u.usuUsuario=:usuario",param);
     }
 }

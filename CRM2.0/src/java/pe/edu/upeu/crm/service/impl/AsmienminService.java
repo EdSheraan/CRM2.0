@@ -44,7 +44,7 @@ public class AsmienminService implements CRUDService<Asmiemmin>{
     @Override
     public List<Asmiemmin> list(Object... param) {
         Logger.info("Listando todos los Asmiemmin");
-        return asmiemminDAO.list(param);
+        return asmiemminDAO.list();
     }
 
     @Override

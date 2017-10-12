@@ -44,7 +44,7 @@ public class EscuelaService implements CRUDService<Escuela>{
     @Override
     public List<Escuela> list(Object... param) {
         Logger.info("Listando todos las escuelas");
-        return escuelaDAO.list(param);
+        return escuelaDAO.list();
     }
 
     @Override

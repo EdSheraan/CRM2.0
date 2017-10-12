@@ -7,20 +7,26 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @param <T>
  */
-
+@Repository
 public abstract class CrudDAO<T> {
+    
+    public static final String ESTADO_ACTIVO ="1";
+    public static final String ESTADO_INACTIVO ="0";
 
-    @Autowired
+    
     private SessionFactory sessionFactory;
+    @Autowired
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+    
+    
 
-    @Transactional
     public Object add(T bean) {
         Session session = sessionFactory.openSession();
         Serializable r = null;
@@ -38,7 +44,6 @@ public abstract class CrudDAO<T> {
         return r;
     }
 
-    @Transactional
     public int update(T bean) {
         Session session = sessionFactory.openSession();
         try {
@@ -55,54 +60,61 @@ public abstract class CrudDAO<T> {
         return 0;
     }
 
-    @Transactional
     public abstract int delete(T bean);
 
-    public abstract List<T> list(Object... param);
+    public abstract List<T> list(HibernateParam... param);
 
-    public abstract List<T> listEnabled(Object... param);
+    public abstract List<T> listEnabled(HibernateParam... param);
 
-    public abstract List<T> listDisabled(Object... param);
+    public abstract List<T> listDisabled(HibernateParam... param);
 
-    public abstract List<T> search(Object... param);
+    public abstract List<T> search(HibernateParam... param);
 
-    public abstract T get(Object... id);
+    public abstract T get(HibernateParam... id);
     
-    public List<T> executeHQLQuery(String query, Object[]... params) {
-        Session session = sessionFactory.openSession();
+    public List<T> executeHQLQuery(String query, HibernateParam... params) {
+        Session session = sessionFactory.getCurrentSession();
         List<T> list = new ArrayList<>();
         try {
-            session.beginTransaction();
+            //session.beginTransaction();
             Query q = session.createQuery(query);
             if (params != null) {
-                for (Object[] p : params) {
+                for (HibernateParam p : params) {
                     if (p != null) {
-                        q.setParameter(p[0].toString(), p[1]);
+                        q.setParameter(p.getName(), p.getValue());
                     }
                 }
             }
             list = q.list();
+            session.flush();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            session.close();
+            //session.close();
         }
         return list;
     }
 
-    @Transactional
-    public T listUnique(String query) {
-        Session session = sessionFactory.openSession();
+    public T listUnique(String query,HibernateParam... params) {
+        Session session = sessionFactory.getCurrentSession();
         T bean = null;
         try {
-            session.beginTransaction();
+            //session.beginTransaction();
             Query q = session.createQuery(query);
+            if (params != null) {
+                for (HibernateParam p : params) {
+                    if (p != null) {
+                        q.setParameter(p.getName(), p.getValue());
+                    }
+                }
+            }
             q.setMaxResults(1);
             bean = (T) q.uniqueResult();
+            session.flush();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            session.close();
+            //session.close();
         }
         return bean;
     }

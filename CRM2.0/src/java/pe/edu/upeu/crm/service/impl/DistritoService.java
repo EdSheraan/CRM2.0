@@ -44,7 +44,7 @@ public class DistritoService implements CRUDService<Distrito>{
     @Override
     public List<Distrito> list(Object... param) {
         Logger.info("Listando todos los distritos");
-        return distritoDAO.list(param);
+        return distritoDAO.list();
     }
 
     @Override

@@ -4,7 +4,8 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Asmiemmin;
 import pe.edu.upeu.crm.dao.CrudDAO;
-
+import pe.edu.upeu.crm.dao.HibernateParam;
+import pe.edu.upeu.crm.dao.HibernateParam;
 @Repository
 public class AsmiemminDAO extends CrudDAO<Asmiemmin>{
 
@@ -14,27 +15,27 @@ public class AsmiemminDAO extends CrudDAO<Asmiemmin>{
     }
 
     @Override
-    public List<Asmiemmin> list(Object... param) {
-        return executeHQLQuery("From Asmiemmin", (Object[]) null);
+    public List<Asmiemmin> list(HibernateParam... param) {
+        return executeHQLQuery("From Asmiemmin");
     }
 
     @Override
-    public List<Asmiemmin> listEnabled(Object... param) {
+    public List<Asmiemmin> listEnabled(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemmin> listDisabled(Object... param) {
+    public List<Asmiemmin> listDisabled(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemmin> search(Object... param) {
+    public List<Asmiemmin> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Asmiemmin get(Object... id) {
+    public Asmiemmin get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

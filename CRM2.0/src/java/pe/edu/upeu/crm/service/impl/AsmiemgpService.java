@@ -44,7 +44,7 @@ public class AsmiemgpService implements CRUDService<Asmiemgp>{
     @Override
     public List<Asmiemgp> list(Object... param) {
         Logger.info("Listando todos los Asmiemgp");
-        return asmiemgpDAO.list(param);
+        return asmiemgpDAO.list();
     }
 
     @Override

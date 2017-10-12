@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Periodo;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class PeriodoDAO extends CrudDAO<Periodo>{
@@ -15,29 +16,29 @@ public class PeriodoDAO extends CrudDAO<Periodo>{
     }
 
     @Override
-    public List<Periodo> list(Object... param) {
-        return executeHQLQuery("From Periodo", (Object[]) null);
+    public List<Periodo> list(HibernateParam... param) {
+        return executeHQLQuery("From Periodo");
     }
 
     @Override
-    public List<Periodo> listEnabled(Object... param) {
+    public List<Periodo> listEnabled(HibernateParam... param) {
         Object[] estado = {"estado", "1"};
-        return executeHQLQuery("From Periodo p where p.prdEstado = :estado", estado);
+        return executeHQLQuery("From Periodo p where p.prdEstado = '1'");
     }
 
     @Override
-    public List<Periodo> listDisabled(Object... param) {
+    public List<Periodo> listDisabled(HibernateParam... param) {
         Object[] estado = {"estado", "0"};
-        return executeHQLQuery("From Periodo p where p.prdEstado = :estado", estado);
+        return executeHQLQuery("From Periodo p where p.prdEstado = '1'");
     }
 
     @Override
-    public List<Periodo> search(Object... param) {
+    public List<Periodo> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Periodo get(Object... id) {
+    public Periodo get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

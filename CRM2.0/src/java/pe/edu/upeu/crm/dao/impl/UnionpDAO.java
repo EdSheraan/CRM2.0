@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Unionp;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class UnionpDAO extends CrudDAO<Unionp>{
@@ -15,29 +16,29 @@ public class UnionpDAO extends CrudDAO<Unionp>{
     }
 
     @Override
-    public List<Unionp> list(Object... param) {
-        return executeHQLQuery("From Unionp", (Object[]) null);
+    public List<Unionp> list(HibernateParam... param) {
+        return executeHQLQuery("From Unionp");
     }
 
     @Override
-    public List<Unionp> listEnabled(Object... param) {
-        Object[] estado = {"estado","1"};
-        return executeHQLQuery("From Unionp u where u.uniEstado = :estado", estado);
+    public List<Unionp> listEnabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Unionp u where u.uniEstado = '1'");
     }
 
     @Override
-    public List<Unionp> listDisabled(Object... param) {
-        Object[] estado = {"estado","0"};
-        return executeHQLQuery("From Unionp u where u.uniEstado = :estado", estado);
+    public List<Unionp> listDisabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Unionp u where u.uniEstado = '1'");
     }
 
     @Override
-    public List<Unionp> search(Object... param) {
+    public List<Unionp> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Unionp get(Object... id) {
+    public Unionp get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

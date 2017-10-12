@@ -6,67 +6,68 @@
 package pe.edu.upeu.crm.service.impl;
 
 import java.util.List;
+import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pe.edu.upeu.crm.bean.Usuario;
+import pe.edu.upeu.crm.bean.Detrol;
 import pe.edu.upeu.crm.dao.HibernateParam;
-import pe.edu.upeu.crm.dao.impl.UsuarioDAO;
+import pe.edu.upeu.crm.dao.impl.DetRolDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
 /**
  *
- * @author Leandro Burgos
+ * @author Andres
  */
 @Service
-public class UsuarioService implements CRUDService<Usuario> {
-
+public class DetRolService implements CRUDService<Detrol>{
+    
     @Autowired
-    private UsuarioDAO usuarioDAO;
+    private DetRolDAO detRolDAO;
+    
 
     @Override
-    public Object add(Usuario bean) {
+    public Object add(Detrol bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int update(Usuario bean) {
+    public int update(Detrol bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int delete(Usuario bean) {
+    public int delete(Detrol bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Usuario> list(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Usuario> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Usuario> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Usuario> search(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Usuario get(Object... id) {
+    public List<Detrol> list(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
     @Transactional
-    public Usuario get(String name) {
-        return usuarioDAO.getByName(new HibernateParam("usuario", name));
+    public List<Detrol> listEnabled(Object... param) {
+        Logger.info("Listando Detrol del usuario: "+param[0] +": "+param[0].getClass().getName());
+        return detRolDAO.listEnabled(new HibernateParam("idUsuario", param[0]));
     }
 
+    @Override
+    public List<Detrol> listDisabled(Object... param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Detrol> search(Object... param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Detrol get(Object... id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

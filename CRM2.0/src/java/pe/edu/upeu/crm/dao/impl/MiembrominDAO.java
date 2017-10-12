@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Miembromin;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class MiembrominDAO extends CrudDAO<Miembromin>{
@@ -15,29 +16,29 @@ public class MiembrominDAO extends CrudDAO<Miembromin>{
     }
 
     @Override
-    public List<Miembromin> list(Object... param) {
-        return executeHQLQuery("From Miembromin", (Object[]) null);
+    public List<Miembromin> list(HibernateParam... param) {
+        return executeHQLQuery("From Miembromin");
     }
 
     @Override
-    public List<Miembromin> listEnabled(Object... param) {
-        Object[] estado = {"estado","1"};
-        return executeHQLQuery("From Miembromin m where m.mmiEstado = :estado", estado);
+    public List<Miembromin> listEnabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Miembromin m where m.mmiEstado = '1'");
     }
 
     @Override
-    public List<Miembromin> listDisabled(Object... param) {
-        Object[] estado = {"estado","0"};
-        return executeHQLQuery("From Miembromin m where m.mmiEstado = :estado", estado);
+    public List<Miembromin> listDisabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Miembromin m where m.mmiEstado = '1'");
     }
 
     @Override
-    public List<Miembromin> search(Object... param) {
+    public List<Miembromin> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Miembromin get(Object... id) {
+    public Miembromin get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

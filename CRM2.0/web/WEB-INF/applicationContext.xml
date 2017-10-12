@@ -17,6 +17,10 @@
        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
     
     <context:component-scan base-package="pe.edu.upeu.crm"/>
+    <aop:config proxy-target-class="true">
+        <!-- other beans defined here... -->
+        
+    </aop:config>
     <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
         <property name="jndiName" value="java:comp/env/jdbc/crmDB"/>
     </bean>
@@ -24,11 +28,11 @@
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:hibernate.cfg.xml" />
     </bean>
-    <tx:annotation-driven  transaction-manager="transactionManager"/>
-    
+    <tx:annotation-driven/>
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+   
     
     <security:http auto-config="true" use-expressions="true">
         <security:intercept-url pattern="/main" access="permitAll" />
@@ -36,11 +40,11 @@
         <security:intercept-url pattern="/**" access="isFullyAuthenticated()" />
          
         <security:form-login login-page="/main"
-                              default-target-url="/menu"
-                              login-processing-url="/j_spring_security_check"
-                              authentication-failure-url="/main?error"
-                              username-parameter="username"
-                              password-parameter="password"
+                             default-target-url="/menu"
+                             login-processing-url="/j_spring_security_check"
+                             authentication-failure-url="/main?error"
+                             username-parameter="username"
+                             password-parameter="password"
         />
         <security:logout logout-success-url="/main?logout" logout-url="/j_spring_security_logout" />
         <security:csrf/>
@@ -56,10 +60,14 @@
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="objectMapper">
-                    <bean class="pe.edu.upeu.crm.config.HibernateAwareObjectMapper" />
+                    <bean class="pe.edu.upeu.crm.util.HibernateAwareObjectMapper" />
                 </property>
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+    <bean id="CrudDAO" class="pe.edu.upeu.crm.dao.CrudDAO" abstract="true" >
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
     
 </beans>

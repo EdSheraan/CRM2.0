@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Iglesia;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class IglesiaDAO extends CrudDAO<Iglesia>{
@@ -15,29 +16,29 @@ public class IglesiaDAO extends CrudDAO<Iglesia>{
     }
 
     @Override
-    public List<Iglesia> list(Object... param) {
-        return executeHQLQuery("From Iglesia", (Object[]) null);
+    public List<Iglesia> list(HibernateParam... param) {
+        return executeHQLQuery("From Iglesia");
     }
 
     @Override
-    public List<Iglesia> listEnabled(Object... param) {
-        Object[] estado = {"estado","1"};
-        return executeHQLQuery("From Iglesia i where i.iglEstado = :estado", estado);
+    public List<Iglesia> listEnabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Iglesia i where i.iglEstado = '1'");
     }
 
     @Override
-    public List<Iglesia> listDisabled(Object... param) {
-        Object[] estado = {"estado","0"};
-        return executeHQLQuery("From Iglesia i where i.iglEstado = :estado", estado);
+    public List<Iglesia> listDisabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Iglesia i where i.iglEstado = '1'");
     }
 
     @Override
-    public List<Iglesia> search(Object... param) {
+    public List<Iglesia> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Iglesia get(Object... id) {
+    public Iglesia get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

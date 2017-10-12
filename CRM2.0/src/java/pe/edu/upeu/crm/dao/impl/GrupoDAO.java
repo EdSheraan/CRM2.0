@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Grupo;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class GrupoDAO extends CrudDAO<Grupo>{
@@ -15,29 +16,29 @@ public class GrupoDAO extends CrudDAO<Grupo>{
     }
 
     @Override
-    public List<Grupo> list(Object... param) {
-        return executeHQLQuery("From Grupo", (Object[]) null);
+    public List<Grupo> list(HibernateParam... param) {
+        return executeHQLQuery("From Grupo");
     }
 
     @Override
-    public List<Grupo> listEnabled(Object... param) {
-        Object[] estado = {"estado","1"};
-        return executeHQLQuery("From Grupo g where g.gpoEstado = :estado", estado);
+    public List<Grupo> listEnabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Grupo g where g.gpoEstado = '1'");
     }
 
     @Override
-    public List<Grupo> listDisabled(Object... param) {
-        Object[] estado = {"estado","0"};
-        return executeHQLQuery("From Grupo g where g.gpoEstado = :estado", estado);
+    public List<Grupo> listDisabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Grupo g where g.gpoEstado = '1'");
     }
 
     @Override
-    public List<Grupo> search(Object... param) {
+    public List<Grupo> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Grupo get(Object... id) {
+    public Grupo get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

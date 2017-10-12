@@ -44,7 +44,7 @@ public class IglesiaService implements CRUDService<Iglesia>{
     @Override
     public List<Iglesia> list(Object... param) {
         Logger.info("Listando todos las iglesias");
-        return iglesiaDAO.list(param);
+        return iglesiaDAO.list();
     }
 
     @Override

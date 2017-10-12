@@ -44,7 +44,7 @@ public class GrupoService implements CRUDService<Grupo>{
     @Override
     public List<Grupo> list(Object... param) {
         Logger.info("Listando todos los grupos");
-        return grupoDAO.list(param);
+        return grupoDAO.list();
     }
 
     @Override

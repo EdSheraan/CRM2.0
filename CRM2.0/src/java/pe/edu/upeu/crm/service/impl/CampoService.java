@@ -44,7 +44,7 @@ public class CampoService implements CRUDService<Campo> {
     @Override
     public List<Campo> list(Object... param) {
         Logger.info("Listando todos los campos");
-        return campoDAO.list(param);
+        return campoDAO.list();
     }
 
     @Override

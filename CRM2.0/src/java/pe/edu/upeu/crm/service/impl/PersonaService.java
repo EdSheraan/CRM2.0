@@ -44,7 +44,7 @@ public class PersonaService implements CRUDService<Persona>{
     @Override
     public List<Persona> list(Object... param) {
         Logger.info("Listando todas las personas");
-        return personaDAO.list(param);
+        return personaDAO.list();
     }
 
     @Override

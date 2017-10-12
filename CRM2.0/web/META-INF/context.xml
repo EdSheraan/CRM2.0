@@ -7,11 +7,12 @@
               type="javax.sql.DataSource" 
               driverClassName="com.mysql.jdbc.Driver" 
               url="jdbc:mysql://localhost:3306/dbcrm" 
-              username="root" 
-              password="root"       
+              username="devcrm" 
+              password="12345678"       
               maxActive="100" 
               maxIdle="20" 
               minIdle="5" 
               maxWait="10000"/>
-    <!--Change propertie 'password' if you have other key in your database-->
+
+    <Environment name="cryptoKey" value="CRM2017$" type="java.lang.String"/>
 </Context>

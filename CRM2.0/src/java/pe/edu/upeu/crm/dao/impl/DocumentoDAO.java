@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Documento;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class DocumentoDAO extends CrudDAO<Documento> {
@@ -15,29 +16,29 @@ public class DocumentoDAO extends CrudDAO<Documento> {
     }
 
     @Override
-    public List<Documento> list(Object... param) {
-        return executeHQLQuery("From Documento", (Object[]) null);
+    public List<Documento> list(HibernateParam... param) {
+        return executeHQLQuery("From Documento");
     }
 
     @Override
-    public List<Documento> listEnabled(Object... param) {
-        Object[] estado = {"estado","1"};
-        return executeHQLQuery("From Documento d where d.docEstado = :estado", estado);
+    public List<Documento> listEnabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Documento d where d.docEstado = '1'");
     }
 
     @Override
-    public List<Documento> listDisabled(Object... param) {
-        Object[] estado = {"estado","0"};
-        return executeHQLQuery("From Documento d where d.docEstado = :estado", estado);
+    public List<Documento> listDisabled(HibernateParam... param) {
+        
+        return executeHQLQuery("From Documento d where d.docEstado = '1'");
     }
 
     @Override
-    public List<Documento> search(Object... param) {
+    public List<Documento> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Documento get(Object... id) {
+    public Documento get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

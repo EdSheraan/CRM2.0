@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Evento;
 import pe.edu.upeu.crm.dao.CrudDAO;
+import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class EventoDAO extends CrudDAO<pe.edu.upeu.crm.bean.Evento>{
@@ -15,29 +16,29 @@ public class EventoDAO extends CrudDAO<pe.edu.upeu.crm.bean.Evento>{
     }
 
     @Override
-    public List<Evento> list(Object... param) {
-        return executeHQLQuery("From Evento", (Object[]) null);
+    public List<Evento> list(HibernateParam... param) {
+        return executeHQLQuery("From Evento");
     }
 
     @Override
-    public List<Evento> listEnabled(Object... param) {
+    public List<Evento> listEnabled(HibernateParam... param) {
         Object[] estado = {"estado", "1"};
-        return executeHQLQuery("From Evento e where e.evtEstado = :estado", estado);
+        return executeHQLQuery("From Evento e where e.evtEstado = '1'");
     }
 
     @Override
-    public List<Evento> listDisabled(Object... param) {
+    public List<Evento> listDisabled(HibernateParam... param) {
         Object[] estado = {"estado", "0"};
-        return executeHQLQuery("From Evento e where e.evtEstado = :estado", estado);
+        return executeHQLQuery("From Evento e where e.evtEstado = '1'");
     }
 
     @Override
-    public List<Evento> search(Object... param) {
+    public List<Evento> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Evento get(Object... id) {
+    public Evento get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
