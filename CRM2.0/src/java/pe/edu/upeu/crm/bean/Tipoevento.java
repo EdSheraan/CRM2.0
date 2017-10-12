@@ -2,6 +2,7 @@ package pe.edu.upeu.crm.bean;
 // Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -86,7 +87,7 @@ public class Tipoevento  implements java.io.Serializable {
     public void setTipEstado(String tipEstado) {
         this.tipEstado = tipEstado;
     }
-
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @OneToMany(fetch=FetchType.LAZY, mappedBy="tipoevento")
     public Set<Evento> getEventos() {
         return this.eventos;

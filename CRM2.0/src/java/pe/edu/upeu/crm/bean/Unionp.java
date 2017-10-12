@@ -2,6 +2,9 @@ package pe.edu.upeu.crm.bean;
 // Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -89,7 +92,7 @@ public class Unionp  implements java.io.Serializable {
     public void setUniEstado(String uniEstado) {
         this.uniEstado = uniEstado;
     }
-
+@JsonIgnore
 @OneToMany(fetch=FetchType.LAZY, mappedBy="unionp")
     public Set<Campo> getCampos() {
         return this.campos;
