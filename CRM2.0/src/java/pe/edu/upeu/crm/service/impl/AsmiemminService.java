@@ -18,7 +18,7 @@ import pe.edu.upeu.crm.service.CRUDService;
  * @author Andres
  */
 @Service
-public class AsmienminService implements CRUDService<Asmiemmin>{
+public class AsmiemminService implements CRUDService<Asmiemmin>{
     
     @Autowired
     private AsmiemminDAO asmiemminDAO;
