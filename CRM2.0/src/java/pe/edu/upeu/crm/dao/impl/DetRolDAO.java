@@ -31,19 +31,19 @@ public class DetRolDAO extends CrudDAO<Detrol>{
     //Listado por usuario
     @Override
     public List<Detrol> list(HibernateParam... param) {
-        return executeHQLQuery("From Detrol dr left join dr.usuario as usuario left join dr.rol as rol"
+        return executeHQLQuery("From Detrol dr join fetch dr.usuario as usuario join fetch dr.rol as rol"
                 + " where dr.usuario.idUsuario = :idUsuario", param);
     }
 
     @Override
     public List<Detrol> listEnabled(HibernateParam... param) {
-        return executeHQLQuery("From Detrol dr left join dr.usuario as usuario left join dr.rol as rol"
+        return executeHQLQuery("From Detrol dr join fetch dr.usuario as usuario join fetch dr.rol as rol"
                 + " where dr.usuario.idUsuario = :idUsuario and dr.drlEstado ='1'", param);
     }
 
     @Override
     public List<Detrol> listDisabled(HibernateParam... param) {
-        return executeHQLQuery("From Detrol dr left join dr.usuario as usuario left join dr.rol as rol"
+        return executeHQLQuery("From Detrol dr join fetch dr.usuario as usuario join fetch dr.rol as rol"
                 + " where dr.usuario.idUsuario = :idUsuario and dr.drlEstado ='0'", param);
     }
 
