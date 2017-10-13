@@ -13,76 +13,71 @@
         <title>CRM Digital</title>
         <%@include file="../jspf/general.jspf" %>
         <script src="<c:url value='/resources/js/plugins.min.js'></c:url>" type="text/javascript"></script>
-    </head>
-    <body>        
-        <div id="loader-wrapper">
-            <div id="loader"></div>        
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-        </div>
-
-        <header id="header" class="page-topbar">
-            <div class="navbar-fixed">
-                <nav class="navbar-color blue-grey darken-3">
-                    <div class="nav-wrapper">
-                        <ul class="left"> 
-                            <li><a class="waves-effect waves-block waves-light blue darken-1 modal-trigger" href="#modal1">
-                                    Ingresar
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="right hide-on-med-and-down">
-
-                            <li><a href="#inicio" class="waves-effect waves-block waves-light">
-                                    Inicio
-                                </a>
-                            </li>
-                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">
-                                    Grupos Pequeños
-                                </a>
-                            </li>
-                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">
-                                    Ministerios
-                                </a>
-                            </li>
-                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">
-                                    Parejas Misioneras
-                                </a>
-                            </li>
-                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">
-                                    Escuelas Sabáticas
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+        </head>
+        <body>        
+            <div id="loader-wrapper">
+                <div id="loader"></div>        
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
             </div>
-        </header>
-        <div class="contenedor col l12">
-            <div style="width: 100%;height: 598px;" class="section row" id="inicio">
-                <div class="container col s6 m6 l6">
-                    <h2 class="thin">¡Bienvenidos!</h2>
-                    <p class="condensed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <br/>
-                    <a style="margin-left: 3%;" class="btn blue darken-1">Tutoriales</a>
+            <header id="header" class="page-topbar">
+                <div class="navbar-fixed">
+                    <nav class="navbar-color blue-grey darken-3">
+                        <div class="nav-wrapper">
+                            <ul class="left"> 
+                                <li><a class="waves-effect waves-block waves-light green accent-3 modal-trigger hide-on-med-and-down" href="#modal1">Ingresar</a></li>
+                                <li>
+                                    <a class="dropdown-button waves-effect waves-light hide-on-large-only" href="#!" data-activates="dropdown1">Menú<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                    <ul id="dropdown1" class="dropdown-content">
+                                        <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
+                                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
+                                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Ministerios</a></li>
+                                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
+                                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="right"> 
+                                <li><a class="waves-effect waves-block waves-light green accent-3 hide-on-large-only darken-1 modal-trigger" href="#modal1">
+                                        Ingresar
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
+                                <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
+                                <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Ministerios</a></li>
+                                <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
+                                <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-
-                <div class="col s6 m6 l6">
-                    <div class="card-image">
+            </header>
+            <div class="container col l12 s12 m12">
+                <div class="row" id="inicio">
+                    <div class="container col s12 m6 l6">
+                        <h2 class="thin">¡Bienvenidos!</h2>
+                        <p class="condensed offset-l2">
+                            El departamento de <strong>Ministerio Personal y Escuela Sabática</strong> de la <strong>Iglesia Villa Unión</strong> te da la bienvenida a esta plataforma digital
+                            en la cual tú como líder podrás monitorear la asistencia a los <strong>Grupos Pequeños</strong> de tus compañeros y así tambien el trabajo misionero que ellos realizan.
+                            De esta manera, <strong>juntos</strong> ,como hermanos en la fe, prodremos cumplir con nuestras metas <strong>CRM</strong>.
+                        </p>
+                        <br/>
+                        <!--<a style="margin-left: 3%;" class="btn blue darken-1">Tutoriales</a>-->
                     </div>
-
+                    <div class="container col s12 m6 l6">
+                        <div class="card-image offset-l2">
+                            <img src="<c:url value="/resources/images/metasCRM.png"/>" alt="" style="width: 100%"/>
+                    </div>
                 </div>
             </div>
         </div>
-
-
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <div class="row">
                     <form name="f" action="<c:url value="/j_spring_security_check"/>" method="POST">
-                        <div class="col s6 l6 m6 offset-s3 offset-l3 offset-m3">
+                        <div class="col s12 l6 m6 offset-l3 offset-m3">
                             <center><h5 class="thin">Iniciar Sesión</h5></center>
                             <div class="input-field">
                                 <i class="mdi-action-account-circle prefix"></i>
@@ -102,8 +97,8 @@
                     </form>
                 </div>
             </div>
-            <div class="modal-footer" style="margin-top: -15px;">
-                <a href="#" class="waves-effect waves-light btn modal-action modal-close left grey darken-1" >Cancelar</a>
+            <div class="modal-footer">
+                <a class="btn-floating waves-effect waves-light grey darken-1 modal-action modal-close left"><i class="mdi-content-clear"></i></a>
             </div>
         </div>
     </body>
