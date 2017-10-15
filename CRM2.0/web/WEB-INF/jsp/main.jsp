@@ -11,8 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CRM Digital</title>
-        <%@include file="../jspf/general.jspf" %>
-        <script src="<c:url value='/resources/js/plugins.min.js'></c:url>" type="text/javascript"></script>
+        <%@include file="../jspf/general.jspf" %>        
         </head>
         <body>        
             <div id="loader-wrapper">
@@ -30,7 +29,7 @@
                                     <a class="dropdown-button waves-effect waves-light hide-on-large-only" href="#!" data-activates="dropdown1">Menú<i class="mdi-navigation-arrow-drop-down right"></i></a>
                                     <ul id="dropdown1" class="dropdown-content">
                                         <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
-                                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
+                                        <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
                                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Ministerios</a></li>
                                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
                                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
@@ -45,7 +44,7 @@
                             </ul>
                             <ul class="right hide-on-med-and-down">
                                 <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
-                                <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
+                                <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
                                 <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Ministerios</a></li>
                                 <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
                                 <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
@@ -55,7 +54,11 @@
                 </div>
             </header>
             <div class="container col l12 s12 m12">
-                <div class="row" id="inicio">
+                
+        </div>
+        <div>
+            <section id="inicio" style="display: block;width: 100%;height: 100%;">
+                <div class="row">
                     <div class="container col s12 m6 l6">
                         <h2 class="thin">¡Bienvenidos!</h2>
                         <p class="condensed offset-l2">
@@ -72,7 +75,15 @@
                     </div>
                 </div>
             </div>
+            </section>
+            <section id="grupo" style="display: block;width: 100%;height: 100%;">
+                
+            </section>
+            <section></section>
+            <section></section>
+            <section></section>
         </div>
+        <!--Inicio de modal LOGIN-->
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <div class="row">
@@ -101,5 +112,6 @@
                 <a class="btn-floating waves-effect waves-light grey darken-1 modal-action modal-close left"><i class="mdi-content-clear"></i></a>
             </div>
         </div>
+        <!--Fin de modal LOGIN-->
     </body>
 </html>

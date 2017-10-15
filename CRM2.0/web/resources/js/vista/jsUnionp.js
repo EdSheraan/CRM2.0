@@ -6,8 +6,8 @@
 var list_body = $('#list_body');
 
 $(document).ready(function(){
-    var uService = new unionpService();
-    uService.listUnionp(listUnionp);
+    /*var uService = new unionpService();
+    uService.listUnionp(listUnionp);*/
 });
 
 function listUnionp(list){

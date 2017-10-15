@@ -50,10 +50,6 @@
             }
 
             .size-icon {
-                /*padding-top: 25px;
-                padding-right: 21px;
-                padding-left: 21px;
-                padding-bottom: 25px;*/
                 color: white;
             }
 

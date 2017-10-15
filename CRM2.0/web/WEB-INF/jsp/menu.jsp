@@ -56,12 +56,11 @@
                 margin-bottom: 25px;
                 color: white;
             }
-
         </style>
     </head>
     <%@include file="../jspf/header.jspf" %>
     <body>
-        
+
         <div class="seaction" style="display: table;margin: auto;padding: 1%;">
             <!--ADECUAR LAS SECCIONES DEPENDIENDO DEL ROL Y SUS PRIVILEGIOS-->
             <div style="margin-top: 20%">
@@ -83,7 +82,7 @@
                     <div class="circulo waves-effect waves-light green accent-4" style="display: table-cell;
                          vertical-align: middle;" >
                         <div class='circulo2'>
-                            <i class="mdi-action-favorite-outline large icon-demo size-icon"></i>
+                            <i class="mdi-action-favorite large icon-demo size-icon"></i>
                             <h6 style="text-align: center" class="white-text regular">Ministerios</h6>
                         </div>
                     </div>
@@ -107,8 +106,8 @@
             </div>
         </footer>
         <script>
-            function redirect(){ //POR MIENTRAS HASTA TENER LOS LINKS EN LA DB
-                location.href="privilegios";
+            function redirect() { //POR MIENTRAS HASTA TENER LOS LINKS EN LA DB
+                location.href = "privilegios";
             }
         </script>
     </body>

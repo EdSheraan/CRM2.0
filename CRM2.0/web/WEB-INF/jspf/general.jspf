@@ -9,11 +9,14 @@
     <!-- Estilos-->
     <link href="<c:url value='/resources/css/materialize.min.css'></c:url>" rel="stylesheet" type="text/css"/>
 <link href="<c:url value='/resources/css/style.min.css'></c:url>" rel="stylesheet" type="text/css"/>
+<link href="<c:url value='/resources/css/perfect-scrollbar.css'></c:url>" rel="stylesheet" type="text/css"/>
 <link href="<c:url value='/resources/css/crm.css'></c:url>" rel="stylesheet" type="text/css"/>
 
     <!-- Javascript-->
     <script src="<c:url value='/resources/js/jquery-2.2.3.min.js'></c:url>" type="text/javascript"></script>
 <script src="<c:url value='/resources/js/materialize.min.js'></c:url>" type="text/javascript"></script>
+<script src="<c:url value='/resources/js/plugins.min.js'></c:url>" type="text/javascript"></script>
+<script src="<c:url value='/resources/js/perfect-scrollbar.min.js'></c:url>" type="text/javascript"></script>
 <script src="<c:url value='/resources/js/util/jsURL.js'></c:url>" type="text/javascript"></script>
 <script src="<c:url value='/resources/js/util/jsMessage.js'></c:url>" type="text/javascript"></script>
 <script src="<c:url value='/resources/js/datos/jsConnector.js'></c:url>" type="text/javascript"></script>
