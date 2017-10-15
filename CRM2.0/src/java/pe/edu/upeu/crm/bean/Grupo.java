@@ -2,6 +2,7 @@ package pe.edu.upeu.crm.bean;
 // Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -80,6 +81,8 @@ public class Grupo  implements java.io.Serializable {
         this.idGrupo = idGrupo;
     }
 
+    //Delete property "JsonIgnore" when you find the solution
+    @JsonIgnore
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="idESCUELA", nullable=false)
     public Escuela getEscuela() {

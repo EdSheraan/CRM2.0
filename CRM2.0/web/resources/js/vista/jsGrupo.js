@@ -7,7 +7,7 @@ var list_body = $('#list_body');
 
 $(document).ready(function () {
     var gService = new grupoService();
-    gService.listGrupo(1,listGrupo);
+    gService.listGrupo({idEscuela:1},listGrupo);
 });
 
 function listGrupo(list) {

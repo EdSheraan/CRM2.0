@@ -5,10 +5,12 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Unionp;
 import pe.edu.upeu.crm.dao.impl.UnionpDAO;
 import pe.edu.upeu.crm.service.CRUDService;
@@ -25,6 +27,8 @@ public class UnionpService implements CRUDService<Unionp>{
     
     @Override
     public Object add(Unionp bean) {
+        bean.setUniFechaCreacion(new Date());
+        bean.setUniEstado("1");
         Logger.info("Registrando Unionp");
         return unionpDAO.add(bean);
     }
@@ -42,6 +46,7 @@ public class UnionpService implements CRUDService<Unionp>{
     }
 
     @Override
+    @Transactional
     public List<Unionp> list(Object... param) {
         Logger.info("Listando todos los unionps");
         return unionpDAO.list();

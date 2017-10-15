@@ -17,7 +17,7 @@ public class GrupoDAO extends CrudDAO<Grupo>{
 
     @Override
     public List<Grupo> list(HibernateParam... param) {
-        return executeHQLQuery("From Grupo");
+        return executeHQLQuery("From Grupo g  where g.escuela.idEscuela=:idEscuela", param);
     }
 
     @Override

@@ -9,7 +9,9 @@ import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Grupo;
+import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.GrupoDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -42,9 +44,10 @@ public class GrupoService implements CRUDService<Grupo>{
     }
 
     @Override
+    @Transactional
     public List<Grupo> list(Object... param) {
         Logger.info("Listando todos los grupos");
-        return grupoDAO.list();
+        return grupoDAO.list(new HibernateParam("idEscuela", param[0]));
     }
 
     @Override

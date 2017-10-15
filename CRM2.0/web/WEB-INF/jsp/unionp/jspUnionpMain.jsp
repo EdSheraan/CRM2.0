@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col s12 m12 l10 offset-l1">
                             <ul id="list_body" class="collection">
-                                <li class="collection-item avatar">
+                                <!--<li class="collection-item avatar">
                                     <div class="col l4">
                                         <div class="circle red" style="display: table;margin: auto;">
                                             <h5 style="display: table-cell;vertical-align: middle;text-align: center;color: white">U</h5>
@@ -47,7 +47,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                     </div>

@@ -29,7 +29,7 @@ public class UnionpDAO extends CrudDAO<Unionp>{
     @Override
     public List<Unionp> listDisabled(HibernateParam... param) {
         
-        return executeHQLQuery("From Unionp u where u.uniEstado = '1'");
+        return executeHQLQuery("From Unionp u where u.uniEstado = '0'");
     }
 
     @Override

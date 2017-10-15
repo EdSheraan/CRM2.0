@@ -77,8 +77,6 @@ function grupoService(){
     };
     
     this.listGrupo = function (escuela,_callback) {
-        console.log(escuela);
-        console.log("holaa");
         var connectionUrl = "/grupo/list";
         var connector = new jsConnector();
         try {

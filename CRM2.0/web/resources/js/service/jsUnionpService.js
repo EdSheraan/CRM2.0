@@ -4,12 +4,10 @@
  * and open the template in the editor.
  */
 function unionpService(){
-    
+    var connector = new jsConnector();
     this.addUnionp = function(unionp,_callback){
-        var connectionUrl ="/unionp/add";
-        var connector = new jsConnector();
         try {
-            connector.post(connectionUrl, unionp, function (result) {
+            connector.post(url.unionp.add, JSON.stringify(unionp), function (result) {
                 //Aqui va la validación de la respuesta del servidor
                 if (result !== undefined && result !== null) {
                     successMessage({
@@ -30,10 +28,8 @@ function unionpService(){
 
     };
     this.updateUnionp = function(unionp, _callback){
-        var connectionUrl = "/unionp/update";
-        var connector = new jsConnector();
         try {
-            connector.post(connectionUrl,unionp,function(result){
+            connector.post(url.unionp.update,unionp,function(result){
                 if (result!== undefined && result!==null && result === 1) {
                     successMessage({
                         title:message.unionp.update.title,
@@ -54,10 +50,8 @@ function unionpService(){
     };
     
     this.deleteUnionp = function(unionp, _callback){
-        var connectionUrl = "/unionp/delete";
-        var connector = new jsConnector();
         try {
-            connector.post(connectionUrl,unionp,function(result){
+            connector.post(url.unionp.delete,unionp,function(result){
                 if (result!== undefined && result!==null && result === 1) {
                     successMessage({
                         title:message.unionp.delete.title,
@@ -77,10 +71,8 @@ function unionpService(){
     };
     
     this.listUnionp = function (_callback) {
-        var connectionUrl = "/unionp/list";
-        var connector = new jsConnector();
         try {
-            connector.post(connectionUrl, JSON.stringify({id:1}), function (result) {
+            connector.post(url.unionp.list, null, function (result) {
                 if (result !== undefined && result !== null && result.length>0) {
                     _callback(result);
                 }else{

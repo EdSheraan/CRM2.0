@@ -6,14 +6,14 @@
 var list_body = $('#list_body');
 
 $(document).ready(function(){
-    /*var uService = new unionpService();
-    uService.listUnionp(listUnionp);*/
+    var uService = new unionpService();
+    uService.listUnionp(listUnionp);
 });
 
 function listUnionp(list){
     var s = "";
     console.log(list);
-    /*for (var i = 0; i < list.length; i++) {
+    for (var i = 0; i < list.length; i++) {
         var unionp = list[i];
         s += '<li class="collection-item avatar">';
         s += '<div class="col l2 ">';
@@ -24,7 +24,7 @@ function listUnionp(list){
         s += '<p class="collections-content"><span class="task-cat green accent-3">Activo</span></p>';
         s += '</div>';
         s += '<div class="col l4">';
-        s += '<p class="collections-content">ASDFGHJKLKJHGFDS</p>';
+        s += '<p class="collections-content">asfhgdsahsdghfsdhgfhgd</p>';
         s += '<p class="collections-content"><span class="task-cat blue darken-1">MIPES de G.P.</span></p>';
         s += '</div>';
         s += '<div class="col l3">';
@@ -36,7 +36,7 @@ function listUnionp(list){
         s += '<a class="btn-floating waves-effect btn-large waves-light red"><i class="mdi-content-clear"></i></a>';
         s += '</div>';
         s += '</li>';
-    }*/
-    /*$(list_body).empty();
-    $(list_body).append(s);*/
+    }
+    $(list_body).empty();
+    $(list_body).append(s);
 }
