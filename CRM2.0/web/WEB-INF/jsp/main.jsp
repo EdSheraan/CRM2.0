@@ -57,9 +57,9 @@
                 
         </div>
         <div>
-            <section id="inicio" style="display: block;width: 100%;height: 100%;">
+            <section id="inicio" style="display: block;width: 100%;margin-top: 10%;">
                 <div class="row">
-                    <div class="container col s12 m6 l6">
+                    <div class="container col s12 m6 l5 offset-l1">
                         <h2 class="thin">¡Bienvenidos!</h2>
                         <p class="condensed offset-l2">
                             El departamento de <strong>Ministerio Personal y Escuela Sabática</strong> de la <strong>Iglesia Villa Unión</strong> te da la bienvenida a esta plataforma digital
@@ -67,9 +67,8 @@
                             De esta manera, <strong>juntos</strong> ,como hermanos en la fe, prodremos cumplir con nuestras metas <strong>CRM</strong>.
                         </p>
                         <br/>
-                        <!--<a style="margin-left: 3%;" class="btn blue darken-1">Tutoriales</a>-->
                     </div>
-                    <div class="container col s12 m6 l6">
+                    <div class="container col s12 m6 l5">
                         <div class="card-image offset-l2">
                             <img src="<c:url value="/resources/images/metasCRM.png"/>" alt="" style="width: 100%"/>
                     </div>
