@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn-floating waves-effect waves-light grey darken-1 modal-action modal-close left"><i class="mdi-content-clear"></i></a>
+                <a class="btn waves-effect waves-light grey darken-1 modal-action modal-close left">Cancelar</a>
             </div>
         </div>
         <!--Fin de modal LOGIN-->

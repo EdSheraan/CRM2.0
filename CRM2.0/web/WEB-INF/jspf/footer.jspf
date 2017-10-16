@@ -5,7 +5,7 @@
         bottom: 0;
     }
 </style>
-<footer class="page-footer blue-grey darken-4">
+<footer class="page-footer blue darken-1">
     <div class="footer-copyright">
         <div class="container">
             © 2017 Copyright 

@@ -19,7 +19,7 @@
                 <section id="content">
                     <div class="container">
                         <div class="row">
-                        <ul id="list_body" class="collection"></ul>
+                            <ul id="list_body" class="collection"></ul>
                         </div>
                     </div>
                 </section>            
@@ -30,7 +30,7 @@
                 <i class="mdi-content-add"></i>
             </a>
         </div>
-                <div id="modal1" class="modal">
+        <div id="modal1" class="modal">
             <div class="modal-content">
                 <h5>Nuevo Grupo Pequeño</h5>
                 <div class="row">
@@ -50,7 +50,7 @@
                 <a class="waves-effect waves-light green btn accent-3 modal-action modal-close right" onclick="save()">Guardar</a>
             </div>
         </div>
-                <%@include file="../../jspf/footer.jspf" %>
+        <%@include file="../../jspf/footer.jspf" %>
         <script src="<c:url value="/resources/js/service/jsGrupoService.js"></c:url>" type="text/javascript"></script>
         <script src="<c:url value="/resources/js/vista/jsGrupo.js"></c:url>" type="text/javascript"></script>
     </body>
