@@ -41,6 +41,7 @@ public class GrupoController {
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
     Integer addGrupo(@RequestBody Grupo grupo) {
+        System.out.println("LA ESCUELA ES : "+grupo.getEscuela());
         return (Integer) grupoService.add(grupo);
     }
 

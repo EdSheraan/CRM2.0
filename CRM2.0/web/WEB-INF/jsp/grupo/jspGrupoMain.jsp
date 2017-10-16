@@ -19,7 +19,11 @@
                 <section id="content">
                     <div class="container">
                         <div class="row">
-                            <ul id="list_body" class="collection"></ul>
+                            <div class="col s12 m12 l10 offset-l1">
+                                <table class="highlight">
+                                    <tbody id="list_body"></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </section>            
@@ -40,6 +44,11 @@
                                 <i class="mdi-social-group prefix"></i>
                                 <input id="ngpo" type="text" class="validate">
                                 <label for="ngpo">Nombre</label>
+                            </div>
+                            <div class="input-field col s12 l6 m6">
+                                <i class="mdi-action-home prefix"></i>
+                                <input id="lgreu" type="text" class="validate">
+                                <label for="lgreu">Lugar de Reunión</label>
                             </div>
                         </div>
                     </form>

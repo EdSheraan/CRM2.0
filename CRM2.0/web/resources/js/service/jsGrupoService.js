@@ -4,12 +4,10 @@
  * and open the template in the editor.
  */
 function grupoService(){
-    
+    var connector = new jsConnector();
     this.addGrupo = function(grupo,_callback){
-        var connectionUrl ="/grupo/add";
-        var connector = new jsConnector();
         try {
-            connector.post(connectionUrl, JSON.stringify(grupo), function (result) {
+            connector.post(url.grupo.add, JSON.stringify(grupo), function (result) {
                 //Aqui va la validación de la respuesta del servidor
                 if (result !== undefined && result !== null) {
                     successMessage({
@@ -31,7 +29,6 @@ function grupoService(){
     };
     this.updateGrupo = function(grupo, _callback){
         var connectionUrl = "/grupo/update";
-        var connector = new jsConnector();
         try {
             connector.post(connectionUrl,grupo,function(result){
                 if (result!== undefined && result!==null && result === 1) {
@@ -55,7 +52,6 @@ function grupoService(){
     
     this.deleteGrupo = function(grupo, _callback){
         var connectionUrl = "/grupo/delete";
-        var connector = new jsConnector();
         try {
             connector.post(connectionUrl,grupo,function(result){
                 if (result!== undefined && result!==null && result === 1) {
@@ -78,7 +74,6 @@ function grupoService(){
     
     this.listGrupo = function (escuela,_callback) {
         var connectionUrl = "/grupo/list";
-        var connector = new jsConnector();
         try {
             connector.post(connectionUrl, JSON.stringify(escuela), function (result) {
                 if (result !== undefined && result !== null && result.length>0) {

@@ -27,12 +27,14 @@ public class GrupoService implements CRUDService<Grupo>{
     private GrupoDAO grupoDAO;
     
     @Override
+    @Transactional
     public Object add(Grupo bean) {
         bean.setGpoFechaCreacion(new Date());
         bean.setGpoFechaAdd(new Date());
         bean.setGpoUsuAdd(1);
         bean.setGpoEstado("1");
         Logger.info("Registrando Grupo");
+        System.out.println("parametro es : " + bean.getEscuela());
         return grupoDAO.add(bean);
     }
 

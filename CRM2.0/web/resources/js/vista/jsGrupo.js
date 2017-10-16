@@ -6,42 +6,39 @@
 var list_body = $('#list_body');
 var gService = new grupoService();
 $(document).ready(function () {
-    gService.listGrupo({idEscuela:1},listGrupo);
+    gService.listGrupo({idEscuela: 1}, listGrupo);
 });
 
 function listGrupo(list) {
     var s = "";
     for (var i = 0; i < list.length; i++) {
         var grupo = list[i];
-        s += '<li class="collection-item avatar">';
-        s += '<div class="col l2 ">';
-        s += '<div class="circle red" style="display: table;margin: auto;">';
-        s += '<h5 style="display: table-cell;vertical-align: middle;text-align: center;color: white">D</h5>';
-        s += '</div>';
-        s += '<strong><span class="title">'+grupo.gpoNombre+'</span></strong>';
-        s += '<p class="collections-content"><span class="task-cat green accent-3">Activo</span></p>';
-        s += '</div>';
-        s += '<div class="col l4">';
-        s += '<p class="collections-content">Ninguno Asignado</p>';
-        s += '<p class="collections-content"><span class="task-cat blue darken-1">MIPES de G.P.</span></p>';
-        s += '</div>';
-        s += '<div class="col l3">';
-        s += '<p class="collections-content">'+grupo.gpoFechaCreacion+'</p>';
-        s += '<p class="collections-content"><span class="task-cat amber darken-1">Fecha de Creación</span></p>';
-        s += '</div>';
-        s += '<div class="col l3">';
-        s += '<a class="btn-floating waves-effect btn-large waves-light blue darken-1 btn modal-trigger tooltipped blue darken-2" href="#modal2" data-tooltip="Editar"><i class="mdi-content-create"></i></a>';
-        s += '<a class="btn-floating waves-effect btn-large waves-light red"><i class="mdi-content-clear"></i></a>';
-        s += '</div>';
-        s += '</li>';
+        s += '<tr>';
+        s += '<td><button class="btn-floating waves-effect waves-light">D</button></td>';
+        s += '<td class="condensed"><strong>' + grupo.gpoNombre + '</strong></td>';
+        s += '<td class="condensed">Arnold Morales Gomez</td>';
+        s += '<td>';
+        s += '<a class="grey-text"><i class="mdi-editor-mode-edit tiny"></i></a>';
+        s += '<a class="grey-text"><i class="mdi-content-clear tiny"></i></a>';
+        s += '<a class="grey-text"><i class="mdi-navigation-more-vert tiny"></i></a>';
+        s += '</td>';
+        s += '</tr>';
     }
     $(list_body).empty();
     $(list_body).append(s);
 }
 
-function save(){
-    var nombre = $("#ngpo").val();
-    gService.addGrupo({gpoNombre:nombre},alert);
+function save() {
+    var nombregp = $("#ngpo").val();
+    var lreunion = $("#lgreu").val();
+    var grupo = {
+        gpoNombre: nombregp,
+        gpoLugarReunion: lreunion,
+        escuela: {
+            idEscuela: 1
+        }        
+    };
+    gService.addGrupo(grupo, alert);
 }
 
                                                                 
