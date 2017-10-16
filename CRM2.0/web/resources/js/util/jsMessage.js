@@ -334,5 +334,68 @@ var message = {
             title:"Listado de los Tipos de Eventos",
             empty: "Aún no hay Tipos de Eventos registrados en el sistema"
         }
-    } 
+    },
+    rol: {
+        add: {
+            title:"Registrar Tipo de Rol",
+            success: "El Tipo de Rol fue registrado con éxito.",
+            error: "Hubo un error al momento de registrar el Tipo de Rol"
+        },
+        update: {
+            title:"Actualización del Tipo de Rol",
+            success: "Los datos del Tipo de Rol han sido actualizados con éxito.",
+            error: "Hubo un error al momento de actualizar los datos del Tipo de Rol"
+        },
+        delete: {
+            title:"Eliminación del Tipo de Rol",
+            success: "El Tipo de Rol fue eliminado con éxito.",
+            error: "Hubo un error al momento de eliminar el Tipo de Rol."
+        },
+        list: {
+            title:"Listado de los Tipos de Roles",
+            empty: "Aún no hay Tipos de Roles registrados en el sistema"
+        }
+    },
+    asistenciaevt: {
+        add: {
+            title:"Registrar Asistencia al Evento",
+            success: "La Asistencia al Evento fue registrado con éxito.",
+            error: "Hubo un error al momento de registrar la Asistencia al Evento"
+        },
+        update: {
+            title:"Actualización de Asistencia al Evento",
+            success: "Los datos de la Asistencia al Evento han sido actualizados con éxito.",
+            error: "Hubo un error al momento de actualizar los datos de la Asistencia al Evento"
+        },
+        delete: {
+            title:"Eliminación de la Asistencia al Evento",
+            success: "La Asistencia al Evento fue eliminado con éxito.",
+            error: "Hubo un error al momento de eliminar la Asistencia al Evento."
+        },
+        list: {
+            title:"Listado de las Asistencias a los Eventos",
+            empty: "Aún no hay Aistencia a los Eventos registrados en el sistema"
+        }
+    },
+    privilegio: {
+        add: {
+            title:"Registrar privilegio",
+            success: "El Privilegio fue registrado con éxito.",
+            error: "Hubo un error al momento de registrar el privilegio"
+        },
+        update: {
+            title:"Actualización de privilegio",
+            success: "Los datos de Privilegio han sido actualizados con éxito.",
+            error: "Hubo un error al momento de actualizar el Privilegio"
+        },
+        delete: {
+            title:"Eliminación Privilegio",
+            success: "El Privilegio fue eliminado con éxito.",
+            error: "Hubo un error al momento de eliminar el Privilegio."
+        },
+        list: {
+            title:"Listado de los Privilegio",
+            empty: "Aún no hay Privilegios registrados en el sistema"
+        }
+    }
 };
