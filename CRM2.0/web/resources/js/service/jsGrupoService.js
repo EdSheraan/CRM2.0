@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function grupoService(){
+function grupoService() {
     var connector = new jsConnector();
-    this.addGrupo = function(grupo,_callback){
+    this.addGrupo = function (grupo, _callback) {
         try {
             connector.post(url.grupo.add, JSON.stringify(grupo), function (result) {
                 //Aqui va la validación de la respuesta del servidor
@@ -15,10 +15,10 @@ function grupoService(){
                         content: message.grupo.add.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.grupo.add.title,
-                       content:message.grupo.add.error
+                        title: message.grupo.add.title,
+                        content: message.grupo.add.error
                     });
                 }
             });
@@ -27,20 +27,20 @@ function grupoService(){
         }
 
     };
-    this.updateGrupo = function(grupo, _callback){
+    this.updateGrupo = function (grupo, _callback) {
         var connectionUrl = "/grupo/update";
         try {
-            connector.post(connectionUrl,grupo,function(result){
-                if (result!== undefined && result!==null && result === 1) {
+            connector.post(connectionUrl, grupo, function (result) {
+                if (result !== undefined && result !== null && result === 1) {
                     successMessage({
-                        title:message.grupo.update.title,
-                        content:message.grupo.update.success
+                        title: message.grupo.update.title,
+                        content: message.grupo.update.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.grupo.update.title,
-                       content:message.grupo.update.error
+                        title: message.grupo.update.title,
+                        content: message.grupo.update.error
                     });
                 }
             });
@@ -49,21 +49,21 @@ function grupoService(){
         }
 
     };
-    
-    this.deleteGrupo = function(grupo, _callback){
+
+    this.deleteGrupo = function (grupo, _callback) {
         var connectionUrl = "/grupo/delete";
         try {
-            connector.post(connectionUrl,grupo,function(result){
-                if (result!== undefined && result!==null && result === 1) {
+            connector.post(connectionUrl, JSON.stringify(grupo), function (result) {
+                if (result !== undefined && result !== null && result === 1) {
                     successMessage({
-                        title:message.grupo.delete.title,
-                        content:message.grupo.delete.success
+                        title: message.grupo.delete.title,
+                        content: message.grupo.delete.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.grupo.delete.title,
-                       content:message.grupo.delete.error
+                        title: message.grupo.delete.title,
+                        content: message.grupo.delete.error
                     });
                 }
             });
@@ -71,17 +71,17 @@ function grupoService(){
             console.log(e);
         }
     };
-    
-    this.listGrupo = function (escuela,_callback) {
+
+    this.listGrupo = function (escuela, _callback) {
         var connectionUrl = "/grupo/list";
         try {
             connector.post(connectionUrl, JSON.stringify(escuela), function (result) {
-                if (result !== undefined && result !== null && result.length>0) {
+                if (result !== undefined && result !== null && result.length > 0) {
                     _callback(result);
-                }else{
+                } else {
                     infoMessage({
-                       title:message.grupo.list.title,
-                       content:message.grupo.list.empty
+                        title: message.grupo.list.title,
+                        content: message.grupo.list.empty
                     });
                 }
             });

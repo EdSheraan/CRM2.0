@@ -10,8 +10,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../jspf/general.jspf" %>
+        <style>
+            .actCRUD{
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .actCRUD:hover{
+                color: #212121;
+            }
+        </style>
     </head>
-    <body>
+    <body class="white">
         <%@include file="../../jspf/header.jspf" %>
         <div id="main">
             <div class="wrapper">
@@ -20,6 +29,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1">
+                                <h5>Lista de Grupos Pequeños</h5>
                                 <table class="highlight">
                                     <tbody id="list_body"></tbody>
                                 </table>
