@@ -10,12 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../jspf/general.jspf" %>
-        <style>
-            footer {
-                width: 100%;
-                position: fixed;
-                bottom: 0;
-            }
+        <style>            
             .circulo {
                 width: 200px;
                 height: 200px;
@@ -97,14 +92,7 @@
             </div>
         </div>
 
-        <footer class="page-footer blue-grey darken-4" style="padding-left: 0;">
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2017 Copyright 
-                    <a class="grey-text text-lighten-4 right thin" href="https://www.facebook.com/mipes.upeu" target="_blank">Facebook</a>
-                </div>
-            </div>
-        </footer>
+        
         <script>
             function redirect() { //POR MIENTRAS HASTA TENER LOS LINKS EN LA DB
                 location.href = "privilegios";

@@ -9,7 +9,7 @@ function grupoService(){
         var connectionUrl ="/grupo/add";
         var connector = new jsConnector();
         try {
-            connector.post(connectionUrl, grupo, function (result) {
+            connector.post(connectionUrl, JSON.stringify(grupo), function (result) {
                 //Aqui va la validación de la respuesta del servidor
                 if (result !== undefined && result !== null) {
                     successMessage({

@@ -5,6 +5,7 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,10 @@ public class GrupoService implements CRUDService<Grupo>{
     
     @Override
     public Object add(Grupo bean) {
+        bean.setGpoFechaCreacion(new Date());
+        bean.setGpoFechaAdd(new Date());
+        bean.setGpoUsuAdd(1);
+        bean.setGpoEstado("1");
         Logger.info("Registrando Grupo");
         return grupoDAO.add(bean);
     }
