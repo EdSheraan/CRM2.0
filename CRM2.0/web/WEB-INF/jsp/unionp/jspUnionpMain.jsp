@@ -5,53 +5,34 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../jspf/general.jspf" %>
+        
         <style>
-            @media only screen and (max-width: 600px) {
-                .oc{
-                    display: none;
-                }
+            .actCRUD{
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .actCRUD:hover{
+                color: #212121;
             }
         </style>
     </head>
     <body>
         <%@include file="../../jspf/header.jspf" %>
-        <div class="col s12 m12 l12">
-            <div class="row">
-                <h5 class="col offset-l1">Lista de <strong>UNIONES</strong></h5>
-                <div id="work-collections">
-                    <div class="row">
-                        <div class="col s12 m12 l10 offset-l1">
-                            <ul id="list_body" class="collection">
-                                <!--<li class="collection-item avatar">
-                                    <div class="col l4">
-                                        <div class="circle red" style="display: table;margin: auto;">
-                                            <h5 style="display: table-cell;vertical-align: middle;text-align: center;color: white">U</h5>
-                                        </div>
-                                        <strong><span class="title">Unión Peruana del Norte</span></strong>
-                                        <p class="collections-content"><span class="task-cat green accent-3">Activo</span></p>
-                                    </div>
-                                    <div class="col l4 oc">
-                                        <p class="collections-content">EDER BENDEZU ALGO MAS</p>
-                                        <p class="collections-content"><span class="task-cat blue darken-1">MIPES de UNION</span></p>
-                                    </div>
-                                    <div class="col l3 oc">
-                                        <a class="btn-floating waves-effect btn-large waves-light blue darken-1 btn modal-trigger tooltipped blue darken-2" href="#modal2" data-tooltip="Editar"><i class="mdi-content-create"></i></a>
-                                        <a class="btn-floating waves-effect btn-large waves-light red"><i class="mdi-content-clear"></i></a>
-                                    </div>
-                                    <div class="col s1">
-                                        <a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown1">
-                                            <i class="mdi-navigation-more-vert right"></i>
-                                        </a>
-                                        <ul id="dropdown1" class="dropdown-content">
-                                            <li><a href="#!" class="-text">Asignar Lider</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>-->
-                            </ul>
+        <div id="main">
+            <div class="wrapper">
+                <%@include file="../../jspf/left_aside.jspf" %>
+                <section id="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m12 l10 offset-l1">
+                                <h5>Lista de Grupos Pequeños</h5>
+                                <table class="highlight">
+                                    <tbody id="list_body"></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>            
             </div>
         </div>
         <div class="fixed-action-btn " style="bottom: 10%; right: 19px;" >

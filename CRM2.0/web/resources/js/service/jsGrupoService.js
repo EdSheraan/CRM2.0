@@ -53,7 +53,7 @@ function grupoService() {
     this.deleteGrupo = function (grupo, _callback) {
         var connectionUrl = "/grupo/delete";
         try {
-            connector.post(connectionUrl, grupo, function (result) {
+            connector.post(connectionUrl, JSON.stringify(grupo), function (result) {
                 if (result !== undefined && result !== null && result === 1) {
                     successMessage({
                         title: message.grupo.delete.title,
