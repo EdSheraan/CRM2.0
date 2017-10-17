@@ -18,7 +18,7 @@ function listGrupo(list) {
             state = "<h6 class='thin black-text'>Inactivo</h6>";
         }
         s += '<tr>';
-        s += '<td style="width:38px;"><button style="'+color[getRandom(color.length)]+'" class="btn-floating waves-effect waves-light">' + r + '</button></td>';
+        s += '<td style="width:38px;"><button style="' + color[getRandom(color.length)] + '" class="btn-floating waves-effect waves-light">' + r + '</button></td>';
         s += '<td class="condensed"><h6><strong>' + grupo.gpoNombre.toUpperCase() + '</strong></h6></td>';
         s += '<td class="condensed">' + state + '</td>';
         s += '<td style="float:right">';
@@ -40,7 +40,7 @@ function getLetter(nombre) {
 
 function updateGrupo(id) {
     console.log("Comenzando a editar...");
-    var s = createModal("Damasco I","Casa de Arnold","active");
+    var s = createModal("Damasco I", "Casa de Arnold", "active");
     $(".modal-content").empty();
     $(".modal-content").append(s);
     $('#modal1').openModal();
@@ -73,7 +73,7 @@ function reload(id) {
     }
 }
 
-function createModal(nombre,lugar,clase) {
+function createModal(nombre, lugar, clase) {
     var s = '';
     s += '<h5 class="grey-text darken-3">Grupo Pequeño</h5>';
     s += '<div class="row">';
@@ -81,13 +81,13 @@ function createModal(nombre,lugar,clase) {
     s += '<div class="row">';
     s += '<div class="input-field col s12 l6 m6">';
     s += '<i class="mdi-social-group prefix"></i>';
-    s += '<input id="ngpo" type="text" class="validate" value="'+nombre+'">';
-    s += '<label for="ngpo" class="'+clase+'">Nombre</label>';
+    s += '<input id="ngpo" type="text" class="validate" value="' + nombre + '">';
+    s += '<label for="ngpo" class="' + clase + '">Nombre</label>';
     s += '</div>';
     s += '<div class="input-field col s12 l6 m6">';
     s += '<i class="mdi-action-home prefix"></i>';
-    s += '<input id="lgreu" type="text" class="validate" value="'+lugar+'">';
-    s += '<label for="lgreu" class="'+clase+'">Lugar de Reunión</label>';
+    s += '<input id="lgreu" type="text" class="validate" value="' + lugar + '">';
+    s += '<label for="lgreu" class="' + clase + '">Lugar de Reunión</label>';
     s += '</div>';
     s += '</div>';
     s += '</form>';
@@ -95,8 +95,8 @@ function createModal(nombre,lugar,clase) {
     return s;
 }
 
-function createGroup(){
-    var s = createModal("","","");
+function createGroup() {
+    var s = createModal("", "", "");
     $(".modal-content").empty();
     $(".modal-content").append(s);
     $('#modal1').openModal();

@@ -10,15 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../jspf/general.jspf" %>
-        <style>
-            .actCRUD{
-                font-size: 20px;
-                cursor: pointer;
-            }
-            .actCRUD:hover{
-                color: #212121;
-            }
-        </style>
     </head>
     <body class="white">
         <%@include file="../../jspf/header.jspf" %>
