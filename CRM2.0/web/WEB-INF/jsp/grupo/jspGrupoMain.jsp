@@ -20,7 +20,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1" style="margin-top: 2%;">
-                                <h5>Lista de Grupos Pequeños</h5>
+                                <h5 class="light italic">Grupos Pequeños</h5>
                                 <table class="highlight">
                                     <tbody id="list_body"></tbody>
                                 </table>
@@ -45,6 +45,6 @@
         <%@include file="../../jspf/footer.jspf" %>
         <script src="<c:url value="/resources/js/service/jsGrupoService.js"></c:url>" type="text/javascript"></script>
         <script src="<c:url value="/resources/js/vista/jsGrupo.js"></c:url>" type="text/javascript"></script>
-        <script src="<c:url value="/resources/js/util/jsGetColors.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/util/jsColors.js"></c:url>" type="text/javascript"></script>
     </body>
 </html>

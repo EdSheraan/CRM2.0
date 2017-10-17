@@ -83,12 +83,12 @@
             <section></section>
         </div>
         <!--Inicio de modal LOGIN-->
-        <div id="modal1" class="modal">
+        <div id="modal1" class="modal white">
             <div class="modal-content">
                 <div class="row">
                     <form name="f" action="<c:url value="/j_spring_security_check"/>" method="POST">
                         <div class="col s12 l6 m6 offset-l3 offset-m3">
-                            <center><h5 class="thin">Iniciar Sesión</h5></center>
+                            <center><h5 class="light italic">Iniciar Sesión</h5></center>
                             <div class="input-field">
                                 <i class="mdi-action-account-circle prefix"></i>
                                 <input id="icon_prefix3" type="text" name="username" class="validate">
@@ -107,8 +107,8 @@
                     </form>
                 </div>
             </div>
-            <div class="modal-footer">
-                <a class="btn waves-effect waves-light grey darken-1 modal-action modal-close left">Cancelar</a>
+            <div class="modal-footer white">
+                <a class="btn waves-effect waves-light btn-flat modal-action modal-close left white">Cancelar</a>
             </div>
         </div>
         <!--Fin de modal LOGIN-->

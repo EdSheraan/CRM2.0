@@ -23,19 +23,13 @@ function listGrupo(list) {
         s += '<td class="condensed">' + state + '</td>';
         s += '<td style="float:right">';
         s += '<a class="grey-text" onclick="updateGrupo(' + grupo.idGrupo + ')"><i class="mdi-editor-mode-edit actCRUD"></i></a>';
-        s += '<a class="grey-text" onclick="deleteGrupo(' + grupo.idGrupo + ')"><i class="mdi-content-clear actCRUD"></i></a>';
+        s += '<a class="grey-text" onclick="deleteGrupo(' + grupo.idGrupo + ')"><i class="mdi-action-delete actCRUD"></i></a>';
         s += '<a class="grey-text"><i class="mdi-navigation-more-vert actCRUD"></i></a>';
         s += '</td>';
         s += '</tr>';
     }
     $(list_body).empty();
     $(list_body).append(s);
-}
-
-function getLetter(nombre) {
-    var letter = nombre.split("");
-    var Let = letter[0];
-    return Let.toUpperCase();
 }
 
 function updateGrupo(id) {
@@ -67,6 +61,7 @@ function save() {
     };
     gService.addGrupo(grupo, reload);
 }
+
 function reload(id) {
     if (id !== 0) {
         gService.listGrupo({idEscuela: 1}, listGrupo);
@@ -75,7 +70,7 @@ function reload(id) {
 
 function createModal(nombre, lugar, clase) {
     var s = '';
-    s += '<h5 class="grey-text darken-3">Grupo Pequeño</h5>';
+    s += '<h5 class="thin">Grupo Pequeño</h5>';
     s += '<div class="row">';
     s += '<form class="col s12">';
     s += '<div class="row">';
