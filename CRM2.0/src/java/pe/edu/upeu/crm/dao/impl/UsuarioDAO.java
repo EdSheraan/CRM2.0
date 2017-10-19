@@ -43,6 +43,6 @@ public class UsuarioDAO extends CrudDAO<Usuario> {
     }
 
     public Usuario getByName(HibernateParam param) {
-        return listUnique("FROM Usuario u where u.usuUsuario=:usuario",param);
+        return listUnique("FROM Usuario u join fetch u.persona as persona where u.usuUsuario=:usuario",param);
     }
 }

@@ -20,7 +20,7 @@ function listGrupo(list) {
         s += '<tr>';
         s += '<td style="width:38px;"><button style="' + color[getRandom(color.length)] + '" class="btn-floating waves-effect waves-light">' + r + '</button></td>';
         s += '<td class="condensed"><h6><strong>' + grupo.gpoNombre.toUpperCase() + '</strong></h6></td>';
-        s += '<td class="condensed">' + state + '</td>';
+        s += '<td class="condensed">' + new Date(grupo.gpoFechaCreacion) + '</td>';
         s += '<td style="float:right">';
         s += '<a class="grey-text" onclick="updateGrupo(' + grupo.idGrupo + ')"><i class="mdi-editor-mode-edit actCRUD"></i></a>';
         s += '<a class="grey-text" onclick="deleteGrupo(' + grupo.idGrupo + ')"><i class="mdi-action-delete actCRUD"></i></a>';

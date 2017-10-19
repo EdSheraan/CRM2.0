@@ -110,7 +110,7 @@ public class Usuario implements java.io.Serializable {
         this.usuEstadoClave = usuEstadoClave;
     }
     
-    
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario")
     public Set<Detrol> getDetrols() {
         return this.detrols;

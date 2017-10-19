@@ -44,8 +44,6 @@ public class GrupoController {
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
     Integer addGrupo(@RequestBody Grupo grupo) {
-        esc.setIdEscuela(1);
-        grupo.setEscuela(esc);
         return (Integer) grupoService.add(grupo);
     }
 

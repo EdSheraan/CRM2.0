@@ -24,7 +24,7 @@ function connect(type, url, data, _callback) {
         contentType: 'application/json',
         data: data,
         dataType: 'json',
-        timeout: 2000,
+        timeout: 1000,
         beforeSend: function (xhr) {
             xhr.setRequestHeader(csrfHeader, csrfToken);
         },
