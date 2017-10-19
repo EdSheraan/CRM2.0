@@ -18,7 +18,7 @@ import pe.edu.upeu.crm.service.CRUDService;
  * @author Leandro Burgos
  */
 @Service
-public class MimebrogpService implements CRUDService<Miembrogp>{
+public class MiembrogpService implements CRUDService<Miembrogp>{
     
     @Autowired
     private MiembrogpDAO miembrogpDAO;

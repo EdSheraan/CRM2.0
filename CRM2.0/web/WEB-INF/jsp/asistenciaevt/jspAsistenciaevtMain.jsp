@@ -12,11 +12,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../jspf/general.jspf" %>
         <link href="<c:url value='/resources/css/jquery.easy-pie-chart.css'></c:url>" rel="stylesheet" type="text/css"/>
-        <style>
-            .titleGP{
-                text-align: right
-            }
-        </style>
+            <style>
+                .titleGP{
+                    text-align: right
+                }
+            </style>
         </head>
         <body class="white">
         <%@include file="../../jspf/header.jspf" %>   
@@ -26,7 +26,7 @@
                 <section id="content">
                     <div class="container">
                         <div class="row">
-                            <div class="col s12 m12 l10 offset-l1 row card-panel">
+                            <div class="col s12 m12 l10 offset-l1 row">
                                 <div class="col l7 s12">
                                     <h5>Registro de Asistencia</h5>
                                     <table class="highlight">
@@ -105,52 +105,51 @@
                 </section>            
             </div>
         </div>
-
+        <script src="<c:url value='/resources/js/plugins/jquery.easypiechart.min.js'></c:url>" type="text/javascript"></script>
         <script type="text/javascript">
-            $(document).ready(function () {
-                startPieChart();
-                var nMiembros = document.getElementById("list_body").rows.length;
-                $(".valF").attr("value",nMiembros);
-                $(".falV").empty();
-                $(".falV").append(nMiembros);
-            });
+                                        $(document).ready(function () {
+                                            startPieChart();
+                                            var nMiembros = document.getElementById("list_body").rows.length;
+                                            $(".valF").attr("value", nMiembros);
+                                            $(".falV").empty();
+                                            $(".falV").append(nMiembros);
+                                        });
 
-            function saveAsis(){
-                confirm("¿Seguro que desea guardar?");
-            }
+                                        function saveAsis() {
+                                            confirm("¿Seguro que desea guardar?");
+                                        }
 
-            function startPieChart() {
-                $('.presente').easyPieChart({
-                    easing: 'easeOutBounce',
-                    lineWidth: '3',
-                    barColor: '#00e676',
-                    size: 60,
-                    animate: 3000,
-                    onStep: function (from, to, percent) {
-                        $(this.el).find('.percent').text(Math.round(percent));
-                    }
-                });
-            }
-            
-            function changePF(id){
-                var P = parseInt($(".valP").val());
-                var F = parseInt($(".valF").val());
-                if ($("#"+id).prop('checked')) {
-                    P = P + 1;
-                    F = F - 1;
-                } else {
-                    F = F + 1;
-                    P = P - 1;
-                }
-                $(".valF").attr("value", F);
-                $(".falV").empty();
-                $(".falV").append(F);
-                $(".valP").attr("value", P);
-                $(".preV").empty();
-                $(".preV").append(P);
-            }
+                                        function startPieChart() {
+                                            $('.presente').easyPieChart({
+                                                easing: 'easeOutBounce',
+                                                lineWidth: '3',
+                                                barColor: '#00e676',
+                                                size: 60,
+                                                animate: 3000,
+                                                onStep: function (from, to, percent) {
+                                                    $(this.el).find('.percent').text(Math.round(percent));
+                                                }
+                                            });
+                                        }
+
+                                        function changePF(id) {
+                                            var P = parseInt($(".valP").val());
+                                            var F = parseInt($(".valF").val());
+                                            if ($("#" + id).prop('checked')) {
+                                                P = P + 1;
+                                                F = F - 1;
+                                            } else {
+                                                F = F + 1;
+                                                P = P - 1;
+                                            }
+                                            $(".valF").attr("value", F);
+                                            $(".falV").empty();
+                                            $(".falV").append(F);
+                                            $(".valP").attr("value", P);
+                                            $(".preV").empty();
+                                            $(".preV").append(P);
+                                        }
 
         </script>
-        <script src="<c:url value='/resources/js/plugins/jquery.easypiechart.min.js'></c:url>" type="text/javascript"></script>
     </body>
 </html>

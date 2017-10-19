@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.crm.bean.Escuela;
-import pe.edu.upeu.crm.bean.Grupo;
-import pe.edu.upeu.crm.service.impl.GrupoService;
+import pe.edu.upeu.crm.bean.Miembrogp;
+import pe.edu.upeu.crm.service.impl.MiembrogpService;
 
 /**
  *
@@ -26,41 +26,41 @@ import pe.edu.upeu.crm.service.impl.GrupoService;
  */
 @Controller
 @Scope("request")
-@RequestMapping("grupo")
-public class GrupoController {
+@RequestMapping("miembrogp")
+public class MiembrogpController {
     
     @Autowired
-    private GrupoService grupoService;
+    private MiembrogpService miembrogpService;
     private ModelAndView modelAndView;
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
-    public ModelAndView showJspGrupo(ModelMap model) {
-        modelAndView = new ModelAndView("grupo/jspGrupoMain", model);
+    public ModelAndView showJspMiembrogp(ModelMap model) {
+        modelAndView = new ModelAndView("miembrogp/jspMiembrogpMain", model);
         return modelAndView;
     }
     
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addGrupo(@RequestBody Grupo grupo) {
-        return (Integer) grupoService.add(grupo);
+    Integer addMiembrogp(@RequestBody Miembrogp miembrogp) {
+        return (Integer) miembrogpService.add(miembrogp);
     }
 
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer updateGrupo(@RequestBody Grupo grupo) {
-        return grupoService.update(grupo);
+    Integer updateMiembrogp(@RequestBody Miembrogp miembrogp) {
+        return miembrogpService.update(miembrogp);
     }
 
     @RequestMapping(value = "/delete", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer deleteGrupo(@RequestBody Grupo grupo) {
-        return grupoService.delete(grupo);
+    Integer deleteMiembrogp(@RequestBody Miembrogp miembrogp) {
+        return miembrogpService.delete(miembrogp);
     }
 
     @RequestMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public @ResponseBody
-    List<Grupo> listGrupo(@RequestBody Escuela escuela) {
-        return grupoService.listEnabled(escuela.getIdEscuela());
+    List<Miembrogp> listMiembrogp(@RequestBody Escuela escuela) {
+        return miembrogpService.listEnabled(escuela.getIdEscuela());
     }
     
 }

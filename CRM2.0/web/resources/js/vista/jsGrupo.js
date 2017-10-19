@@ -7,20 +7,18 @@ $(document).ready(function () {
 function listGrupo(list) {
     console.log("Cargando Grupos ...");
     var s = "";
-    var state = "";
     for (var i = 0; i < list.length; i++) {
         var grupo = list[i];
         var r = getLetter(grupo.gpoNombre);
-        var status = grupo.gpoEstado;
-        if (parseInt(status) === 1) {
-            state = "<h6 class='thin black-text'>Activo</h6>";
-        } else {
-            state = "<h6 class='thin black-text'>Inactivo</h6>";
-        }
+        var date = new Date(grupo.gpoFechaCreacion);
+        var year = date.getFullYear();
+        var month = 1 + date.getMonth();
+        var day = date.getDate();
         s += '<tr>';
         s += '<td style="width:38px;"><button style="' + color[getRandom(color.length)] + '" class="btn-floating waves-effect waves-light">' + r + '</button></td>';
         s += '<td class="condensed"><h6><strong>' + grupo.gpoNombre.toUpperCase() + '</strong></h6></td>';
-        s += '<td class="condensed">' + new Date(grupo.gpoFechaCreacion) + '</td>';
+        s += '<td class="light italic tR"><small>Registrado el</small> ' + day + '/' + month + '/' + year + '</td>';
+        s += '<td class="light italic tR">' + grupo.gpoLugarReunion + '</td>';
         s += '<td style="float:right">';
         s += '<a class="grey-text" onclick="updateGrupo(' + grupo.idGrupo + ')"><i class="mdi-editor-mode-edit actCRUD"></i></a>';
         s += '<a class="grey-text" onclick="deleteGrupo(' + grupo.idGrupo + ')"><i class="mdi-action-delete actCRUD"></i></a>';
@@ -34,10 +32,11 @@ function listGrupo(list) {
 
 function updateGrupo(id) {
     console.log("Comenzando a editar...");
+    var grupo = {idGrupo: id};
     var s = createModal("Damasco I", "Casa de Arnold", "active");
-    $(".modal-content").empty();
-    $(".modal-content").append(s);
-    $('#modal1').openModal();
+    /*$(".modal-content").empty();
+     $(".modal-content").append(s);
+     $('#modal1').openModal();*/
 }
 
 function deleteGrupo(idGrupo) {
@@ -45,22 +44,26 @@ function deleteGrupo(idGrupo) {
     if (reply === true) {
         console.log(idGrupo);
         console.log("Eliminando...");
-        var grupo = {idGrupo: idGrupo, escuela:{idEscuela:1}};
+        var grupo = {idGrupo: idGrupo, escuela: {idEscuela: 1}};
         gService.deleteGrupo(grupo, reload);
     } else {
-        console.log("nancy");
+        console.log("Se canceló la eliminación...");
     }
 }
 
 function save() {
     var nombregp = $("#ngpo").val();
     var lreunion = $("#lgreu").val();
-    var grupo = {
-        gpoNombre: nombregp,
-        gpoLugarReunion: lreunion,
-        escuela:{idEscuela:1}
-    };
-    gService.addGrupo(grupo, reload);
+    if (nombregp !== "" && lreunion !== "") {
+        var grupo = {
+            gpoNombre: nombregp,
+            gpoLugarReunion: lreunion,
+            escuela: {idEscuela: 1}
+        };
+        gService.addGrupo(grupo, reload);
+    }else{
+        alert("Campos Incompletos...");
+    }
 }
 
 function reload(id) {

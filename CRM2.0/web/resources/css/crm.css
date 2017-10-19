@@ -5,3 +5,11 @@
 .actCRUD:hover{
     color: #212121;
 }
+body{
+    background: white;
+}
+@media only screen and (max-width: 600px) {
+    .tR {
+        display : none;
+    }
+}
