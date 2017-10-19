@@ -5,23 +5,43 @@
  */
 
 function errorMessage(params) {
-    params.type ="error";
-    showMessage(params);
+    new PNotify({
+        title: '<span class="red-text">' + params.title + '</span>',
+        text: params.content,
+        addclass: 'crm-pnotify',
+        icon: 'mdi-alert-warning red-text',
+        sticker: false
+    });
 }
 
 function infoMessage(params) {
-    params.type ="info";
-    showMessage(params);
+    new PNotify({
+        title: '<span class="blue-text">' + params.title + '</span>',
+        text: params.content,
+        addclass: 'crm-pnotify',
+        icon: 'mdi-action-info blue-text',
+        sticker: false
+    });
 }
 
 function successMessage(params) {
-    params.type ="success";
-    showMessage(params);
+    new PNotify({
+        title: '<span class="green-text">' + params.title + '</span>',
+        text: params.content,
+        addclass: 'crm-pnotify',
+        icon: 'mdi-action-done green-text lighten-3',
+        sticker: false
+    });
 }
 
-function showMessage(params){
-    //Esto es por mientras, luego se pondrá segun el plugin del materialize
-    alert(params.type+": "+params.title + "\n"+ params.content);
+function showMessage(params) {
+    new PNotify({
+        title: params.title,
+        text: params.content,
+        addclass: 'crm-pnotify',
+        icon: false,
+        sticker: false
+    });
 }
 
 /**
@@ -38,363 +58,363 @@ function showMessage(params){
 var message = {
     persona: {
         add: {
-            title:"Registro de Persona",
+            title: "Registro de Persona",
             success: "Persona registrada con éxito.",
             error: "Hubo un error al momento de registrar a la persona."
         },
         update: {
-            title:"Actualización de datos Personales",
+            title: "Actualización de datos Personales",
             success: "Los datos de la persona han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de la persona."
         },
         delete: {
-            title:"Eliminación de Persona",
+            title: "Eliminación de Persona",
             success: "Persona eliminada con éxito.",
             error: "Hubo un error al momento de eliminar a la persona."
         },
         list: {
-            title:"Listado de Personas",
+            title: "Listado de Personas",
             empty: "Aún no hay personas registradas en el sistema"
         }
     },
     connector: {
-        title:"Sistema CRM Digital 2.0",
+        title: "Sistema CRM Digital 2.0",
         error: "Ocurrió un error al momento de enviar la información, asegurese de que tiene conexión a internet. " +
                 "De lo contrario, comuníquese con el administrador del sistema."
     },
     grupo: {
         add: {
-            title:"Registro de Grupo Pequeño",
+            title: "Registro de Grupo Pequeño",
             success: "Grupo Pequeño registrado con éxito.",
             error: "Hubo un error al momento de registrar al Grupo Pequeño."
         },
         update: {
-            title:"Actualización de Grupo Pequeño",
+            title: "Actualización de Grupo Pequeño",
             success: "Los datos del Grupo Pequeño han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos del Grupo Pequeño."
         },
         delete: {
-            title:"Eliminación de Grupo Pequeño",
+            title: "Eliminación de Grupo Pequeño",
             success: "Grupo Pequeño eliminado con éxito.",
             error: "Hubo un error al momento de eliminar al Grupo Pequeño."
         },
         list: {
-            title:"Listado de Grupos Pequeños",
+            title: "Listado de Grupos Pequeños",
             empty: "Aún no hay Grupos Pequeños registrados en el sistema"
         }
     },
     evento: {
         add: {
-            title:"Registro de Evento",
+            title: "Registro de Evento",
             success: "Evento registrado con éxito.",
             error: "Hubo un error al momento de registrar el Evento"
         },
         update: {
-            title:"Actualización del Evento",
+            title: "Actualización del Evento",
             success: "Los datos del Evento han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos del Evento"
         },
         delete: {
-            title:"Eliminación del Evento",
+            title: "Eliminación del Evento",
             success: "Evento eliminado con éxito.",
             error: "Hubo un error al momento de eliminar el Evento."
         },
         list: {
-            title:"Listado de Eventos",
+            title: "Listado de Eventos",
             empty: "Aún no hay Eventos registrados en el sistema"
         }
     },
     unionp: {
         add: {
-            title:"Registro de Unión",
+            title: "Registro de Unión",
             success: "Unión registrado con éxito.",
             error: "Hubo un error al momento de registrar Unión"
         },
         update: {
-            title:"Actualización de Unión",
+            title: "Actualización de Unión",
             success: "Los datos del Unión han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de Unión"
         },
         delete: {
-            title:"Eliminación de Unión",
+            title: "Eliminación de Unión",
             success: "Unión eliminado con éxito.",
             error: "Hubo un error al momento de eliminar Unión."
         },
         list: {
-            title:"Listado de Unións",
+            title: "Listado de Unións",
             empty: "Aún no hay Uniones registrados en el sistema"
         }
     },
     asmiemgp: {
         add: {
-            title:"Registro de Unión",
+            title: "Registro de Unión",
             success: "Unión registrado con éxito.",
             error: "Hubo un error al momento de registrar Unión"
         },
         update: {
-            title:"Actualización de Unión",
+            title: "Actualización de Unión",
             success: "Los datos del Unión han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de Unión"
         },
         delete: {
-            title:"Eliminación de Unión",
+            title: "Eliminación de Unión",
             success: "Unión eliminado con éxito.",
             error: "Hubo un error al momento de eliminar Unión."
         },
         list: {
-            title:"Listado de Unións",
+            title: "Listado de Unións",
             empty: "Aún no hay Uniones registrados en el sistema"
         }
     },
     campo: {
         add: {
-            title:"Registro de Campo",
+            title: "Registro de Campo",
             success: "Campo registrado con éxito.",
             error: "Hubo un error al momento de registrar el Campo"
         },
         update: {
-            title:"Actualización de Campo",
+            title: "Actualización de Campo",
             success: "Los datos del Campo han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de Campo"
         },
         delete: {
-            title:"Eliminación de Campo",
+            title: "Eliminación de Campo",
             success: "Campo eliminado con éxito.",
             error: "Hubo un error al momento de eliminar Campo."
         },
         list: {
-            title:"Listado de Campos",
+            title: "Listado de Campos",
             empty: "Aún no hay Campos registrados en el sistema"
         }
     },
     distrito: {
         add: {
-            title:"Registro de Distrito Misionero",
+            title: "Registro de Distrito Misionero",
             success: "Distrito Misionero registrado con éxito.",
             error: "Hubo un error al momento de registrar al Distrito Misionero"
         },
         update: {
-            title:"Actualización de Distrito Misionero",
+            title: "Actualización de Distrito Misionero",
             success: "Los datos del Distrito Misionero han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de Distrito Misionero"
         },
         delete: {
-            title:"Eliminación de Distrito Misionero",
+            title: "Eliminación de Distrito Misionero",
             success: "Distrito Misionero eliminado con éxito.",
             error: "Hubo un error al momento de eliminar al Distrito Misionero."
         },
         list: {
-            title:"Listado de Distritos Misioneros",
+            title: "Listado de Distritos Misioneros",
             empty: "Aún no hay Distritos Misioneros registrados en el sistema"
         }
     },
     escuela: {
         add: {
-            title:"Registro de Escuela Sabática",
+            title: "Registro de Escuela Sabática",
             success: "Escuela Sabática registrado con éxito.",
             error: "Hubo un error al momento de registrar a la Escuela Sabática"
         },
         update: {
-            title:"Actualización de Escuela Sabática",
+            title: "Actualización de Escuela Sabática",
             success: "Los datos de Escuela Sabática han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de la Escuela Sabática"
         },
         delete: {
-            title:"Eliminación de Escuela Sabática",
+            title: "Eliminación de Escuela Sabática",
             success: "Escuela Sabática eliminado con éxito.",
             error: "Hubo un error al momento de eliminar a la Escuela Sabática."
         },
         list: {
-            title:"Listado de Escuelas Sabáticas",
+            title: "Listado de Escuelas Sabáticas",
             empty: "Aún no hay Escuelas Sabáticas registrados en el sistema"
         }
     },
     iglesia: {
         add: {
-            title:"Registro de Iglesia",
+            title: "Registro de Iglesia",
             success: "Iglesia registrado con éxito.",
             error: "Hubo un error al momento de registrar a la Iglesia"
         },
         update: {
-            title:"Actualización de Iglesia",
+            title: "Actualización de Iglesia",
             success: "Los datos del Iglesia han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de la Iglesia"
         },
         delete: {
-            title:"Eliminación de Iglesia",
+            title: "Eliminación de Iglesia",
             success: "Iglesia eliminado con éxito.",
             error: "Hubo un error al momento de eliminar a la Iglesia."
         },
         list: {
-            title:"Listado de Iglesias",
+            title: "Listado de Iglesias",
             empty: "Aún no hay Iglesias registrados en el sistema"
         }
     },
     miembrogp: {
         add: {
-            title:"Registro del Mimebro de Grupo Pequeño",
+            title: "Registro del Mimebro de Grupo Pequeño",
             success: "Mimebro de Grupo Pequeño registrado con éxito.",
             error: "Hubo un error al momento de registrar al Mimebro de Grupo Pequeño"
         },
         update: {
-            title:"Actualización del Mimebro de Grupo Pequeño",
+            title: "Actualización del Mimebro de Grupo Pequeño",
             success: "Los datos del Mimebro de Grupo Pequeño han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos del Mimebro de Grupo Pequeño"
         },
         delete: {
-            title:"Eliminación del Mimebro de Grupo Pequeño",
+            title: "Eliminación del Mimebro de Grupo Pequeño",
             success: "Mimebro de Grupo Pequeño eliminado con éxito.",
             error: "Hubo un error al momento de eliminar al Mimebro de Grupo Pequeño."
         },
         list: {
-            title:"Listado de Mimebros de Grupo Pequeño",
+            title: "Listado de Mimebros de Grupo Pequeño",
             empty: "Aún no hay Mimebros de Grupo Pequeño registrados en el sistema"
         }
     },
     miembromin: {
         add: {
-            title:"Registro del Mimebro de Ministerio",
+            title: "Registro del Mimebro de Ministerio",
             success: "Mimebro de Ministerio registrado con éxito.",
             error: "Hubo un error al momento de registrar al Mimebro de Ministerio"
         },
         update: {
-            title:"Actualización de Mimebro de Ministerio",
+            title: "Actualización de Mimebro de Ministerio",
             success: "Los datos del Mimebro de Ministerio han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de Mimebro de Ministerio"
         },
         delete: {
-            title:"Eliminación del Mimebro de Ministerio",
+            title: "Eliminación del Mimebro de Ministerio",
             success: "Mimebro de Ministerio eliminado con éxito.",
             error: "Hubo un error al momento de eliminar al Mimebro de Ministerio."
         },
         list: {
-            title:"Listado de los Mimebros de Ministerio",
+            title: "Listado de los Mimebros de Ministerio",
             empty: "Aún no hay Mimebros de Ministerio registrados en el sistema"
         }
     },
     ministerio: {
         add: {
-            title:"Registro de Ministerio",
+            title: "Registro de Ministerio",
             success: "Ministerio registrado con éxito.",
             error: "Hubo un error al momento de registrar el Ministerio"
         },
         update: {
-            title:"Actualización de Ministerio",
+            title: "Actualización de Ministerio",
             success: "Los datos del Ministerio han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de Ministerio"
         },
         delete: {
-            title:"Eliminación de Ministerio",
+            title: "Eliminación de Ministerio",
             success: "Ministerio eliminado con éxito.",
             error: "Hubo un error al momento de eliminar el Ministerio."
         },
         list: {
-            title:"Listado de Ministerios",
+            title: "Listado de Ministerios",
             empty: "Aún no hay Ministerios registrados en el sistema"
         }
     },
     periodo: {
         add: {
-            title:"Registro del Periodo de Trabajo",
+            title: "Registro del Periodo de Trabajo",
             success: "Periodo de Trabajo registrado con éxito.",
             error: "Hubo un error al momento de registrar Periodo de Trabajo"
         },
         update: {
-            title:"Actualización del Periodo de Trabajo",
+            title: "Actualización del Periodo de Trabajo",
             success: "Los datos del Periodo de Trabajo han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos del Periodo de Trabajo"
         },
         delete: {
-            title:"Eliminación del Periodo de Trabajo",
+            title: "Eliminación del Periodo de Trabajo",
             success: "Periodo de Trabajo eliminado con éxito.",
             error: "Hubo un error al momento de eliminar el Periodo de Trabajo."
         },
         list: {
-            title:"Listado de Periodos de Trabajo",
+            title: "Listado de Periodos de Trabajo",
             empty: "Aún no hay Uniones registrados en el sistema"
         }
     },
     tipoevento: {
         add: {
-            title:"Registrar Tipo de Evento",
+            title: "Registrar Tipo de Evento",
             success: "El Tipo de Evento fue registrado con éxito.",
             error: "Hubo un error al momento de registrar el Tipo de Evento"
         },
         update: {
-            title:"Actualización del Tipo de Evento",
+            title: "Actualización del Tipo de Evento",
             success: "Los datos del Tipo de Evento han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos del Tipo de Evento"
         },
         delete: {
-            title:"Eliminación del Tipo de Evento",
+            title: "Eliminación del Tipo de Evento",
             success: "El Tipo de Evento fue eliminado con éxito.",
             error: "Hubo un error al momento de eliminar el Tipo de Evento."
         },
         list: {
-            title:"Listado de los Tipos de Eventos",
+            title: "Listado de los Tipos de Eventos",
             empty: "Aún no hay Tipos de Eventos registrados en el sistema"
         }
     },
     rol: {
         add: {
-            title:"Registrar Tipo de Rol",
+            title: "Registrar Tipo de Rol",
             success: "El Tipo de Rol fue registrado con éxito.",
             error: "Hubo un error al momento de registrar el Tipo de Rol"
         },
         update: {
-            title:"Actualización del Tipo de Rol",
+            title: "Actualización del Tipo de Rol",
             success: "Los datos del Tipo de Rol han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos del Tipo de Rol"
         },
         delete: {
-            title:"Eliminación del Tipo de Rol",
+            title: "Eliminación del Tipo de Rol",
             success: "El Tipo de Rol fue eliminado con éxito.",
             error: "Hubo un error al momento de eliminar el Tipo de Rol."
         },
         list: {
-            title:"Listado de los Tipos de Roles",
+            title: "Listado de los Tipos de Roles",
             empty: "Aún no hay Tipos de Roles registrados en el sistema"
         }
     },
     asistenciaevt: {
         add: {
-            title:"Registrar Asistencia al Evento",
+            title: "Registrar Asistencia al Evento",
             success: "La Asistencia al Evento fue registrado con éxito.",
             error: "Hubo un error al momento de registrar la Asistencia al Evento"
         },
         update: {
-            title:"Actualización de Asistencia al Evento",
+            title: "Actualización de Asistencia al Evento",
             success: "Los datos de la Asistencia al Evento han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar los datos de la Asistencia al Evento"
         },
         delete: {
-            title:"Eliminación de la Asistencia al Evento",
+            title: "Eliminación de la Asistencia al Evento",
             success: "La Asistencia al Evento fue eliminado con éxito.",
             error: "Hubo un error al momento de eliminar la Asistencia al Evento."
         },
         list: {
-            title:"Listado de las Asistencias a los Eventos",
+            title: "Listado de las Asistencias a los Eventos",
             empty: "Aún no hay Aistencia a los Eventos registrados en el sistema"
         }
     },
     privilegio: {
         add: {
-            title:"Registrar privilegio",
+            title: "Registrar privilegio",
             success: "El Privilegio fue registrado con éxito.",
             error: "Hubo un error al momento de registrar el privilegio"
         },
         update: {
-            title:"Actualización de privilegio",
+            title: "Actualización de privilegio",
             success: "Los datos de Privilegio han sido actualizados con éxito.",
             error: "Hubo un error al momento de actualizar el Privilegio"
         },
         delete: {
-            title:"Eliminación Privilegio",
+            title: "Eliminación Privilegio",
             success: "El Privilegio fue eliminado con éxito.",
             error: "Hubo un error al momento de eliminar el Privilegio."
         },
         list: {
-            title:"Listado de los Privilegio",
+            title: "Listado de los Privilegio",
             empty: "Aún no hay Privilegios registrados en el sistema"
         }
     }

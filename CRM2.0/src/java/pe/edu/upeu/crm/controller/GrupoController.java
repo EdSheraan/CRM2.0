@@ -35,6 +35,7 @@ public class GrupoController {
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspGrupo(ModelMap model) {
+        model.addAttribute("mensaje", "Hola mundo");
         modelAndView = new ModelAndView("grupo/jspGrupoMain", model);
         return modelAndView;
     }

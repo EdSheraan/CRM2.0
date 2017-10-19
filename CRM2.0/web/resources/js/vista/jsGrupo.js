@@ -61,7 +61,7 @@ function save() {
             escuela: {idEscuela: 1}
         };
         gService.addGrupo(grupo, reload);
-    }else{
+    } else {
         alert("Campos Incompletos...");
     }
 }
