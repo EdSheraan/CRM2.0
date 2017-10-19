@@ -32,8 +32,8 @@ public class Asistenciaevt  implements java.io.Serializable {
      private String astVisitas;
      private String astDescripcion;
      private String astLugar;
-     private Set<Asmiemmin> asmiemmins = new HashSet<Asmiemmin>(0);
-     private Set<Asmiemgp> asmiemgps = new HashSet<Asmiemgp>(0);
+     private Set<Asmiemmin> asmiemmins = new HashSet<>(0);
+     private Set<Asmiemgp> asmiemgps = new HashSet<>(0);
 
     public Asistenciaevt() {
     }

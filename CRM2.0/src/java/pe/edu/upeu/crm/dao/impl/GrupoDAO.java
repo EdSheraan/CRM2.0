@@ -11,25 +11,23 @@ public class GrupoDAO extends CrudDAO<Grupo>{
 
     @Override
     public int delete(Grupo bean) {
-        bean.setGpoEstado("0");
-        return update(bean);
+        HibernateParam param = new HibernateParam("idGrupo", bean.getIdGrupo());
+        return executeHQLUpdate("Update Grupo g set g.gpoEstado = '0' where g.idGrupo = :idGrupo",param);
     }
 
     @Override
     public List<Grupo> list(HibernateParam... param) {
-        return executeHQLQuery("From Grupo g  where g.escuela.idEscuela=:idEscuela", param);
+        return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela", param);
     }
 
     @Override
     public List<Grupo> listEnabled(HibernateParam... param) {
-        
-        return executeHQLQuery("From Grupo g where g.gpoEstado = '1'");
+            return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela and g.gpoEstado ='1'", param);
     }
 
     @Override
     public List<Grupo> listDisabled(HibernateParam... param) {
-        
-        return executeHQLQuery("From Grupo g where g.gpoEstado = '1'");
+        return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela and g.gpoEstado ='0'",param);
     }
 
     @Override

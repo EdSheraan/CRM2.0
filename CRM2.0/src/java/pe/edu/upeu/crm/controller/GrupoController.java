@@ -8,6 +8,7 @@ package pe.edu.upeu.crm.controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -60,10 +61,10 @@ public class GrupoController {
         return grupoService.delete(grupo);
     }
 
-    @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
+    @RequestMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public @ResponseBody
     List<Grupo> listGrupo(@RequestBody Escuela escuela) {
-        return grupoService.list(escuela.getIdEscuela());
+        return grupoService.listEnabled(escuela.getIdEscuela());
     }
     
 }

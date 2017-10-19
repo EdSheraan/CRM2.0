@@ -27,6 +27,7 @@ public class GrupoService implements CRUDService<Grupo>{
     private GrupoDAO grupoDAO;
     
     @Override
+    @Transactional
     public Object add(Grupo bean) {
         bean.setGpoFechaCreacion(new Date());
         bean.setGpoFechaAdd(new Date());
@@ -37,27 +38,31 @@ public class GrupoService implements CRUDService<Grupo>{
     }
 
     @Override
+    @Transactional
     public int update(Grupo bean) {
         Logger.info("Actualizando Grupo");
         return grupoDAO.update(bean);
     }
 
     @Override
+    @Transactional
     public int delete(Grupo bean) {
         Logger.info("Eliminando Grupo");
-        return grupoDAO.update(bean);
+        return grupoDAO.delete(bean);
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true) // Usar readonly= true para todas las consultas SELECT
     public List<Grupo> list(Object... param) {
         Logger.info("Listando todos los grupos");
         return grupoDAO.list(new HibernateParam("idEscuela", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Grupo> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Logger.info("Listando todos los grupos habilitados");
+        return grupoDAO.listEnabled(new HibernateParam("idEscuela", param[0]));
     }
 
     @Override
