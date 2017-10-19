@@ -55,16 +55,7 @@
         </security:authentication-provider>
     </security:authentication-manager>
     
-    <!-- Jackson Mapper para Hibernate-->
-    <mvc:annotation-driven>
-        <mvc:message-converters>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-                <property name="objectMapper">
-                    <bean class="pe.edu.upeu.crm.util.HibernateAwareObjectMapper" />
-                </property>
-            </bean>
-        </mvc:message-converters>
-    </mvc:annotation-driven>
+    
     <bean id="CrudDAO" class="pe.edu.upeu.crm.dao.CrudDAO" abstract="true" >
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>

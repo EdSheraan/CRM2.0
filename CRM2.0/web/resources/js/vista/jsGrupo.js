@@ -45,7 +45,7 @@ function deleteGrupo(idGrupo) {
     if (reply === true) {
         console.log(idGrupo);
         console.log("Eliminando...");
-        var grupo = {idGrupo: idGrupo};
+        var grupo = {idGrupo: idGrupo, escuela:{idEscuela:1}};
         gService.deleteGrupo(grupo, reload);
     } else {
         console.log("nancy");
@@ -57,7 +57,8 @@ function save() {
     var lreunion = $("#lgreu").val();
     var grupo = {
         gpoNombre: nombregp,
-        gpoLugarReunion: lreunion
+        gpoLugarReunion: lreunion,
+        escuela:{idEscuela:1}
     };
     gService.addGrupo(grupo, reload);
 }
