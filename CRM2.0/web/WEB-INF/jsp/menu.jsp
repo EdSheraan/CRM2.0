@@ -27,9 +27,9 @@
             }
             .cGP:hover{
                 color: #00e676;
-                border-style: solid;
+                /*border-style: solid;
                 border-width: thin;
-                border-color: #00e676;
+                border-color: #00e676;*/
             }
             .cMI:hover{
                 color: #1e88e5;
@@ -42,9 +42,9 @@
             }
             .cUS:hover{
                 color: #3949ab;
-                border-style: solid;
+                /*border-style: solid;
                 border-width: thin;
-                border-color: #3949ab;
+                border-color: #3949ab;*/
             }
             .cAD:hover{
                 color: #fdd835;
@@ -92,13 +92,13 @@
                 </center>
                 <p class="grey-text" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
             </div>
-            <!--<div class="col l2 card-panel waves-effect waves-light cAD" onclick="redirect(this.id)">
+            <div class="col l2 card-panel waves-effect waves-light cAD" onclick="redirect(this.id)">
                 <center>
                     <i class="mdi-action-settings large " style="width: 90px;height: 90px;"></i>
                     <h5 class="thin">Administrador</h5>
                 </center>
                 <p class="grey-text" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>-->
+            </div>
         </div>
         <script>
             function redirect(id) { //POR MIENTRAS HASTA TENER LOS LINKS EN LA DB

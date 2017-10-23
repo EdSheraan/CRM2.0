@@ -3,8 +3,8 @@
         <nav class="navbar-color grey darken-3">
             <div class="nav-wrapper">
                 <ul class="right">
-                    <li>
-                        <div class="chip grey darken-1 white-text cgProfile" onclick="loadProfile()" style="cursor: pointer;">
+                    <li class="hide-on-med-and-down">
+                        <div class="chip grey darken-1 white-text" onclick="loadProfile()" style="cursor: pointer;">
                             <img src="<c:url value='/resources/images/user.png'/>" alt="Usuario">Leandro Burgos Robles
                         </div>
                     </li>
