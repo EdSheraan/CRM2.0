@@ -13,7 +13,7 @@ function loadMiembros(list) {
     var s = "";
     for (var i = 0, max = list.length; i < max; i++) {
         var r = getLetter(list[i].persona.perNombres);
-        s += '<tr>';
+        s += '<tr style="height :80px">';
         s += '<td style="width:38px;"><button style="' + color[getRandom(color.length)] + '" class="btn-floating waves-effect waves-light">' + r + '</button></td>';
         s += '<td class="ligth italic">' + list[i].persona.perNombres + ' ' + list[i].persona.perApellidos + '</td>';
         s += '<td>';
@@ -85,11 +85,19 @@ function startPieChart() {
         lineWidth: '3',
         barColor: '#00e676',
         size: 60,
-        animate: 3000,
+        animate: 2000,
         onStep: function (from, to, percent) {
             $(this.el).find('.percent').text(Math.round(percent));
         }
     });
+}
+
+function changeAll() {
+    if ($("#as").prop('checked')) {
+        $(".checkO").attr("checked","true");
+    } else {
+        $(".checkO").removeAttr("checked");
+    }
 }
 
 function changePF(id) {

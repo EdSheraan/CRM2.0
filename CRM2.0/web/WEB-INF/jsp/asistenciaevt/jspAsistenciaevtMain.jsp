@@ -26,9 +26,19 @@
                 <section id="content">
                     <div class="container">
                         <div class="row">
+                            <!--<h6 class="light italic left">Evento n° 10 || 23 de octubre del 2017</h6>-->
+                            <div class="chip green accent-3 white-text light italic" style="margin-top: 2%">Evento n° 10</div>
+                            <div class="chip amber white-text light italic" style="margin-top: 2%">23 de octubre del 2017</div>
+                            <div class="chip deep-orange darken-2 white-text light italic" style="margin-top: 2%">Reunión de Grupo Pequeño</div>
+                            <div class="chip blue darken-1 white-text right light italic" style="margin-top: 2%">Vence el 30 de octubre
+                            <i class="material-icons mdi-navigation-close"></i></div>
                             <div class="col s12 m12 l10 offset-l1 row">
+
                                 <div class="col l7 s12">
-                                    <h5 class="light italic">Registro de Asistencia</h5>
+                                    <div class="row">
+                                    <h5 class="light italic left">Registro de Asistencia</h5>
+                                    <p class="right" style="margin-right: 6%;"><input type="checkbox" onclick="changeAll()" id="as"><label for="as"></label></p>
+                                    </div>
                                     <table class="highlight light italic">
                                         <tbody id="list_miembros">
                                         </tbody>
