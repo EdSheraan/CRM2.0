@@ -9,6 +9,7 @@ import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Asmiemgp;
 import pe.edu.upeu.crm.dao.impl.AsmiemgpDAO;
 import pe.edu.upeu.crm.service.CRUDService;
@@ -24,6 +25,7 @@ public class AsmiemgpService implements CRUDService<Asmiemgp>{
     private AsmiemgpDAO asmiemgpDAO;
     
     @Override
+    @Transactional
     public Object add(Asmiemgp bean) {
         Logger.info("Registrando Asmiemgp");
         return asmiemgpDAO.add(bean);

@@ -28,18 +28,18 @@ import pe.edu.upeu.crm.service.impl.GrupoService;
 @Scope("request")
 @RequestMapping("grupo")
 public class GrupoController {
-    
+
     @Autowired
     private GrupoService grupoService;
     private ModelAndView modelAndView;
-    
+
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspGrupo(ModelMap model) {
         model.addAttribute("mensaje", "Hola mundo");
         modelAndView = new ModelAndView("grupo/jspGrupoMain", model);
         return modelAndView;
     }
-    
+
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
     Integer addGrupo(@RequestBody Grupo grupo) {
@@ -63,5 +63,11 @@ public class GrupoController {
     List<Grupo> listGrupo(@RequestBody Escuela escuela) {
         return grupoService.listEnabled(escuela.getIdEscuela());
     }
-    
+
+    @RequestMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
+    public @ResponseBody
+    Grupo listGrupo(@RequestBody Grupo grupo) {
+        return grupoService.get(grupo.getIdGrupo());
+    }
+
 }

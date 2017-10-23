@@ -146,25 +146,8 @@ var message = {
         }
     },
     asmiemgp: {
-        add: {
-            title: "Registro de Unión",
-            success: "Unión registrado con éxito.",
-            error: "Hubo un error al momento de registrar Unión"
-        },
-        update: {
-            title: "Actualización de Unión",
-            success: "Los datos del Unión han sido actualizados con éxito.",
-            error: "Hubo un error al momento de actualizar los datos de Unión"
-        },
-        delete: {
-            title: "Eliminación de Unión",
-            success: "Unión eliminado con éxito.",
-            error: "Hubo un error al momento de eliminar Unión."
-        },
-        list: {
-            title: "Listado de Unións",
-            empty: "Aún no hay Uniones registrados en el sistema"
-        }
+            title: "Registro de Asistencia de Miembro GP",
+            error: "Hubo un error al momento de registrar la Asistencia de Miembro GP"
     },
     campo: {
         add: {

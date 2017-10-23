@@ -7,7 +7,7 @@ import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
-public class MiembrogpDAO extends CrudDAO<Miembrogp>{
+public class MiembrogpDAO extends CrudDAO<Miembrogp> {
 
     @Override
     public int delete(Miembrogp bean) {
@@ -17,18 +17,18 @@ public class MiembrogpDAO extends CrudDAO<Miembrogp>{
 
     @Override
     public List<Miembrogp> list(HibernateParam... param) {
-        return executeHQLQuery("From Miembrogp");
+        return executeHQLQuery("From Miembrogp m join fetch m.persona as persona where m.grupo.idGrupo=:idGrupo", param);
     }
 
     @Override
     public List<Miembrogp> listEnabled(HibernateParam... param) {
-        
+
         return executeHQLQuery("From Miembrogp m where m.mgpEstado = '1'");
     }
 
     @Override
     public List<Miembrogp> listDisabled(HibernateParam... param) {
-        
+
         return executeHQLQuery("From Miembrogp m where m.mgpEstado = '1'");
     }
 
@@ -41,5 +41,5 @@ public class MiembrogpDAO extends CrudDAO<Miembrogp>{
     public Miembrogp get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

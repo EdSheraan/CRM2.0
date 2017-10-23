@@ -7,9 +7,9 @@
 </style>
 <footer class="page-footer grey darken-4">
     <div class="footer-copyright">
-        <div class="container">
-            © 2017 Copyright 
-            <a class="grey-text text-lighten-4 right thin" href="https://www.facebook.com/mipes.upeu" target="_blank">Facebook</a>
-        </div>
+        <div class="container thin">
+            <span class="tR">Copyright © 2017 <a class="grey-text text-lighten-4" href="http://facebook.com/" target="_blank"><strong>Alpha Team</strong></a> All rights reserved.</span>
+                <span class="right"><strong>CRM</strong> <small>Digital</small></span>
+            </div>
     </div>
 </footer>

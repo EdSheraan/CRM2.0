@@ -20,14 +20,22 @@ function listGrupo(list) {
         s += '<td class="light italic tR"><small>Registrado el</small> ' + day + '/' + month + '/' + year + '</td>';
         s += '<td class="light italic tR">' + grupo.gpoLugarReunion + '</td>';
         s += '<td style="float:right">';
-        s += '<a class="grey-text" onclick="updateGrupo(' + grupo.idGrupo + ')"><i class="mdi-editor-mode-edit actCRUD"></i></a>';
-        s += '<a class="grey-text" onclick="deleteGrupo(' + grupo.idGrupo + ')"><i class="mdi-action-delete actCRUD"></i></a>';
-        s += '<a class="grey-text"><i class="mdi-navigation-more-vert actCRUD"></i></a>';
+        s += '<a class="grey-text tR" onclick="updateGrupo(' + grupo.idGrupo + ')"><i class="mdi-editor-mode-edit actCRUD"></i></a>';
+        s += '<a class="grey-text tR" onclick="deleteGrupo(' + grupo.idGrupo + ')"><i class="mdi-action-delete actCRUD"></i></a>';
+        s += '<a class="grey-text tR"><i class="mdi-social-group actCRUD"></i></a>';
+        s += '<a class="grey-text tS"><i class="mdi-action-info-outline actCRUD"></i></a>';
+        s += '<a class="grey-text dropdown-button tS" data-activates="dropdown' + i + '"><i class="mdi-navigation-more-vert actCRUD"></i></a>';
+        s += '<ul id="dropdown' + i + '" class="dropdown-content">';
+        s += '<li><a onclick="updateGrupo(' + grupo.idGrupo + ')" class="-text">Editar</a></li>';
+        s += '<li><a onclick="deleteGrupo(' + grupo.idGrupo + ')" class="-text">Eliminar</a></li>';
+        s += '<li><a href="#!" class="-text">Miembros</a></li>';
+        s += '</ul>';
         s += '</td>';
         s += '</tr>';
     }
     $(list_body).empty();
     $(list_body).append(s);
+    $('.dropdown-button').dropdown();
 }
 
 function updateGrupo(id) {
@@ -42,9 +50,7 @@ function updateGrupo(id) {
 function deleteGrupo(idGrupo) {
     var reply = confirm("¿Seguro que desea eliminar este grupo?");
     if (reply === true) {
-        console.log(idGrupo);
-        console.log("Eliminando...");
-        var grupo = {idGrupo: idGrupo, escuela: {idEscuela: 1}};
+        var grupo = {idGrupo: idGrupo};
         gService.deleteGrupo(grupo, reload);
     } else {
         console.log("Se canceló la eliminación...");

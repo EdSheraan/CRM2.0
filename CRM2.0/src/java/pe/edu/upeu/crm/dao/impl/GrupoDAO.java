@@ -37,7 +37,7 @@ public class GrupoDAO extends CrudDAO<Grupo>{
 
     @Override
     public Grupo get(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listUnique("From Grupo g where g.idGrupo=:idGrupo", param);
     }
     
 }

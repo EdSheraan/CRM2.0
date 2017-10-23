@@ -16,20 +16,9 @@
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1 row">
                                 <div class="col l12 s12">
-                                    <h5>Miembros</h5>
+                                    <h5 class="light italic">Miembros</h5>
                                     <table class="highlight">
-                                        <tbody id="list_body">
-                                            <tr style="margin: 0;padding: 0;">
-                                                <td><button style="" class="btn-floating waves-effect waves-light purple">L</button></td>
-                                                <td class="ligth italic">Leandro Jair Burgos Robles</td>
-                                                <td class="thin tR"><i class="mdi-communication-call"></i>  963258741</td>
-                                                <td class="thin tR"><i class="mdi-communication-email"></i>  leandroburgos@upeu.edu.pe</td>
-                                                <td style="float:right">
-                                                    <a class="grey-text" ><i class="mdi-editor-mode-edit actCRUD"></i></a>
-                                                    <a class="grey-text" ><i class="mdi-action-delete actCRUD"></i></a>
-                                                    <a class="grey-text"><i class="mdi-navigation-more-vert actCRUD"></i></a>
-                                                </td>
-                                            </tr>
+                                        <tbody class="light italic" id="list_body">                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -47,5 +36,8 @@
             </a>
         </div>
         <%@include file="../../jspf/footer.jspf" %>
+        <script src="<c:url value="/resources/js/service/jsMiembrogpService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/vista/jsMiembrogp.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/util/jsColors.js"></c:url>" type="text/javascript"></script>
     </body>
 </html>

@@ -30,47 +30,7 @@
                                 <div class="col l7 s12">
                                     <h5>Registro de Asistencia</h5>
                                     <table class="highlight">
-                                        <tbody id="list_body">
-                                            <tr style="margin: 0;padding: 0;">
-                                                <td><button style="" class="btn-floating waves-effect waves-light">L</button></td>
-                                                <td class="ligth italic">Leandro Jair Burgos Robles</td>
-                                                <td>
-                                                    <span class="chart presente" data-percent="12">
-                                                        <span class="percent"></span>
-                                                    </span>
-                                                </td>
-                                                <td><p><input type="checkbox" class="checkO" onclick="changePF(this.id)" id="test5"><label for="test5"></label></p></td>
-                                            </tr>
-                                            <tr style="margin: 0;padding: 0;">
-                                                <td><button style="" class="btn-floating waves-effect waves-light amber">A</button></td>
-                                                <td class="ligth italic">Arnold Danilo Morales Gomez</td>
-                                                <td>
-                                                    <span class="chart presente" data-percent="42">
-                                                        <span class="percent"></span>
-                                                    </span>
-                                                </td>
-                                                <td><p><input type="checkbox" class="checkO" onclick="changePF(this.id)" id="asfsf"><label for="asfsf"></label></p></td>
-                                            </tr>
-                                            <tr style="margin: 0;padding: 0;">
-                                                <td><button style="" class="btn-floating waves-effect waves-light pink">C</button></td>
-                                                <td class="ligth italic">Carlos David Tocto Mamani</td>
-                                                <td>
-                                                    <span class="chart presente" data-percent="20">
-                                                        <span class="percent"></span>
-                                                    </span>
-                                                </td>
-                                                <td><p><input type="checkbox" class="checkO" onclick="changePF(this.id)" id="tesadast5"><label for="tesadast5"></label></p></td>
-                                            </tr>
-                                            <tr style="margin: 0;padding: 0;">
-                                                <td><button style="" class="btn-floating waves-effect waves-light brown">P</button></td>
-                                                <td class="ligth italic">Pamela Sandra Flores Garcia</td>
-                                                <td>
-                                                    <span class="chart presente" data-percent="82">
-                                                        <span class="percent"></span>
-                                                    </span>
-                                                </td>
-                                                <td><p><input type="checkbox" class="checkO" onclick="changePF(this.id)" id="dasdsa"><label for="dasdsa"></label></p></td>
-                                            </tr>
+                                        <tbody id="list_miembros">
                                         </tbody>
                                     </table>
                                 </div>
@@ -87,13 +47,13 @@
                                     <div class="row">
                                         <div class="input-field col s10 offset-s1">
                                             <i class="mdi-social-people prefix"></i>
-                                            <input id="icon_prefix3" type="number" name="username" class="validate">
-                                            <label for="icon_prefix3" class="">Número de visitas</label>
+                                            <input id="nvisitas" type="number" class="validate">
+                                            <label for="nvisitas" class="">Número de visitas</label>
                                         </div>
                                         <div class="input-field col s10 offset-s1">
                                             <i class="mdi-action-home prefix"></i>
-                                            <input id="icon_prefix3" type="text" name="username" class="validate">
-                                            <label for="icon_prefix3" class="">Lugar de Reunión</label>
+                                            <input id="lreunion" type="text" class="validate">
+                                            <label for="lreunion" class="">Lugar de Reunión</label>
                                         </div>
                                     </div>
                                     <br>
@@ -106,50 +66,11 @@
             </div>
         </div>
         <script src="<c:url value='/resources/js/plugins/jquery.easypiechart.min.js'></c:url>" type="text/javascript"></script>
-        <script type="text/javascript">
-                                        $(document).ready(function () {
-                                            startPieChart();
-                                            var nMiembros = document.getElementById("list_body").rows.length;
-                                            $(".valF").attr("value", nMiembros);
-                                            $(".falV").empty();
-                                            $(".falV").append(nMiembros);
-                                        });
-
-                                        function saveAsis() {
-                                            confirm("¿Seguro que desea guardar?");
-                                        }
-
-                                        function startPieChart() {
-                                            $('.presente').easyPieChart({
-                                                easing: 'easeOutBounce',
-                                                lineWidth: '3',
-                                                barColor: '#00e676',
-                                                size: 60,
-                                                animate: 3000,
-                                                onStep: function (from, to, percent) {
-                                                    $(this.el).find('.percent').text(Math.round(percent));
-                                                }
-                                            });
-                                        }
-
-                                        function changePF(id) {
-                                            var P = parseInt($(".valP").val());
-                                            var F = parseInt($(".valF").val());
-                                            if ($("#" + id).prop('checked')) {
-                                                P = P + 1;
-                                                F = F - 1;
-                                            } else {
-                                                F = F + 1;
-                                                P = P - 1;
-                                            }
-                                            $(".valF").attr("value", F);
-                                            $(".falV").empty();
-                                            $(".falV").append(F);
-                                            $(".valP").attr("value", P);
-                                            $(".preV").empty();
-                                            $(".preV").append(P);
-                                        }
-
-        </script>
+        <script src="<c:url value='/resources/js/service/jsAsistenciaevtService.js'></c:url>" type="text/javascript"></script>
+        <script src="<c:url value='/resources/js/service/jsAsmiemgpService.js'></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/service/jsMiembrogpService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value='/resources/js/vista/jsAsistenciaevt.js'></c:url>" type="text/javascript"></script>
+        <script src="<c:url value='/resources/js/vista/jsAsmiemgp.js'></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/util/jsColors.js"></c:url>" type="text/javascript"></script>
     </body>
 </html>

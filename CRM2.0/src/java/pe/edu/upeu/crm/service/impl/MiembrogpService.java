@@ -9,7 +9,9 @@ import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Miembrogp;
+import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.MiembrogpDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -42,9 +44,10 @@ public class MiembrogpService implements CRUDService<Miembrogp>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Miembrogp> list(Object... param) {
-        Logger.info("Listando todas las personas");
-        return miembrogpDAO.list();
+        Logger.info("Listando todas los miembros de GP");
+        return miembrogpDAO.list(new HibernateParam("idGrupo",param[0]));
     }
 
     @Override

@@ -76,8 +76,10 @@ public class GrupoService implements CRUDService<Grupo>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Grupo get(Object... id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Logger.info("Listando datos de un grupo");
+        return grupoDAO.get(new HibernateParam("idGrupo", id));
     }
     
 }

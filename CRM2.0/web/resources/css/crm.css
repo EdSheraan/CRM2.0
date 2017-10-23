@@ -12,6 +12,14 @@ body{
     .tR {
         display : none;
     }
+    .tS{
+        display: inline-block;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .tS{
+        display: none;
+    }
 }
 
 /*Pnotify*/
