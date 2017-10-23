@@ -4,7 +4,7 @@
         <li class="bold"><a href="#" class="waves-effect waves-light"><i class="mdi-social-person"></i> Perfil</a>
         </li>
         <li class="li-hover"><div class="divider"></div></li>
-        <li class="bold active"><a href="<%=request.getContextPath()%>/grupo/main" class="waves-effect waves-light"><i class="mdi-action-list"></i> Grupos Pequeños</a>
+        <li class="bold"><a href="<%=request.getContextPath()%>/grupo/main" class="waves-effect waves-light"><i class="mdi-action-list"></i> Grupos Pequeños</a>
         </li>
         <li class="bold"><a href="<%=request.getContextPath()%>/asistenciaevt/main" class="waves-effect waves-light"><i class="mdi-toggle-check-box"></i> Registrar Asistencia</a>
         </li>

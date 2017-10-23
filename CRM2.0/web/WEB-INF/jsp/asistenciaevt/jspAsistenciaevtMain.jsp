@@ -28,8 +28,8 @@
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1 row">
                                 <div class="col l7 s12">
-                                    <h5>Registro de Asistencia</h5>
-                                    <table class="highlight">
+                                    <h5 class="light italic">Registro de Asistencia</h5>
+                                    <table class="highlight light italic">
                                         <tbody id="list_miembros">
                                         </tbody>
                                     </table>
@@ -65,6 +65,7 @@
                 </section>            
             </div>
         </div>
+        <%@include file="../../jspf/footer.jspf" %>
         <script src="<c:url value='/resources/js/plugins/jquery.easypiechart.min.js'></c:url>" type="text/javascript"></script>
         <script src="<c:url value='/resources/js/service/jsAsistenciaevtService.js'></c:url>" type="text/javascript"></script>
         <script src="<c:url value='/resources/js/service/jsAsmiemgpService.js'></c:url>" type="text/javascript"></script>
