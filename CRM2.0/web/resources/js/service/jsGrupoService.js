@@ -70,7 +70,7 @@ function grupoService() {
                 if (result !== undefined && result !== null && result.length > 0) {
                     _callback(result);
                 } else {
-                    errorMessage({
+                    infoMessage({
                         title: message.grupo.list.title,
                         content: message.grupo.list.empty
                     });
