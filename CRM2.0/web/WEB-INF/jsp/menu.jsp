@@ -28,7 +28,7 @@
             .cGP:hover{
                 color: #00e676;
                 /*border-style: solid;
-                border-width: thin;
+                border-width: light italic;
                 border-color: #00e676;*/
             }
             .cMI:hover{
@@ -43,7 +43,7 @@
             .cUS:hover{
                 color: #3949ab;
                 /*border-style: solid;
-                border-width: thin;
+                border-width: light italic;
                 border-color: #3949ab;*/
             }
             .cAD:hover{
@@ -57,48 +57,48 @@
     <body class="white">
         <%@include file="../jspf/header.jspf" %>   
         <div class="row contModulos">
-            <div class="col l2 card-panel offset-l2 waves-effect waves-light cGP" id="modGP" onclick="redirect(this.id)">
+            <div class="col l2 card-panel  waves-effect waves-light cGP" id="modGP" onclick="redirect(this.id)" style="margin-left: 8%;">
                 <center>
                     <i class="mdi-social-group large" style="width: 90px;height: 90px;"></i>
-                    <h5 class="thin">Grupo Pequeño</h5>
+                    <h5 class="light italic">Grupo Pequeño</h5>
                 </center>
                 <p class="grey-text" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
             </div>
-            <!--<div class="col l2 card-panel waves-effect waves-light cTM" onclick="redirect(this.id)">
+            <div class="col l2 card-panel waves-effect waves-light cTM" onclick="redirect(this.id)">
                 <center>
                     <i class="mdi-action-wallet-travel large " style="width: 90px;height: 90px;"></i>
                     <h5 class="light italic">Trabajo Misionero</h5>
                 </center>
                 <p class="grey-text" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>-->
-            <!--<div class="col l2 card-panel waves-effect waves-light cMI" onclick="redirect(this.id)">
+            </div>
+            <div class="col l2 card-panel waves-effect waves-light cMI" onclick="redirect(this.id)">
                 <center>
                     <i class="mdi-action-favorite large " style="width: 90px;height: 90px;"></i>
                     <h5 class="light italic">Ministerios</h5>
                 </center>
                 <p class="grey-text" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>-->
-            <!--<div class="col l2 card-panel waves-effect waves-light cES" onclick="redirect(this.id)">
+            </div>
+            <div class="col l2 card-panel waves-effect waves-light cES" onclick="redirect(this.id)">
                 <center>
                     <i class="mdi-action-book large " style="width: 90px;height: 90px;"></i>
-                    <h5 class="thin">Escuela Sabática</h5>
+                    <h5 class="light italic">Escuela Sabática</h5>
                 </center>
                 <p class="grey-text" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>-->
+            </div>
             <div class="col l2 card-panel waves-effect waves-light cUS" onclick="redirect(this.id)">
                 <center>
                     <i class="mdi-social-person large " style="width: 90px;height: 90px;"></i>
-                    <h5 class="thin">Usuario</h5>
+                    <h5 class="light italic">Usuario</h5>
                 </center>
                 <p class="grey-text" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
             </div>
-            <div class="col l2 card-panel waves-effect waves-light cAD" onclick="redirect(this.id)">
+            <!--<div class="col l2 card-panel waves-effect waves-light cAD" onclick="redirect(this.id)">
                 <center>
                     <i class="mdi-action-settings large " style="width: 90px;height: 90px;"></i>
-                    <h5 class="thin">Administrador</h5>
+                    <h5 class="light italic">Administrador</h5>
                 </center>
                 <p class="grey-text" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
+            </div>-->
         </div>
         <script>
             function redirect(id) { //POR MIENTRAS HASTA TENER LOS LINKS EN LA DB

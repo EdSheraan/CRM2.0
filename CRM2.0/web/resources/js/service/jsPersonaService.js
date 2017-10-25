@@ -7,11 +7,12 @@
 function personaService() {
     //Aqui se registra cada método a utilizarse
     //Evitar la interaccion con HTML
+    var connector = new jsConnector();
+
     this.addPersona = function (persona, _callback) {
-        var connectionUrl = "/persona/add";
-        var connector = new jsConnector();
+        console.log(persona);
         try {
-            connector.post(connectionUrl, persona, function (result) {
+            connector.post(url.persona.add, JSON.stringify(persona), function (result) {
                 //Aqui va la validación de la respuesta del servidor
                 if (result !== undefined && result !== null) {
                     successMessage({
@@ -19,10 +20,10 @@ function personaService() {
                         content: message.persona.add.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.persona.add.title,
-                       content:message.persona.add.error
+                        title: message.persona.add.title,
+                        content: message.persona.add.error
                     });
                 }
 
@@ -45,16 +46,15 @@ function personaService() {
 
     this.listPersona = function (_callback) {
         var connectionUrl = "/persona/list";
-        var connector = new jsConnector();
         try {
-            connector.post(connectionUrl, JSON.stringify({id:1}), function (result) {
+            connector.post(connectionUrl, JSON.stringify({id: 1}), function (result) {
                 //Aqui va la validación de la respuesta del servidor
-                if (result !== undefined && result !== null && result.length>0) {
+                if (result !== undefined && result !== null && result.length > 0) {
                     _callback(result);
-                }else{
+                } else {
                     infoMessage({
-                       title:message.persona.list.title,
-                       content:message.persona.list.empty
+                        title: message.persona.list.title,
+                        content: message.persona.list.empty
                     });
                 }
 

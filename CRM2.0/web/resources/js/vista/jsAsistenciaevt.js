@@ -13,11 +13,11 @@ function loadMiembros(list) {
     var s = "";
     for (var i = 0, max = list.length; i < max; i++) {
         var r = getLetter(list[i].persona.perNombres);
-        s += '<tr style="height :80px">';
+        s += '<tr>';
         s += '<td style="width:38px;"><button style="' + color[getRandom(color.length)] + '" class="btn-floating waves-effect waves-light">' + r + '</button></td>';
         s += '<td class="ligth italic">' + list[i].persona.perNombres + ' ' + list[i].persona.perApellidos + '</td>';
         s += '<td>';
-        s += '<span class="chart presente" data-percent="42">';
+        s += '<span class="chart presente" data-percent="' + getRandomArbitrary(37, 100) + '">';
         s += '<span class="percent"></span>';
         s += '</span>';
         s += '</td>';
@@ -94,7 +94,7 @@ function startPieChart() {
 
 function changeAll() {
     if ($("#as").prop('checked')) {
-        $(".checkO").attr("checked","true");
+        $(".checkO").attr("checked", "true");
     } else {
         $(".checkO").removeAttr("checked");
     }

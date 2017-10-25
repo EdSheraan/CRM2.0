@@ -26,3 +26,7 @@ function getLetter(nombre) {
     var Let = letter[0];
     return Let.toUpperCase();
 }
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
