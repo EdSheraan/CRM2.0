@@ -15,7 +15,7 @@ function mostrar(list) {
         var c = list[i].persona.perCorreo;
         (c === undefined) ? c = "Sin correo" : c;
         s += '<tr>';
-        s += '<td style="width:38px;"><button style="' + color[getRandom(color.length)] + '" class="btn-floating waves-effect waves-light">' + r + '</button></td>';
+        s += '<td style="width:38px;"><button class="btn-floating waves-effect waves-light ' + getColor() + '">' + r + '</button></td>';
         s += '<td class="ligth italic">' + list[i].persona.perNombres + ' ' + list[i].persona.perApellidos + '</td>';
         s += '<td class="thin tR"><i class="mdi-communication-call"></i>  ' + t + '</td>';
         s += '<td class="thin tR"><i class="mdi-communication-email"></i>  ' + c + '</td>';

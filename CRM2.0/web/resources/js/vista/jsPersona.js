@@ -33,11 +33,11 @@ function listPersona(list) {
 
 function regBasicPersona(idTipoDoc, nDoc, pNombre, pApellido, pSexo) {
     var persona = {
-        documento: {idDocumento: parseInt(idTipoDoc)},
         perDocumento: nDoc,
         perNombres: pNombre,
         perApellidos: pApellido,
-        perSexo: pSexo
+        perSexo: pSexo,
+        documento: {idDocumento: parseInt(idTipoDoc)}
     };
     pService.addPersona(persona, algo);    
 }

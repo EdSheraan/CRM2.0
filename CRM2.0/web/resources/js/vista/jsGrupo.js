@@ -15,7 +15,7 @@ function listGrupo(list) {
         var month = 1 + date.getMonth();
         var day = date.getDate();
         s += '<tr>';
-        s += '<td style="width:38px;"><button style="' + color[getRandom(color.length)] + '" class="btn-floating waves-effect waves-light">' + r + '</button></td>';
+        s += '<td style="width:38px;"><button class="btn-floating waves-effect waves-light ' + getColor() + '">' + r + '</button></td>';
         s += '<td class="condensed"><h6><strong>' + grupo.gpoNombre.toUpperCase() + '</strong></h6></td>';
         s += '<td class="tR"><small>Registrado el</small> ' + day + '/' + month + '/' + year + '</td>';
         s += '<td class="tR">' + grupo.gpoLugarReunion + '</td>';

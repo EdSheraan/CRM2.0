@@ -10,7 +10,6 @@ function personaService() {
     var connector = new jsConnector();
 
     this.addPersona = function (persona, _callback) {
-        console.log(persona);
         try {
             connector.post(url.persona.add, JSON.stringify(persona), function (result) {
                 //Aqui va la validación de la respuesta del servidor

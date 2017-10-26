@@ -21,9 +21,6 @@
                 height: 100px;
                 /*-moz-border-radius: 50%;
                 -webkit-border-radius: 50%;*/
-                //border-radius: 50%;
-                display: inline-block;
-                cursor: pointer;
             }
 
             .circulo:hover {
@@ -43,10 +40,6 @@
             .circulo2 {
                 width: 50px;
                 height: 50px;
-                /*-moz-border-radius: 50%;
-                -webkit-border-radius: 50%;*/
-                //border-radius: 50%;
-                margin: 25px 21px;
             }
 
             .size-icon {
