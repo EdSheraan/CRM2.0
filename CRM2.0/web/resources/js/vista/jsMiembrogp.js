@@ -1,8 +1,8 @@
 var list_body = $('#list_body');
 var mgpService = new miembrogpService();
-
+var idGrupo = $("#idGrupo").val();
 $(document).ready(function () {
-    var grupo = {idGrupo: 1};
+    var grupo = {idGrupo: idGrupo};
     mgpService.listMiembrogp(grupo, mostrar);
 });
 
@@ -29,4 +29,23 @@ function mostrar(list) {
     $(list_body).empty();
     $(list_body).append(s);
 
+}
+
+function addMiembroGP(idPersona) {
+    try {
+        var miembrogp = {
+            persona: {idPersona: idPersona},
+            grupo: {idGrupo: idGrupo}
+        };
+        mgpService.addMiembrogp(miembrogp, algoritmo);
+    } catch (e) {
+        console.error("Error jsMiembrogp : " + e);
+    }
+
+}
+
+function algoritmo() {
+    $('#modal1').closeModal();
+    var grupo = {idGrupo: idGrupo};
+    mgpService.listMiembrogp(grupo, mostrar);
 }

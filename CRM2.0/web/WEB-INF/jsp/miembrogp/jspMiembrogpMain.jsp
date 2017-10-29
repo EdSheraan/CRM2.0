@@ -7,6 +7,7 @@
         <%@include file="../../jspf/general.jspf" %>        
     </head>
     <body>
+        <input type="hidden" value="1" id="idGrupo">
         <%@include file="../../jspf/header.jspf" %>
         <div id="main">
             <div class="wrapper">
@@ -88,8 +89,8 @@
                                                 <div class="select-wrapper input-field">
                                                     <select id="isexo">
                                                         <option value="" disabled="" selected="">Sexo</option>
-                                                        <option value="1">Masculino</option>
-                                                        <option value="0">Femenino</option>
+                                                        <option value="M">Masculino</option>
+                                                        <option value="F">Femenino</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -112,8 +113,8 @@
         </div>
         <%@include file="../../jspf/footer.jspf" %>
         <script src="<c:url value="/resources/js/service/jsMiembrogpService.js"></c:url>" type="text/javascript"></script>
-        <script src="<c:url value="/resources/js/vista/jsMiembrogp.js"></c:url>" type="text/javascript"></script>
         <script src="<c:url value="/resources/js/service/jsPersonaService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/vista/jsMiembrogp.js"></c:url>" type="text/javascript"></script>        
         <script src="<c:url value="/resources/js/vista/jsPersona.js"></c:url>" type="text/javascript"></script>
         <script src="<c:url value="/resources/js/util/jsColors.js"></c:url>" type="text/javascript"></script>
         <script>

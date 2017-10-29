@@ -17,7 +17,7 @@ public class MiembrogpDAO extends CrudDAO<Miembrogp> {
 
     @Override
     public List<Miembrogp> list(HibernateParam... param) {
-        return executeHQLQuery("From Miembrogp m join fetch m.persona as persona where m.grupo.idGrupo=:idGrupo", param);
+        return executeHQLQuery("From Miembrogp m join fetch m.persona as persona where m.grupo.idGrupo=:idGrupo order by m.persona.perNombres asc", param);
     }
 
     @Override

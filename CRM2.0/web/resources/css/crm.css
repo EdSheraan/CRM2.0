@@ -20,6 +20,9 @@ footer {
     .tS{
         display: inline-block;
     }
+    footer{
+        position: inherit;
+    }
 }
 @media only screen and (min-width: 600px) {
     .tS{

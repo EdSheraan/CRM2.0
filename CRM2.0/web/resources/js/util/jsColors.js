@@ -5,14 +5,17 @@ var principal = [
     "green",
     "amber",
     "brown",
-    "blue"
+    "blue",
+    "deep-orange",
+    "blue-grey",
+    "light-green",
+    "deep-purple"
 ];
 
 var complement = [
     "lighten-1",
     "lighten-2",
-    "lighten-3",
-    "lighten-4"
+    "lighten-3"
 ];
 
 function getRandom(max) {

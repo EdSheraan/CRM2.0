@@ -1,15 +1,26 @@
 var aService = new asistenciaevtService();
 var nMiembros = 0;
 var mgpService = new miembrogpService();
+var gpService = new grupoService();
 var list_miembros = $("#list_miembros");
 
 $(document).ready(function () {
     var grupo = {idGrupo: 1};
     mgpService.listMiembrogp(grupo, loadMiembros);
+    gpService.getGrupo(grupo, dataGroup);
 });
 
+function dataGroup(grupo) {
+    $(".titleGP").empty();
+    $(".titleGP").append("<small>Grupo Pequeño</small><br>" + grupo.gpoNombre);
+    var s = '<i class="mdi-action-home prefix grey-text darken-3"></i>';
+    s += '<input id="lreunion" type="text" class="validate" value="' + grupo.gpoLugarReunion + '">';
+    s += '<label for="lreunion" class="active">Lugar de Reunión</label>';
+    $(".contLR").empty();
+    $(".contLR").append(s);
+}
+
 function loadMiembros(list) {
-    console.log(list);
     var s = "";
     for (var i = 0, max = list.length; i < max; i++) {
         var r = getLetter(list[i].persona.perNombres);
@@ -17,7 +28,7 @@ function loadMiembros(list) {
         s += '<td style="width:38px;"><button class="btn-floating waves-effect waves-light ' + getColor() + '">' + r + '</button></td>';
         s += '<td class="ligth italic">' + list[i].persona.perNombres + ' ' + list[i].persona.perApellidos + '</td>';
         s += '<td>';
-        s += '<span class="chart presente" data-percent="' + getRandomArbitrary(37, 100) + '">';
+        s += '<span class="chart presente" data-percent="' + getRandomArbitrary(0, 100) + '">';
         s += '<span class="percent"></span>';
         s += '</span>';
         s += '</td>';

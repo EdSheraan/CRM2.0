@@ -84,7 +84,7 @@ function grupoService() {
     this.getGrupo = function (grupo, _callback) {
         try {
             connector.post("/grupo/get", JSON.stringify(grupo), function (result) {
-                if (result !== undefined && result !== null && result.length > 0) {
+                if (result.gpoNombre !== undefined) {
                     _callback(result);
                 } else {
                     errorMessage({

@@ -67,7 +67,7 @@ public class GrupoController {
     @RequestMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public @ResponseBody
     Grupo listGrupo(@RequestBody Grupo grupo) {
-        return grupoService.get(grupo.getIdGrupo());
+        return grupoService.getGrupo(grupo.getIdGrupo());
     }
 
 }

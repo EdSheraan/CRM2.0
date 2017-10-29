@@ -2,7 +2,7 @@ function miembrogpService(){
     var connector = new jsConnector();
     this.addMiembrogp = function(miembrogp,_callback){
         try {
-            connector.post(url.miembrogp.add, miembrogp, function (result) {
+            connector.post(url.miembrogp.add, JSON.stringify(miembrogp), function (result) {
                 if (result !== undefined && result !== null) {
                     successMessage({
                         title: message.miembrogp.add.title,

@@ -103,7 +103,6 @@ public class Persona implements java.io.Serializable {
         this.idPersona = idPersona;
     }
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idDOCUMENTO", nullable = false)
     public Documento getDocumento() {

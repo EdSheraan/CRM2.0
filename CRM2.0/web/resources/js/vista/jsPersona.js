@@ -32,17 +32,19 @@ function listPersona(list) {
 }
 
 function regBasicPersona(idTipoDoc, nDoc, pNombre, pApellido, pSexo) {
-    var persona = {
-        perDocumento: nDoc,
-        perNombres: pNombre,
-        perApellidos: pApellido,
-        perSexo: pSexo,
-        documento: {idDocumento: parseInt(idTipoDoc)}
-    };
-    pService.addPersona(persona, algo);    
+    try {
+        var persona = {
+            perDocumento: nDoc,
+            perNombres: pNombre,
+            perApellidos: pApellido,
+            perSexo: pSexo,
+            documento: {idDocumento: parseInt(idTipoDoc)}
+        };
+        pService.addPersona(persona, addMiembroGP);
+    } catch (e) {
+        console.error("Error jsPersona : " + e);
+    }
+
 }
 
-function algo(id) {
-    console.log(id);
-}
 
