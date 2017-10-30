@@ -5,11 +5,15 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upeu.crm.bean.Detrol;
 import pe.edu.upeu.crm.bean.Rol;
+import pe.edu.upeu.crm.dao.HibernateParam;
+import pe.edu.upeu.crm.dao.impl.DetRolDAO;
 import pe.edu.upeu.crm.dao.impl.RolDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -22,6 +26,9 @@ public class RolService implements CRUDService<Rol>{
 
     @Autowired
     private RolDAO rolDAO;
+    
+    @Autowired
+    private DetRolDAO detRolDAO;
     
     @Override
     public Object add(Rol bean) {
@@ -49,7 +56,13 @@ public class RolService implements CRUDService<Rol>{
 
     @Override
     public List<Rol> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Logger.info("Lista de roles por usuario");
+        List<Detrol> detrols = detRolDAO.listEnabled(new HibernateParam("idUsuario", param[0]));
+        List<Rol> rols = new ArrayList<>();
+        for(Detrol d:detrols){
+            rols.add(d.getRol());
+        }
+        return rols;
     }
 
     @Override

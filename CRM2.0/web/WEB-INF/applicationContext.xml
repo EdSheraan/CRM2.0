@@ -40,7 +40,7 @@
         <security:intercept-url pattern="/**" access="isFullyAuthenticated()" />
          
         <security:form-login login-page="/main"
-                             default-target-url="/menu"
+                             default-target-url="/rol/select"
                              login-processing-url="/j_spring_security_check"
                              authentication-failure-url="/main?error"
                              username-parameter="username"

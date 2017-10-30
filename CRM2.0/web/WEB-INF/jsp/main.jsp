@@ -12,83 +12,291 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CRM Digital</title>
         <%@include file="../jspf/general.jspf" %>        
-        </head>
-        <body>        
-            <div id="loader-wrapper">
-                <div id="loader"></div>        
-                <div class="loader-section section-left"></div>
-                <div class="loader-section section-right"></div>
-            </div>
-            <header id="header" class="page-topbar">
-                <div class="navbar-fixed">
-                    <nav class="navbar-color blue-grey darken-3">
-                        <div class="nav-wrapper">
-                            <ul class="left"> 
-                                <li><a class="waves-effect waves-block waves-light green accent-3 modal-trigger hide-on-med-and-down" href="#modal1">Ingresar</a></li>
-                                <li>
-                                    <a class="dropdown-button waves-effect waves-light hide-on-large-only" href="#!" data-activates="dropdown1">Menú<i class="mdi-navigation-arrow-drop-down right"></i></a>
-                                    <ul id="dropdown1" class="dropdown-content">
-                                        <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
-                                        <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
-                                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Ministerios</a></li>
-                                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
-                                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="right"> 
-                                <li><a class="waves-effect waves-block waves-light green accent-3 hide-on-large-only darken-1 modal-trigger" href="#modal1">
-                                        Ingresar
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="right hide-on-med-and-down">
-                                <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
-                                <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
-                                <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Ministerios</a></li>
-                                <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
-                                <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </header>
-            <div class="container col l12 s12 m12">
-                
+    </head>
+    <body>        
+        <div id="loader-wrapper">
+            <div id="loader"></div>        
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
         </div>
-        <div>
-            <section id="inicio" style="display: block;width: 100%;margin-top: 10%;">
+        <header id="header" class="page-topbar">
+            <div class="navbar-fixed">
+                <nav class="navbar-color blue-grey darken-3">
+                    <div class="nav-wrapper">
+                        <ul class="left"> 
+                            <li>
+                                <a class="btn-login waves-effect waves-block waves-light blue modal-trigger hide-on-med-and-down" href="#modal1">
+                                    Ingresar al Sistema
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-button waves-effect waves-light hide-on-large-only" href="#!" data-activates="dropdown1">Menú<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                <ul id="dropdown1" class="dropdown-content">
+                                    <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
+                                    <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
+                                    <li><a href="#ministerio" class="waves-effect waves-block waves-light">Ministerios</a></li>
+                                    <li><a href="#pm" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
+                                    <li><a href="#escuela" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="right"> 
+                            <li><a class="btn-login waves-effect waves-block waves-light blue hide-on-large-only darken-1 modal-trigger" href="#modal1">
+                                    Ingresar al Sistema
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
+                            <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
+                            <li><a href="#ministerio" class="waves-effect waves-block waves-light">Ministerios</a></li>
+                            <li><a href="#pm" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
+                            <li><a href="#escuela" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div id="inicio" class="blue-grey darken-3 white-text">
+            <div class="row">
+                <div class="container col s12 m6 l5 offset-l1">
+                    <br>
+                    <c:url var="img_logo" value="/resources/images/crm_logo2_ligth_color.png"></c:url>
+                    <img src="${img_logo}" width="80%" alt="crm_logo"/>
+                    <h5 class="thin">Sistema de Gestión de las actividades del
+                        Ministerio Personal y la Escuela Sabática</h5>
+
+                    <br/>
+                    <a class="btn waves-effect waves-light blue" target="_blank" href="https://www.youtube.com">Tutoriales
+                        <i class="mdi-av-video-collection right"></i>
+                    </a>
+                    <br>
+                    <br>
+                </div>
+                <div class="container col s12 m6 l5">
+                    <br>
+                    <h5 class="thin right">Nuestras metas CRM</h5>
+                    <div class="card-image offset-l2">
+                        <img src="<c:url value="/resources/images/metas_crm.png"/>" alt="" style="width: 100%"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row hide-on-small-only">
+                <br />
+                <br />
+            </div>
+        </div>
+        <div id="grupo" class="green accent-4 white-text" style="margin-top: -20px">
+            <div class="row">
+
+                <div class="container col l4 m6 s12">
+                    <h4><i class="mdi-action-home"></i>&nbsp;Grupos Pequeños</h4>
+                    <br>
+                    <p class="text-justify font-small">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    </p>
+                </div>
+                <div class="container col l8 m6 s12 no-padding">
+                    <c:url var="gp_image" value="/resources/images/gp_1.jpg"></c:url>
+                    <img src="${gp_image}" width="100%" alt="gp_1"/>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    <h5>Top 5 del Mes</h5>
+                </div>
+                <%for (int i = 0; i < 6; i++) {%>
+                <div class="col l2 m3 s6">
+                    <div class="card">
+                        <div class="card-content green-text">
+                            <center><i class="mdi-action-grade large"></i></center>
+                        </div>
+                        <div class="card-action black-text">
+                            <center>
+                                <b>Distrito Misionero</b><br>
+                                <span class="font-medium">SHADAI</span><br>
+                                <b>Escuela Sabática</b><br>
+                                <span class="font-medium">PENIEL</span>
+                            </center>
+                        </div>
+                    </div>
+
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <div id="ministerio" class="red white-text" style="margin-top: -20px">
+            <div class="row">
+                <div class="container col l8 m6 s12 no-padding">
+                    <c:url var="m_image" value="/resources/images/ministerio_1.jpg"></c:url>
+                    <img src="${m_image}" width="100%" alt="ministerio_1"/>
+                </div>
+                <div class="container col l4 m6 s12">
+                    <h4><i class="mdi-action-favorite"></i>&nbsp;Ministerios</h4>
+                    <br>
+                    <p class="text-justify font-small">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    </p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    <h5 class="right">Top 5 del Mes</h5>
+                </div>
+                <%for (int i = 0; i < 6; i++) {%>
+                <div class="col l2 m3 s6">
+                    <div class="card">
+                        <div class="card-content red-text">
+                            <center><i class="mdi-action-grade large"></i></center>
+                        </div>
+                        <div class="card-action black-text">
+                            <center>
+                                <b>Distrito Misionero</b><br>
+                                <span class="font-medium">SHADAI</span><br>
+                                <b>Escuela Sabática</b><br>
+                                <span class="font-medium">PENIEL</span>
+                            </center>
+                        </div>
+                    </div>
+
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <div id="pm" class="blue white-text" style="margin-top: -20px">
+            <div class="row">
+                <div class="container col l4 m6 s12">
+                    <h4><i class="mdi-social-people"></i>&nbsp;Parejas Misioneras</h4>
+                    <br>
+                    <p class="text-justify font-small">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                        mollit anim id est laborum
+                    </p>
+                </div>
+                <div class="container col l8 m6 s12 no-padding">
+                    <c:url var="m_image" value="/resources/images/gp_2.jpg"></c:url>
+                    <img src="${m_image}" width="100%" alt="grupo_2"/>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    <h5>Top 5 del Mes</h5>
+                </div>
+                <%for (int i = 0; i < 5; i++) {%>
+                <div class="col l2 m3 s6">
+                    <div class="card">
+                        <div class="card-content blue-text">
+                            <center><i class="mdi-action-grade large"></i></center>
+                        </div>
+                        <div class="card-action black-text">
+                            <center>
+                                <b>Distrito Misionero</b><br>
+                                <span class="font-medium">SHADAI</span><br>
+                                <b>Escuela Sabática</b><br>
+                                <span class="font-medium">PENIEL</span>
+                            </center>
+                        </div>
+                    </div>
+
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <div id="escuela" class="yellow darken-1 white-text" style="margin-top: -20px">
+            <div class="row">
+                <div class="container col l8 m6 s12 no-padding">
+                    <c:url var="m_image" value="/resources/images/escuela_1.jpg"></c:url>
+                    <img src="${m_image}" width="100%" alt="escuela_1"/>
+                </div>
+                <div class="container col l4 m6 s12">
+                    <h4><i class="mdi-social-people"></i>&nbsp;Escuela Sabática</h4>
+                    <br>
+                    <p class="text-justify font-small">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    <h5>Top 5 del Mes</h5>
+                </div>
+                <%for (int i = 0; i < 5; i++) {%>
+                <div class="col l2 m3 s6">
+                    <div class="card">
+                        <div class="card-content yellow-text">
+                            <center><i class="mdi-action-grade large"></i></center>
+                        </div>
+                        <div class="card-action black-text">
+                            <center>
+                                <b>Distrito Misionero</b><br>
+                                <span class="font-medium">SHADAI</span><br>
+                                <b>Escuela Sabática</b><br>
+                                <span class="font-medium">PENIEL</span>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <footer class="page-footer blue-grey darken-3" id="footer" style="margin-top: -20px">
+            <div class="container">
                 <div class="row">
-                    <div class="container col s12 m6 l5 offset-l1">
-                        <h2 class="thin">¡Bienvenidos!</h2>
-                        <p class="condensed offset-l2">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">CRM Digital 2.0</h5>
+                        <p class="condensed offset-l2 font-small white-text text-justify">
                             El departamento de <strong>Ministerio Personal y Escuela Sabática</strong> de la <strong>Iglesia Villa Unión</strong> te da la bienvenida a esta plataforma digital
                             en la cual tú como líder podrás monitorear la asistencia a los <strong>Grupos Pequeños</strong> de tus compañeros y así tambien el trabajo misionero que ellos realizan.
                             De esta manera, <strong>juntos</strong> ,como hermanos en la fe, prodremos cumplir con nuestras metas <strong>CRM</strong>.
                         </p>
-                        <br/>
                     </div>
-                    <div class="container col s12 m6 l5">
-                        <div class="card-image offset-l2">
-                            <img src="<c:url value="/resources/images/metasCRM.png"/>" alt="" style="width: 100%"/>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Correo</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Youtube</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            </section>
-            <section id="grupo" style="display: block;width: 100%;height: 100%;">
-                
-            </section>
-            <section></section>
-            <section></section>
-            <section></section>
-        </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Sistema de Gestión de Grupos Pequeños y 
+                    Trabajo Misionero desarrollado por Alpha Team.
+                    © 2017. Todos los derechos reservados
+                    <a class="grey-text text-lighten-4 right" href="#!">Ayuda</a>
+                </div>
+            </div>
+        </footer>
+
         <!--Inicio de modal LOGIN-->
-        <div id="modal1" class="modal white">
+        <div id="modal1" class="modal">
             <div class="modal-content">
                 <div class="row">
-                    <form name="f" action="<c:url value="/j_spring_security_check"/>" method="POST">
-                        <div class="col s12 l6 m6 offset-l3 offset-m3">
-                            <center><h5 class="light italic">Iniciar Sesión</h5></center>
+                    <div class="col l5 m6 s12 hide-on-small-only">
+                        <br><br>
+                        <c:url var="img_login" value="/resources/images/crm_logo_ligth_color.png"></c:url>
+                            <center>
+                                <img src="${img_login}" width="180px" alt="crm_logo"/>
+                        </center>
+                        <br>
+                        <p class="text-justify font-small">Sistema de Gestión de Grupos Pequeños y 
+                            Trabajo Misionero desarrollado por Alpha Team.
+                            © 2017. Todos los derechos reservados</p>
+                    </div>
+                    <div class="col l7 m6 s12">
+                        <form name="f" action="<c:url value="/j_spring_security_check"/>" method="POST">
+                            <center><h5>Iniciar Sesión</h5></center>
                             <div class="input-field">
                                 <i class="mdi-action-account-circle prefix"></i>
                                 <input id="icon_prefix3" type="text" name="username" class="validate">
@@ -101,16 +309,75 @@
                             </div>
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                             <div class="input-field">
-                                <button type="submit" name="submit" class="waves-effect waves-light btn blue darken-1 col l12 m12 s12">Ingresar</button>
+                                <button type="submit" name="submit" class="waves-effect waves-light btn blue col l12 m12 s12">Ingresar</button>
                             </div>
-                        </div>
-                    </form>
+                            <br>
+                            <br>
+                            <p class="font-small"><b>¿No tienes una cuenta en el sistema? </b><a href="" class="blue-text">Registrate Aqui</a></p>
+                            <br />
+                            <br />
+                            <br />
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer white">
-                <a class="btn waves-effect waves-light btn-flat modal-action modal-close left white">Cancelar</a>
             </div>
         </div>
         <!--Fin de modal LOGIN-->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(window).trigger('scroll');
+                $(window).scroll(function (event) {
+                    var scroll = $(window).scrollTop();
+                    var grupo = $('#grupo').position();
+                    var ministerio = $('#ministerio').position();
+                    var pm = $('#pm').position();
+                    var escuela = $('#escuela').position();
+                    var footer = $('#footer').position();
+                    var k = 64;
+                    if (between(0, grupo.top - k, scroll)) {
+                        $('.navbar-color').addClass('blue-grey darken-3');
+                        $('.navbar-color').removeClass('green accent-4');
+
+                        $('.btn-login').removeClass('green accent-3');
+                        $('.btn-login').addClass('blue');
+                    }
+                    if (between(grupo.top - k, ministerio.top - k, scroll)) {
+                        $('.navbar-color').removeClass('blue-grey darken-3');
+                        $('.navbar-color').addClass('green accent-4');
+
+                        $('.btn-login').removeClass('blue');
+                        $('.btn-login').addClass('green accent-3');
+                    }
+                    if (between(ministerio.top - k, pm.top - k, scroll)) {
+                        $('.navbar-color').removeClass('green accent-4');
+                        $('.navbar-color').removeClass('blue');
+                        $('.navbar-color').addClass('red');
+
+                        $('.btn-login').removeClass('green accent-3');
+                        $('.btn-login').removeClass('blue lighten-2');
+                        $('.btn-login').addClass('red lighten-2');
+                    }
+                    if (between(pm.top - k, escuela.top - k, scroll)) {
+                        $('.navbar-color').removeClass('red yellow darken-1');
+                        $('.navbar-color').addClass('blue');
+
+                        $('.btn-login').removeClass('red lighten-2 yellow lighten-2');
+                        $('.btn-login').addClass('blue lighten-2');
+                    }
+                    if (between(escuela.top - k, footer.top - k, scroll)) {
+                        $('.navbar-color').removeClass('blue');
+                        $('.navbar-color').addClass('yellow darken-1');
+
+                        $('.btn-login').removeClass('blue lighten-2');
+                        $('.btn-login').addClass('yellow lighten-2');
+                    }
+                });
+            });
+
+
+            function between(start, end, value) {
+                return (value >= start && value <= end);
+            }
+        </script>
     </body>
 </html>

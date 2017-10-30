@@ -66,7 +66,6 @@ public class LoginService implements UserDetailsService {
         List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();
         List<Detrol> detrols = detRolService.listEnabled(usuario.getIdUsuario());
         for (int i = 0; i < detrols.size(); i++) {
-            System.out.println(detrols.get(i).getClass().getName());
             Detrol detrol = detrols.get(i);
             simpleGrantedAuthorities.add(new SimpleGrantedAuthority(detrol.getRol().getRolCodigo()));
         }
