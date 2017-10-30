@@ -1,14 +1,8 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 function grupoService() {
     var connector = new jsConnector();
     this.addGrupo = function (grupo, _callback) {
         try {
             connector.post(url.grupo.add, JSON.stringify(grupo), function (result) {
-                //Aqui va la validación de la respuesta del servidor
                 if (result !== undefined && result !== null) {
                     successMessage({
                         title: message.grupo.add.title,
@@ -28,9 +22,8 @@ function grupoService() {
 
     };
     this.updateGrupo = function (grupo, _callback) {
-        var connectionUrl = "/grupo/update";
         try {
-            connector.post(connectionUrl, grupo, function (result) {
+            connector.post(url.grupo.update, grupo, function (result) {
                 if (result !== undefined && result !== null && result === 1) {
                     successMessage({
                         title: message.grupo.update.title,
@@ -51,9 +44,8 @@ function grupoService() {
     };
 
     this.deleteGrupo = function (grupo, _callback) {
-        var connectionUrl = "/grupo/delete";
         try {
-            connector.post(connectionUrl, JSON.stringify(grupo), function (result) {
+            connector.post(url.grupo.delete, JSON.stringify(grupo), function (result) {
                 if (result !== undefined && result !== null && result === 1) {
                     successMessage({
                         title: message.grupo.delete.title,
@@ -73,9 +65,8 @@ function grupoService() {
     };
 
     this.listGrupo = function (escuela, _callback) {
-        var connectionUrl = "/grupo/list";
         try {
-            connector.post(connectionUrl, JSON.stringify(escuela), function (result) {
+            connector.post(url.grupo.list, JSON.stringify(escuela), function (result) {
                 if (result !== undefined && result !== null && result.length > 0) {
                     _callback(result);
                 } else {
@@ -89,4 +80,23 @@ function grupoService() {
             console.log(e);
         }
     };
+
+    this.getGrupo = function (grupo, _callback) {
+        try {
+            connector.post("/grupo/get", JSON.stringify(grupo), function (result) {
+                if (result.gpoNombre !== undefined) {
+                    _callback(result);
+                } else {
+                    errorMessage({
+                        title: message.grupo.list.title,
+                        content: message.grupo.list.empty
+                    });
+                }
+            });
+        } catch (e) {
+            console.error(e);
+        }
+
+    };
+
 }

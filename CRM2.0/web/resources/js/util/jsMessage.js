@@ -146,25 +146,8 @@ var message = {
         }
     },
     asmiemgp: {
-        add: {
-            title: "Registro de Unión",
-            success: "Unión registrado con éxito.",
-            error: "Hubo un error al momento de registrar Unión"
-        },
-        update: {
-            title: "Actualización de Unión",
-            success: "Los datos del Unión han sido actualizados con éxito.",
-            error: "Hubo un error al momento de actualizar los datos de Unión"
-        },
-        delete: {
-            title: "Eliminación de Unión",
-            success: "Unión eliminado con éxito.",
-            error: "Hubo un error al momento de eliminar Unión."
-        },
-        list: {
-            title: "Listado de Unións",
-            empty: "Aún no hay Uniones registrados en el sistema"
-        }
+            title: "Registro de Asistencia de Miembro GP",
+            error: "Hubo un error al momento de registrar la Asistencia de Miembro GP"
     },
     campo: {
         add: {
@@ -252,23 +235,23 @@ var message = {
     },
     miembrogp: {
         add: {
-            title: "Registro del Mimebro de Grupo Pequeño",
-            success: "Mimebro de Grupo Pequeño registrado con éxito.",
-            error: "Hubo un error al momento de registrar al Mimebro de Grupo Pequeño"
+            title: "Registro del Miembro de Grupo Pequeño",
+            success: "Miembro de Grupo Pequeño registrado con éxito.",
+            error: "Hubo un error al momento de registrar al Miembro de Grupo Pequeño"
         },
         update: {
-            title: "Actualización del Mimebro de Grupo Pequeño",
-            success: "Los datos del Mimebro de Grupo Pequeño han sido actualizados con éxito.",
-            error: "Hubo un error al momento de actualizar los datos del Mimebro de Grupo Pequeño"
+            title: "Actualización del Miembro de Grupo Pequeño",
+            success: "Los datos del Miembro de Grupo Pequeño han sido actualizados con éxito.",
+            error: "Hubo un error al momento de actualizar los datos del Miembro de Grupo Pequeño"
         },
         delete: {
-            title: "Eliminación del Mimebro de Grupo Pequeño",
-            success: "Mimebro de Grupo Pequeño eliminado con éxito.",
-            error: "Hubo un error al momento de eliminar al Mimebro de Grupo Pequeño."
+            title: "Eliminación del Miembro de Grupo Pequeño",
+            success: "Miembro de Grupo Pequeño eliminado con éxito.",
+            error: "Hubo un error al momento de eliminar al Miembro de Grupo Pequeño."
         },
         list: {
-            title: "Listado de Mimebros de Grupo Pequeño",
-            empty: "Aún no hay Mimebros de Grupo Pequeño registrados en el sistema"
+            title: "Listado de Miembros de Grupo Pequeño",
+            empty: "Aún no hay Miembros de Grupo Pequeño registrados en el sistema"
         }
     },
     miembromin: {

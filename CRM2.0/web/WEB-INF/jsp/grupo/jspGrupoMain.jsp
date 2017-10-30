@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1" style="margin-top: 2%;">
                                 <h5 class="light italic">Grupos Pequeños</h5>
-                                <table class="highlight">
+                                <table class="highlight light italic ">
                                     <tbody id="list_body"></tbody>
                                 </table>
                             </div>

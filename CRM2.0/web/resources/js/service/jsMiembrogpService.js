@@ -1,14 +1,8 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 function miembrogpService(){
     var connector = new jsConnector();
     this.addMiembrogp = function(miembrogp,_callback){
         try {
-            connector.post(url.miembrogp.add, miembrogp, function (result) {
-                //Aqui va la validación de la respuesta del servidor
+            connector.post(url.miembrogp.add, JSON.stringify(miembrogp), function (result) {
                 if (result !== undefined && result !== null) {
                     successMessage({
                         title: message.miembrogp.add.title,
@@ -70,9 +64,9 @@ function miembrogpService(){
         }
     };
     
-    this.listMiembrogp = function (_callback) {
+    this.listMiembrogp = function (grupo,_callback) {
         try {
-            connector.post(url.miembrogp.list, JSON.stringify({id:1}), function (result) {
+            connector.post(url.miembrogp.list, JSON.stringify(grupo), function (result) {
                 if (result !== undefined && result !== null && result.length>0) {
                     _callback(result);
                 }else{

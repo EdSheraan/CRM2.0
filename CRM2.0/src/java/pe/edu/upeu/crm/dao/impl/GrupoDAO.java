@@ -17,12 +17,12 @@ public class GrupoDAO extends CrudDAO<Grupo>{
 
     @Override
     public List<Grupo> list(HibernateParam... param) {
-        return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela", param);
+        return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela order by g.gpoNombre asc", param);
     }
 
     @Override
     public List<Grupo> listEnabled(HibernateParam... param) {
-            return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela and g.gpoEstado ='1'", param);
+            return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela and g.gpoEstado ='1' order by g.gpoNombre asc", param);
     }
 
     @Override
@@ -37,7 +37,11 @@ public class GrupoDAO extends CrudDAO<Grupo>{
 
     @Override
     public Grupo get(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listUnique("From Grupo g where g.idGrupo=:idGrupo", param);
+    }
+    
+    public Grupo getGrupo(HibernateParam param) {
+        return listUnique("From Grupo g where g.idGrupo=:idGrupo", param);
     }
     
 }

@@ -21,11 +21,11 @@ import pe.edu.upeu.crm.service.CRUDService;
  * @author Leandro Burgos
  */
 @Service
-public class GrupoService implements CRUDService<Grupo>{
+public class GrupoService implements CRUDService<Grupo> {
 
     @Autowired
     private GrupoDAO grupoDAO;
-    
+
     @Override
     @Transactional
     public Object add(Grupo bean) {
@@ -33,7 +33,7 @@ public class GrupoService implements CRUDService<Grupo>{
         bean.setGpoFechaAdd(new Date());
         bean.setGpoUsuAdd(1);
         bean.setGpoEstado("1");
-        Logger.info("Registrando Grupo");        
+        Logger.info("Registrando Grupo");
         return grupoDAO.add(bean);
     }
 
@@ -76,8 +76,15 @@ public class GrupoService implements CRUDService<Grupo>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Grupo get(Object... id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Logger.info("Listando datos de un grupo");
+        return grupoDAO.get(new HibernateParam("idGrupo", id[0]));
     }
-    
+
+    @Transactional
+    public Grupo getGrupo(int id) {
+        return grupoDAO.getGrupo(new HibernateParam("idGrupo", id));
+    }
+
 }

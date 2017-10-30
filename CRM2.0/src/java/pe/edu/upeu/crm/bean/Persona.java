@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "persona",
-         catalog = "dbcrm"
+        catalog = "dbcrm"
 )
 public class Persona implements java.io.Serializable {
 
@@ -103,7 +103,6 @@ public class Persona implements java.io.Serializable {
         this.idPersona = idPersona;
     }
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idDOCUMENTO", nullable = false)
     public Documento getDocumento() {
@@ -280,7 +279,7 @@ public class Persona implements java.io.Serializable {
     public void setPerFechaDel(Date perFechaDel) {
         this.perFechaDel = perFechaDel;
     }
-    
+
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
     public Set<Miembromin> getMiembromins() {
@@ -290,7 +289,7 @@ public class Persona implements java.io.Serializable {
     public void setMiembromins(Set<Miembromin> miembromins) {
         this.miembromins = miembromins;
     }
-    
+
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
     public Set<Usuario> getUsuarios() {
@@ -300,7 +299,7 @@ public class Persona implements java.io.Serializable {
     public void setUsuarios(Set<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
-    
+
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
     public Set<Miembrogp> getMiembrogps() {

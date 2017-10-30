@@ -11,13 +11,59 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CRM Digital</title>
-        <%@include file="../jspf/general.jspf" %>        
+        <%@include file="../jspf/general.jspf" %>
+        <style>
+            .btnAc:hover{
+                background: white;
+                color: black;
+            }
+        </style>
     </head>
     <body>        
         <div id="loader-wrapper">
             <div id="loader"></div>        
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
+        </div>
+        <header id="header" class="page-topbar">
+            <div class="navbar-fixed">
+                <nav class="navbar-color grey darken-4 light italic">
+                    <div class="nav-wrapper">
+                        <ul class="left"> 
+                            <li><a class="btnAc waves-effect waves-block waves-light modal-trigger hide-on-med-and-down" href="#modal1">Ingresar</a></li>
+                            <li><a class="btnAc waves-effect waves-block waves-light modal-trigger hide-on-med-and-down" href="#modal2">Registrar</a></li>
+                            <li>
+                                <a class="dropdown-button waves-effect waves-light hide-on-large-only" href="#!" data-activates="dropdown1">Menú<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                <ul id="dropdown1" class="dropdown-content">
+                                    <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
+                                    <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
+                                    <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Ministerios</a></li>
+                                    <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
+                                    <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="right"> 
+                            <li><a class="waves-effect waves-block waves-light green accent-3 hide-on-large-only darken-1 modal-trigger light italic" href="#modal1">
+                                    Ingresar
+                                </a>
+                            </li>
+                            <li><a class="waves-effect waves-block waves-light blue darken-1 modal-trigger hide-on-large-only" href="#modal2">Registrar</a></li>
+
+                        </ul>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="#inicio" class="btnAc waves-effect waves-block waves-light">Inicio</a></li>
+                            <li><a href="#grupo" class="btnAc waves-effect waves-block waves-light">Grupos Pequeños</a></li>
+                            <li><a href="javascript:void(0);" class="btnAc waves-effect waves-block waves-light">Ministerios</a></li>
+                            <li><a href="javascript:void(0);" class="btnAc waves-effect waves-block waves-light">Parejas Misioneras</a></li>
+                            <li><a href="javascript:void(0);" class="btnAc waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container col l12 s12 m12">
+
         </div>
         <header id="header" class="page-topbar">
             <div class="navbar-fixed">
@@ -258,6 +304,7 @@
                             De esta manera, <strong>juntos</strong> ,como hermanos en la fe, prodremos cumplir con nuestras metas <strong>CRM</strong>.
                         </p>
                     </div>
+<<<<<<< HEAD
                     <div class="col l4 offset-l2 s12">
                         <h5 class="white-text">Links</h5>
                         <ul>
@@ -266,19 +313,14 @@
                             <li><a class="grey-text text-lighten-3" href="#!">Youtube</a></li>
                             <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
                         </ul>
+=======
+                    <div class="container col s12 m6 l5">
+                        <div class="card-image offset-l2">
+                            <img src="<c:url value="/resources/images/metasCRM.png"/>" alt="" style="width: 100%"/>
+                        </div>
+>>>>>>> origin/master
                     </div>
                 </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    Sistema de Gestión de Grupos Pequeños y 
-                    Trabajo Misionero desarrollado por Alpha Team.
-                    © 2017. Todos los derechos reservados
-                    <a class="grey-text text-lighten-4 right" href="#!">Ayuda</a>
-                </div>
-            </div>
-        </footer>
-
         <!--Inicio de modal LOGIN-->
         <div id="modal1" class="modal">
             <div class="modal-content">
@@ -323,61 +365,27 @@
             </div>
         </div>
         <!--Fin de modal LOGIN-->
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $(window).trigger('scroll');
-                $(window).scroll(function (event) {
-                    var scroll = $(window).scrollTop();
-                    var grupo = $('#grupo').position();
-                    var ministerio = $('#ministerio').position();
-                    var pm = $('#pm').position();
-                    var escuela = $('#escuela').position();
-                    var footer = $('#footer').position();
-                    var k = 64;
-                    if (between(0, grupo.top - k, scroll)) {
-                        $('.navbar-color').addClass('blue-grey darken-3');
-                        $('.navbar-color').removeClass('green accent-4');
+<<<<<<< HEAD
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Sistema de Gestión de Grupos Pequeños y 
+                    Trabajo Misionero desarrollado por Alpha Team.
+                    © 2017. Todos los derechos reservados
+                    <a class="grey-text text-lighten-4 right" href="#!">Ayuda</a>
+                </div>
+            </div>
+        </footer>
 
-                        $('.btn-login').removeClass('green accent-3');
-                        $('.btn-login').addClass('blue');
-                    }
-                    if (between(grupo.top - k, ministerio.top - k, scroll)) {
-                        $('.navbar-color').removeClass('blue-grey darken-3');
-                        $('.navbar-color').addClass('green accent-4');
+=======
+            </section>
+            <section id="grupo" style="display: block;width: 100%;height: 100%;">
 
-                        $('.btn-login').removeClass('blue');
-                        $('.btn-login').addClass('green accent-3');
-                    }
-                    if (between(ministerio.top - k, pm.top - k, scroll)) {
-                        $('.navbar-color').removeClass('green accent-4');
-                        $('.navbar-color').removeClass('blue');
-                        $('.navbar-color').addClass('red');
-
-                        $('.btn-login').removeClass('green accent-3');
-                        $('.btn-login').removeClass('blue lighten-2');
-                        $('.btn-login').addClass('red lighten-2');
-                    }
-                    if (between(pm.top - k, escuela.top - k, scroll)) {
-                        $('.navbar-color').removeClass('red yellow darken-1');
-                        $('.navbar-color').addClass('blue');
-
-                        $('.btn-login').removeClass('red lighten-2 yellow lighten-2');
-                        $('.btn-login').addClass('blue lighten-2');
-                    }
-                    if (between(escuela.top - k, footer.top - k, scroll)) {
-                        $('.navbar-color').removeClass('blue');
-                        $('.navbar-color').addClass('yellow darken-1');
-
-                        $('.btn-login').removeClass('blue lighten-2');
-                        $('.btn-login').addClass('yellow lighten-2');
-                    }
-                });
-            });
-
-
-            function between(start, end, value) {
-                return (value >= start && value <= end);
-            }
-        </script>
+            </section>
+            <section></section>
+            <section></section>
+            <section></section>
+        </div>
+>>>>>>> origin/master
     </body>
 </html>

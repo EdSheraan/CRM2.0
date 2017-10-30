@@ -5,10 +5,12 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Asistenciaevt;
 import pe.edu.upeu.crm.dao.impl.AsistenciaevtDAO;
 import pe.edu.upeu.crm.service.CRUDService;
@@ -24,7 +26,9 @@ public class AsistenciaevtService implements CRUDService<Asistenciaevt>{
     private AsistenciaevtDAO asistenciaevtDAO;
     
     @Override
+    @Transactional
     public Object add(Asistenciaevt bean) {
+        bean.setAstFechaRegistro(new Date());
         Logger.info("Registrando Asistenciaevt");
         return asistenciaevtDAO.add(bean);
     }

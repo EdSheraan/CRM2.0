@@ -63,6 +63,18 @@ var url ={
         update:"/unionp/update",
         delete:"/unionp/delete",
         list:"/unionp/list"
+    },
+    asistenciaevt :{
+        add:"/asistenciaevt/add",
+        update:"/asistenciaevt/update",
+        delete:"/asistenciaevt/delete",
+        list:"/asistenciaevt/list"
+    },
+    miembrogp :{
+        add:"/miembrogp/add",
+        update:"/miembrogp/update",
+        delete:"/miembrogp/delete",
+        list:"/miembrogp/list"
     }
 };
 

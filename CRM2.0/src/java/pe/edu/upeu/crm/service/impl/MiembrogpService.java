@@ -5,11 +5,14 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Miembrogp;
+import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.MiembrogpDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -24,27 +27,31 @@ public class MiembrogpService implements CRUDService<Miembrogp>{
     private MiembrogpDAO miembrogpDAO;
 
     @Override
+    @Transactional
     public Object add(Miembrogp bean) {
-        Logger.info("Registrando persona");
+        bean.setMgpFechaRegistro(new Date());
+        bean.setMgpEstado("1");
+        Logger.info("Registrando miembro GP");
         return miembrogpDAO.add(bean);
     }
 
     @Override
     public int update(Miembrogp bean) {
-        Logger.info("Actualizando persona");
+        Logger.info("Actualizando miembro GP");
         return miembrogpDAO.update(bean);
     }
 
     @Override
     public int delete(Miembrogp bean) {
-        Logger.info("Eliminando persona");
+        Logger.info("Eliminando miembro GP");
         return miembrogpDAO.update(bean);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Miembrogp> list(Object... param) {
-        Logger.info("Listando todas las personas");
-        return miembrogpDAO.list();
+        Logger.info("Listando todas los miembros de GP");
+        return miembrogpDAO.list(new HibernateParam("idGrupo",param[0]));
     }
 
     @Override

@@ -5,10 +5,12 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Persona;
 import pe.edu.upeu.crm.dao.impl.PersonaDAO;
 import pe.edu.upeu.crm.service.CRUDService;
@@ -24,7 +26,12 @@ public class PersonaService implements CRUDService<Persona>{
     private PersonaDAO personaDAO;
 
     @Override
+    @Transactional
     public Object add(Persona bean) {
+        bean.setPerEstado("1");
+        bean.setPerUsuAdd(1);
+        bean.setPerFechaAdd(new Date());
+        bean.setPerBautizado("1");
         Logger.info("Registrando persona");
         return personaDAO.add(bean);
     }

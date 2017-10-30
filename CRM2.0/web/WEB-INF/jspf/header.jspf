@@ -16,7 +16,11 @@
                 </ul>
                 <ul class="right">
                     <li class="hide-on-med-and-down">
-                        <a href="<%=request.getContextPath()%>/menu" class="waves-effect waves-block waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Menú"><i class="mdi-navigation-apps"></i></a>
+                        <div class="chip grey darken-1 white-text" onclick="loadProfile()" style="cursor: pointer;">
+                            <img src="<c:url value='/resources/images/user.png'/>" alt="Usuario">Leandro Burgos Robles
+                        </div>
+                    </li>
+                    <li><a href="<%=request.getContextPath()%>/menu" class="waves-effect waves-block waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Menú"><i class="mdi-action-view-week"></i></a>
                     </li>
                     <li class="hide-on-med-and-down">
                         <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen hide-on-med-and-down tooltipped" data-position="bottom" data-delay="50" data-tooltip="Pantalla Completa"><i class="mdi-action-settings-overscan"></i></a>

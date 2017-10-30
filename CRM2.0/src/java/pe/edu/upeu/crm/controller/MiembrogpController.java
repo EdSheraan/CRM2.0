@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import pe.edu.upeu.crm.bean.Escuela;
+import pe.edu.upeu.crm.bean.Grupo;
 import pe.edu.upeu.crm.bean.Miembrogp;
 import pe.edu.upeu.crm.service.impl.MiembrogpService;
 
@@ -59,8 +59,8 @@ public class MiembrogpController {
 
     @RequestMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public @ResponseBody
-    List<Miembrogp> listMiembrogp(@RequestBody Escuela escuela) {
-        return miembrogpService.listEnabled(escuela.getIdEscuela());
+    List<Miembrogp> listMiembrogp(@RequestBody Grupo grupo) {
+        return miembrogpService.list(grupo.getIdGrupo());
     }
     
 }

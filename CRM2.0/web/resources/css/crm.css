@@ -8,9 +8,25 @@
 body{
     background: white;
 }
+footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
 @media only screen and (max-width: 600px) {
     .tR {
         display : none;
+    }
+    .tS{
+        display: inline-block;
+    }
+    footer{
+        position: inherit;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .tS{
+        display: none;
     }
 }
 

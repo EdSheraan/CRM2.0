@@ -7,6 +7,7 @@
         <%@include file="../../jspf/general.jspf" %>        
     </head>
     <body>
+        <input type="hidden" value="1" id="idGrupo">
         <%@include file="../../jspf/header.jspf" %>
         <div id="main">
             <div class="wrapper">
@@ -16,20 +17,9 @@
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1 row">
                                 <div class="col l12 s12">
-                                    <h5>Miembros</h5>
+                                    <h5 class="light italic">Miembros</h5>
                                     <table class="highlight">
-                                        <tbody id="list_body">
-                                            <tr style="margin: 0;padding: 0;">
-                                                <td><button style="" class="btn-floating waves-effect waves-light purple">L</button></td>
-                                                <td class="ligth italic">Leandro Jair Burgos Robles</td>
-                                                <td class="thin tR"><i class="mdi-communication-call"></i>  963258741</td>
-                                                <td class="thin tR"><i class="mdi-communication-email"></i>  leandroburgos@upeu.edu.pe</td>
-                                                <td style="float:right">
-                                                    <a class="grey-text" ><i class="mdi-editor-mode-edit actCRUD"></i></a>
-                                                    <a class="grey-text" ><i class="mdi-action-delete actCRUD"></i></a>
-                                                    <a class="grey-text"><i class="mdi-navigation-more-vert actCRUD"></i></a>
-                                                </td>
-                                            </tr>
+                                        <tbody class="light italic" id="list_body">                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -46,6 +36,96 @@
                 <i class="mdi-social-person-add"></i>
             </a>
         </div>
+        <div id="modal1" class="modal white">
+            <div class="modal-content" style="padding: 0px">
+                <div id="basic-tabs" class="section">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+
+                            <div class="row">
+                                <div class="col s12">
+                                    <ul class="tabs tab-demo z-depth-1">
+                                        <li class="tab col s3"><a class="active" href="#test1">Buscar</a>
+                                        </li>
+                                        <li class="tab col s3"><a href="#test2">Registrar</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col s12">
+                                    <div id="test1" class="col s12">
+                                        <p>BUSCADOR</p>                                        
+                                    </div>
+                                    <div id="test2" class="col s12">
+                                        <div class="row light italic">
+                                            <div class="col l6 m6 s12">
+                                                <div class="input-field">
+                                                    <i class="mdi-social-person-outline prefix"></i>
+                                                    <input id="inombre" type="text" class="validate">
+                                                    <label for="inombre">Nombre(s)</label>
+                                                </div>
+                                                <div class="input-field">
+                                                    <i class="mdi-social-person-outline prefix"></i>
+                                                    <input id="iapellido" type="text" class="validate">
+                                                    <label for="iapellido">Apellidos</label>
+                                                </div>                                                
+                                                <div class="switch">Bautizado : 
+                                                    <label>No<input type="checkbox"><span class="lever"></span>Si</label>
+                                                </div>
+                                            </div>
+                                            <div class="col l6 m6 s12">
+                                                <div class="select-wrapper input-field">
+                                                    <select id="idoc">
+                                                        <option value="" disabled="" selected="">Tipo de Documento de Identificación</option>
+                                                        <option value="1">DNI</option>
+                                                        <option value="2">Carné Universitario</option>
+                                                        <option value="3">Carné de Extranjería</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input-field">
+                                                    <i class="mdi-action-credit-card prefix"></i>
+                                                    <input id="idocumento" name="password" type="text" class="validate">
+                                                    <label for="idocumento">N° de Documento</label>
+                                                </div>
+                                                <div class="select-wrapper input-field">
+                                                    <select id="isexo">
+                                                        <option value="" disabled="" selected="">Sexo</option>
+                                                        <option value="M">Masculino</option>
+                                                        <option value="F">Femenino</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="input-field" style="">
+                                                <button type="button" onclick="regPersona()" class="waves-effect waves-light btn blue darken-1 col l6 offset-l3 m12 s12">Registrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer white">
+                <a class="btn waves-effect waves-light btn-flat modal-action modal-close left white">Cancelar</a>
+            </div>
+        </div>
         <%@include file="../../jspf/footer.jspf" %>
+        <script src="<c:url value="/resources/js/service/jsMiembrogpService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/service/jsPersonaService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/vista/jsMiembrogp.js"></c:url>" type="text/javascript"></script>        
+        <script src="<c:url value="/resources/js/vista/jsPersona.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/util/jsColors.js"></c:url>" type="text/javascript"></script>
+        <script>
+            function regPersona() {
+    var nombre = $("#inombre").val();
+    var apellidos = $("#iapellido").val();
+    var idDoc = $("#idoc").val();
+    var isexo = $("#isexo").val();
+    var idocumento = $("#idocumento").val();
+    regBasicPersona(idDoc, idocumento, nombre, apellidos, isexo);
+}
+        </script>
     </body>
 </html>
