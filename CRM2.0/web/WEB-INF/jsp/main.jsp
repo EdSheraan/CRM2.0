@@ -39,11 +39,11 @@
                             <li>
                                 <a class="dropdown-button waves-effect waves-light hide-on-large-only" href="#!" data-activates="dropdown1">Menú<i class="mdi-navigation-arrow-drop-down right"></i></a>
                                 <ul id="dropdown1" class="dropdown-content">
-                                    <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
-                                    <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
-                                    <li><a href="#ministerio" class="waves-effect waves-block waves-light">Ministerios</a></li>
-                                    <li><a href="#pm" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
-                                    <li><a href="#escuela" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
+                                    <li><a href="#inicio" class="waves-effect waves-block waves-light scroll">Inicio</a></li>
+                                    <li><a href="#grupo" class="waves-effect waves-block waves-light scroll">Grupos Pequeños</a></li>
+                                    <li><a href="#ministerio" class="waves-effect waves-block waves-light scroll">Ministerios</a></li>
+                                    <li><a href="#pm" class="waves-effect waves-block waves-light scroll">Parejas Misioneras</a></li>
+                                    <li><a href="#escuela" class="waves-effect waves-block waves-light scroll">Escuelas Sabáticas</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -54,11 +54,11 @@
                             </li>
                         </ul>
                         <ul class="right hide-on-med-and-down">
-                            <li><a href="#inicio" class="waves-effect waves-block waves-light">Inicio</a></li>
-                            <li><a href="#grupo" class="waves-effect waves-block waves-light">Grupos Pequeños</a></li>
-                            <li><a href="#ministerio" class="waves-effect waves-block waves-light">Ministerios</a></li>
-                            <li><a href="#pm" class="waves-effect waves-block waves-light">Parejas Misioneras</a></li>
-                            <li><a href="#escuela" class="waves-effect waves-block waves-light">Escuelas Sabáticas</a></li>
+                            <li><a href="#inicio" class="waves-effect waves-block waves-light scroll">Inicio</a></li>
+                            <li><a href="#grupo" class="waves-effect waves-block waves-light scroll">Grupos Pequeños</a></li>
+                            <li><a href="#ministerio" class="waves-effect waves-block waves-light scroll">Ministerios</a></li>
+                            <li><a href="#pm" class="waves-effect waves-block waves-light scroll">Parejas Misioneras</a></li>
+                            <li><a href="#escuela" class="waves-effect waves-block waves-light scroll">Escuelas Sabáticas</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -329,61 +329,6 @@
             </div>
         </div>
         <!--Fin de modal LOGIN-->
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $(window).trigger('scroll');
-                $(window).scroll(function (event) {
-                    var scroll = $(window).scrollTop();
-                    var grupo = $('#grupo').position();
-                    var ministerio = $('#ministerio').position();
-                    var pm = $('#pm').position();
-                    var escuela = $('#escuela').position();
-                    var footer = $('#footer').position();
-                    var k = 64;
-                    if (between(0, grupo.top - k, scroll)) {
-                        $('.navbar-color').addClass('blue-grey darken-3');
-                        $('.navbar-color').removeClass('green accent-4');
-
-                        $('.btn-login').removeClass('green accent-3');
-                        $('.btn-login').addClass('blue');
-                    }
-                    if (between(grupo.top - k, ministerio.top - k, scroll)) {
-                        $('.navbar-color').removeClass('blue-grey darken-3');
-                        $('.navbar-color').addClass('green accent-4');
-
-                        $('.btn-login').removeClass('blue');
-                        $('.btn-login').addClass('green accent-3');
-                    }
-                    if (between(ministerio.top - k, pm.top - k, scroll)) {
-                        $('.navbar-color').removeClass('green accent-4');
-                        $('.navbar-color').removeClass('blue');
-                        $('.navbar-color').addClass('red');
-
-                        $('.btn-login').removeClass('green accent-3');
-                        $('.btn-login').removeClass('blue lighten-2');
-                        $('.btn-login').addClass('red lighten-2');
-                    }
-                    if (between(pm.top - k, escuela.top - k, scroll)) {
-                        $('.navbar-color').removeClass('red yellow darken-1');
-                        $('.navbar-color').addClass('blue');
-
-                        $('.btn-login').removeClass('red lighten-2 yellow lighten-2');
-                        $('.btn-login').addClass('blue lighten-2');
-                    }
-                    if (between(escuela.top - k, footer.top - k, scroll)) {
-                        $('.navbar-color').removeClass('blue');
-                        $('.navbar-color').addClass('yellow darken-1');
-
-                        $('.btn-login').removeClass('blue lighten-2');
-                        $('.btn-login').addClass('yellow lighten-2');
-                    }
-                });
-            });
-
-
-            function between(start, end, value) {
-                return (value >= start && value <= end);
-            }
-        </script>
+        <script src="<c:url value='/resources/js/vista/jsMain.js'></c:url>" type="text/javascript"></script>
     </body>
 </html>

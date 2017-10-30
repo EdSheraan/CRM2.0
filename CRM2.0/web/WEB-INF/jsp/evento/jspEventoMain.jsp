@@ -13,7 +13,13 @@
     </head>
     <body>
         <%@include file="../../jspf/header.jspf" %>
-        <h1>Hello World!</h1>
+        <div class="box-container">
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    
+                </div>
+            </div>
+        </div>
         <script src="<c:url value="/resources/js/service/jsEventoService.js"></c:url>" type="text/javascript"></script>
         <script src="<c:url value="/resources/js/vista/jsEvento.js"></c:url>" type="text/javascript"></script>
     </body>

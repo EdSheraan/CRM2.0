@@ -29,7 +29,7 @@ public class IglesiaDAO extends CrudDAO<Iglesia>{
     @Override
     public List<Iglesia> listDisabled(HibernateParam... param) {
         
-        return executeHQLQuery("From Iglesia i where i.iglEstado = '1'");
+        return executeHQLQuery("From Iglesia i where i.iglEstado = '0'");
     }
 
     @Override
