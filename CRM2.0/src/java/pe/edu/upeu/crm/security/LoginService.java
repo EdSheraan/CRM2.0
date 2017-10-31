@@ -21,11 +21,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.CustomUserDetails;
 import pe.edu.upeu.crm.bean.Detrol;
-import pe.edu.upeu.crm.bean.Rol;
 import pe.edu.upeu.crm.bean.Usuario;
-import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.service.impl.DetRolService;
-import pe.edu.upeu.crm.service.impl.RolService;
 import pe.edu.upeu.crm.service.impl.UsuarioService;
 
 /**
@@ -48,6 +45,7 @@ public class LoginService implements UserDetailsService {
     public void setDetRolService(DetRolService detRolService) {
         this.detRolService = detRolService;
     }
+    
 
     @Override
     @Transactional
@@ -58,6 +56,14 @@ public class LoginService implements UserDetailsService {
                 usuario.getUsuUsuario(), usuario.getUsuClave(), usuario.getPersona().getPerNombres(),
                 usuario.getPersona().getPerApellidos(), usuario.getIdUsuario(), true, true, true,
                 (usuario.getUsuEstado().equals("1")));
+
+        userDetails.setUnion(usuario.getUsuUnion());
+        userDetails.setCampo(usuario.getUsuCampo());
+        userDetails.setDistrito(usuario.getUsuDistrito());
+        userDetails.setIglesia(usuario.getUsuIglesia());
+        userDetails.setMinisterio(usuario.getUsuMinisterio());
+        userDetails.setEscuela(usuario.getUsuEscuela());
+        userDetails.setGrupo(usuario.getUsuGrupo());
         Logger.info("Iniciando sesion, usuario=" + string);
         return userDetails;
     }

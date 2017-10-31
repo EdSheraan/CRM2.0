@@ -20,8 +20,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1" style="margin-top: 2%;">
-                                <h5 class="light italic">Grupos Pequeños</h5>
-                                <table class="highlight light italic ">
+                                <h5 class="italic">Grupos Pequeños</h5>
+                                <p>Listado de grupos pequeños que pertencen a la escuela sabática " "</p>
+                                <table class="highlight light italic">
                                     <tbody id="list_body"></tbody>
                                 </table>
                             </div>
@@ -31,11 +32,14 @@
             </div>
         </div>
         <div class="fixed-action-btn" style="bottom: 10%; right: 19px;" >
-            <a class="btn-floating btn-large green accent-3 btn tooltipped" onclick="createGroup()" data-tooltip="Añadir"  >
+            <a class="btn-floating btn-large green accent-4 btn tooltipped" onclick="createGroup()" data-tooltip="Añadir"  >
                 <i class="mdi-content-add"></i>
             </a>
         </div>
         <div id="modal1" class="modal">
+            <button class="modal-close btn-flat blue-grey-text" style="position:absolute;top:0;right:0;">
+                <i class="mdi-navigation-cancel"></i>
+            </button>
             <div class="modal-content"></div>
             <div class="modal-footer">
                 <a class="waves-effect waves-light grey btn darken-1 modal-action modal-close left">Cerrar</a>

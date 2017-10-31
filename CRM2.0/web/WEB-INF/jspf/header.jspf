@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %> 
 <header id="header" class="page-topbar">
     <div class="navbar-fixed">
         <nav class="navbar-color grey darken-3">
@@ -51,3 +52,10 @@
         </nav>
     </div>
 </header>
+<input type="hidden" id="crmUnion" value="<sec:authentication property="principal.union"/>" />
+<input type="hidden" id="crmCampo" value="<sec:authentication property="principal.campo"/>" />
+<input type="hidden" id="crmDistrito" value="<sec:authentication property="principal.distrito"/>" />
+<input type="hidden" id="crmIglesia" value="<sec:authentication property="principal.iglesia"/>" />
+<input type="hidden" id="crmEscuela" value="<sec:authentication property="principal.escuela"/>" />
+<input type="hidden" id="crmMinisterio" value="<sec:authentication property="principal.ministerio"/>" />
+<input type="hidden" id="crmGrupo" value="<sec:authentication property="principal.grupo"/>" />
