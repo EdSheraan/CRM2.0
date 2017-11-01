@@ -22,8 +22,9 @@ function grupoService() {
 
     };
     this.updateGrupo = function (grupo, _callback) {
+        console.log(grupo);
         try {
-            connector.post(url.grupo.update, grupo, function (result) {
+            connector.post(url.grupo.update, JSON.stringify(grupo), function (result) {
                 if (result !== undefined && result !== null && result === 1) {
                     successMessage({
                         title: message.grupo.update.title,

@@ -5,6 +5,7 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,21 @@ public class IglesiaService implements CRUDService<Iglesia> {
     private IglesiaDAO iglesiaDAO;
 
     @Override
+    @Transactional
     public Object add(Iglesia bean) {
+        bean.setIglFechaAdd(new Date());
+        bean.setIglFechaCreacion(new Date());
+        bean.setIglUsuAdd(1);
+        bean.setIglEstado("1");
         Logger.info("Registrando Iglesia");
         return iglesiaDAO.add(bean);
     }
 
     @Override
+    @Transactional
     public int update(Iglesia bean) {
+        bean.setIglFechaUpd(new Date());
+        bean.setIglUsuUpd(1);
         Logger.info("Actualizando Iglesia");
         return iglesiaDAO.update(bean);
     }

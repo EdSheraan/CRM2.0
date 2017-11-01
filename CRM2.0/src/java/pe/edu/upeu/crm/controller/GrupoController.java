@@ -49,6 +49,7 @@ public class GrupoController {
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
     Integer updateGrupo(@RequestBody Grupo grupo) {
+        System.out.println("llega");
         return grupoService.update(grupo);
     }
 
