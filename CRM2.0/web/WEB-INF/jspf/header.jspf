@@ -1,4 +1,6 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %> 
 <header id="header" class="page-topbar">
     <div class="navbar-fixed">
@@ -31,7 +33,10 @@
                         </a>
                     </li>  
                     <li>
-                        <a href="<%=request.getContextPath()%>/main?logout" class="waves-effect waves-block waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Cerrar Sesión"><i class="mdi-action-exit-to-app"></i></a>
+                        <c:url var="action_logout" value="/j_spring_security_logout"></c:url>
+                        <form:form id="logout_form" action="${action_logout}" method="post" cssClass="hidden">
+                        </form:form>
+                        <a onclick="confirmForm('#logout_form')" class="waves-effect waves-block waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Cerrar Sesión"><i class="mdi-action-exit-to-app"></i></a>
                     </li>
                 </ul>
                 <ul id="notifications-dropdown" class="dropdown-content">

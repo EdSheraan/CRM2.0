@@ -51,6 +51,18 @@ function showMessage(params) {
         }
     });
 }
+function confirmForm(form) {
+    var c = confirmMessage({
+        title: message.logout.title,
+        content: message.logout.confirm
+    });
+    if (c) {
+        $(form).submit();
+    }
+}
+function confirmMessage(params) {
+    return confirm(params.title + "\n" + params.content);
+}
 
 /**
  * No modifcar la estructura que ya esta desarrollada, solo el contenido de los mensajes.
@@ -64,6 +76,10 @@ function showMessage(params) {
  * @type Object
  */
 var message = {
+    logout: {
+        title: "Cerrar sesion",
+        confirm: "¿Está seguro(a) de cerrar sesion?"
+    },
     persona: {
         add: {
             title: "Registro de Persona",
