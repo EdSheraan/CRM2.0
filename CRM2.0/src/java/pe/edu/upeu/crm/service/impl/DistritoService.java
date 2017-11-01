@@ -36,6 +36,7 @@ public class DistritoService implements CRUDService<Distrito>{
     }
 
     @Override
+    @Transactional
     public int update(Distrito bean) {
         Logger.info("Actualizando Distrito");
         return distritoDAO.update(bean);

@@ -1,5 +1,6 @@
 var list_body = $('#list_body');
 var gService = new grupoService();
+var grupoAct;
 $(document).ready(function () {
     gService.listGrupo({idEscuela: 1}, listGrupo);
 });
@@ -41,7 +42,8 @@ function listGrupo(list) {
 function updateGrupo(id) {
     var grupo = {idGrupo: id};
     gService.getGrupo(grupo, function (data) {
-        var s = createModal(data.gpoNombre, data.gpoLugarReunion, "active");
+        grupoAct = data;
+        var s = createModal("update", data.gpoNombre, data.gpoLugarReunion, "active");
         $(".modal-content").empty();
         $(".modal-content").append(s);
         $('#modal1').openModal();
@@ -52,7 +54,7 @@ function deleteGrupo(idGrupo) {
     confirmMessage({
         title: 'Eliminar Grupo Pequeño',
         content: '¿Seguro que desea eliminar este grupo?'
-    }, function(){
+    }, function () {
         var grupo = {idGrupo: idGrupo};
         gService.deleteGrupo(grupo, reload);
     });
@@ -61,13 +63,30 @@ function deleteGrupo(idGrupo) {
 function save() {
     var nombregp = $("#ngpo").val();
     var lreunion = $("#lgreu").val();
+    var tip = $("#tipModal").val();
     if (nombregp !== "" && lreunion !== "") {
-        var grupo = {
-            gpoNombre: nombregp,
-            gpoLugarReunion: lreunion,
-            escuela: {idEscuela: 1}
-        };
-        gService.addGrupo(grupo, reload);
+        var grupo;
+        if (tip === "create") {
+            grupo = {
+                gpoNombre: nombregp,
+                gpoLugarReunion: lreunion,
+                escuela: {idEscuela: 1}
+            };
+            gService.addGrupo(grupo, reload);
+        }
+        if (tip === "update") {
+            grupo = {
+                gpoNombre: nombregp,
+                gpoLugarReunion: lreunion,
+                idGrupo: grupoAct.idGrupo,
+                gpoEstado: grupoAct.gpoEstado,
+                gpoUsuAdd: grupoAct.gpoUsuAdd,
+                gpoFechaCreacion: grupoAct.gpoFechaCreacion,
+                gpoFechaAdd : grupoAct.gpoFechaAdd,
+                escuela: {idEscuela: grupoAct.escuela.idEscuela}
+            };
+            gService.updateGrupo(grupo, reload);
+        }
     } else {
         alert("Campos Incompletos...");
     }
@@ -79,7 +98,7 @@ function reload(id) {
     }
 }
 
-function createModal(nombre, lugar, clase) {
+function createModal(tipo, nombre, lugar, clase) {
     var s = '';
     s += '<h5 class="thin">Grupo Pequeño</h5>';
     s += '<div class="row">';
@@ -96,13 +115,14 @@ function createModal(nombre, lugar, clase) {
     s += '<label for="lgreu" class="' + clase + '">Lugar de Reunión</label>';
     s += '</div>';
     s += '</div>';
+    s += '<input type="hidden" value=' + tipo + ' id="tipModal">';
     s += '</form>';
     s += '</div>';
     return s;
 }
 
 function createGroup() {
-    var s = createModal("", "", "");
+    var s = createModal("create", "", "", "");
     $(".modal-content").empty();
     $(".modal-content").append(s);
     $('#modal1').openModal();

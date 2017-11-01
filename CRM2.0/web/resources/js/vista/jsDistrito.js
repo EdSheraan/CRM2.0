@@ -1,5 +1,6 @@
 var list_body = $('#list_body');
 var dService = new distritoService();
+var distritoAct;
 $(document).ready(function () {
     var campo = {
         idCampo: 1
@@ -42,18 +43,19 @@ function listDistrito(list) {
 function updateDistrito(id) {
     var distrito = {idDistrito: id};
     dService.getDistrito(distrito, function (data) {
-        var s = createModal(data.disNombre, "active");
+        distritoAct = data;
+        var s = createModal("update", data.disNombre, "active");
         $(".modal-content").empty();
         $(".modal-content").append(s);
         $('#modal1').openModal();
     });
 }
 
-function deleteDistrito(idDistrito) {    
+function deleteDistrito(idDistrito) {
     confirmMessage({
         title: 'Eliminar Distrito Misionero',
         content: '¿Seguro que desea eliminar este distrito?'
-    }, function(){
+    }, function () {
         var distrito = {idDistrito: idDistrito};
         dService.deleteDistrito(distrito, reload);
     });
@@ -61,14 +63,26 @@ function deleteDistrito(idDistrito) {
 
 function save() {
     var nombregp = $("#ndis").val();
-    var lreunion = $("#lgreu").val();
-    if (nombregp !== "" && lreunion !== "") {
-        var distrito = {
-            disNombre: nombregp,
-            disLugarReunion: lreunion,
-            campo: {idCampo: 1}
-        };
-        dService.addDistrito(distrito, reload);
+    var tip = $("#tipModal").val();
+    if (nombregp !== "") {
+        var distrito;
+        if (tip === "create") {
+            distrito = {
+                disNombre: nombregp,
+                campo: {idCampo: 1}
+            };
+            dService.addDistrito(distrito, reload);
+        }
+        if (tip === "update") {
+            distrito = {
+                disNombre: nombregp,
+                idDistrito: distritoAct.idDistrito,
+                disEstado: distritoAct.disEstado,
+                disFechaCreacion: distritoAct.disFechaCreacion,
+                campo: {idCampo: distritoAct.campo.idCampo}
+            };
+            dService.updateDistrito(distrito, reload);
+        }
     } else {
         alert("Campos Incompletos...");
     }
@@ -80,7 +94,7 @@ function reload(id) {
     }
 }
 
-function createModal(nombre, clase) {
+function createModal(tipo, nombre, clase) {
     var s = '';
     s += '<h5 class="thin">Distrito</h5>';
     s += '<div class="row">';
@@ -92,13 +106,14 @@ function createModal(nombre, clase) {
     s += '<label for="ndis" class="' + clase + '">Nombre</label>';
     s += '</div>';
     s += '</div>';
+    s += '<input type="hidden" value=' + tipo + ' id="tipModal">';
     s += '</form>';
     s += '</div>';
     return s;
 }
 
 function createDistrito() {
-    var s = createModal("",  "");
+    var s = createModal("create", "", "");
     $(".modal-content").empty();
     $(".modal-content").append(s);
     $('#modal1').openModal();

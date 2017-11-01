@@ -40,6 +40,8 @@ public class GrupoService implements CRUDService<Grupo> {
     @Override
     @Transactional
     public int update(Grupo bean) {
+        bean.setGpoFechaUpd(new Date());
+        bean.setGpoUsuUpd(1);
         Logger.info("Actualizando Grupo");
         return grupoDAO.update(bean);
     }

@@ -1,5 +1,6 @@
 var list_body = $('#list_body');
 var iService = new iglesiaService();
+var iglesiaAct;
 $(document).ready(function () {
     var distrito = {
         idDistrito: 1
@@ -43,7 +44,8 @@ function listIglesia(list) {
 function updateIglesia(id) {
     var iglesia = {idIglesia: id};
     iService.getIglesia(iglesia, function (data) {
-        var s = createModal(data.iglNombre, data.iglDireccion, "active");
+        iglesiaAct = data;
+        var s = createModal("update", data.iglNombre, data.iglDireccion, "active");
         $(".modal-content").empty();
         $(".modal-content").append(s);
         $('#modal1').openModal();
@@ -54,7 +56,7 @@ function deleteIglesia(idIglesia) {
     confirmMessage({
         title: 'Eliminar Iglesia',
         content: '¿Seguro que desea eliminar este iglesia?'
-    }, function(){
+    }, function () {
         var iglesia = {idIglesia: idIglesia};
         iService.deleteIglesia(iglesia, reload);
     });
@@ -63,13 +65,30 @@ function deleteIglesia(idIglesia) {
 function save() {
     var nombregp = $("#nigl").val();
     var lreunion = $("#lgreu").val();
+    var tip = $("#tipModal").val();
     if (nombregp !== "" && lreunion !== "") {
-        var iglesia = {
-            iglNombre: nombregp,
-            iglLugarReunion: lreunion,
-            distrito: {idDistrito: 1}
-        };
-        iService.addIglesia(iglesia, reload);
+        var iglesia;
+        if (tip === "create") {
+            iglesia = {
+                iglNombre: nombregp,
+                iglDireccion: lreunion,
+                distrito: {idDistrito: 1}
+            };
+            iService.addIglesia(iglesia, reload);
+        }
+        if (tip === "update") {
+            iglesia = {
+                iglNombre: nombregp,
+                iglDireccion: lreunion,
+                idIglesia: iglesiaAct.idIglesia,
+                iglEstado: iglesiaAct.iglEstado,
+                iglUsuAdd: iglesiaAct.iglUsuAdd,
+                iglFechaCreacion: iglesiaAct.iglFechaCreacion,
+                iglFechaAdd: iglesiaAct.iglFechaAdd,
+                distrito: {idDistrito: iglesiaAct.distrito.idDistrito}
+            };
+            iService.updateIglesia(iglesia, reload);
+        }
     } else {
         alert("Campos Incompletos...");
     }
@@ -81,7 +100,7 @@ function reload(id) {
     }
 }
 
-function createModal(nombre, lugar, clase) {
+function createModal(tipo, nombre, lugar, clase) {
     var s = '';
     s += '<h5 class="thin">Iglesia</h5>';
     s += '<div class="row">';
@@ -98,13 +117,14 @@ function createModal(nombre, lugar, clase) {
     s += '<label for="lgreu" class="' + clase + '">Dirección</label>';
     s += '</div>';
     s += '</div>';
+    s += '<input type="hidden" value=' + tipo + ' id="tipModal">';
     s += '</form>';
     s += '</div>';
     return s;
 }
 
 function createIglesia() {
-    var s = createModal("", "", "");
+    var s = createModal("create", "", "", "");
     $(".modal-content").empty();
     $(".modal-content").append(s);
     $('#modal1').openModal();

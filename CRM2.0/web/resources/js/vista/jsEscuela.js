@@ -1,5 +1,6 @@
 var list_body = $('#list_body');
 var eService = new escuelaService();
+var escuelaAct;
 $(document).ready(function () {
     var iglesia = {
         idIglesia: 1
@@ -43,7 +44,8 @@ function listEscuela(list) {
 function updateEscuela(id) {
     var escuela = {idEscuela: id};
     eService.getEscuela(escuela, function (data) {
-        var s = createModal(data.escNombre, data.escLugarReunion, "active");
+        escuelaAct = data;
+        var s = createModal("update", data.escNombre, data.escLugarReunion, "active");
         $(".modal-content").empty();
         $(".modal-content").append(s);
         $('#modal1').openModal();
@@ -54,7 +56,7 @@ function deleteEscuela(idEscuela) {
     confirmMessage({
         title: 'Eliminar Escuela Sabática',
         content: '¿Seguro que desea eliminar este escuela?'
-    }, function(){
+    }, function () {
         var escuela = {idEscuela: idEscuela};
         eService.deleteEscuela(escuela, reload);
     });
@@ -63,13 +65,30 @@ function deleteEscuela(idEscuela) {
 function save() {
     var nombregp = $("#nesc").val();
     var lreunion = $("#lgreu").val();
+    var tip = $("#tipModal").val();
     if (nombregp !== "" && lreunion !== "") {
-        var escuela = {
-            escNombre: nombregp,
-            escLugarReunion: lreunion,
-            iglesia: {idIglesia: 1}
-        };
-        eService.addEscuela(escuela, reload);
+        var escuela;
+        if (tip === "create") {
+            escuela = {
+                escNombre: nombregp,
+                escLugarReunion: lreunion,
+                iglesia: {idIglesia: 1}
+            };
+            eService.addEscuela(escuela, reload);
+        }
+        if (tip === "update") {
+            escuela = {
+                escNombre: nombregp,
+                escLugarReunion: lreunion,
+                escEstado: escuelaAct.escEstado,
+                escUsuAdd: escuelaAct.escUsuAdd,
+                escFechaCreacion: escuelaAct.escFechaCreacion,
+                escFechaAdd : escuelaAct.escFechaAdd,
+                idEscuela : escuelaAct.idEscuela,
+                iglesia: {idIglesia: escuelaAct.iglesia.idIglesia}
+            };
+            eService.updateEscuela(escuela, reload);
+        }
     } else {
         alert("Campos Incompletos...");
     }
@@ -81,7 +100,7 @@ function reload(id) {
     }
 }
 
-function createModal(nombre, lugar, clase) {
+function createModal(tipo,nombre, lugar, clase) {
     var s = '';
     s += '<h5 class="thin">Escuela Sabática</h5>';
     s += '<div class="row">';
@@ -98,13 +117,14 @@ function createModal(nombre, lugar, clase) {
     s += '<label for="lgreu" class="' + clase + '">Lugar de Reunión</label>';
     s += '</div>';
     s += '</div>';
+    s += '<input type="hidden" value=' + tipo + ' id="tipModal">';
     s += '</form>';
     s += '</div>';
     return s;
 }
 
 function createEscuela() {
-    var s = createModal("", "", "");
+    var s = createModal("create","", "", "");
     $(".modal-content").empty();
     $(".modal-content").append(s);
     $('#modal1').openModal();

@@ -39,6 +39,8 @@ public class EscuelaService implements CRUDService<Escuela>{
 
     @Override
     public int update(Escuela bean) {
+        bean.setEscFechaUpd(new Date());
+        bean.setEscUsuUpd(1);
         Logger.info("Actualizando Escuela");
         return escuelaDAO.update(bean);
     }
