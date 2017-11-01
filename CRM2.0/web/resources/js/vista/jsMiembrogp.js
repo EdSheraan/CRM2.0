@@ -2,11 +2,16 @@ var list_body = $('#list_body');
 var mgpService = new miembrogpService();
 var idGrupo = $("#idGrupo").val();
 $(document).ready(function () {
-    var grupo = {idGrupo: idGrupo};
-    mgpService.listMiembrogp(grupo, mostrar);
+    load();
 });
 
+function load(){
+    var grupo = {idGrupo: idGrupo};
+    mgpService.listMiembrogp(grupo, mostrar);
+}
+
 function mostrar(list) {
+    console.log(list);
     var s = "";
     for (var i = 0, max = list.length; i < max; i++) {
         var r = getLetter(list[i].persona.perNombres);
@@ -20,7 +25,7 @@ function mostrar(list) {
         s += '<td class="thin tR"><i class="mdi-communication-call"></i>  ' + t + '</td>';
         s += '<td class="thin tR"><i class="mdi-communication-email"></i>  ' + c + '</td>';
         s += '<td style="float:right">';
-        s += '<a class="grey-text" ><i class="mdi-action-delete actCRUD"></i></a>';
+        s += '<a class="grey-text" onclick="deleteMGP(' + list[i].idMiembrogp + ')"><i class="mdi-action-delete actCRUD"></i></a>';
         s += '<a class="grey-text"><i class="mdi-social-person actCRUD"></i></a>';
         //s += '<a class="grey-text"><i class="mdi-navigation-more-vert actCRUD"></i></a>';
         s += '</td>';
@@ -48,4 +53,9 @@ function algoritmo() {
     $('#modal1').closeModal();
     var grupo = {idGrupo: idGrupo};
     mgpService.listMiembrogp(grupo, mostrar);
+}
+
+function deleteMGP(idMiembrogp) {
+    var miembrogp = {idMiembrogp: idMiembrogp};
+    mgpService.deleteMiembrogp(miembrogp,load);
 }

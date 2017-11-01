@@ -4,7 +4,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <%@include file="../../jspf/general.jspf" %>        
+        <%@include file="../../jspf/general.jspf" %>
+        <link href="<c:url value='/resources/css/animate.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
     </head>
     <body>
         <input type="hidden" value="1" id="idGrupo">
@@ -32,7 +33,7 @@
             </div>
         </div>
         <div class="fixed-action-btn " style="bottom: 10%; right: 19px;" >
-            <a class="btn-floating btn-large green accent-3 modal-trigger" href="#modal1">
+            <a class="btn-floating btn-large green accent-3 modal-trigger animated infinite pulse" href="#modal1">
                 <i class="mdi-social-person-add"></i>
             </a>
         </div>
@@ -76,7 +77,7 @@
                                                 <div class="select-wrapper input-field">
                                                     <select id="idoc">
                                                         <option value="" disabled="" selected="">Tipo de Documento de Identificación</option>
-                                                        <option value="1">DNI</option>
+                                                        <option value="1">Documento Nacional de Identidad</option>
                                                         <option value="2">Carné Universitario</option>
                                                         <option value="3">Carné de Extranjería</option>
                                                     </select>
@@ -118,14 +119,14 @@
         <script src="<c:url value="/resources/js/vista/jsPersona.js"></c:url>" type="text/javascript"></script>
         <script src="<c:url value="/resources/js/util/jsColors.js"></c:url>" type="text/javascript"></script>
         <script>
-            function regPersona() {
-    var nombre = $("#inombre").val();
-    var apellidos = $("#iapellido").val();
-    var idDoc = $("#idoc").val();
-    var isexo = $("#isexo").val();
-    var idocumento = $("#idocumento").val();
-    regBasicPersona(idDoc, idocumento, nombre, apellidos, isexo);
-}
+                                                    function regPersona() {
+                                                        var nombre = $("#inombre").val();
+                                                        var apellidos = $("#iapellido").val();
+                                                        var idDoc = $("#idoc").val();
+                                                        var isexo = $("#isexo").val();
+                                                        var idocumento = $("#idocumento").val();
+                                                        regBasicPersona(idDoc, idocumento, nombre, apellidos, isexo);
+                                                    }
         </script>
     </body>
 </html>

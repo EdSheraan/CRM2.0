@@ -5,7 +5,6 @@ $(document).ready(function () {
 });
 
 function listGrupo(list) {
-    console.log("Cargando Grupos ...");
     var s = "";
     for (var i = 0; i < list.length; i++) {
         var grupo = list[i];
@@ -18,6 +17,7 @@ function listGrupo(list) {
         s += '<td style="width:38px;"><button class="btn-floating waves-effect waves-light ' + getColor() + '">' + r + '</button></td>';
         s += '<td class="condensed"><h6><strong>' + grupo.gpoNombre.toUpperCase() + '</strong></h6></td>';
         s += '<td class="tR"><small>Registrado el</small> ' + day + '/' + month + '/' + year + '</td>';
+        //s += '<td class="tR"><strong><small>Lider : </small> Arnold Danilo Morales Gomez</strong></td>';
         s += '<td class="tR">' + grupo.gpoLugarReunion + '</td>';
         s += '<td style="float:right">';
         s += '<a class="grey-text tR" onclick="updateGrupo(' + grupo.idGrupo + ')"><i class="mdi-editor-mode-edit actCRUD"></i></a>';
@@ -39,12 +39,13 @@ function listGrupo(list) {
 }
 
 function updateGrupo(id) {
-    console.log("Comenzando a editar...");
     var grupo = {idGrupo: id};
-    var s = createModal("Damasco I", "Casa de Arnold", "active");
-    /*$(".modal-content").empty();
-     $(".modal-content").append(s);
-     $('#modal1').openModal();*/
+    gService.getGrupo(grupo, function (data) {
+        var s = createModal(data.gpoNombre, data.gpoLugarReunion, "active");
+        $(".modal-content").empty();
+        $(".modal-content").append(s);
+        $('#modal1').openModal();
+    });
 }
 
 function deleteGrupo(idGrupo) {

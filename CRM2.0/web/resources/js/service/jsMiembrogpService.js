@@ -1,6 +1,6 @@
-function miembrogpService(){
+function miembrogpService() {
     var connector = new jsConnector();
-    this.addMiembrogp = function(miembrogp,_callback){
+    this.addMiembrogp = function (miembrogp, _callback) {
         try {
             connector.post(url.miembrogp.add, JSON.stringify(miembrogp), function (result) {
                 if (result !== undefined && result !== null) {
@@ -9,10 +9,10 @@ function miembrogpService(){
                         content: message.miembrogp.add.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.miembrogp.add.title,
-                       content:message.miembrogp.add.error
+                        title: message.miembrogp.add.title,
+                        content: message.miembrogp.add.error
                     });
                 }
             });
@@ -21,19 +21,19 @@ function miembrogpService(){
         }
 
     };
-    this.updateMiembrogp = function(miembrogp, _callback){
+    this.updateMiembrogp = function (miembrogp, _callback) {
         try {
-            connector.post(url.miembrogp.update,miembrogp,function(result){
-                if (result!== undefined && result!==null && result === 1) {
+            connector.post(url.miembrogp.update, miembrogp, function (result) {
+                if (result !== undefined && result !== null && result === 1) {
                     successMessage({
-                        title:message.miembrogp.update.title,
-                        content:message.miembrogp.update.success
+                        title: message.miembrogp.update.title,
+                        content: message.miembrogp.update.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.miembrogp.update.title,
-                       content:message.miembrogp.update.error
+                        title: message.miembrogp.update.title,
+                        content: message.miembrogp.update.error
                     });
                 }
             });
@@ -42,20 +42,20 @@ function miembrogpService(){
         }
 
     };
-    
-    this.deleteMiembrogp = function(miembrogp, _callback){
+
+    this.deleteMiembrogp = function (miembrogp, _callback) {
         try {
-            connector.post(url.miembrogp.delete,miembrogp,function(result){
-                if (result!== undefined && result!==null && result === 1) {
+            connector.post(url.miembrogp.delete, JSON.stringify(miembrogp), function (result) {
+                if (result !== undefined && result !== null && result === 1) {
                     successMessage({
-                        title:message.miembrogp.delete.title,
-                        content:message.miembrogp.delete.success
+                        title: message.miembrogp.delete.title,
+                        content: message.miembrogp.delete.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.miembrogp.delete.title,
-                       content:message.miembrogp.delete.error
+                        title: message.miembrogp.delete.title,
+                        content: message.miembrogp.delete.error
                     });
                 }
             });
@@ -63,16 +63,16 @@ function miembrogpService(){
             console.log(e);
         }
     };
-    
-    this.listMiembrogp = function (grupo,_callback) {
+
+    this.listMiembrogp = function (grupo, _callback) {
         try {
             connector.post(url.miembrogp.list, JSON.stringify(grupo), function (result) {
-                if (result !== undefined && result !== null && result.length>0) {
+                if (result !== undefined && result !== null && result.length > 0) {
                     _callback(result);
-                }else{
+                } else {
                     infoMessage({
-                       title:message.miembrogp.list.title,
-                       content:message.miembrogp.list.empty
+                        title: message.miembrogp.list.title,
+                        content: message.miembrogp.list.empty
                     });
                 }
             });

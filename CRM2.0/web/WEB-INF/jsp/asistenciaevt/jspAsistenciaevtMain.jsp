@@ -31,10 +31,10 @@
                         <div class="row">
                             <div class="col s12 m12 l12">
                                 <ol class="breadcrumbs light italic">
-                                    <li class="active">Evento n° 10</li>
+                                    <li class="active">Evento n° 1</li>
                                     <li class="active">Reunión de Grupo Pequeño</li>
-                                    <li class="active">23 de octubre del 2017</li>
-                                    <li class="active">Vence el 30 de octubre</li>
+                                    <li class="active">30 de octubre del 2017</li>
+                                    <li class="active">Vence el 31 de octubre</li>
                                 </ol>
                             </div>
                             <div class="col s12 m12 l10 offset-l1 row">

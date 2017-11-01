@@ -8,7 +8,12 @@ $(document).ready(function () {
     var grupo = {idGrupo: 1};
     mgpService.listMiembrogp(grupo, loadMiembros);
     gpService.getGrupo(grupo, dataGroup);
+    dataEvento();
 });
+
+function dataEvento(){
+    
+}
 
 function dataGroup(grupo) {
     $(".titleGP").empty();
