@@ -5,11 +5,14 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upeu.crm.bean.Privilegio;
+import pe.edu.upeu.crm.bean.PrivilegioGroup;
+import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.PrivilegioDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -49,7 +52,8 @@ public class PrivilegioService implements CRUDService<Privilegio>{
 
     @Override
     public List<Privilegio> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Logger.info("Listando todos los privilegios del rol: "+param[0]);
+        return privilegioDAO.listEnabled(new HibernateParam("idRol", param[0]));
     }
 
     @Override
@@ -65,6 +69,26 @@ public class PrivilegioService implements CRUDService<Privilegio>{
     @Override
     public Privilegio get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public List<PrivilegioGroup> group(List<Privilegio> list){
+        List<PrivilegioGroup> groups = new ArrayList<>();
+        for(Privilegio p: list){
+            if(p.getPrvIdPadre()==0){
+                groups.add(addChilds(p, list));
+            }
+        }
+        return groups;
+    }
+    
+    private PrivilegioGroup addChilds(Privilegio p, List<Privilegio> list){
+        PrivilegioGroup g = new PrivilegioGroup();
+        for(Privilegio child:list){
+            if(p.getPrvIdPadre() == p.getIdPrivilegio()){
+                g.addChild(child);
+            }
+        }
+        return g;
     }
 
 }

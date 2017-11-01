@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.crm.bean.Rol;
 import pe.edu.upeu.crm.security.LoginService;
+import pe.edu.upeu.crm.service.impl.PrivilegioService;
 import pe.edu.upeu.crm.service.impl.RolService;
 import pe.edu.upeu.crm.util.SessionUtil;
 
@@ -28,17 +29,22 @@ import pe.edu.upeu.crm.util.SessionUtil;
 @Scope("request")
 @RequestMapping("rol")
 public class RolController {
-
+    
     @Autowired
     private RolService rolService;
-
+    
+    @Autowired
+    private PrivilegioService privilegioService;
+    
     private ModelAndView modelAndView;
-
+    
     @RequestMapping("/select")
     public ModelAndView selectRols(HttpSession session) {
         List<Rol> rols = rolService.listEnabled(LoginService.getPrincipal().getIdPersona());
         if (rols.size() == 1) {
             session.setAttribute(SessionUtil.ROL_SELECTED, rols.get(0));
+            session.setAttribute(SessionUtil.PRV_ROL,
+                    privilegioService.group(privilegioService.listEnabled(rols.get(0).getIdRol())));
         }
         session.setAttribute(SessionUtil.ROL_LIST, rols);
         modelAndView = new ModelAndView("roles");
@@ -46,11 +52,12 @@ public class RolController {
     }
     
     @RequestMapping("/select/r")
-    public ModelAndView selectRol(@ModelAttribute Rol rol,HttpSession session) {
+    public ModelAndView selectRol(@ModelAttribute Rol rol, HttpSession session) {
         session.setAttribute(SessionUtil.ROL_SELECTED, rol);
+        session.setAttribute(SessionUtil.PRV_ROL,
+                privilegioService.group(privilegioService.listEnabled(rol.getIdRol())));
         modelAndView = new ModelAndView("redirect:/menu");
         return modelAndView;
     }
-    
     
 }

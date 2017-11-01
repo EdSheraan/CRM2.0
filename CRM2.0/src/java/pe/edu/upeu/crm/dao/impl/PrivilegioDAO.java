@@ -22,8 +22,7 @@ public class PrivilegioDAO extends CrudDAO<Privilegio> {
 
     @Override
     public List<Privilegio> listEnabled(HibernateParam... param) {
-        Object[] estado = {"estado", "1"};
-        return executeHQLQuery("From Privilegio p where p.prvEstado = '1'");
+        return executeHQLQuery("From Privilegio p join p.rols as r where p.prvEstado = '1' and p.r.idRol = :idRol",param);
     }
 
     @Override
