@@ -20,6 +20,7 @@
                 </div>
             </div>
         </div>
+        
         <script src="<c:url value="/resources/js/service/jsEventoService.js"></c:url>" type="text/javascript"></script>
         <script src="<c:url value="/resources/js/vista/jsEvento.js"></c:url>" type="text/javascript"></script>
     </body>

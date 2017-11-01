@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var dependencies =[''];
-$(document).ready(function(){
-    
+var dependencies = [''];
+$(document).ready(function () {
+
 });
 /**
  * 
  * @param {type} name
  * @returns {undefined}
  */
-function checkDependecies(name){
-    
-}
+function checkDependecies(name) {
 
+}
