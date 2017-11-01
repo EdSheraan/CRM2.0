@@ -11,8 +11,8 @@ $(document).ready(function () {
     dataEvento();
 });
 
-function dataEvento(){
-    
+function dataEvento() {
+
 }
 
 function dataGroup(grupo) {
@@ -52,25 +52,10 @@ function loadMiembros(list) {
 }
 
 function saveAsis() {
-    (new PNotify({
+    confirmMessage({
         title: 'Registro de Asistencia',
-        text: '¿Está seguro que desea registrar?',
-        addclass: 'crm-pnotify',
-        icon: 'mdi-communication-chat white-text',
-        hide: false,
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        }
-    })).get().on('pnotify.confirm', function () {
-        addAsistenciaevt();
-    });
+        content: '¿Está seguro que desea registrar?'
+    }, addAsistenciaevt);
 }
 
 function addAsistenciaevt() {

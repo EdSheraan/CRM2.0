@@ -1,9 +1,3 @@
-<%-- 
-    Document   : grupoView
-    Created on : 09/10/2017, 11:40:42 PM
-    Author     : Leandro Burgos
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,8 +14,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1" style="margin-top: 2%;">
-                                <h5 class="italic">Grupos Pequeños</h5>
-                                <p>Listado de grupos pequeños que pertencen a la escuela sabática " "</p>
+                                <h5 class="italic">Escuelas Sabáticas</h5>
+                                <p>Listado de escuelas sabáticas que pertencen a la iglesia " "</p>
                                 <table class="highlight light italic">
                                     <tbody id="list_body"></tbody>
                                 </table>
@@ -32,7 +26,7 @@
             </div>
         </div>
         <div class="fixed-action-btn" style="bottom: 10%; right: 19px;" >
-            <a class="btn-floating btn-large green accent-4 btn tooltipped" onclick="createGroup()" data-tooltip="Añadir"  >
+            <a class="btn-floating btn-large green accent-4 btn tooltipped" onclick="createEscuela()" data-tooltip="Añadir"  >
                 <i class="mdi-content-add"></i>
             </a>
         </div>
@@ -47,8 +41,8 @@
             </div>
         </div>
         <%@include file="../../jspf/footer.jspf" %>
-        <script src="<c:url value="/resources/js/service/jsGrupoService.js"></c:url>" type="text/javascript"></script>
-        <script src="<c:url value="/resources/js/vista/jsGrupo.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/service/jsEscuelaService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/vista/jsEscuela.js"></c:url>" type="text/javascript"></script>
         <script src="<c:url value="/resources/js/util/jsColors.js"></c:url>" type="text/javascript"></script>
     </body>
 </html>

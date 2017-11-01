@@ -19,6 +19,7 @@ public class CustomUserDetails implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
     private String username, password, name, lastname;
     private int idPersona;
+    private Integer union, campo, distrito, iglesia, ministerio, escuela, grupo;
     private boolean accountNonExpired;
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
@@ -122,6 +123,62 @@ public class CustomUserDetails implements UserDetails {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Integer getUnion() {
+        return union;
+    }
+
+    public void setUnion(Integer union) {
+        this.union = union;
+    }
+
+    public Integer getCampo() {
+        return campo;
+    }
+
+    public void setCampo(Integer campo) {
+        this.campo = campo;
+    }
+
+    public Integer getDistrito() {
+        return distrito;
+    }
+
+    public void setDistrito(Integer distrito) {
+        this.distrito = distrito;
+    }
+
+    public Integer getIglesia() {
+        return iglesia;
+    }
+
+    public void setIglesia(Integer iglesia) {
+        this.iglesia = iglesia;
+    }
+
+    public Integer getMinisterio() {
+        return ministerio;
+    }
+
+    public void setMinisterio(Integer ministerio) {
+        this.ministerio = ministerio;
+    }
+
+    public Integer getEscuela() {
+        return escuela;
+    }
+
+    public void setEscuela(Integer escuela) {
+        this.escuela = escuela;
+    }
+
+    public Integer getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Integer grupo) {
+        this.grupo = grupo;
     }
 
 }

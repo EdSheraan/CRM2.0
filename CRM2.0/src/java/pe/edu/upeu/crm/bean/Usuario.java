@@ -27,6 +27,7 @@ public class Usuario implements java.io.Serializable {
     private Integer idUsuario;
     private Persona persona;
     private String usuUsuario;
+    private Integer usuUnion, usuCampo, usuDistrito, usuIglesia, usuMinisterio, usuEscuela, usuGrupo;
     private String usuClave;
     private String usuEstado;
     private String usuEstadoClave;
@@ -119,5 +120,70 @@ public class Usuario implements java.io.Serializable {
     public void setDetrols(Set<Detrol> detrols) {
         this.detrols = detrols;
     }
+    
+    @Column(name = "USU_UNION")
+    public Integer getUsuUnion() {
+        return usuUnion;
+    }
+
+    public void setUsuUnion(Integer usuUnion) {
+        this.usuUnion = usuUnion;
+    }
+    
+    @Column(name = "USU_CAMPO")
+    public Integer getUsuCampo() {
+        return usuCampo;
+    }
+
+    public void setUsuCampo(Integer usuCampo) {
+        this.usuCampo = usuCampo;
+    }
+    
+    @Column(name = "USU_DISTRITO")
+    public Integer getUsuDistrito() {
+        return usuDistrito;
+    }
+
+    public void setUsuDistrito(Integer usuDistrito) {
+        this.usuDistrito = usuDistrito;
+    }
+    
+    @Column(name = "USU_IGLESIA")
+    public Integer getUsuIglesia() {
+        return usuIglesia;
+    }
+
+    public void setUsuIglesia(Integer usuIglesia) {
+        this.usuIglesia = usuIglesia;
+    }
+    
+    @Column(name = "USU_MINISTERIO")
+    public Integer getUsuMinisterio() {
+        return usuMinisterio;
+    }
+
+    public void setUsuMinisterio(Integer usuMinisterio) {
+        this.usuMinisterio = usuMinisterio;
+    }
+    
+    @Column(name = "USU_ESCUELA")
+    public Integer getUsuEscuela() {
+        return usuEscuela;
+    }
+
+    public void setUsuEscuela(Integer usuEscuela) {
+        this.usuEscuela = usuEscuela;
+    }
+    
+    @Column(name = "USU_GRUPO")
+    public Integer getUsuGrupo() {
+        return usuGrupo;
+    }
+
+    public void setUsuGrupo(Integer usuGrupo) {
+        this.usuGrupo = usuGrupo;
+    }
+    
+    
 
 }

@@ -10,7 +10,9 @@ function errorMessage(params) {
         text: params.content,
         addclass: 'crm-pnotify',
         icon: 'mdi-alert-warning red-text',
-        sticker: false
+        buttons: {
+            sticker: false
+        }
     });
 }
 
@@ -20,7 +22,9 @@ function infoMessage(params) {
         text: params.content,
         addclass: 'crm-pnotify',
         icon: 'mdi-action-info blue-text',
-        sticker: false
+        buttons: {
+            sticker: false
+        }
     });
 }
 
@@ -30,7 +34,9 @@ function successMessage(params) {
         text: params.content,
         addclass: 'crm-pnotify',
         icon: 'mdi-action-done green-text lighten-3',
-        sticker: false
+        buttons: {
+            sticker: false
+        }
     });
 }
 
@@ -40,8 +46,30 @@ function showMessage(params) {
         text: params.content,
         addclass: 'crm-pnotify',
         icon: false,
-        sticker: false
+        buttons: {
+            sticker: false
+        }
     });
+}
+
+function confirmMessage(params, event) {
+    (new PNotify({
+        title: params.title,
+        text: params.content,
+        addclass: 'crm-pnotify',
+        icon: 'mdi-communication-chat white-text',
+        hide: false,
+        confirm: {
+            confirm: true
+        },
+        buttons: {
+            closer: false,
+            sticker: false
+        },
+        history: {
+            history: false
+        }
+    })).get().on('pnotify.confirm', event);
 }
 
 /**
@@ -146,8 +174,8 @@ var message = {
         }
     },
     asmiemgp: {
-            title: "Registro de Asistencia de Miembro GP",
-            error: "Hubo un error al momento de registrar la Asistencia de Miembro GP"
+        title: "Registro de Asistencia de Miembro GP",
+        error: "Hubo un error al momento de registrar la Asistencia de Miembro GP"
     },
     campo: {
         add: {

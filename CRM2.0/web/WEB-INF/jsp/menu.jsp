@@ -55,7 +55,7 @@
         </style>
     </head>
     <body class="white">
-        <%@include file="../jspf/header.jspf" %>   
+        <%@include file="../jspf/header.jspf" %> 
         <div class="row contModulos">
             <div class="col l2 card-panel  waves-effect waves-light cGP" id="modGP" onclick="redirect(this.id)" style="margin-left: 8%;">
                 <center>

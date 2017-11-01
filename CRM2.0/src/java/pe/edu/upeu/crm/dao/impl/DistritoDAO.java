@@ -7,7 +7,7 @@ import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
-public class DistritoDAO extends CrudDAO<Distrito>{
+public class DistritoDAO extends CrudDAO<Distrito> {
 
     @Override
     public int delete(Distrito bean) {
@@ -21,7 +21,7 @@ public class DistritoDAO extends CrudDAO<Distrito>{
 
     @Override
     public List<Distrito> listEnabled(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Distrito d where d.campo.idCampo=:idCampo and d.disEstado ='1' order by d.disNombre asc", param);
     }
 
     @Override
@@ -39,4 +39,8 @@ public class DistritoDAO extends CrudDAO<Distrito>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public Distrito getDistrito(HibernateParam param) {
+        return listUnique("From Distrito d where d.idDistrito=:idDistrito", param);
+    }
+
 }

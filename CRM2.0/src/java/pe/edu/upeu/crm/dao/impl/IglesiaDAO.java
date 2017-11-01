@@ -7,7 +7,7 @@ import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
-public class IglesiaDAO extends CrudDAO<Iglesia>{
+public class IglesiaDAO extends CrudDAO<Iglesia> {
 
     @Override
     public int delete(Iglesia bean) {
@@ -22,14 +22,12 @@ public class IglesiaDAO extends CrudDAO<Iglesia>{
 
     @Override
     public List<Iglesia> listEnabled(HibernateParam... param) {
-        
-        return executeHQLQuery("From Iglesia i where i.iglEstado = '1'");
+        return executeHQLQuery("From Iglesia i where i.distrito.idDistrito=:idDistrito and i.iglEstado ='1' order by i.iglNombre asc", param);
     }
 
     @Override
     public List<Iglesia> listDisabled(HibernateParam... param) {
-        
-        return executeHQLQuery("From Iglesia i where i.iglEstado = '1'");
+        return executeHQLQuery("From Iglesia i where i.iglEstado = '0'");
     }
 
     @Override
@@ -42,4 +40,8 @@ public class IglesiaDAO extends CrudDAO<Iglesia>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public Iglesia getIglesia(HibernateParam param) {
+        return listUnique("From Iglesia i where i.idIglesia=:idIglesia", param);
+    }
+
 }

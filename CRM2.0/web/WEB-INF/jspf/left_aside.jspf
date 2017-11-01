@@ -10,6 +10,8 @@
         </li>
         <li class="bold"><a href="<%=request.getContextPath()%>/miembrogp/main" class="waves-effect waves-light"><i class="mdi-social-group"></i> Gestión de Miembros</a>
         </li>
+        <li class="bold"><a href="<%=request.getContextPath()%>/escuela/main" class="waves-effect waves-light"><i class="mdi-social-group"></i> Escuelas Sabáticas</a>
+        </li>
     </ul>
     <a href="#" data-activates="slide-out" class="sidebar-collapse waves-effect waves-light hide-on-large-only"><i class="mdi-navigation-menu small white-text"></i></a>
 </aside>

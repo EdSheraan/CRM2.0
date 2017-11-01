@@ -11,8 +11,8 @@ public class EscuelaDAO extends CrudDAO<Escuela> {
 
     @Override
     public int delete(Escuela bean) {
-        bean.setEscEstado("0");
-        return update(bean);
+        HibernateParam param = new HibernateParam("idEscuela", bean.getIdEscuela());
+        return executeHQLUpdate("Update Escuela e set e.escEstado = '0' where e.idEscuela = :idEscuela", param);
     }
 
     @Override
@@ -22,14 +22,12 @@ public class EscuelaDAO extends CrudDAO<Escuela> {
 
     @Override
     public List<Escuela> listEnabled(HibernateParam... param) {
-        Object[] estado = {"estado", "1"};
-        return executeHQLQuery("From Escuela e where e.escEstado = '1'");
+        return executeHQLQuery("From Escuela e where e.iglesia.idIglesia=:idIglesia and e.escEstado = '1' order by e.escNombre asc", param);
     }
 
     @Override
     public List<Escuela> listDisabled(HibernateParam... param) {
-        Object[] estado = {"estado", "0"};
-        return executeHQLQuery("From Escuela e where e.escEstado = '1'");
+        return executeHQLQuery("From Escuela e where e.escEstado = '0'");
     }
 
     @Override
@@ -42,4 +40,7 @@ public class EscuelaDAO extends CrudDAO<Escuela> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public Escuela getEscuela(HibernateParam param) {
+        return listUnique("From Escuela e where e.idEscuela=:idEscuela", param);
+    }
 }
