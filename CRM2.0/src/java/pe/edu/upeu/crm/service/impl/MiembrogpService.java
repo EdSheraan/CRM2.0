@@ -44,7 +44,7 @@ public class MiembrogpService implements CRUDService<Miembrogp>{
     @Override
     public int delete(Miembrogp bean) {
         Logger.info("Eliminando miembro GP");
-        return miembrogpDAO.update(bean);
+        return miembrogpDAO.delete(bean);
     }
 
     @Override

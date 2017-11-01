@@ -1,33 +1,35 @@
 var list_body = $('#list_body');
-var gService = new grupoService();
+var eService = new escuelaService();
 $(document).ready(function () {
-    gService.listGrupo({idEscuela: 1}, listGrupo);
+    var iglesia = {
+        idIglesia: 1
+    };
+    eService.listEscuela(iglesia, listEscuela);
 });
 
-function listGrupo(list) {
+function listEscuela(list) {
     var s = "";
     for (var i = 0; i < list.length; i++) {
-        var grupo = list[i];
-        var r = getLetter(grupo.gpoNombre);
-        var date = new Date(grupo.gpoFechaCreacion);
+        var escuela = list[i];
+        var r = getLetter(escuela.escNombre);
+        var date = new Date(escuela.escFechaCreacion);
         var year = date.getFullYear();
         var month = 1 + date.getMonth();
         var day = date.getDate();
         s += '<tr>';
         s += '<td style="width:38px;"><button class="btn-floating waves-effect waves-light ' + getColor() + '">' + r + '</button></td>';
-        s += '<td class="condensed"><h6><strong>' + grupo.gpoNombre.toUpperCase() + '</strong></h6></td>';
+        s += '<td class="condensed"><h6><strong>' + escuela.escNombre.toUpperCase() + '</strong></h6></td>';
         s += '<td class="tR"><small>Registrado el</small> ' + day + '/' + month + '/' + year + '</td>';
-        //s += '<td class="tR"><strong><small>Lider : </small> Arnold Danilo Morales Gomez</strong></td>';
-        s += '<td class="tR">' + grupo.gpoLugarReunion + '</td>';
+        s += '<td class="tR">' + escuela.escLugarReunion + '</td>';
         s += '<td style="float:right">';
-        s += '<a class="grey-text tR" onclick="updateGrupo(' + grupo.idGrupo + ')"><i class="mdi-editor-mode-edit actCRUD"></i></a>';
-        s += '<a class="grey-text tR" onclick="deleteGrupo(' + grupo.idGrupo + ')"><i class="mdi-action-delete actCRUD"></i></a>';
+        s += '<a class="grey-text tR" onclick="updateEscuela(' + escuela.idEscuela + ')"><i class="mdi-editor-mode-edit actCRUD"></i></a>';
+        s += '<a class="grey-text tR" onclick="deleteEscuela(' + escuela.idEscuela + ')"><i class="mdi-action-delete actCRUD"></i></a>';
         s += '<a class="grey-text tR"><i class="mdi-social-group actCRUD"></i></a>';
         s += '<a class="grey-text tS"><i class="mdi-action-info-outline actCRUD"></i></a>';
         s += '<a class="grey-text dropdown-button tS" data-activates="dropdown' + i + '"><i class="mdi-navigation-more-vert actCRUD"></i></a>';
         s += '<ul id="dropdown' + i + '" class="dropdown-content">';
-        s += '<li><a onclick="updateGrupo(' + grupo.idGrupo + ')" class="-text">Editar</a></li>';
-        s += '<li><a onclick="deleteGrupo(' + grupo.idGrupo + ')" class="-text">Eliminar</a></li>';
+        s += '<li><a onclick="updateEscuela(' + escuela.idEscuela + ')" class="-text">Editar</a></li>';
+        s += '<li><a onclick="deleteEscuela(' + escuela.idEscuela + ')" class="-text">Eliminar</a></li>';
         s += '<li><a href="#!" class="-text">Miembros</a></li>';
         s += '</ul>';
         s += '</td>';
@@ -38,36 +40,36 @@ function listGrupo(list) {
     $('.dropdown-button').dropdown();
 }
 
-function updateGrupo(id) {
-    var grupo = {idGrupo: id};
-    gService.getGrupo(grupo, function (data) {
-        var s = createModal(data.gpoNombre, data.gpoLugarReunion, "active");
+function updateEscuela(id) {
+    var escuela = {idEscuela: id};
+    eService.getEscuela(escuela, function (data) {
+        var s = createModal(data.escNombre, data.escLugarReunion, "active");
         $(".modal-content").empty();
         $(".modal-content").append(s);
         $('#modal1').openModal();
     });
 }
 
-function deleteGrupo(idGrupo) {
+function deleteEscuela(idEscuela) {
     confirmMessage({
-        title: 'Eliminar Grupo Pequeño',
-        content: '¿Seguro que desea eliminar este grupo?'
+        title: 'Eliminar Escuela Sabática',
+        content: '¿Seguro que desea eliminar este escuela?'
     }, function(){
-        var grupo = {idGrupo: idGrupo};
-        gService.deleteGrupo(grupo, reload);
+        var escuela = {idEscuela: idEscuela};
+        eService.deleteEscuela(escuela, reload);
     });
 }
 
 function save() {
-    var nombregp = $("#ngpo").val();
+    var nombregp = $("#nesc").val();
     var lreunion = $("#lgreu").val();
     if (nombregp !== "" && lreunion !== "") {
-        var grupo = {
-            gpoNombre: nombregp,
-            gpoLugarReunion: lreunion,
-            escuela: {idEscuela: 1}
+        var escuela = {
+            escNombre: nombregp,
+            escLugarReunion: lreunion,
+            iglesia: {idIglesia: 1}
         };
-        gService.addGrupo(grupo, reload);
+        eService.addEscuela(escuela, reload);
     } else {
         alert("Campos Incompletos...");
     }
@@ -75,20 +77,20 @@ function save() {
 
 function reload(id) {
     if (id !== 0) {
-        gService.listGrupo({idEscuela: 1}, listGrupo);
+        eService.listEscuela({idIglesia: 1}, listEscuela);
     }
 }
 
 function createModal(nombre, lugar, clase) {
     var s = '';
-    s += '<h5 class="thin">Grupo Pequeño</h5>';
+    s += '<h5 class="thin">Escuela Sabática</h5>';
     s += '<div class="row">';
     s += '<form class="col s12">';
     s += '<div class="row">';
     s += '<div class="input-field col s12 l6 m6">';
     s += '<i class="mdi-social-group prefix"></i>';
-    s += '<input id="ngpo" type="text" class="validate" value="' + nombre + '">';
-    s += '<label for="ngpo" class="' + clase + '">Nombre</label>';
+    s += '<input id="nesc" type="text" class="validate" value="' + nombre + '">';
+    s += '<label for="nesc" class="' + clase + '">Nombre</label>';
     s += '</div>';
     s += '<div class="input-field col s12 l6 m6">';
     s += '<i class="mdi-action-home prefix"></i>';
@@ -101,7 +103,7 @@ function createModal(nombre, lugar, clase) {
     return s;
 }
 
-function createGroup() {
+function createEscuela() {
     var s = createModal("", "", "");
     $(".modal-content").empty();
     $(".modal-content").append(s);

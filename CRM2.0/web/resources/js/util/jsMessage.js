@@ -64,6 +64,26 @@ function confirmMessage(params) {
     return confirm(params.title + "\n" + params.content);
 }
 
+function confirmMessage(params, event) {
+    (new PNotify({
+        title: params.title,
+        text: params.content,
+        addclass: 'crm-pnotify',
+        icon: 'mdi-communication-chat white-text',
+        hide: false,
+        confirm: {
+            confirm: true
+        },
+        buttons: {
+            closer: false,
+            sticker: false
+        },
+        history: {
+            history: false
+        }
+    })).get().on('pnotify.confirm', event);
+}
+
 /**
  * No modifcar la estructura que ya esta desarrollada, solo el contenido de los mensajes.
  * La estructura es la siguiente:

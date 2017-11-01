@@ -8,6 +8,7 @@ package pe.edu.upeu.crm.controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import pe.edu.upeu.crm.bean.Distrito;
 import pe.edu.upeu.crm.bean.Iglesia;
 import pe.edu.upeu.crm.service.impl.IglesiaService;
 
@@ -26,17 +28,17 @@ import pe.edu.upeu.crm.service.impl.IglesiaService;
 @Scope("request")
 @RequestMapping("iglesia")
 public class IglesiaController {
-    
+
     @Autowired
     private IglesiaService iglesiaService;
     private ModelAndView modelAndView;
-    
+
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspIglesia(ModelMap model) {
         modelAndView = new ModelAndView("iglesia/jspIglesiaMain", model);
         return modelAndView;
     }
-    
+
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
     Integer addIglesia(@RequestBody Iglesia iglesia) {
@@ -57,8 +59,14 @@ public class IglesiaController {
 
     @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Iglesia> listIglesia() {
-        return iglesiaService.list((Object[]) null);
+    List<Iglesia> listIglesia(@RequestBody Distrito distrito) {
+        return iglesiaService.listEnabled(distrito.getIdDistrito());
+    }
+
+    @RequestMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
+    public @ResponseBody
+    Iglesia listIglesia(@RequestBody Iglesia iglesia) {
+        return iglesiaService.getIglesia(iglesia.getIdIglesia());
     }
     
 }

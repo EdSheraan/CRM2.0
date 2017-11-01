@@ -5,11 +5,14 @@
  */
 package pe.edu.upeu.crm.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Distrito;
+import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.DistritoDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -24,7 +27,10 @@ public class DistritoService implements CRUDService<Distrito>{
     private DistritoDAO distritoDAO;
     
     @Override
+    @Transactional
     public Object add(Distrito bean) {
+        bean.setDisFechaCreacion(new Date());
+        bean.setDisEstado("1");
         Logger.info("Registrando Distrito");
         return distritoDAO.add(bean);
     }
@@ -48,8 +54,9 @@ public class DistritoService implements CRUDService<Distrito>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Distrito> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return distritoDAO.listEnabled(new HibernateParam("idCampo", param[0]));
     }
 
     @Override
@@ -67,4 +74,8 @@ public class DistritoService implements CRUDService<Distrito>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    @Transactional
+    public Distrito getDistrito(int id) {
+        return distritoDAO.getDistrito(new HibernateParam("idDistrito", id));
+    }
 }

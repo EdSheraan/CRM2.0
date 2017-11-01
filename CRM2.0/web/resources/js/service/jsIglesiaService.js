@@ -7,7 +7,7 @@ function iglesiaService(){
     var connector = new jsConnector();
     this.addIglesia = function(iglesia,_callback){
         try {
-            connector.post(url.iglesia.add, iglesia, function (result) {
+            connector.post(url.iglesia.add, JSON.stringify(iglesia), function (result) {
                 //Aqui va la validación de la respuesta del servidor
                 if (result !== undefined && result !== null) {
                     successMessage({
@@ -29,7 +29,7 @@ function iglesiaService(){
     };
     this.updateIglesia = function(iglesia, _callback){
         try {
-            connector.post(url.iglesia.update,iglesia,function(result){
+            connector.post(url.iglesia.update,JSON.stringify(iglesia),function(result){
                 if (result!== undefined && result!==null && result === 1) {
                     successMessage({
                         title:message.iglesia.update.title,
@@ -51,7 +51,7 @@ function iglesiaService(){
     
     this.deleteIglesia = function(iglesia, _callback){
         try {
-            connector.post(url.iglesia.delete,iglesia,function(result){
+            connector.post(url.iglesia.delete,JSON.stringify(iglesia),function(result){
                 if (result!== undefined && result!==null && result === 1) {
                     successMessage({
                         title:message.iglesia.delete.title,
@@ -70,9 +70,9 @@ function iglesiaService(){
         }
     };
     
-    this.listIglesia = function (_callback) {
+    this.listIglesia = function (distrito,_callback) {
         try {
-            connector.post(url.iglesia.list, JSON.stringify({id:1}), function (result) {
+            connector.post(url.iglesia.list, JSON.stringify(distrito), function (result) {
                 if (result !== undefined && result !== null && result.length>0) {
                     _callback(result);
                 }else{
@@ -85,5 +85,23 @@ function iglesiaService(){
         } catch (e) {
             console.log(e);
         }
+    };
+    
+    this.getIglesia = function (iglesia, _callback) {
+        try {
+            connector.post("/iglesia/get", JSON.stringify(iglesia), function (result) {
+                if (result.iglNombre !== undefined) {
+                    _callback(result);
+                } else {
+                    errorMessage({
+                        title: message.iglesia.list.title,
+                        content: message.iglesia.list.empty
+                    });
+                }
+            });
+        } catch (e) {
+            console.error(e);
+        }
+
     };
 }

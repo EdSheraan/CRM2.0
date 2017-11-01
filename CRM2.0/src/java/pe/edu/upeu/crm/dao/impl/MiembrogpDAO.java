@@ -11,13 +11,13 @@ public class MiembrogpDAO extends CrudDAO<Miembrogp> {
 
     @Override
     public int delete(Miembrogp bean) {
-        bean.setMgpEstado("0");
-        return update(bean);
+        HibernateParam param = new HibernateParam("idMiembrogp", bean.getIdMiembrogp());
+        return executeHQLUpdate("Update Miembrogp m set m.mgpEstado = '0' where m.idMiembrogp =:idMiembrogp", param);
     }
 
     @Override
     public List<Miembrogp> list(HibernateParam... param) {
-        return executeHQLQuery("From Miembrogp m join fetch m.persona as persona where m.grupo.idGrupo=:idGrupo order by m.persona.perNombres asc", param);
+        return executeHQLQuery("From Miembrogp m join fetch m.persona as persona where m.grupo.idGrupo=:idGrupo and m.mgpEstado = '1' order by m.persona.perNombres asc", param);
     }
 
     @Override

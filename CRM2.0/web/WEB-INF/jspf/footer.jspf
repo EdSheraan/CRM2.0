@@ -1,8 +1,15 @@
-<footer class="page-footer grey darken-4 fixed-footer hide-on-med-and-down">
+<style>
+    footer{
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+    }
+</style>
+<footer class="page-footer grey darken-4">
     <div class="footer-copyright">
         <div class="container thin">            
-                <span><strong>CRM</strong> <small>Digital</small></span>
-                <span class="tR right">Copyright © 2017 <a class="grey-text text-lighten-4" href="http://facebook.com/AlphaTeamUPeU/" target="_blank"><strong>Alpha Team</strong></a> All rights reserved.</span>
-            </div>
+            <span><strong>CRM</strong> <small>Digital</small></span>
+            <span class="tR right">Copyright © 2017 <a class="grey-text text-lighten-4" href="http://facebook.com/AlphaTeamUPeU/" target="_blank"><strong>Alpha Team</strong></a> All rights reserved.</span>
+        </div>
     </div>
 </footer>
