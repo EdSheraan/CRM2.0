@@ -1,9 +1,12 @@
 var list_body = $('#list_body');
 var eService = new escuelaService();
 var escuelaAct;
+var idIglesia = $("#crm_idIglesia").val();
 $(document).ready(function () {
+    $(".titleTab").empty();
+    $(".titleTab").append("Listado de escuelas sabáticas que pertencen a la iglesia <strong>" + $("#crm_iglNombre").val().toUpperCase() + "</strong>");
     var iglesia = {
-        idIglesia: 1
+        idIglesia: idIglesia
     };
     eService.listEscuela(iglesia, listEscuela);
 });
@@ -72,7 +75,7 @@ function save() {
             escuela = {
                 escNombre: nombregp,
                 escLugarReunion: lreunion,
-                iglesia: {idIglesia: 1}
+                iglesia: {idIglesia: idIglesia}
             };
             eService.addEscuela(escuela, reload);
         }
@@ -83,8 +86,8 @@ function save() {
                 escEstado: escuelaAct.escEstado,
                 escUsuAdd: escuelaAct.escUsuAdd,
                 escFechaCreacion: escuelaAct.escFechaCreacion,
-                escFechaAdd : escuelaAct.escFechaAdd,
-                idEscuela : escuelaAct.idEscuela,
+                escFechaAdd: escuelaAct.escFechaAdd,
+                idEscuela: escuelaAct.idEscuela,
                 iglesia: {idIglesia: escuelaAct.iglesia.idIglesia}
             };
             eService.updateEscuela(escuela, reload);
@@ -96,11 +99,11 @@ function save() {
 
 function reload(id) {
     if (id !== 0) {
-        eService.listEscuela({idIglesia: 1}, listEscuela);
+        eService.listEscuela({idIglesia: idIglesia}, listEscuela);
     }
 }
 
-function createModal(tipo,nombre, lugar, clase) {
+function createModal(tipo, nombre, lugar, clase) {
     var s = '';
     s += '<h5 class="thin">Escuela Sabática</h5>';
     s += '<div class="row">';
@@ -124,7 +127,7 @@ function createModal(tipo,nombre, lugar, clase) {
 }
 
 function createEscuela() {
-    var s = createModal("create","", "", "");
+    var s = createModal("create", "", "", "");
     $(".modal-content").empty();
     $(".modal-content").append(s);
     $('#modal1').openModal();

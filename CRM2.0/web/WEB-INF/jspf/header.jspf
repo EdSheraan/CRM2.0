@@ -20,7 +20,7 @@
                 <ul class="right">
                     <li class="hide-on-med-and-down">
                         <div class="chip grey darken-1 white-text" onclick="loadProfile()" style="cursor: pointer;">
-                            <img src="<c:url value='/resources/images/user.png'/>" alt="Usuario">Leandro Burgos Robles
+                            <img src="<c:url value='/resources/images/user.png'/>" alt="Usuario">Nombre Apellido Apellido
                         </div>
                     </li>
                     <li><a href="<%=request.getContextPath()%>/menu" class="waves-effect waves-block waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Menú"><i class="mdi-action-view-week"></i></a>

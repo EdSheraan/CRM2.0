@@ -1,8 +1,12 @@
 var list_body = $('#list_body');
 var gService = new grupoService();
 var grupoAct;
+var idEscuela = $("#crm_idEscuela").val();
 $(document).ready(function () {
-    gService.listGrupo({idEscuela: 1}, listGrupo);
+    $(".titleTab").empty();
+    $(".titleTab").append("Listado de grupos pequeños que pertencen a la escuela sabática <strong>" + $("#crm_escNombre").val().toUpperCase() + "</strong>");
+    var escuela = {idEscuela: idEscuela};
+    gService.listGrupo(escuela, listGrupo);
 });
 
 function listGrupo(list) {
@@ -70,7 +74,7 @@ function save() {
             grupo = {
                 gpoNombre: nombregp,
                 gpoLugarReunion: lreunion,
-                escuela: {idEscuela: 1}
+                escuela: {idEscuela: idEscuela}
             };
             gService.addGrupo(grupo, reload);
         }
@@ -82,7 +86,7 @@ function save() {
                 gpoEstado: grupoAct.gpoEstado,
                 gpoUsuAdd: grupoAct.gpoUsuAdd,
                 gpoFechaCreacion: grupoAct.gpoFechaCreacion,
-                gpoFechaAdd : grupoAct.gpoFechaAdd,
+                gpoFechaAdd: grupoAct.gpoFechaAdd,
                 escuela: {idEscuela: grupoAct.escuela.idEscuela}
             };
             gService.updateGrupo(grupo, reload);
@@ -94,7 +98,8 @@ function save() {
 
 function reload(id) {
     if (id !== 0) {
-        gService.listGrupo({idEscuela: 1}, listGrupo);
+        var escuela = {idEscuela: idEscuela};
+        gService.listGrupo(escuela, listGrupo);
     }
 }
 

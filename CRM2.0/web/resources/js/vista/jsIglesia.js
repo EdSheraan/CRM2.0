@@ -1,9 +1,12 @@
 var list_body = $('#list_body');
 var iService = new iglesiaService();
 var iglesiaAct;
+var idDistrito = $("#crm_idDistrito").val();
 $(document).ready(function () {
+    $(".titleTab").empty();
+    $(".titleTab").append("Listado de iglesias que pertencen al distrito misionero <strong>" + $("#crm_disNombre").val().toUpperCase() + "</strong>");
     var distrito = {
-        idDistrito: 1
+        idDistrito: idDistrito
     };
     iService.listIglesia(distrito, listIglesia);
 });
@@ -72,7 +75,7 @@ function save() {
             iglesia = {
                 iglNombre: nombregp,
                 iglDireccion: lreunion,
-                distrito: {idDistrito: 1}
+                distrito: {idDistrito: idDistrito}
             };
             iService.addIglesia(iglesia, reload);
         }
@@ -96,7 +99,7 @@ function save() {
 
 function reload(id) {
     if (id !== 0) {
-        iService.listIglesia({idDistrito: 1}, listIglesia);
+        iService.listIglesia({idDistrito: idDistrito}, listIglesia);
     }
 }
 

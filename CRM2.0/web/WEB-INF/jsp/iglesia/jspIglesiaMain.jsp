@@ -15,7 +15,7 @@
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1" style="margin-top: 2%;">
                                 <h5 class="italic">Iglesias</h5>
-                                <p>Listado de iglesias que pertencen al distrito misionero " "</p>
+                                <p class="titleTab light italic"></p>
                                 <table class="highlight light italic">
                                     <tbody id="list_body"></tbody>
                                 </table>

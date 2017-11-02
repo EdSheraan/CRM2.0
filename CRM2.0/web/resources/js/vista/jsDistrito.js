@@ -1,9 +1,12 @@
 var list_body = $('#list_body');
 var dService = new distritoService();
 var distritoAct;
+var idCampo=$("#crm_idCampo").val();
 $(document).ready(function () {
+    $(".titleTab").empty();
+    $(".titleTab").append("Listado de distritos misioneros que pertencen al campo <strong>" + $("#crm_cmpNombre").val().toUpperCase() + "</strong>");
     var campo = {
-        idCampo: 1
+        idCampo: idCampo
     };
     dService.listDistrito(campo, listDistrito);
 });
@@ -69,7 +72,7 @@ function save() {
         if (tip === "create") {
             distrito = {
                 disNombre: nombregp,
-                campo: {idCampo: 1}
+                campo: {idCampo: idCampo}
             };
             dService.addDistrito(distrito, reload);
         }
@@ -90,7 +93,7 @@ function save() {
 
 function reload(id) {
     if (id !== 0) {
-        dService.listDistrito({idCampo: 1}, listDistrito);
+        dService.listDistrito({idCampo: idCampo}, listDistrito);
     }
 }
 
