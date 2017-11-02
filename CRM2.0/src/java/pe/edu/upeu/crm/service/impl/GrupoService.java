@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Grupo;
 import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.GrupoDAO;
+import pe.edu.upeu.crm.security.LoginService;
 import pe.edu.upeu.crm.service.CRUDService;
 
 /**
@@ -31,7 +32,7 @@ public class GrupoService implements CRUDService<Grupo> {
     public Object add(Grupo bean) {
         bean.setGpoFechaCreacion(new Date());
         bean.setGpoFechaAdd(new Date());
-        bean.setGpoUsuAdd(1);
+        bean.setGpoUsuAdd(LoginService.getPrincipal().getIdPersona());
         bean.setGpoEstado("1");
         Logger.info("Registrando Grupo");
         return grupoDAO.add(bean);
@@ -41,7 +42,7 @@ public class GrupoService implements CRUDService<Grupo> {
     @Transactional
     public int update(Grupo bean) {
         bean.setGpoFechaUpd(new Date());
-        bean.setGpoUsuUpd(1);
+        bean.setGpoUsuUpd(LoginService.getPrincipal().getIdPersona());
         Logger.info("Actualizando Grupo");
         return grupoDAO.update(bean);
     }

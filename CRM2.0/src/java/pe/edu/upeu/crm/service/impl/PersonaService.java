@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Persona;
 import pe.edu.upeu.crm.dao.impl.PersonaDAO;
+import pe.edu.upeu.crm.security.LoginService;
 import pe.edu.upeu.crm.service.CRUDService;
 
 /**
@@ -29,7 +30,7 @@ public class PersonaService implements CRUDService<Persona>{
     @Transactional
     public Object add(Persona bean) {
         bean.setPerEstado("1");
-        bean.setPerUsuAdd(1);
+        bean.setPerUsuAdd(LoginService.getPrincipal().getIdPersona());
         bean.setPerFechaAdd(new Date());
         bean.setPerBautizado("1");
         Logger.info("Registrando persona");
