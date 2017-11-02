@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Escuela;
 import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.EscuelaDAO;
+import pe.edu.upeu.crm.security.LoginService;
 import pe.edu.upeu.crm.service.CRUDService;
 
 /**
@@ -31,7 +32,7 @@ public class EscuelaService implements CRUDService<Escuela>{
     public Object add(Escuela bean) {
         bean.setEscFechaCreacion(new Date());
         bean.setEscFechaAdd(new Date());
-        bean.setEscUsuAdd(1);
+        bean.setEscUsuAdd(LoginService.getPrincipal().getIdPersona());
         bean.setEscEstado("1");
         Logger.info("Registrando Escuela");
         return escuelaDAO.add(bean);
@@ -41,7 +42,7 @@ public class EscuelaService implements CRUDService<Escuela>{
     @Transactional
     public int update(Escuela bean) {
         bean.setEscFechaUpd(new Date());
-        bean.setEscUsuUpd(1);
+        bean.setEscUsuUpd(LoginService.getPrincipal().getIdPersona());
         Logger.info("Actualizando Escuela");
         return escuelaDAO.update(bean);
     }

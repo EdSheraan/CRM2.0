@@ -5,30 +5,30 @@
  */
 package pe.edu.upeu.crm.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import pe.edu.upeu.crm.bean.Privilegio;
+import pe.edu.upeu.crm.service.impl.UsuarioService;
 
 /**
  *
- * @author Andres
+ * @author Leandro Burgos
  */
 @Controller
 @Scope("request")
-@RequestMapping("privilegio")
-public class PrivilegioController {
-
+@RequestMapping("usuario")
+public class UsuarioController {
+    @Autowired
+    private UsuarioService usuarioService;
     private ModelAndView modelAndView;
-
+    
     @RequestMapping(value = "/main", method = RequestMethod.GET)
-    public ModelAndView privilegioRol(ModelMap model) {
-        //System.out.println(privilegio.getPrvLink());
-        modelAndView = new ModelAndView("privilegios", model);
+    public ModelAndView showJspUsuario(ModelMap model) {
+        modelAndView = new ModelAndView("usuario/jspUsuarioMain", model);
         return modelAndView;
     }
 }

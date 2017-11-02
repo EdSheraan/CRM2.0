@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Iglesia;
 import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.IglesiaDAO;
+import pe.edu.upeu.crm.security.LoginService;
 import pe.edu.upeu.crm.service.CRUDService;
 
 /**
@@ -31,7 +32,7 @@ public class IglesiaService implements CRUDService<Iglesia> {
     public Object add(Iglesia bean) {
         bean.setIglFechaAdd(new Date());
         bean.setIglFechaCreacion(new Date());
-        bean.setIglUsuAdd(1);
+        bean.setIglUsuAdd(LoginService.getPrincipal().getIdPersona());
         bean.setIglEstado("1");
         Logger.info("Registrando Iglesia");
         return iglesiaDAO.add(bean);
@@ -41,7 +42,7 @@ public class IglesiaService implements CRUDService<Iglesia> {
     @Transactional
     public int update(Iglesia bean) {
         bean.setIglFechaUpd(new Date());
-        bean.setIglUsuUpd(1);
+        bean.setIglUsuUpd(LoginService.getPrincipal().getIdPersona());
         Logger.info("Actualizando Iglesia");
         return iglesiaDAO.update(bean);
     }

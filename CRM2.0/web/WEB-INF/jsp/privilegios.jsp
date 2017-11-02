@@ -36,11 +36,11 @@
         <div class="seaction">      
             <center>
                 <div class="row light italic" style="margin-top: 10%">
-                    <a href="grupo/main" class="contPriv waves-effect waves-light green darken-2">
+                    <a href="<%=request.getContextPath()%>/grupo/main" class="contPriv waves-effect waves-light green darken-2">
                         <i class="mdi-action-list icon-demo size-icon"></i>
                         <p>Grupos Pequeños</p>
                     </a>
-                    <a href="asistenciaevt/main" class="contPriv waves-effect waves-light green darken-1">
+                    <a href="<%=request.getContextPath()%>/asistenciaevt/main" class="contPriv waves-effect waves-light green darken-1">
                         <i class="mdi-toggle-check-box icon-demo size-icon"></i>
                         <p>Registrar Asistencia</p>
                     </a>

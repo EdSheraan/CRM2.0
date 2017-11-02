@@ -59,10 +59,5 @@
 
             </div>
         </div>
-        <script>
-            function redirect() { //POR MIENTRAS HASTA TENER LOS LINKS EN LA DB
-                location.href = "menu";
-            }
-        </script>
     </body>
 </html>
