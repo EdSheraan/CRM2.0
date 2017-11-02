@@ -39,6 +39,7 @@ public class EscuelaService implements CRUDService<Escuela>{
     }
 
     @Override
+    @Transactional
     public int update(Escuela bean) {
         bean.setEscFechaUpd(new Date());
         bean.setEscUsuUpd(LoginService.getPrincipal().getIdPersona());
@@ -54,6 +55,7 @@ public class EscuelaService implements CRUDService<Escuela>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Escuela> list(Object... param) {
         Logger.info("Listando todos las escuelas");
         return escuelaDAO.list();
@@ -67,23 +69,27 @@ public class EscuelaService implements CRUDService<Escuela>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Escuela> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return escuelaDAO.listDisabled(new HibernateParam("idIglesia", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Escuela> search(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return escuelaDAO.search(new HibernateParam("escNombre", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Escuela get(Object... id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return escuelaDAO.get(new HibernateParam("idEscuela", id[0]));
     }
-    
-    @Transactional
-    public Escuela getEscuela(int id) {
-        return escuelaDAO.getEscuela(new HibernateParam("idEscuela", id));
+
+    @Override
+    @Transactional(readOnly = true)
+    public Escuela getByParent(Object... parentID) {
+        return escuelaDAO.getByParent(new HibernateParam("idIglesia", parentID[0]));
     }
     
 }

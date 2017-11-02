@@ -41,5 +41,10 @@ public class MiembrominDAO extends CrudDAO<Miembromin>{
     public Miembromin get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Miembromin getByParent(HibernateParam... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

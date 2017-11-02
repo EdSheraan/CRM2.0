@@ -41,5 +41,10 @@ public class RolDAO extends CrudDAO<Rol>{
     public Rol get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Rol getByParent(HibernateParam... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

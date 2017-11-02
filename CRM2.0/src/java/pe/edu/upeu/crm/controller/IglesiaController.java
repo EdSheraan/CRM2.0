@@ -66,7 +66,7 @@ public class IglesiaController {
     @RequestMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public @ResponseBody
     Iglesia listIglesia(@RequestBody Iglesia iglesia) {
-        return iglesiaService.getIglesia(iglesia.getIdIglesia());
+        return iglesiaService.get(iglesia.getIdIglesia());
     }
     
 }

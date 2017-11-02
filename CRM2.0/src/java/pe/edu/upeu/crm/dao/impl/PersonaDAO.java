@@ -53,5 +53,10 @@ public class PersonaDAO extends CrudDAO<Persona>{
     public Persona get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Persona getByParent(HibernateParam... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

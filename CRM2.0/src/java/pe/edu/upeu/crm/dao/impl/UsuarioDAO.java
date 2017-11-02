@@ -45,4 +45,9 @@ public class UsuarioDAO extends CrudDAO<Usuario> {
     public Usuario getByName(HibernateParam param) {
         return listUnique("FROM Usuario u join fetch u.persona as persona where u.usuUsuario=:usuario",param);
     }
+
+    @Override
+    public Usuario getByParent(HibernateParam... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

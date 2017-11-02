@@ -1,7 +1,22 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <aside id="left-sidebar-nav">
     <ul id="slide-out" class="side-nav fixed leftside-navigation">
-        <li class="li-hover"><p class="ultra-small margin more-text">MENÚ</p></li>
-        <li class="bold"><a href="<%=request.getContextPath()%>/usuario/main" class="waves-effect waves-light"><i class="mdi-social-person"></i> Perfil</a>
+        <c:forEach items="${sessionScope.prvRol}" var="item">
+            <c:if test="${!empty item.childs}">
+                <li class="li-hover">
+                    <p class="ultra-small margin more-text">${item.parent.prvNombre}</p>
+                </li>
+                <c:forEach items="${item.childs}" var="child">
+                    <li class="bold">
+                        <a href="<c:url value="/"></c:url>${child.prvLink}" 
+                           class="waves-effect waves-light">
+                                <i class="${child.prvIcono}"></i> ${child.prvNombre}
+                        </a>
+                    </li>
+                </c:forEach>
+            </c:if>
+        </c:forEach>
+        <li class="bold"><a href="#" class="waves-effect waves-light"><i class="mdi-social-person"></i> Perfil</a>
         </li>
         <li class="li-hover"><div class="divider"></div></li>
         <li class="bold"><a href="<%=request.getContextPath()%>/grupo/main" class="waves-effect waves-light"><i class="mdi-action-list"></i> Grupos Pequeños</a>

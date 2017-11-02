@@ -41,5 +41,10 @@ public class PeriodoDAO extends CrudDAO<Periodo>{
     public Periodo get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Periodo getByParent(HibernateParam... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

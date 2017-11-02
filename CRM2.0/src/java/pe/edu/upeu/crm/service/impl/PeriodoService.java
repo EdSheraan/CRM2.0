@@ -66,5 +66,10 @@ public class PeriodoService implements CRUDService<Periodo>{
     public Periodo get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Periodo getByParent(Object... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

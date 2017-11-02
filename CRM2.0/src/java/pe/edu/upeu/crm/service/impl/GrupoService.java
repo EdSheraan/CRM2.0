@@ -69,13 +69,15 @@ public class GrupoService implements CRUDService<Grupo> {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Grupo> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return grupoDAO.listDisabled(new HibernateParam("idEscuela", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Grupo> search(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return grupoDAO.search(new HibernateParam("gpoNombre", param[0]));
     }
 
     @Override
@@ -85,9 +87,10 @@ public class GrupoService implements CRUDService<Grupo> {
         return grupoDAO.get(new HibernateParam("idGrupo", id[0]));
     }
 
-    @Transactional
-    public Grupo getGrupo(int id) {
-        return grupoDAO.getGrupo(new HibernateParam("idGrupo", id));
+    @Override
+    @Transactional(readOnly = true)
+    public Grupo getByParent(Object... parentID) {
+        return grupoDAO.getByParent(new HibernateParam("idEscuela", parentID[0]));
     }
 
 }

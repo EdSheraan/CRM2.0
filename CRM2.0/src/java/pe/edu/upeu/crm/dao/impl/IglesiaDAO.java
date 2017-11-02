@@ -11,8 +11,8 @@ public class IglesiaDAO extends CrudDAO<Iglesia> {
 
     @Override
     public int delete(Iglesia bean) {
-        bean.setIglEstado("0");
-        return update(bean);
+        return executeHQLUpdate("Update Iglesia i set i.iglEstado='0' where i.idIglesia=:idIglesia",
+                new HibernateParam("idIglesia", bean.getIdIglesia()));
     }
 
     @Override
@@ -27,7 +27,7 @@ public class IglesiaDAO extends CrudDAO<Iglesia> {
 
     @Override
     public List<Iglesia> listDisabled(HibernateParam... param) {
-        return executeHQLQuery("From Iglesia i where i.iglEstado = '0'");
+        return executeHQLQuery("From Iglesia i where i.distrito.idDistrito=:idDistrito and i.iglEstado ='0' order by i.iglNombre asc", param);
     }
 
     @Override
@@ -37,11 +37,12 @@ public class IglesiaDAO extends CrudDAO<Iglesia> {
 
     @Override
     public Iglesia get(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    public Iglesia getIglesia(HibernateParam param) {
         return listUnique("From Iglesia i where i.idIglesia=:idIglesia", param);
+    }
+
+    @Override
+    public Iglesia getByParent(HibernateParam... parentID) {
+        return listUnique("From Iglesia i where i.distrito.idDistrito=:idDistrito", parentID);
     }
 
 }

@@ -69,5 +69,10 @@ public class DetRolService implements CRUDService<Detrol>{
     public Detrol get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Detrol getByParent(Object... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

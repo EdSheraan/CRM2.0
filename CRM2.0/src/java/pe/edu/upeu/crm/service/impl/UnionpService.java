@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Unionp;
+import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.UnionpDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -26,6 +27,7 @@ public class UnionpService implements CRUDService<Unionp>{
     private UnionpDAO unionpDAO;
     
     @Override
+    @Transactional
     public Object add(Unionp bean) {
         bean.setUniFechaCreacion(new Date());
         bean.setUniEstado("1");
@@ -34,41 +36,53 @@ public class UnionpService implements CRUDService<Unionp>{
     }
 
     @Override
+    @Transactional
     public int update(Unionp bean) {
         Logger.info("Actualizando Unionp");
         return unionpDAO.update(bean);
     }
 
     @Override
+    @Transactional
     public int delete(Unionp bean) {
         Logger.info("Eliminando Unionp");
-        return unionpDAO.update(bean);
+        return unionpDAO.delete(bean);
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public List<Unionp> list(Object... param) {
         Logger.info("Listando todos los unionps");
         return unionpDAO.list();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Unionp> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return unionpDAO.listEnabled();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Unionp> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return unionpDAO.listDisabled();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Unionp> search(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return unionpDAO.search(new HibernateParam("uniNombre", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Unionp get(Object... id) {
+        return unionpDAO.get(new HibernateParam("idUnion", id[0]));
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Unionp getByParent(Object... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

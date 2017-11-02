@@ -52,16 +52,12 @@ function showMessage(params) {
     });
 }
 function confirmForm(form) {
-    var c = confirmMessage({
+    confirmMessage({
         title: message.logout.title,
         content: message.logout.confirm
-    });
-    if (c) {
+    }, function(){
         $(form).submit();
-    }
-}
-function confirmMessage(params) {
-    return confirm(params.title + "\n" + params.content);
+    });
 }
 
 function confirmMessage(params, event) {

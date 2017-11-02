@@ -37,11 +37,15 @@
             </a>
         </div>
         <div id="modal1" class="modal">
-            <button class="modal-close btn-flat blue-grey-text" style="position:absolute;top:0;right:0;">
-                <i class="mdi-navigation-cancel"></i>
-            </button>
-            <div class="modal-content"></div>
-            <div class="modal-footer">
+            <div class="modal-header-mobile z-depth-1 green accent-4 white-text hide-on-med-and-up">
+                <a class="btn-flat modal-close"><i class="mdi-navigation-arrow-back white-text"></i></a>
+                Registrar Grupo Pequeño
+                <a class="btn-flat right" onclick="save()"><i class="mdi-navigation-check white-text"></i></a>
+            </div>
+            <div class="modal-content">
+                
+            </div>
+            <div class="modal-footer hide-on-small-only">
                 <a class="waves-effect waves-light grey btn darken-1 modal-action modal-close left">Cerrar</a>
                 <a class="waves-effect waves-light green btn accent-3 modal-action modal-close right" onclick="save()">Guardar</a>
             </div>

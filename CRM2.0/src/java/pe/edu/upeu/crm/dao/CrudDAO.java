@@ -72,6 +72,8 @@ public abstract class CrudDAO<T> {
 
     public abstract T get(HibernateParam... id);
     
+    public abstract T getByParent(HibernateParam ... parentID);
+    
     public List<T> executeHQLQuery(String query, HibernateParam... params) {
         Session session = sessionFactory.openSession();
         List<T> list = new ArrayList<>();

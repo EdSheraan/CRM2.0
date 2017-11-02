@@ -38,5 +38,10 @@ public class AsmiemminDAO extends CrudDAO<Asmiemmin>{
     public Asmiemmin get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Asmiemmin getByParent(HibernateParam... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

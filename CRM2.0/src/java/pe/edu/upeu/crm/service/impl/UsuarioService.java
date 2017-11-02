@@ -69,4 +69,9 @@ public class UsuarioService implements CRUDService<Usuario> {
         return usuarioDAO.getByName(new HibernateParam("usuario", name));
     }
 
+    @Override
+    public Usuario getByParent(Object... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
