@@ -66,5 +66,10 @@ public class TipoeventoService implements CRUDService<Tipoevento>{
     public Tipoevento get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Tipoevento getByParent(Object... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

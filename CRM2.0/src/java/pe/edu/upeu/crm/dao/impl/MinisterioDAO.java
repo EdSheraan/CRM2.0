@@ -11,8 +11,8 @@ public class MinisterioDAO extends CrudDAO<Ministerio>{
 
     @Override
     public int delete(Ministerio bean) {
-        bean.setMinEstado("0");
-        return update(bean);
+        return executeHQLUpdate("Update Ministerio m set m.minEstado='0' where m.idMinisterio =:idMinisterio" ,
+                new HibernateParam("idMinisterio", bean.getIdMinisterio()));
     }
 
     @Override
@@ -22,14 +22,14 @@ public class MinisterioDAO extends CrudDAO<Ministerio>{
 
     @Override
     public List<Ministerio> listEnabled(HibernateParam... param) {
-        
-        return executeHQLQuery("From Ministerio m where m.minEstado = '1'");
+        return executeHQLQuery("From Ministerio m where m.iglesia.idIglesia=:idIglesia "
+                + "and m.minEstado = '1' order by m.minNombre", param);
     }
 
     @Override
     public List<Ministerio> listDisabled(HibernateParam... param) {
-        
-        return executeHQLQuery("From Ministerio m where m.minEstado = '1'");
+        return executeHQLQuery("From Ministerio m where m.iglesia.idIglesia=:idIglesia "
+                + "and m.minEstado = '0' order by m.minNombre", param);
     }
 
     @Override
@@ -39,7 +39,12 @@ public class MinisterioDAO extends CrudDAO<Ministerio>{
 
     @Override
     public Ministerio get(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listUnique("From Ministerio m where m.idMinisterio =:idMinisterio", param);
+    }
+
+    @Override
+    public Ministerio getByParent(HibernateParam... parentID) {
+        return listUnique("From Ministerio m where m.iglesia.idIglesia =:idIglesia", parentID);
     }
     
 }

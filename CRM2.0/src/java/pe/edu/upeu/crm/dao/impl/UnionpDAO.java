@@ -11,8 +11,8 @@ public class UnionpDAO extends CrudDAO<Unionp>{
 
     @Override
     public int delete(Unionp bean) {
-        bean.setUniEstado("0");
-        return update(bean);
+        HibernateParam param = new HibernateParam("idUnion", bean.getIdUnion());
+        return executeHQLUpdate("Update Unionp p set p.uniEstado ='0' where p.idUnion =:idUnion", param);
     }
 
     @Override
@@ -22,13 +22,11 @@ public class UnionpDAO extends CrudDAO<Unionp>{
 
     @Override
     public List<Unionp> listEnabled(HibernateParam... param) {
-        
         return executeHQLQuery("From Unionp u where u.uniEstado = '1'");
     }
 
     @Override
     public List<Unionp> listDisabled(HibernateParam... param) {
-        
         return executeHQLQuery("From Unionp u where u.uniEstado = '0'");
     }
 
@@ -39,6 +37,11 @@ public class UnionpDAO extends CrudDAO<Unionp>{
 
     @Override
     public Unionp get(HibernateParam... param) {
+        return listUnique("From Unionp u where u.idUnion =:idUnion", param);
+    }
+
+    @Override
+    public Unionp getByParent(HibernateParam... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

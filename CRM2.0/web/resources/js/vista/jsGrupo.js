@@ -100,7 +100,7 @@ function reload(id) {
 
 function createModal(tipo, nombre, lugar, clase) {
     var s = '';
-    s += '<h5 class="thin">Grupo Pequeño</h5>';
+    s += '<h5 class="hide-on-small-only">Grupo Pequeño</h5>';
     s += '<div class="row">';
     s += '<form class="col s12">';
     s += '<div class="row">';

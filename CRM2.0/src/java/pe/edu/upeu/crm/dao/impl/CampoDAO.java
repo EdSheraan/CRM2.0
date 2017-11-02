@@ -11,8 +11,8 @@ public class CampoDAO extends CrudDAO<Campo>{
 
     @Override
     public int delete(Campo bean) {
-        bean.setCmpEstado(ESTADO_INACTIVO);
-        return update(bean);
+        return executeHQLUpdate("Update Campo c set c.cmpEstado='0' where c.idCampo=:idCampo",
+                new HibernateParam("idCampo", bean.getIdCampo()));
     }
 
     @Override
@@ -37,7 +37,12 @@ public class CampoDAO extends CrudDAO<Campo>{
 
     @Override
     public Campo get(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listUnique("From Campo c where c.idCampo =:idCampo", param);
+    }
+
+    @Override
+    public Campo getByParent(HibernateParam... parentID) {
+        return listUnique("From Campo c where c.unionp.idUnion =:idUnion", parentID);
     }
     
 }

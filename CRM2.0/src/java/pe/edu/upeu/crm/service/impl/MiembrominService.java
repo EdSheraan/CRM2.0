@@ -66,5 +66,10 @@ public class MiembrominService implements CRUDService<Miembromin>{
     public Miembromin get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Miembromin getByParent(Object... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

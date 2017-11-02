@@ -13,11 +13,22 @@
     </head>
     <body>
         <%@include file="../../jspf/header.jspf" %>
-        <div class="box-container">
-            <div class="row">
-                <div class="col l12 m12 s12">
-                    
-                </div>
+        <div id="main">
+            <div class="wrapper">
+                <%@include file="../../jspf/left_aside.jspf" %>
+                <section id="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m12 l10 offset-l1" style="margin-top: 2%;">
+                                <h5>Gestion de Eventos</h5>
+                                <p>Administración de todos los eventos a realizarse del Distrito Misionero de ""</p>
+                                <table class="highlight light italic">
+                                    <tbody id="list_body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>            
             </div>
         </div>
         

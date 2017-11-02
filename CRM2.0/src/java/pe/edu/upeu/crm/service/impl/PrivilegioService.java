@@ -15,6 +15,7 @@ import pe.edu.upeu.crm.bean.PrivilegioGroup;
 import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.PrivilegioDAO;
 import pe.edu.upeu.crm.service.CRUDService;
+import pe.edu.upeu.crm.util.JsonUtil;
 
 /**
  *
@@ -84,11 +85,17 @@ public class PrivilegioService implements CRUDService<Privilegio>{
     private PrivilegioGroup addChilds(Privilegio p, List<Privilegio> list){
         PrivilegioGroup g = new PrivilegioGroup();
         for(Privilegio child:list){
-            if(p.getPrvIdPadre() == p.getIdPrivilegio()){
+            if(child.getPrvIdPadre() == p.getIdPrivilegio()){
+                g.setParent(p);
                 g.addChild(child);
             }
         }
         return g;
+    }
+
+    @Override
+    public Privilegio getByParent(Object... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

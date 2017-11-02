@@ -66,7 +66,7 @@ public class DistritoController {
     @RequestMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public @ResponseBody
     Distrito listDistrito(@RequestBody Distrito distrito) {
-        return distritoService.getDistrito(distrito.getIdDistrito());
+        return distritoService.get(distrito.getIdDistrito());
     }
     
 }

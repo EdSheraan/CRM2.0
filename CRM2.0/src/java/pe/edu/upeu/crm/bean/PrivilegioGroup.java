@@ -5,6 +5,7 @@
  */
 package pe.edu.upeu.crm.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author Andres
  */
-public class PrivilegioGroup {
+public class PrivilegioGroup implements Serializable{
 
     private Privilegio parent;
     private List<Privilegio> childs;

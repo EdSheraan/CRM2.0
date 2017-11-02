@@ -22,4 +22,5 @@ public interface CRUDService<T> {
     public List<T> listDisabled(Object ... param);
     public List<T> search(Object ... param);
     public T get(Object ... id);
+    public T getByParent(Object ...parentID);
 }

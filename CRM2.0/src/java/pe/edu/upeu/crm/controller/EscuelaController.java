@@ -66,6 +66,6 @@ public class EscuelaController {
     @RequestMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public @ResponseBody
     Escuela listGrupo(@RequestBody Escuela escuela) {
-        return escuelaService.getEscuela(escuela.getIdEscuela());
+        return escuelaService.get(escuela.getIdEscuela());
     }
 }

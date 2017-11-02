@@ -43,12 +43,14 @@ public class DistritoService implements CRUDService<Distrito>{
     }
 
     @Override
+    @Transactional
     public int delete(Distrito bean) {
         Logger.info("Eliminando Distrito");
-        return distritoDAO.update(bean);
+        return distritoDAO.delete(bean);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Distrito> list(Object... param) {
         Logger.info("Listando todos los distritos");
         return distritoDAO.list();
@@ -61,22 +63,26 @@ public class DistritoService implements CRUDService<Distrito>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Distrito> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return distritoDAO.listDisabled(new HibernateParam("idCampo", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Distrito> search(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return distritoDAO.search(new HibernateParam("disNombre", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Distrito get(Object... id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return distritoDAO.get(new HibernateParam("idDistrito", id[0]));
     }
-    
-    @Transactional
-    public Distrito getDistrito(int id) {
-        return distritoDAO.getDistrito(new HibernateParam("idDistrito", id));
+
+    @Override
+    @Transactional(readOnly = true)
+    public Distrito getByParent(Object... parentID) {
+        return distritoDAO.getByParent(new HibernateParam("idCampo", parentID[0]));
     }
 }

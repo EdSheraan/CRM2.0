@@ -22,13 +22,12 @@ public class PrivilegioDAO extends CrudDAO<Privilegio> {
 
     @Override
     public List<Privilegio> listEnabled(HibernateParam... param) {
-        return executeHQLQuery("From Privilegio p join p.rols as r where p.prvEstado = '1' and p.r.idRol = :idRol",param);
+        return executeHQLQuery("Select p From Privilegio p join p.rols r where p.prvEstado = '1' and r.idRol = :idRol",param);
     }
 
     @Override
     public List<Privilegio> listDisabled(HibernateParam... param) {
-        Object[] estado = {"estado", "0"};
-        return executeHQLQuery("From Privilegio p where p.prvEstado = '1'");
+        return executeHQLQuery("From Privilegio p where p.prvEstado = '0'");
     }
 
     @Override
@@ -38,6 +37,11 @@ public class PrivilegioDAO extends CrudDAO<Privilegio> {
 
     @Override
     public Privilegio get(HibernateParam... param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Privilegio getByParent(HibernateParam... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

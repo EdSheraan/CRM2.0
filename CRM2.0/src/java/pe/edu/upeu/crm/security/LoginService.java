@@ -21,8 +21,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.CustomUserDetails;
 import pe.edu.upeu.crm.bean.Detrol;
+import pe.edu.upeu.crm.bean.Unionp;
 import pe.edu.upeu.crm.bean.Usuario;
+import pe.edu.upeu.crm.service.impl.CampoService;
 import pe.edu.upeu.crm.service.impl.DetRolService;
+import pe.edu.upeu.crm.service.impl.DistritoService;
+import pe.edu.upeu.crm.service.impl.EscuelaService;
+import pe.edu.upeu.crm.service.impl.GrupoService;
+import pe.edu.upeu.crm.service.impl.IglesiaService;
+import pe.edu.upeu.crm.service.impl.MinisterioService;
+import pe.edu.upeu.crm.service.impl.UnionpService;
 import pe.edu.upeu.crm.service.impl.UsuarioService;
 
 /**
@@ -45,7 +53,55 @@ public class LoginService implements UserDetailsService {
     public void setDetRolService(DetRolService detRolService) {
         this.detRolService = detRolService;
     }
-    
+
+    private UnionpService unionpService;
+
+    @Autowired
+    public void setUnionpService(UnionpService unionpService) {
+        this.unionpService = unionpService;
+    }
+
+    private CampoService campoService;
+
+    @Autowired
+    public void setCampoService(CampoService campoService) {
+        this.campoService = campoService;
+    }
+
+    private DistritoService distritoService;
+
+    @Autowired
+    public void setDistritoService(DistritoService distritoService) {
+        this.distritoService = distritoService;
+    }
+
+    private IglesiaService iglesiaService;
+
+    @Autowired
+    public void setIglesiaService(IglesiaService iglesiaService) {
+        this.iglesiaService = iglesiaService;
+    }
+
+    private MinisterioService ministerioService;
+
+    @Autowired
+    public void setMinisterioService(MinisterioService ministerioService) {
+        this.ministerioService = ministerioService;
+    }
+
+    private EscuelaService escuelaService;
+
+    @Autowired
+    public void setEscuelaService(EscuelaService escuelaService) {
+        this.escuelaService = escuelaService;
+    }
+
+    private GrupoService grupoService;
+
+    @Autowired
+    public void setGrupoService(GrupoService grupoService) {
+        this.grupoService = grupoService;
+    }
 
     @Override
     @Transactional
@@ -56,14 +112,22 @@ public class LoginService implements UserDetailsService {
                 usuario.getUsuUsuario(), usuario.getUsuClave(), usuario.getPersona().getPerNombres(),
                 usuario.getPersona().getPerApellidos(), usuario.getIdUsuario(), true, true, true,
                 (usuario.getUsuEstado().equals("1")));
-
-        userDetails.setUnion(usuario.getUsuUnion());
-        userDetails.setCampo(usuario.getUsuCampo());
-        userDetails.setDistrito(usuario.getUsuDistrito());
-        userDetails.setIglesia(usuario.getUsuIglesia());
-        userDetails.setMinisterio(usuario.getUsuMinisterio());
-        userDetails.setEscuela(usuario.getUsuEscuela());
-        userDetails.setGrupo(usuario.getUsuGrupo());
+        
+        userDetails.setUnionp((usuario.getUsuUnion() != null) ? 
+                unionpService.get(usuario.getUsuUnion()) : null);
+        userDetails.setCampo((usuario.getUsuCampo()!= null) ? 
+                campoService.get(usuario.getUsuCampo()) : null);
+        userDetails.setDistrito((usuario.getUsuDistrito()!= null) ? 
+                distritoService.get(usuario.getUsuDistrito()) : null);
+        userDetails.setIglesia((usuario.getUsuIglesia()!= null) ? 
+                iglesiaService.get(usuario.getUsuIglesia()) : null);
+        userDetails.setMinisterio((usuario.getUsuMinisterio()!= null) ? 
+                ministerioService.get(usuario.getUsuMinisterio()) : null);
+        userDetails.setEscuela((usuario.getUsuEscuela()!= null) ? 
+                escuelaService.get(usuario.getUsuEscuela()) : null);
+        userDetails.setGrupo((usuario.getUsuGrupo()!= null) ? 
+                grupoService.get(usuario.getUsuGrupo()) : null);
+        
         Logger.info("Iniciando sesion, usuario=" + string);
         return userDetails;
     }

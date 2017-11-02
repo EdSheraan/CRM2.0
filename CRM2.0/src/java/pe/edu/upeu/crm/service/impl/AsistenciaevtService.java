@@ -70,5 +70,10 @@ public class AsistenciaevtService implements CRUDService<Asistenciaevt>{
     public Asistenciaevt get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Asistenciaevt getByParent(Object... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

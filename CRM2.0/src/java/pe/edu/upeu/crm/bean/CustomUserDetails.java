@@ -19,11 +19,17 @@ public class CustomUserDetails implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
     private String username, password, name, lastname;
     private int idPersona;
-    private Integer union, campo, distrito, iglesia, ministerio, escuela, grupo;
     private boolean accountNonExpired;
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
     private boolean enabled;
+    private Unionp unionp;
+    private Campo campo;
+    private Distrito distrito;
+    private Iglesia iglesia;
+    private Ministerio ministerio;
+    private Escuela escuela;
+    private Grupo grupo;
 
     public CustomUserDetails(Collection<? extends GrantedAuthority> authorities, String username, String password, String name, String lastname, int idPersona, boolean accountNonExpired, boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
         this.authorities = authorities;
@@ -125,60 +131,61 @@ public class CustomUserDetails implements UserDetails {
         this.enabled = enabled;
     }
 
-    public Integer getUnion() {
-        return union;
+    public Unionp getUnionp() {
+        return unionp;
     }
 
-    public void setUnion(Integer union) {
-        this.union = union;
+    public void setUnionp(Unionp unionp) {
+        this.unionp = unionp;
     }
 
-    public Integer getCampo() {
+    public Campo getCampo() {
         return campo;
     }
 
-    public void setCampo(Integer campo) {
+    public void setCampo(Campo campo) {
         this.campo = campo;
     }
 
-    public Integer getDistrito() {
+    public Distrito getDistrito() {
         return distrito;
     }
 
-    public void setDistrito(Integer distrito) {
+    public void setDistrito(Distrito distrito) {
         this.distrito = distrito;
     }
 
-    public Integer getIglesia() {
+    public Iglesia getIglesia() {
         return iglesia;
     }
 
-    public void setIglesia(Integer iglesia) {
+    public void setIglesia(Iglesia iglesia) {
         this.iglesia = iglesia;
     }
 
-    public Integer getMinisterio() {
+    public Ministerio getMinisterio() {
         return ministerio;
     }
 
-    public void setMinisterio(Integer ministerio) {
+    public void setMinisterio(Ministerio ministerio) {
         this.ministerio = ministerio;
     }
 
-    public Integer getEscuela() {
+    public Escuela getEscuela() {
         return escuela;
     }
 
-    public void setEscuela(Integer escuela) {
+    public void setEscuela(Escuela escuela) {
         this.escuela = escuela;
     }
 
-    public Integer getGrupo() {
+    public Grupo getGrupo() {
         return grupo;
     }
 
-    public void setGrupo(Integer grupo) {
+    public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
-
+    
+    
 }

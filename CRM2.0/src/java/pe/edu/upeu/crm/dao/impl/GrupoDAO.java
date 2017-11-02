@@ -39,9 +39,10 @@ public class GrupoDAO extends CrudDAO<Grupo>{
     public Grupo get(HibernateParam... param) {
         return listUnique("From Grupo g where g.idGrupo=:idGrupo", param);
     }
-    
-    public Grupo getGrupo(HibernateParam param) {
-        return listUnique("From Grupo g where g.idGrupo=:idGrupo", param);
+
+    @Override
+    public Grupo getByParent(HibernateParam... parentID) {
+        return listUnique("From Grupo g where g.escuela.idEscuela=:idEscuela", parentID);
     }
     
 }

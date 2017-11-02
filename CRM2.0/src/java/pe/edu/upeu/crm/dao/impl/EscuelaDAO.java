@@ -27,7 +27,7 @@ public class EscuelaDAO extends CrudDAO<Escuela> {
 
     @Override
     public List<Escuela> listDisabled(HibernateParam... param) {
-        return executeHQLQuery("From Escuela e where e.escEstado = '0'");
+        return executeHQLQuery("From Escuela e where e.iglesia.idIglesia=:idIglesia and e.escEstado = '0' order by e.escNombre asc", param);
     }
 
     @Override
@@ -37,10 +37,10 @@ public class EscuelaDAO extends CrudDAO<Escuela> {
 
     @Override
     public Escuela get(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Escuela getEscuela(HibernateParam param) {
         return listUnique("From Escuela e where e.idEscuela=:idEscuela", param);
+    }
+    @Override
+    public Escuela getByParent(HibernateParam... parentID) {
+        return listUnique("From Escuela e where e.iglesia.idIglesia=:idIglesia", parentID);
     }
 }

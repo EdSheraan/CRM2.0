@@ -68,5 +68,10 @@ public class AsmiemgpService implements CRUDService<Asmiemgp>{
     public Asmiemgp get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Asmiemgp getByParent(Object... parentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

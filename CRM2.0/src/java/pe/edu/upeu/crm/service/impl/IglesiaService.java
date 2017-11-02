@@ -47,12 +47,14 @@ public class IglesiaService implements CRUDService<Iglesia> {
     }
 
     @Override
+    @Transactional
     public int delete(Iglesia bean) {
         Logger.info("Eliminando Iglesia");
-        return iglesiaDAO.update(bean);
+        return iglesiaDAO.delete(bean);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Iglesia> list(Object... param) {
         Logger.info("Listando todos las iglesias");
         return iglesiaDAO.list();
@@ -65,22 +67,26 @@ public class IglesiaService implements CRUDService<Iglesia> {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Iglesia> listDisabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return iglesiaDAO.listDisabled(new HibernateParam("idDistrito", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Iglesia> search(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return iglesiaDAO.search(new HibernateParam("iglNombre", param[0]));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Iglesia get(Object... id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return iglesiaDAO.get(new HibernateParam("idIglesia", id[0]));
     }
-
-    @Transactional
-    public Iglesia getIglesia(int id) {
-        return iglesiaDAO.getIglesia(new HibernateParam("idIglesia", id));
+    
+    @Override
+    @Transactional(readOnly = true)
+    public Iglesia getByParent(Object... parentID) {
+        return iglesiaDAO.getByParent(new HibernateParam("idDistrito", parentID[0]));
     }
 }
