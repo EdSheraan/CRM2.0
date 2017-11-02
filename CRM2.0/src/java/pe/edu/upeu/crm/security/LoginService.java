@@ -19,8 +19,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pe.edu.upeu.crm.bean.Campo;
 import pe.edu.upeu.crm.bean.CustomUserDetails;
 import pe.edu.upeu.crm.bean.Detrol;
+import pe.edu.upeu.crm.bean.Distrito;
+import pe.edu.upeu.crm.bean.Escuela;
+import pe.edu.upeu.crm.bean.Grupo;
+import pe.edu.upeu.crm.bean.Iglesia;
+import pe.edu.upeu.crm.bean.Ministerio;
 import pe.edu.upeu.crm.bean.Unionp;
 import pe.edu.upeu.crm.bean.Usuario;
 import pe.edu.upeu.crm.service.impl.CampoService;
@@ -114,19 +120,19 @@ public class LoginService implements UserDetailsService {
                 (usuario.getUsuEstado().equals("1")));
         
         userDetails.setUnionp((usuario.getUsuUnion() != null) ? 
-                unionpService.get(usuario.getUsuUnion()) : null);
+                unionpService.get(usuario.getUsuUnion()) : new Unionp());
         userDetails.setCampo((usuario.getUsuCampo()!= null) ? 
-                campoService.get(usuario.getUsuCampo()) : null);
+                campoService.get(usuario.getUsuCampo()) : new Campo());
         userDetails.setDistrito((usuario.getUsuDistrito()!= null) ? 
-                distritoService.get(usuario.getUsuDistrito()) : null);
+                distritoService.get(usuario.getUsuDistrito()) : new Distrito());
         userDetails.setIglesia((usuario.getUsuIglesia()!= null) ? 
-                iglesiaService.get(usuario.getUsuIglesia()) : null);
+                iglesiaService.get(usuario.getUsuIglesia()) : new Iglesia());
         userDetails.setMinisterio((usuario.getUsuMinisterio()!= null) ? 
-                ministerioService.get(usuario.getUsuMinisterio()) : null);
+                ministerioService.get(usuario.getUsuMinisterio()) : new Ministerio());
         userDetails.setEscuela((usuario.getUsuEscuela()!= null) ? 
-                escuelaService.get(usuario.getUsuEscuela()) : null);
+                escuelaService.get(usuario.getUsuEscuela()) : new Escuela());
         userDetails.setGrupo((usuario.getUsuGrupo()!= null) ? 
-                grupoService.get(usuario.getUsuGrupo()) : null);
+                grupoService.get(usuario.getUsuGrupo()) : new Grupo());
         
         Logger.info("Iniciando sesion, usuario=" + string);
         return userDetails;
