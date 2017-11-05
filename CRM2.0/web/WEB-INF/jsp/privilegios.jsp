@@ -7,28 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../jspf/general.jspf" %>
-        <style>
-            .contPriv{
-                width: 150px;
-                height: 150px;
-                padding: 1%;
-                color:white;
-            }
-            .contPriv:hover{
-                -webkit-transform: scale(1.2);
-                -ms-transform: scale(1.2);
-                transform: scale(1.2);
-                position: relative;
-                z-index: 1;
-            }
-            .contPriv:not(:hover){
-                position: relative;
-                z-index: 0;
-            }
-            .size-icon{
-                font-size: 60px;                
-            }
-        </style>
+        <link href="<c:url value='/resources/css/custom/privilegio.css'></c:url>" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <%@include file="../jspf/header.jspf" %>

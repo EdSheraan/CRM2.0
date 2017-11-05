@@ -35,10 +35,7 @@
                             <div class="card-content">
                                 <center><h5 class="bold">${item.rolNombre}</h5></center>
                                 <center><i class="mdi-action-verified-user large green-text accent-4"></i></center>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                <p>${item.rolDescripcion}</p>
                             </div>
                             <div class="card-action">
                                 <form commandName="rol" action="${form_action}" method="post">
