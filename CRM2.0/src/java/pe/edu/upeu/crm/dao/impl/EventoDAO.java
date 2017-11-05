@@ -7,7 +7,7 @@ import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
-public class EventoDAO extends CrudDAO<pe.edu.upeu.crm.bean.Evento>{
+public class EventoDAO extends CrudDAO<pe.edu.upeu.crm.bean.Evento> {
 
     @Override
     public int delete(Evento bean) {
@@ -22,8 +22,7 @@ public class EventoDAO extends CrudDAO<pe.edu.upeu.crm.bean.Evento>{
 
     @Override
     public List<Evento> listEnabled(HibernateParam... param) {
-        Object[] estado = {"estado", "1"};
-        return executeHQLQuery("From Evento e where e.evtEstado = '1'");
+        return executeHQLQuery("From Evento e where e.evtEstado = '1' and e.periodo.idPeriodo=:idPeriodo", param);
     }
 
     @Override
@@ -47,5 +46,4 @@ public class EventoDAO extends CrudDAO<pe.edu.upeu.crm.bean.Evento>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
 }

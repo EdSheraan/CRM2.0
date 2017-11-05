@@ -1,6 +1,6 @@
-function asistenciaevtService(){
+function asistenciaevtService() {
     var connector = new jsConnector();
-    this.addAsistenciaevt = function(asistenciaevt,_callback){
+    this.addAsistenciaevt = function (asistenciaevt, _callback) {
         try {
             connector.post(url.asistenciaevt.add, JSON.stringify(asistenciaevt), function (result) {
                 if (result !== undefined && result !== null) {
@@ -9,10 +9,10 @@ function asistenciaevtService(){
                         content: message.asistenciaevt.add.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.asistenciaevt.add.title,
-                       content:message.asistenciaevt.add.error
+                        title: message.asistenciaevt.add.title,
+                        content: message.asistenciaevt.add.error
                     });
                 }
             });
@@ -21,19 +21,19 @@ function asistenciaevtService(){
         }
 
     };
-    this.updateAsistenciaevt = function(asistenciaevt, _callback){
+    this.updateAsistenciaevt = function (asistenciaevt, _callback) {
         try {
-            connector.post(url.asistenciaevt.update,asistenciaevt,function(result){
-                if (result!== undefined && result!==null && result === 1) {
+            connector.post(url.asistenciaevt.update, asistenciaevt, function (result) {
+                if (result !== undefined && result !== null && result === 1) {
                     successMessage({
-                        title:message.asistenciaevt.update.title,
-                        content:message.asistenciaevt.update.success
+                        title: message.asistenciaevt.update.title,
+                        content: message.asistenciaevt.update.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.asistenciaevt.update.title,
-                       content:message.asistenciaevt.update.error
+                        title: message.asistenciaevt.update.title,
+                        content: message.asistenciaevt.update.error
                     });
                 }
             });
@@ -42,20 +42,20 @@ function asistenciaevtService(){
         }
 
     };
-    
-    this.deleteAsistenciaevt = function(asistenciaevt, _callback){
+
+    this.deleteAsistenciaevt = function (asistenciaevt, _callback) {
         try {
-            connector.post(url.asistenciaevt.delete,asistenciaevt,function(result){
-                if (result!== undefined && result!==null && result === 1) {
+            connector.post(url.asistenciaevt.delete, asistenciaevt, function (result) {
+                if (result !== undefined && result !== null && result === 1) {
                     successMessage({
-                        title:message.asistenciaevt.delete.title,
-                        content:message.asistenciaevt.delete.success
+                        title: message.asistenciaevt.delete.title,
+                        content: message.asistenciaevt.delete.success
                     });
                     _callback(result);
-                }else{
+                } else {
                     errorMessage({
-                       title:message.asistenciaevt.delete.title,
-                       content:message.asistenciaevt.delete.error
+                        title: message.asistenciaevt.delete.title,
+                        content: message.asistenciaevt.delete.error
                     });
                 }
             });
@@ -63,8 +63,14 @@ function asistenciaevtService(){
             console.log(e);
         }
     };
-    
-    this.listAsistenciaevt = function (_callback) {
-        //No implementado aún
+
+    this.listAsistenciaevt = function (evento, _callback) {
+        try {
+            connector.post(url.asistenciaevt.list, JSON.stringify(evento), function (result) {
+                _callback(result);
+            });
+        } catch (e) {
+            console.log(e);
+        }
     };
 }

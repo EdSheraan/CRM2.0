@@ -9,9 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <%@include file="../../jspf/general.jspf" %>
     </head>
-    <body>
-        <h1>It's my profile :)</h1>
+    <body class="white">
+        <%@include file="../../jspf/header.jspf" %>
+        <div id="main">
+            <div class="wrapper">
+                <%@include file="../../jspf/left_aside.jspf" %>
+                <section id="content">
+                    <div class="container">
+                    </div>
+                </section>            
+            </div>
+        </div>
     </body>
 </html>

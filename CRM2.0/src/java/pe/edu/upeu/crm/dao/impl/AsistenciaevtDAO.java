@@ -21,7 +21,7 @@ public class AsistenciaevtDAO extends CrudDAO<Asistenciaevt> {
 
     @Override
     public List<Asistenciaevt> listEnabled(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Asistenciaevt e where e.evento.idEvento=:idEvento", param);
     }
 
     @Override

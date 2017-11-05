@@ -31,12 +31,18 @@ public class PrivilegioController {
     @RequestMapping(value = "/main", method = RequestMethod.POST)
     public ModelAndView privilegioRol(ModelMap model, HttpServletRequest request, HttpSession session) {
         int opc = Integer.parseInt(request.getParameter("opc"));
+        String vista = "";
         try {
+            if (opc == 8) {
+                vista = "redirect:/usuario/main";
+            } else {
+                vista = "privilegios";
+            }
             session.setAttribute(SessionUtil.MOD_ACT, opc);
         } catch (Exception e) {
             System.out.println("error en privilegioController : " + e);
         }
-        modelAndView = new ModelAndView("privilegios", model);
+        modelAndView = new ModelAndView(vista, model);
         return modelAndView;
     }
 }

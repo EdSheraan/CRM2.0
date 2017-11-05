@@ -16,17 +16,12 @@
                 </c:forEach>
             </c:if>
         </c:forEach>
-        <!--<li class="bold"><a href="#" class="waves-effect waves-light"><i class="mdi-social-person"></i> Perfil</a>
+        <li class="li-hover hide-on-large-only"><div class="divider"></div></li>
+        <li class="li-hover hide-on-large-only"><p class="ultra-small margin more-text">Más</p></li>
+        <li class="hide-on-large-only"><a href="<%=request.getContextPath()%>/rol/select"><i class="mdi-action-cached"></i> Ver como  <span class="new badge"></span></a>
         </li>
-        <li class="li-hover"><div class="divider"></div></li>
-        <li class="bold"><a href="<%=request.getContextPath()%>/grupo/main" class="waves-effect waves-light"><i class="mdi-action-list"></i> Grupos Pequeños</a>
+        <li class="hide-on-large-only"><a href="<%=request.getContextPath()%>/menu"><i class="mdi-action-view-week"></i> Menú</a>
         </li>
-        <li class="bold"><a href="<%=request.getContextPath()%>/asistenciaevt/main" class="waves-effect waves-light"><i class="mdi-toggle-check-box"></i> Registrar Asistencia</a>
-        </li>
-        <li class="bold"><a href="<%=request.getContextPath()%>/miembrogp/main" class="waves-effect waves-light"><i class="mdi-social-group"></i> Gestión de Miembros</a>
-        </li>
-        <li class="bold"><a href="<%=request.getContextPath()%>/escuela/main" class="waves-effect waves-light"><i class="mdi-social-group"></i> Escuelas Sabáticas</a>
-        </li>-->
     </ul>
     <a href="#" data-activates="slide-out" class="sidebar-collapse waves-effect waves-light hide-on-large-only"><i class="mdi-navigation-menu small white-text"></i></a>
 </aside>

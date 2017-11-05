@@ -9,7 +9,9 @@ import java.util.List;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Evento;
+import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.EventoDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -18,11 +20,11 @@ import pe.edu.upeu.crm.service.CRUDService;
  * @author Leandro Burgos
  */
 @Service
-public class EventoService implements CRUDService<Evento>{
+public class EventoService implements CRUDService<Evento> {
 
     @Autowired
     private EventoDAO eventoDAO;
-    
+
     @Override
     public Object add(Evento bean) {
         Logger.info("Registrando Evento");
@@ -48,8 +50,10 @@ public class EventoService implements CRUDService<Evento>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Evento> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Logger.info("Listando los eventos activos");
+        return eventoDAO.listEnabled(new HibernateParam("idPeriodo", param[0]));
     }
 
     @Override
@@ -71,5 +75,5 @@ public class EventoService implements CRUDService<Evento>{
     public Evento getByParent(Object... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

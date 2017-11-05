@@ -31,9 +31,9 @@
                 <c:url var="form_action" value="/rol/select/r"></c:url>
                 <c:forEach items="${sessionScope.rolList}" var="item">
                     <div class="col l6 m12 s12">
-                        <div class="card">
+                        <div class="card light italic">
                             <div class="card-content">
-                                <center><h5 class="bold">${item.rolNombre}</h5></center>
+                                <center><h5>${item.rolNombre}</h5></center>
                                 <center><i class="mdi-action-verified-user large green-text accent-4"></i></center>
                                 <p>${item.rolDescripcion}</p>
                             </div>

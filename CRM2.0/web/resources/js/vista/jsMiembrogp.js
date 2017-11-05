@@ -5,7 +5,7 @@ $(document).ready(function () {
     load();
 });
 
-function load(){
+function load() {
     var grupo = {idGrupo: idGrupo};
     mgpService.listMiembrogp(grupo, mostrar);
 }
@@ -26,7 +26,7 @@ function mostrar(list) {
         s += '<td class="thin tR"><i class="mdi-communication-email"></i>  ' + c + '</td>';
         s += '<td style="float:right">';
         s += '<a class="grey-text" onclick="deleteMGP(' + list[i].idMiembrogp + ')"><i class="mdi-action-delete actCRUD"></i></a>';
-        s += '<a class="grey-text"><i class="mdi-social-person actCRUD"></i></a>';
+        s += '<a class="grey-text"><i class="mdi-social-person actCRUD" onclick="inform()"></i></a>';
         //s += '<a class="grey-text"><i class="mdi-navigation-more-vert actCRUD"></i></a>';
         s += '</td>';
         s += '</tr>';
@@ -56,6 +56,23 @@ function algoritmo() {
 }
 
 function deleteMGP(idMiembrogp) {
-    var miembrogp = {idMiembrogp: idMiembrogp};
-    mgpService.deleteMiembrogp(miembrogp,load);
+    confirmMessage({
+        title: 'Desvinculación de Miembro',
+        content: '¿Seguro que desea desvincular a este miembro?'
+    }, function () {
+        var miembrogp = {idMiembrogp: idMiembrogp};
+        mgpService.deleteMiembrogp(miembrogp, load);
+    });
+}
+
+function inform(){
+    new PNotify({
+        title: '<span class="blue-text">¡Hey!</span>',
+        text: 'Estamos trabajando para tener habilitada esta opción pronto',
+        addclass: 'crm-pnotify',
+        icon: 'mdi-action-info blue-text',
+        buttons: {
+            sticker: false
+        }
+    });
 }

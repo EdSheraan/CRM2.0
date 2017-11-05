@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.crm.bean.Evento;
+import pe.edu.upeu.crm.bean.Periodo;
 import pe.edu.upeu.crm.service.impl.EventoService;
 
 /**
@@ -59,7 +60,7 @@ public class EventoController {
 
     @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Evento> listEvento() {
-        return eventoService.list((Object[]) null);
+    List<Evento> listEvento(@RequestBody Periodo periodo) {
+        return eventoService.listEnabled(periodo.getIdPeriodo());
     }
 }

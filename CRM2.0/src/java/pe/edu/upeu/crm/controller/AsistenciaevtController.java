@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.crm.bean.Asistenciaevt;
+import pe.edu.upeu.crm.bean.Evento;
 import pe.edu.upeu.crm.service.impl.AsistenciaevtService;
 
 /**
@@ -26,17 +27,17 @@ import pe.edu.upeu.crm.service.impl.AsistenciaevtService;
 @Scope("request")
 @RequestMapping("asistenciaevt")
 public class AsistenciaevtController {
-    
+
     @Autowired
     private AsistenciaevtService asistenciaevtService;
     private ModelAndView modelAndView;
-    
+
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspAsistenciaevt(ModelMap model) {
         modelAndView = new ModelAndView("asistenciaevt/jspAsistenciaevtMain", model);
         return modelAndView;
     }
-    
+
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
     Integer addAsistenciaevt(@RequestBody Asistenciaevt asistenciaevt) {
@@ -57,8 +58,8 @@ public class AsistenciaevtController {
 
     @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Asistenciaevt> listAsistenciaevt() {
-        return asistenciaevtService.list((Object[]) null);
+    List<Asistenciaevt> listAsistenciaevt(@RequestBody Evento evento) {
+        return asistenciaevtService.listEnabled(evento.getIdEvento());
     }
-    
+
 }

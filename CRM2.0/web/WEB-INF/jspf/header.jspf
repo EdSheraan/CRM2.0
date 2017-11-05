@@ -20,10 +20,14 @@
                 <ul class="right">
                     <li class="hide-on-med-and-down">
                         <div class="chip grey darken-1 white-text" onclick="loadProfile()" style="cursor: pointer;">
-                            <img src="<c:url value='/resources/images/user.png'/>" alt="Usuario">Nombre Apellido Apellido
+                            <img src="<c:url value='/resources/images/user.png'/>" alt="Usuario">
+                            <sec:authentication property="principal.name"/>
+                            <sec:authentication property="principal.lastname"/>
                         </div>
                     </li>
-                    <li><a href="<%=request.getContextPath()%>/menu" class="waves-effect waves-block waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Menú"><i class="mdi-action-view-week"></i></a>
+                    <li><a href="<%=request.getContextPath()%>/rol/select" class="waves-effect waves-block waves-light tooltipped hide-on-med-and-down" data-position="bottom" data-delay="50" data-tooltip="Ver Como"><i class="mdi-action-cached"></i></a>
+                    </li>
+                    <li><a href="<%=request.getContextPath()%>/menu" class="waves-effect waves-block waves-light tooltipped hide-on-med-and-down" data-position="bottom" data-delay="50" data-tooltip="Menú"><i class="mdi-action-view-week"></i></a>
                     </li>
                     <li class="hide-on-med-and-down">
                         <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen hide-on-med-and-down tooltipped" data-position="bottom" data-delay="50" data-tooltip="Pantalla Completa"><i class="mdi-action-settings-overscan"></i></a>
@@ -67,3 +71,12 @@
 <input type="hidden" id="crm_minNombre" value="<sec:authentication property="principal.ministerio.minNombre"/>" />
 <input type="hidden" id="crm_idGrupo" value="<sec:authentication property="principal.grupo.idGrupo"/>" />
 <input type="hidden" id="crm_gpoNombre" value="<sec:authentication property="principal.grupo.gpoNombre"/>" />
+<input type="hidden" id="crm_perNombre" value="<sec:authentication property="principal.name"/>" />
+<input type="hidden" id="crm_perApellidos" value="<sec:authentication property="principal.lastname"/>" />
+<input type="hidden" id="crm_idPersona" value="<sec:authentication property="principal.idPersona"/>" />
+
+<script>
+    function loadProfile(){
+        location.href="<%=request.getContextPath()%>/usuario/main";
+    }
+</script>

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Asistenciaevt;
+import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.AsistenciaevtDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
@@ -20,11 +21,11 @@ import pe.edu.upeu.crm.service.CRUDService;
  * @author Andres
  */
 @Service
-public class AsistenciaevtService implements CRUDService<Asistenciaevt>{
-    
+public class AsistenciaevtService implements CRUDService<Asistenciaevt> {
+
     @Autowired
     private AsistenciaevtDAO asistenciaevtDAO;
-    
+
     @Override
     @Transactional
     public Object add(Asistenciaevt bean) {
@@ -52,8 +53,10 @@ public class AsistenciaevtService implements CRUDService<Asistenciaevt>{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Asistenciaevt> listEnabled(Object... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Logger.info("buscando evento activo");
+        return asistenciaevtDAO.listEnabled(new HibernateParam("idEvento", param[0]));
     }
 
     @Override
@@ -75,5 +78,5 @@ public class AsistenciaevtService implements CRUDService<Asistenciaevt>{
     public Asistenciaevt getByParent(Object... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

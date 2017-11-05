@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="fixed-action-btn" style="bottom: 10%; right: 19px;" >
-            <a class="btn-floating btn-large green accent-4 btn tooltipped" onclick="createGroup()" data-tooltip="Añadir"  >
+            <a class="btn-floating btn-large green accent-4 btn animated infinite pulse" onclick="createGroup()">
                 <i class="mdi-content-add"></i>
             </a>
         </div>

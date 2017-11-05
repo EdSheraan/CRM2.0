@@ -5,7 +5,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../jspf/general.jspf" %>
-        <link href="<c:url value='/resources/css/animate.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
     </head>
     <body>
         <input type="hidden" value="1" id="idGrupo">
@@ -44,19 +43,20 @@
                         <div class="col s12 m12 l12">
 
                             <div class="row">
-                                <div class="col s12">
+                                <!--<div class="col s12">
                                     <ul class="tabs tab-demo z-depth-1">
                                         <li class="tab col s3"><a class="active" href="#test1">Buscar</a>
                                         </li>
                                         <li class="tab col s3"><a href="#test2">Registrar</a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div>-->
                                 <div class="col s12">
-                                    <div id="test1" class="col s12">
+                                    <!--<div id="test1" class="col s12">
                                         <p>BUSCADOR</p>                                        
-                                    </div>
+                                    </div>-->
                                     <div id="test2" class="col s12">
+                                        <h5>Registrar Persona</h5>
                                         <div class="row light italic">
                                             <div class="col l6 m6 s12">
                                                 <div class="input-field">

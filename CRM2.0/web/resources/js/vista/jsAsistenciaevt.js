@@ -2,17 +2,43 @@ var aService = new asistenciaevtService();
 var nMiembros = 0;
 var mgpService = new miembrogpService();
 var gpService = new grupoService();
-var list_miembros = $("#list_miembros");
+var evtService = new eventoService();
+var list_miembros;
+var idEventoG;
 
 $(document).ready(function () {
-    var grupo = {idGrupo: 1};
-    mgpService.listMiembrogp(grupo, loadMiembros);
-    gpService.getGrupo(grupo, dataGroup);
-    dataEvento();
+    loadHeader();
 });
 
-function dataEvento() {
+function loadHeader() {
+    var periodo = {idPeriodo: 1};
+    evtService.listEvento(periodo, function (lista) {
+        idEventoG = lista[0].idEvento;
+        var s = '<li class="active">Evento n° ' + idEventoG + '</li>';
+        s += '<li class="active">' + lista[0].evtNombre + '</li>';
+        s += '<li class="active">' + getActualDateLong() + '</li>';
+        s += '<li class="active">Vence el ' + getDateLong(new Date(lista[0].evtFechaLimite)) + '</li>';
+        $(".conH").empty();
+        $(".conH").append(s);
+        testEnabled(idEventoG);
+    });
+}
 
+function testEnabled(idEvento) {//provisional
+    aService.listAsistenciaevt({idEvento: idEvento}, function (l) {
+        if (l.length > 0) {//ya hay una asistencia de ese evento
+            var texto = "Felicidades, ya ha registrado la asistencia al este evento. Debe esperar a que esté disponible el siguiente evento para poder registrar la asistencia de su Grupo Pequeño";
+            $(".contAsis").empty();
+            $(".contAsis").append(createMessageAlert("green accent-3", texto));
+        } else {//puede registrar
+            $(".contAsis").empty();
+            $(".contAsis").append(createContextAsis());
+            list_miembros = $("#list_miembros");
+            var grupo = {idGrupo: 1};
+            mgpService.listMiembrogp(grupo, loadMiembros);
+            gpService.getGrupo(grupo, dataGroup);
+        }
+    });
 }
 
 function dataGroup(grupo) {
@@ -74,7 +100,7 @@ function addAsistenciaevt() {
         astDescripcion: "",
         astLugar: L,
         evento: {
-            idEvento: 1
+            idEvento: idEventoG
         }
     };
     aService.addAsistenciaevt(asistenciaevt, addAsisMiemgp);
@@ -117,4 +143,51 @@ function changePF(id) {
     $(".valP").attr("value", P);
     $(".preV").empty();
     $(".preV").append(P);
+}
+
+function createContextAsis() {
+    var s = '<div class="col l7 s12">';
+    s += '<div class="row">';
+    s += '<h5 class="light italic left">Registro de Asistencia</h5>';
+    s += '</div>';
+    s += '<table class="highlight light italic">';
+    s += '<tbody id="list_miembros">';
+    s += '</tbody>';
+    s += '</table>';
+    s += '</div>';
+    s += '<div class="col l5 s12">';
+    s += '<h5 class="light italic titleGP"></h5>';
+    s += '<table class="row">';
+    s += '<tr style="margin: 0;padding: 0;">';
+    s += '<td class="col s3 offset-s3 green-text accent-3" style="text-align: center"><h3 class="thin preV">0</h3><small>Presentes</small></td>';
+    s += '<input type="hidden" class="valP" value="0">';
+    s += '<td class="col s3 grey-text darken-3" style="text-align: center"><h3 class="thin falV">0</h3><small>Faltas</small></td>';
+    s += '<input type="hidden" class="valF" value="0">';
+    s += '</tr>';
+    s += '</table>';
+    s += '<div class="row">';
+    s += '<div class="input-field col s10 offset-s1">';
+    s += '<i class="mdi-social-people prefix grey-text darken-3"></i>';
+    s += '<input id="nvisitas" type="number" class="validate">';
+    s += '<label for="nvisitas" class="">Número de visitas</label>';
+    s += '</div>';
+    s += '<div class="input-field col s10 offset-s1 contLR">';
+    s += '</div>';
+    s += '</div>';
+    s += '<br>';
+    s += '<button class="btn waves-effect waves-light green accent-3 col l12 m12 s12" onclick="saveAsis()">Registrar</button>';
+    s += '</div>';
+    return s;
+}
+
+function createMessageAlert(ColorClass, text) {
+    var s = '<div class="col l12 m12 s12">';
+    s += '<div class="card ' + ColorClass + ' white-text">';
+    s += '<div class="card-content">';
+    s += '<i class="mdi-social-notifications"></i>';
+    s += text;
+    s += '</div>';
+    s += '</div>';
+    s += '</div>';
+    return s;
 }

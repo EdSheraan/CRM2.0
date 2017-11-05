@@ -9,13 +9,11 @@ function addAsisMiemgp(idAsistenciaevt) {
         if ($("#as" + idMiembro).prop('checked')) {
             asis = "1";
         }
-        agService.addAsmiemgp(createAsmiemgp(idAsistenciaevt, idMiembro, asis), writeT);
+        agService.addAsmiemgp(createAsmiemgp(idAsistenciaevt, idMiembro, asis), function (rpta) {
+        });
+        loadHeader();
     }
-    //location.href=crm_context_path+"/asistenciaevt/main";
-}
 
-function writeT(id){
-    console.log("Id de asistencia de miembro : " + id);
 }
 
 function createAsmiemgp(idAsevt, idMiembro, asistencia) {

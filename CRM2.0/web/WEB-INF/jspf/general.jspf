@@ -11,7 +11,8 @@
 <link href="<c:url value='/resources/css/style.min.css'></c:url>" rel="stylesheet" type="text/css"/>
 <link href="<c:url value='/resources/css/pnotify.custom.min.css'></c:url>" rel="stylesheet" type="text/css"/>
 <link href="<c:url value='/resources/css/perfect-scrollbar.css'></c:url>" rel="stylesheet" type="text/css"/>
-<link href="<c:url value='/resources/css/crm.css'></c:url>" rel="stylesheet" type="text/css"/>
+<link href="<c:url value='/resources/css/crm.css'></c:url>" rel="stylesheet" type="text/css"/>        
+<link href="<c:url value='/resources/css/animate.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
 
     <!-- Javascript-->
     <script src="<c:url value='/resources/js/jquery-2.2.3.min.js'></c:url>" type="text/javascript"></script>
