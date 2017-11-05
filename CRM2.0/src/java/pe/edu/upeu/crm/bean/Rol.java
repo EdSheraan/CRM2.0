@@ -30,6 +30,7 @@ public class Rol  implements java.io.Serializable {
      private String rolNombre;
      private String rolCodigo;
      private String rolEstado;
+     private String rolDescripcion;
      private Set<Privilegio> privilegios = new HashSet<Privilegio>(0);
      private Set<Detrol> detrols = new HashSet<Detrol>(0);
 
@@ -42,10 +43,11 @@ public class Rol  implements java.io.Serializable {
         this.rolCodigo = rolCodigo;
         this.rolEstado = rolEstado;
     }
-    public Rol(String rolNombre, String rolCodigo, String rolEstado, Set<Privilegio> privilegios, Set<Detrol> detrols) {
+    public Rol(String rolNombre, String rolCodigo, String rolEstado,String rolDescripcion, Set<Privilegio> privilegios, Set<Detrol> detrols) {
        this.rolNombre = rolNombre;
        this.rolCodigo = rolCodigo;
        this.rolEstado = rolEstado;
+       this.rolDescripcion = rolDescripcion;
        this.privilegios = privilegios;
        this.detrols = detrols;
     }
@@ -90,6 +92,15 @@ public class Rol  implements java.io.Serializable {
     
     public void setRolEstado(String rolEstado) {
         this.rolEstado = rolEstado;
+    }
+    
+    @Column(name = "ROL_DESCRIPCION", length = 255)
+    public String getRolDescripcion() {
+        return this.rolDescripcion;
+    }
+
+    public void setRolDescripcion(String rolDescripcion) {
+        this.rolDescripcion = rolDescripcion;
     }
 
 @ManyToMany(fetch=FetchType.LAZY)

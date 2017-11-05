@@ -1,10 +1,7 @@
-<%-- 
-  Document  : privilegios
-  Created on : 11/10/2017, 12:21:18 PM
-  Author   : Leandro Burgos
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +9,8 @@
         <%@include file="../jspf/general.jspf" %>
         <style>
             .contPriv{
+                width: 150px;
+                height: 150px;
                 padding: 1%;
                 color:white;
             }
@@ -36,14 +35,18 @@
         <div class="seaction">      
             <center>
                 <div class="row light italic" style="margin-top: 10%">
-                    <a href="<%=request.getContextPath()%>/grupo/main" class="contPriv waves-effect waves-light green darken-2">
-                        <i class="mdi-action-list icon-demo size-icon"></i>
-                        <p>Grupos Pequeños</p>
-                    </a>
-                    <a href="<%=request.getContextPath()%>/asistenciaevt/main" class="contPriv waves-effect waves-light green darken-1">
-                        <i class="mdi-toggle-check-box icon-demo size-icon"></i>
-                        <p>Registrar Asistencia</p>
-                    </a>
+                    <c:forEach items="${sessionScope.prvRol}" var="modulo">
+                        <c:if test="${!empty modulo.childs}">
+                            <c:if test="${modulo.parent.idPrivilegio == sessionScope.modSelected}">
+                                <c:forEach items="${modulo.childs}" var="child">
+                                    <a href="<%=request.getContextPath()%>/${child.prvLink}" class="contPriv waves-effect waves-light ${child.prvColor}">
+                                        <i class="${child.prvIcono} icon-demo size-icon"></i>
+                                        <p>${child.prvNombre}</p>
+                                    </a>
+                                </c:forEach>
+                            </c:if> 
+                        </c:if>                        
+                    </c:forEach>
                 </div>
             </center>
         </div>

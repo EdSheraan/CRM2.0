@@ -16,8 +16,9 @@ public class SessionUtil {
     public static final String ROL_LIST = "rolList";
     public static final String ROL_SELECTED = "rolSelected";
     public static final String PRV_ROL = "prvRol";
-    
-    public static String getString(HttpSession session, String key){
+    public static final String MOD_ACT = "modSelected";
+
+    public static String getString(HttpSession session, String key) {
         try {
             return session.getAttribute(key).toString();
         } catch (Exception e) {
@@ -25,8 +26,8 @@ public class SessionUtil {
         }
         return "";
     }
-    
-    public static int getInteger(HttpSession session, String key){
+
+    public static int getInteger(HttpSession session, String key) {
         try {
             return Integer.parseInt(session.getAttribute(key).toString());
         } catch (Exception e) {
