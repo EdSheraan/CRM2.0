@@ -31,13 +31,14 @@ function listPersona(list) {
     $(list_body).append(t);
 }
 
-function regBasicPersona(idTipoDoc, nDoc, pNombre, pApellido, pSexo) {
+function regBasicPersona(idTipoDoc, nDoc, pNombre, pApellido, pSexo, pBautizado) {
     try {
         var persona = {
             perDocumento: nDoc,
             perNombres: pNombre,
             perApellidos: pApellido,
             perSexo: pSexo,
+            perBautizado: pBautizado,
             documento: {idDocumento: parseInt(idTipoDoc)}
         };
         pService.addPersona(persona, addMiembroGP);

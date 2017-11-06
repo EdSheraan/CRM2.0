@@ -32,7 +32,6 @@ public class PersonaService implements CRUDService<Persona>{
         bean.setPerEstado("1");
         bean.setPerUsuAdd(LoginService.getPrincipal().getIdPersona());
         bean.setPerFechaAdd(new Date());
-        bean.setPerBautizado("1");
         Logger.info("Registrando persona");
         return personaDAO.add(bean);
     }

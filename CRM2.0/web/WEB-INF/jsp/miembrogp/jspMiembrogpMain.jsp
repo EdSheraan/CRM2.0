@@ -70,7 +70,7 @@
                                                     <label for="iapellido">Apellidos</label>
                                                 </div>                                                
                                                 <div class="switch">Bautizado : 
-                                                    <label>No<input type="checkbox"><span class="lever"></span>Si</label>
+                                                    <label>No<input type="checkbox" id="chckB"><span class="lever"></span>Si</label>
                                                 </div>
                                             </div>
                                             <div class="col l6 m6 s12">
@@ -125,7 +125,12 @@
                                                         var idDoc = $("#idoc").val();
                                                         var isexo = $("#isexo").val();
                                                         var idocumento = $("#idocumento").val();
-                                                        regBasicPersona(idDoc, idocumento, nombre, apellidos, isexo);
+                                                        var a = $("#chckB").prop('checked');
+                                                        var ibautizado = 0;
+                                                        if (a) {
+                                                            ibautizado = 1;
+                                                        }
+                                                        regBasicPersona(idDoc, idocumento, nombre, apellidos, isexo, ibautizado);
                                                     }
         </script>
     </body>
