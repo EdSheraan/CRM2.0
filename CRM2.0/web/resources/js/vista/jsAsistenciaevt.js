@@ -34,7 +34,7 @@ function testEnabled(idEvento) {//provisional
             $(".contAsis").empty();
             $(".contAsis").append(createContextAsis());
             list_miembros = $("#list_miembros");
-            var grupo = {idGrupo: 1};
+            var grupo = {idGrupo: $("#crm_idGrupo").val()};
             mgpService.listMiembrogp(grupo, loadMiembros);
             gpService.getGrupo(grupo, dataGroup);
         }

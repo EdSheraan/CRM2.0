@@ -91,6 +91,7 @@ function save() {
             };
             gService.updateGrupo(grupo, reload);
         }
+        $('#modal1').closeModal();
     } else {
         alert("Campos Incompletos...");
     }

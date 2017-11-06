@@ -1,6 +1,6 @@
 var list_body = $('#list_body');
 var mgpService = new miembrogpService();
-var idGrupo = $("#idGrupo").val();
+var idGrupo = $("#crm_idGrupo").val();
 $(document).ready(function () {
     load();
 });

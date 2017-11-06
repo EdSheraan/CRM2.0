@@ -7,7 +7,6 @@
         <%@include file="../../jspf/general.jspf" %>
     </head>
     <body>
-        <input type="hidden" value="1" id="idGrupo">
         <%@include file="../../jspf/header.jspf" %>
         <div id="main">
             <div class="wrapper">
