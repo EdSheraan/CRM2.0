@@ -19,6 +19,9 @@
                 td,th{
                     padding:0px 5px; 
                 }
+                #content .container{
+                    padding-bottom: 30px;
+                }
             </style>
         </head>
         <body class="white">

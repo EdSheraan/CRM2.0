@@ -26,21 +26,27 @@ import pe.edu.upeu.crm.service.impl.AsmiemgpService;
 @Scope("request")
 @RequestMapping("asmiemgp")
 public class AsmiemgpController {
-    
+
     @Autowired
     private AsmiemgpService asmiemgpService;
     private ModelAndView modelAndView;
-    
+
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspAsmiemgp(ModelMap model) {
         modelAndView = new ModelAndView("asmiemgp/jspAsmiemgpMain", model);
         return modelAndView;
     }
-    
-    @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/addABC", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
     Integer addAsmiemgp(@RequestBody Asmiemgp asmiemgp) {
         return (Integer) asmiemgpService.add(asmiemgp);
+    }
+
+    @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
+    public @ResponseBody
+    Integer addAsmiemgp(@RequestBody List<Asmiemgp> asmiemgp) {
+        return (Integer) asmiemgpService.addAsis(asmiemgp);
     }
 
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
@@ -60,5 +66,5 @@ public class AsmiemgpController {
     List<Asmiemgp> listAsmiemgp() {
         return asmiemgpService.list((Object[]) null);
     }
-    
+
 }

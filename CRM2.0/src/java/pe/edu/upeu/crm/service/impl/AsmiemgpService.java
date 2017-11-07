@@ -19,11 +19,11 @@ import pe.edu.upeu.crm.service.CRUDService;
  * @author Andres
  */
 @Service
-public class AsmiemgpService implements CRUDService<Asmiemgp>{
-    
+public class AsmiemgpService implements CRUDService<Asmiemgp> {
+
     @Autowired
     private AsmiemgpDAO asmiemgpDAO;
-    
+
     @Override
     @Transactional
     public Object add(Asmiemgp bean) {
@@ -73,5 +73,16 @@ public class AsmiemgpService implements CRUDService<Asmiemgp>{
     public Asmiemgp getByParent(Object... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Transactional
+    public Object addAsis(List<Asmiemgp> asmiembros) {
+        int n = 0;
+        Logger.info("Registrando asistencia de miembros");
+        for (int i = 0; i < asmiembros.size(); i++) {
+            n = n + 1;
+            add(asmiembros.get(i));
+        }
+        return n;
+    }
+
 }

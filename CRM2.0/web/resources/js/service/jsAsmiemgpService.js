@@ -1,9 +1,9 @@
 function asmiemgpService() {
     var connector = new jsConnector();
 
-    this.addAsmiemgp = function (asmiemgp, _callback) {
+    this.addAsmiemgp = function (asistencia, _callback) {
         try {
-            connector.post(url.asmiemgp.add, JSON.stringify(asmiemgp), function (result) {
+            connector.post(url.asmiemgp.add, JSON.stringify(asistencia), function (result) {
                 if (result !== undefined && result !== null) {
                     _callback(result);
                 } else {

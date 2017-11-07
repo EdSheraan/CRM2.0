@@ -12,10 +12,24 @@ var principal = [
     "deep-purple"
 ];
 
-var complement = [
+var lighten = [
     "lighten-1",
     "lighten-2",
     "lighten-3"
+];
+
+var darken = [
+    "darken-1",
+    "darken-2",
+    "darken-3",
+    "darken-4"
+];
+
+var accent = [
+    "accent-1",
+    "accent-2",
+    "accent-3",
+    "accent-4"
 ];
 
 function getRandom(max) {
@@ -41,5 +55,9 @@ function getPrincipal() {
 }
 
 function getComplement() {
-    return complement[getRandom(complement.length)];
+    return lighten[getRandom(lighten.length)];
+}
+
+function getColorDarken() {
+    return getPrincipal() + " " + getColorDarken();
 }
