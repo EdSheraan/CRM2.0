@@ -1,18 +1,25 @@
 package pe.edu.upeu.crm.dao.impl;
 
 import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Grupo;
 import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
-public class GrupoDAO extends CrudDAO<Grupo>{
+public class GrupoDAO extends CrudDAO<Grupo> {
 
     @Override
     public int delete(Grupo bean) {
         HibernateParam param = new HibernateParam("idGrupo", bean.getIdGrupo());
-        return executeHQLUpdate("Update Grupo g set g.gpoEstado = '0' where g.idGrupo = :idGrupo",param);
+        return executeHQLUpdate("Update Grupo g set g.gpoEstado = '0' where g.idGrupo = :idGrupo", param);
     }
 
     @Override
@@ -22,12 +29,12 @@ public class GrupoDAO extends CrudDAO<Grupo>{
 
     @Override
     public List<Grupo> listEnabled(HibernateParam... param) {
-            return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela and g.gpoEstado ='1' order by g.gpoNombre asc", param);
+        return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela and g.gpoEstado ='1' order by g.gpoNombre asc", param);
     }
 
     @Override
     public List<Grupo> listDisabled(HibernateParam... param) {
-        return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela and g.gpoEstado ='0'",param);
+        return executeHQLQuery("From Grupo g where g.escuela.idEscuela=:idEscuela and g.gpoEstado ='0'", param);
     }
 
     @Override
@@ -44,5 +51,5 @@ public class GrupoDAO extends CrudDAO<Grupo>{
     public Grupo getByParent(HibernateParam... parentID) {
         return listUnique("From Grupo g where g.escuela.idEscuela=:idEscuela", parentID);
     }
-    
-}
+
+    }

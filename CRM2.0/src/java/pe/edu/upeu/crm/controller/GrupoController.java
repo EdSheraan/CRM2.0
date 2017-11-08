@@ -70,5 +70,5 @@ public class GrupoController {
     Grupo listGrupo(@RequestBody Grupo grupo) {
         return grupoService.get(grupo.getIdGrupo());
     }
-
-}
+    
+    }

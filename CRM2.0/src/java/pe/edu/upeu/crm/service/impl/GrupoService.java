@@ -92,5 +92,5 @@ public class GrupoService implements CRUDService<Grupo> {
     public Grupo getByParent(Object... parentID) {
         return grupoDAO.getByParent(new HibernateParam("idEscuela", parentID[0]));
     }
-
-}
+    
+    }

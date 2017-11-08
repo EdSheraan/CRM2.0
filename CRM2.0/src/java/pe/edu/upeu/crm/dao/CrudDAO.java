@@ -3,9 +3,14 @@ package pe.edu.upeu.crm.dao;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,18 +19,16 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public abstract class CrudDAO<T> {
-    
-    public static final String ESTADO_ACTIVO ="1";
-    public static final String ESTADO_INACTIVO ="0";
 
-    
+    public static final String ESTADO_ACTIVO = "1";
+    public static final String ESTADO_INACTIVO = "0";
+
     protected SessionFactory sessionFactory;
+
     @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-    
-    
 
     public Object add(T bean) {
         Session session = sessionFactory.openSession();
@@ -71,14 +74,14 @@ public abstract class CrudDAO<T> {
     public abstract List<T> search(HibernateParam... param);
 
     public abstract T get(HibernateParam... id);
-    
-    public abstract T getByParent(HibernateParam ... parentID);
-    
+
+    public abstract T getByParent(HibernateParam... parentID);
+
     public List<T> executeHQLQuery(String query, HibernateParam... params) {
         Session session = sessionFactory.openSession();
         List<T> list = new ArrayList<>();
         try {
-            
+
             Query q = session.createQuery(query);
             if (params != null) {
                 for (HibernateParam p : params) {
@@ -95,7 +98,7 @@ public abstract class CrudDAO<T> {
         }
         return list;
     }
-    
+
     public int executeHQLUpdate(String query, HibernateParam... params) {
         Session session = sessionFactory.openSession();
         try {
@@ -108,7 +111,7 @@ public abstract class CrudDAO<T> {
                     }
                 }
             }
-            int r= q.executeUpdate();
+            int r = q.executeUpdate();
             session.getTransaction().commit();
             return r;
         } catch (Exception e) {
@@ -120,7 +123,7 @@ public abstract class CrudDAO<T> {
         return 0;
     }
 
-    public T listUnique(String query,HibernateParam... params) {
+    public T listUnique(String query, HibernateParam... params) {
         Session session = sessionFactory.openSession();
         T bean = null;
         try {
@@ -142,4 +145,18 @@ public abstract class CrudDAO<T> {
         }
         return bean;
     }
+
+    public List<Object> listSQLNative(String sql) {
+        Session session = sessionFactory.openSession();
+        List data = null;
+        try {
+            SQLQuery query = session.createSQLQuery(sql);
+            query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+            data = query.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
 }
