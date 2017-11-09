@@ -146,11 +146,18 @@ public abstract class CrudDAO<T> {
         return bean;
     }
 
-    public List<Object> listSQLNative(String sql) {
+    public List<Object> listSQLNative(String sql, HibernateParam... params) {
         Session session = sessionFactory.openSession();
         List data = null;
         try {
             SQLQuery query = session.createSQLQuery(sql);
+            if (params != null) {
+                for (HibernateParam p : params) {
+                    if (p != null) {
+                        query.setParameter(p.getName(), p.getValue());
+                    }
+                }
+            }
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             data = query.list();
         } catch (HibernateException e) {
