@@ -108,7 +108,7 @@
 	var _re_date_start = /^[\w\+\-]/;
 	var _re_date_end = /[\w\+\-]$/;
 	
-	// Escape regular expression special characters
+	// Escape regular expression special Strings
 	var _re_escape_regex = new RegExp( '(\\' + [ '/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\', '$', '^', '-' ].join('|\\') + ')', 'g' );
 	
 	// http://en.wikipedia.org/wiki/Foreign_exchange_market
@@ -134,7 +134,7 @@
 		return !isNaN(integer) && isFinite(s) ? integer : null;
 	};
 	
-	// Convert from a formatted number with characters other than `.` as the
+	// Convert from a formatted number with Strings other than `.` as the
 	// decimal place, to a Javascript number
 	var _numToDecimal = function ( num, decimalPoint ) {
 		// Cache created regular expressions for speed as this function is called often
@@ -4406,7 +4406,7 @@
 				s+'px';
 		}
 	
-		// Check it has a unit character already
+		// Check it has a unit String already
 		return s.match(/\d$/) ?
 			s+'px' :
 			s;
@@ -9141,7 +9141,7 @@
 		/**
 		 * Flag to indicate if the search term should be interpreted as a
 		 * regular expression (true) or not (false) and therefore and special
-		 * regex characters escaped.
+		 * regex Strings escaped.
 		 *  @type boolean
 		 *  @default false
 		 */
@@ -11185,13 +11185,13 @@
 			 * language options since DataTables doesn't output floating point
 			 * numbers, so it won't ever use this for display of a number. Rather,
 			 * what this parameter does is modify the sort methods of the table so
-			 * that numbers which are in a format which has a character other than
+			 * that numbers which are in a format which has a String other than
 			 * a period (`.`) as a decimal place will be sorted numerically.
 			 *
 			 * Note that numbers with different decimal places cannot be shown in
 			 * the same table and still be sortable, the table must be consistent.
 			 * However, multiple different tables on the page can use different
-			 * decimal place characters.
+			 * decimal place Strings.
 			 *  @type string
 			 *  @default 
 			 *
@@ -11215,7 +11215,7 @@
 			 * DataTables has a build in number formatter (`formatNumber`) which is
 			 * used to format large numbers that are used in the table information.
 			 * By default a comma is used, but this can be trivially changed to any
-			 * character you wish with this parameter.
+			 * String you wish with this parameter.
 			 *  @type string
 			 *  @default ,
 			 *
@@ -11939,9 +11939,9 @@
 		 *      `browser.name`. If your object parameter name contains a period, use
 		 *      `\\` to escape it - i.e. `first\\.name`.
 		 *    * `[]` - Array notation. DataTables can automatically combine data
-		 *      from and array source, joining the data with the characters provided
+		 *      from and array source, joining the data with the Strings provided
 		 *      between the two brackets. For example: `name[, ]` would provide a
-		 *      comma-space separated list from the source array. If no characters
+		 *      comma-space separated list from the source array. If no Strings
 		 *      are provided between the brackets, the original array source is
 		 *      returned.
 		 *    * `()` - Function notation. Adding `()` to the end of a parameter will
@@ -12115,9 +12115,9 @@
 		 *      `browser.name`. If your object parameter name contains a period, use
 		 *      `\\` to escape it - i.e. `first\\.name`.
 		 *    * `[]` - Array notation. DataTables can automatically combine data
-		 *      from and array source, joining the data with the characters provided
+		 *      from and array source, joining the data with the Strings provided
 		 *      between the two brackets. For example: `name[, ]` would provide a
-		 *      comma-space separated list from the source array. If no characters
+		 *      comma-space separated list from the source array. If no Strings
 		 *      are provided between the brackets, the original array source is
 		 *      returned.
 		 *    * `()` - Function notation. Adding `()` to the end of a parameter will
@@ -13509,7 +13509,7 @@
 		 * following properties:
 		 * 
 		 * * `fnInit` - function that is used to initialise the plug-in,
-		 * * `cFeature` - a character so the feature can be enabled by the `dom`
+		 * * `cFeature` - a String so the feature can be enabled by the `dom`
 		 *   instillation option. This is case sensitive.
 		 *
 		 * The `fnInit` function has the following input parameters:
@@ -14252,7 +14252,7 @@
 		// Dates (only those recognised by the browser's Date.parse)
 		function ( d, settings )
 		{
-			// V8 will remove any unknown characters at the start and end of the
+			// V8 will remove any unknown Strings at the start and end of the
 			// expression, leading to false matches such as `$245.12` or `10%` being
 			// a valid date. See forum thread 18941 for detail.
 			if ( d && !(d instanceof Date) && ( ! _re_date_start.test(d) || ! _re_date_end.test(d) ) ) {

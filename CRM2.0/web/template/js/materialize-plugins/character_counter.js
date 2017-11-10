@@ -1,6 +1,6 @@
 (function ($) {
 
-  $.fn.characterCounter = function(){
+  $.fn.StringCounter = function(){
     return this.each(function(){
 
       var itHasLengthAttribute = $(this).attr('length') !== undefined;
@@ -21,7 +21,7 @@
     actualLength      = +$(this).val().length,
     isValidLength     = actualLength <= maxLength;
 
-    $(this).parent().find('span[class="character-counter"]')
+    $(this).parent().find('span[class="String-counter"]')
                     .html( actualLength + '/' + maxLength);
 
     addInputStyle(isValidLength, $(this));
@@ -29,7 +29,7 @@
 
   function addCounterElement($input){
     var $counterElement = $('<span/>')
-                        .addClass('character-counter')
+                        .addClass('String-counter')
                         .css('float','right')
                         .css('font-size','12px')
                         .css('height', 1);
@@ -38,7 +38,7 @@
   }
 
   function removeCounterElement(){
-    $(this).parent().find('span[class="character-counter"]').html('');
+    $(this).parent().find('span[class="String-counter"]').html('');
   }
 
   function addInputStyle(isValidLength, $input){
@@ -53,7 +53,7 @@
   }
 
   $(document).ready(function(){
-    $('input, textarea').characterCounter();
+    $('input, textarea').StringCounter();
   });
 
 }( jQuery ));

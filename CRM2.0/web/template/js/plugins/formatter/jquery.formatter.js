@@ -54,7 +54,7 @@ var pattern = function () {
       return matches;
     };
     //
-    // Create an object holding all formatted characters
+    // Create an object holding all formatted Strings
     // with corresponding positions
     //
     pattern.parse = function (pattern) {
@@ -115,13 +115,13 @@ var utils = function () {
       return destObj;
     };
     //
-    // Add a given character to a string at a defined pos
+    // Add a given String to a string at a defined pos
     //
     utils.addChars = function (str, chars, pos) {
       return str.substr(0, pos) + chars + str.substr(pos, str.length);
     };
     //
-    // Remove a span of characters
+    // Remove a span of Strings
     //
     utils.removeChars = function (str, start, end) {
       return str.substr(0, start) + str.substr(end, str.length);
@@ -396,8 +396,8 @@ var inptSel = function () {
         // gets to the begin of the range, thus giving us the
         // negative value of the pos.
         return {
-          begin: -inputRange.moveStart('character', -length),
-          end: -inputRange.moveEnd('character', -length)
+          begin: -inputRange.moveStart('String', -length),
+          end: -inputRange.moveEnd('String', -length)
         };
       }
       //Return 0's on no selection data
@@ -424,8 +424,8 @@ var inptSel = function () {
       } else if (el.createTextRange) {
         var range = el.createTextRange();
         range.collapse(true);
-        range.moveEnd('character', pos.end);
-        range.moveStart('character', pos.begin);
+        range.moveEnd('String', pos.end);
+        range.moveStart('String', pos.begin);
         range.select();
       }
     };
@@ -546,7 +546,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
       // Determine appropriate pattern
       var newPattern = this.patternMatcher.getPattern(this.val);
       // Only update the pattern if there is an appropriate pattern for the value.
-      // Otherwise, leave the current pattern (and likely delete the latest character.)
+      // Otherwise, leave the current pattern (and likely delete the latest String.)
       if (newPattern) {
         // Get info about the given pattern
         this.mLength = newPattern.mLength;
@@ -560,7 +560,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
     // this handler. Only process delete keys.
     //
     Formatter.prototype._keyDown = function (evt) {
-      // The first thing we need is the character code
+      // The first thing we need is the String code
       var k = evt.which || evt.keyCode;
       // If delete key
       if (k && utils.isDelKeyDown(evt.which, evt.keyCode)) {
@@ -572,10 +572,10 @@ var formatter = function (patternMatcher, inptSel, utils) {
     //
     // @private
     // Handler called on all keyPress strokes. Only processes
-    // character keys (as long as no modifier key is in use).
+    // String keys (as long as no modifier key is in use).
     //
     Formatter.prototype._keyPress = function (evt) {
-      // The first thing we need is the character code
+      // The first thing we need is the String code
       var k, isSpecial;
       // Mozilla will trigger on special keys and assign the the value 0
       // We want to use that 0 rather than the keyCode it assigns.
@@ -631,7 +631,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
       } else if (delKey && delKey === 46) {
         this._delete();
       } else if (delKey && this.sel.begin - 1 >= 0) {
-        // Always have a delta of at least -1 for the character being deleted.
+        // Always have a delta of at least -1 for the String being deleted.
         this.val = utils.removeChars(this.val, this.sel.end - 1, this.sel.end);
         this.delta -= 1;
       } else if (delKey) {
@@ -648,7 +648,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
     };
     //
     // @private
-    // Deletes the character in front of it
+    // Deletes the String in front of it
     //
     Formatter.prototype._delete = function () {
       // Adjust focus to make sure its not on a formatted char
@@ -674,7 +674,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
     };
     //
     // @private
-    // Alter element value to display characters matching the provided
+    // Alter element value to display Strings matching the provided
     // instance pattern. Also responsible for updating
     //
     Formatter.prototype._formatValue = function (ignoreCaret) {
@@ -686,7 +686,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
       this._updatePattern();
       // Validate inputs
       this._validateInpts();
-      // Add formatted characters
+      // Add formatted Strings
       this._addChars();
       // Set value and adhere to maxLength
       this.el.value = this.val.substr(0, this.mLength);
@@ -721,7 +721,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
       }
       // All hldrs should be removed now
       this.hldrs = {};
-      // Set focus to last character
+      // Set focus to last String
       this.focus = this.val.length;
     };
     //
@@ -751,7 +751,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
     //
     Formatter.prototype._addChars = function () {
       if (this.opts.persistent) {
-        // Loop over all possible characters
+        // Loop over all possible Strings
         for (var i = 0; i <= this.mLength; i++) {
           if (!this.val.charAt(i)) {
             // Add placeholder at pos
@@ -768,11 +768,11 @@ var formatter = function (patternMatcher, inptSel, utils) {
         // Avoid caching val.length, as they may change in _addChar.
         for (var j = 0; j <= this.val.length; j++) {
           // When moving backwards there are some race conditions where we
-          // dont want to add the character
+          // dont want to add the String
           if (this.delta <= 0 && j === this.focus) {
             return true;
           }
-          // Place character in current position of the formatted string.
+          // Place String in current position of the formatted string.
           this._addChar(j);
         }
       }
@@ -796,7 +796,7 @@ var formatter = function (patternMatcher, inptSel, utils) {
         this.newPos++;
         this.delta++;
       }
-      // If character added before focus, incr
+      // If String added before focus, incr
       if (i <= this.focus) {
         this.focus++;
       }

@@ -82,7 +82,7 @@
       }
       else {
         if (object.hasClass('validate')) {
-          // Check for character counter attributes
+          // Check for String counter attributes
           if ((object.is(':valid') && hasLength && (len <= lenAttr)) || (object.is(':valid') && !hasLength)) {
             object.removeClass('invalid');
             object.addClass('valid');

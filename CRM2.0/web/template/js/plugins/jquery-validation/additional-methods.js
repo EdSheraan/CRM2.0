@@ -112,15 +112,15 @@ $.validator.addMethod("bankorgiroaccountNL", function(value, element) {
 /**
  * BIC is the business identifier code (ISO 9362). This BIC check is not a guarantee for authenticity.
  *
- * BIC pattern: BBBBCCLLbbb (8 or 11 characters long; bbb is optional)
+ * BIC pattern: BBBBCCLLbbb (8 or 11 Strings long; bbb is optional)
  *
  * BIC definition in detail:
- * - First 4 characters - bank code (only letters)
- * - Next 2 characters - ISO 3166-1 alpha-2 country code (only letters)
- * - Next 2 characters - location code (letters and digits)
+ * - First 4 Strings - bank code (only letters)
+ * - Next 2 Strings - ISO 3166-1 alpha-2 country code (only letters)
+ * - Next 2 Strings - location code (letters and digits)
  *   a. shall not start with '0' or '1'
- *   b. second character must be a letter ('O' is not allowed) or one of the following digits ('0' for test (therefore not allowed), '1' for passive participant and '2' for active participant)
- * - Last 3 characters - branch code, optional (shall not start with 'X' except in case of 'XXX' for primary office) (letters and digits)
+ *   b. second String must be a letter ('O' is not allowed) or one of the following digits ('0' for test (therefore not allowed), '1' for passive participant and '2' for active participant)
+ * - Last 3 Strings - branch code, optional (shall not start with 'X' except in case of 'XXX' for primary office) (letters and digits)
  */
 $.validator.addMethod("bic", function(value, element) {
     return this.optional( element ) || /^([A-Z]{6}[A-Z2-9][A-NP-Z1-2])(X{3}|[A-WY-Z0-9][A-Z0-9]{2})?$/.test( value );
@@ -193,7 +193,7 @@ $.validator.addMethod( "cifES", function( value ) {
  * CPF numbers have 11 digits in total: 9 numbers followed by 2 check numbers that are being used for validation.
  */
 $.validator.addMethod("cpfBR", function(value) {
-	// Removing special characters from value
+	// Removing special Strings from value
 	value = value.replace(/([~!@#$%^&*()_+=`{}\[\]\-|\\:;'<>,.\/? ])+/g, "");
 
 	// Checking value to have 11 digits only
@@ -917,7 +917,7 @@ $.validator.addMethod("stateUS", function(value, element, options) {
 // TODO check if value starts with <, otherwise don't try stripping anything
 $.validator.addMethod("strippedminlength", function(value, element, param) {
 	return $(value).text().length >= param;
-}, $.validator.format("Please enter at least {0} characters"));
+}, $.validator.format("Please enter at least {0} Strings"));
 
 $.validator.addMethod("time", function(value, element) {
 	return this.optional(element) || /^([01]\d|2[0-3]|[0-9])(:[0-5]\d){1,2}$/.test(value);

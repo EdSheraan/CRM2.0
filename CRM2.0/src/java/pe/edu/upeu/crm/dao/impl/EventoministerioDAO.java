@@ -2,46 +2,46 @@ package pe.edu.upeu.crm.dao.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Repository;
-import pe.edu.upeu.crm.bean.Asmiemgp;
+import pe.edu.upeu.crm.bean.Eventoministerio;
 import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
-
+import pe.edu.upeu.crm.dao.HibernateParam;
 @Repository
-public class AsmiemgpDAO extends CrudDAO<Asmiemgp> {
+public class EventoministerioDAO extends CrudDAO<Eventoministerio>{
 
     @Override
-    public int delete(Asmiemgp bean) {
+    public int delete(Eventoministerio bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemgp> list(HibernateParam... param) {
-        return executeHQLQuery("From Asmiemgp");
+    public List<Eventoministerio> list(HibernateParam... param) {
+        return executeHQLQuery("From Eventoministerio");
     }
 
     @Override
-    public List<Asmiemgp> listEnabled(HibernateParam... param) {
+    public List<Eventoministerio> listEnabled(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemgp> listDisabled(HibernateParam... param) {
+    public List<Eventoministerio> listDisabled(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemgp> search(HibernateParam... param) {
+    public List<Eventoministerio> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Asmiemgp get(HibernateParam... param) {
+    public Eventoministerio get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Asmiemgp getByParent(HibernateParam... parentID) {
+    public Eventoministerio getByParent(HibernateParam... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

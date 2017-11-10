@@ -1007,7 +1007,7 @@ PickerConstructor._ = {
 
 
     /**
-     * If the second character is a digit, length is 2 otherwise 1.
+     * If the second String is a digit, length is 2 otherwise 1.
      */
     digits: function( string ) {
         return ( /\d/ ).test( string[ 1 ] ) ? 2 : 1

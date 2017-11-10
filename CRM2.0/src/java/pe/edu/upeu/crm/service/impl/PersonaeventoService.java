@@ -10,8 +10,8 @@ import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pe.edu.upeu.crm.bean.Asmiemgp;
-import pe.edu.upeu.crm.dao.impl.AsmiemgpDAO;
+import pe.edu.upeu.crm.bean.Personaevento;
+import pe.edu.upeu.crm.dao.impl.PersonaeventoDAO;
 import pe.edu.upeu.crm.service.CRUDService;
 
 /**
@@ -19,63 +19,63 @@ import pe.edu.upeu.crm.service.CRUDService;
  * @author Andres
  */
 @Service
-public class AsmiemgpService implements CRUDService<Asmiemgp> {
+public class PersonaeventoService implements CRUDService<Personaevento> {
 
     @Autowired
-    private AsmiemgpDAO asmiemgpDAO;
+    private PersonaeventoDAO personaeventoDAO;
 
     @Override
     @Transactional
-    public Object add(Asmiemgp bean) {
-        Logger.info("Registrando Asmiemgp");
-        return asmiemgpDAO.add(bean);
+    public Object add(Personaevento bean) {
+        Logger.info("Registrando Personaevento");
+        return personaeventoDAO.add(bean);
     }
 
     @Override
-    public int update(Asmiemgp bean) {
-        Logger.info("Actualizando Asmiemgp");
-        return asmiemgpDAO.update(bean);
+    public int update(Personaevento bean) {
+        Logger.info("Actualizando Personaevento");
+        return personaeventoDAO.update(bean);
     }
 
     @Override
-    public int delete(Asmiemgp bean) {
-        Logger.info("Eliminando Asmiemgp");
-        return asmiemgpDAO.delete(bean);
+    public int delete(Personaevento bean) {
+        Logger.info("Eliminando Personaevento");
+        return personaeventoDAO.delete(bean);
     }
 
     @Override
-    public List<Asmiemgp> list(Object... param) {
-        Logger.info("Listando todos los Asmiemgp");
-        return asmiemgpDAO.list();
+    public List<Personaevento> list(Object... param) {
+        Logger.info("Listando todos los Personaevento");
+        return personaeventoDAO.list();
     }
 
     @Override
-    public List<Asmiemgp> listEnabled(Object... param) {
+    public List<Personaevento> listEnabled(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemgp> listDisabled(Object... param) {
+    public List<Personaevento> listDisabled(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemgp> search(Object... param) {
+    public List<Personaevento> search(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Asmiemgp get(Object... id) {
+    public Personaevento get(Object... id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Asmiemgp getByParent(Object... parentID) {
+    public Personaevento getByParent(Object... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Transactional
-    public Object addAsis(List<Asmiemgp> asmiembros) {
+    public Object addAsis(List<Personaevento> asmiembros) {
         int n = 0;
         Logger.info("Registrando asistencia de miembros");
         for (int i = 0; i < asmiembros.size(); i++) {

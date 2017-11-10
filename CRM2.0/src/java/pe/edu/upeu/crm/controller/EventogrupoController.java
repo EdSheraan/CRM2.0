@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import pe.edu.upeu.crm.bean.Asmiemmin;
-import pe.edu.upeu.crm.service.impl.AsmiemminService;
+import pe.edu.upeu.crm.bean.Eventogrupo;
+import pe.edu.upeu.crm.bean.Evento;
+import pe.edu.upeu.crm.bean.Grupo;
+import pe.edu.upeu.crm.service.impl.EventogrupoService;
+import pe.edu.upeu.crm.service.impl.EventoService;
 
 /**
  *
@@ -24,41 +27,41 @@ import pe.edu.upeu.crm.service.impl.AsmiemminService;
  */
 @Controller
 @Scope("request")
-@RequestMapping("asmiemmin")
-public class AsmiemminController {
-    
+@RequestMapping("eventogrupo")
+public class EventogrupoController {
+
     @Autowired
-    private AsmiemminService asmiemminService;
+    private EventogrupoService eventogrupoService;
     private ModelAndView modelAndView;
-    
+
     @RequestMapping(value = "/main", method = RequestMethod.GET)
-    public ModelAndView showJspAsmiemmin(ModelMap model) {
-        modelAndView = new ModelAndView("asmiemmin/jspAsmiemminMain", model);
+    public ModelAndView showJspEventogrupo(ModelMap model) {
+        modelAndView = new ModelAndView("eventogrupo/jspEventogrupoMain", model);
         return modelAndView;
     }
-    
+
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addAsmiemmin(@RequestBody Asmiemmin asmiemmin) {
-        return (Integer) asmiemminService.add(asmiemmin);
+    Integer addEventogrupo(@RequestBody Eventogrupo eventogrupo) {
+        return (Integer) eventogrupoService.add(eventogrupo);
     }
 
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer updateAsmiemmin(@RequestBody Asmiemmin asmiemmin) {
-        return asmiemminService.update(asmiemmin);
+    Integer updateEventogrupo(@RequestBody Eventogrupo eventogrupo) {
+        return eventogrupoService.update(eventogrupo);
     }
 
     @RequestMapping(value = "/delete", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer deleteAsmiemmin(@RequestBody Asmiemmin asmiemmin) {
-        return asmiemminService.delete(asmiemmin);
+    Integer deleteEventogrupo(@RequestBody Eventogrupo eventogrupo) {
+        return eventogrupoService.delete(eventogrupo);
     }
 
     @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Asmiemmin> listAsmiemmin() {
-        return asmiemminService.list((Object[]) null);
+    List<Eventogrupo> listEventogrupo(@RequestBody Evento evento) {
+        return eventogrupoService.listEnabled(evento.getIdEvento());
     }
-    
+
 }

@@ -1403,7 +1403,7 @@ if (!document.createElement('canvas').getContext) {
   p.DOMSTRING_SIZE_ERR = 2;
   p.HIERARCHY_REQUEST_ERR = 3;
   p.WRONG_DOCUMENT_ERR = 4;
-  p.INVALID_CHARACTER_ERR = 5;
+  p.INVALID_String_ERR = 5;
   p.NO_DATA_ALLOWED_ERR = 6;
   p.NO_MODIFICATION_ALLOWED_ERR = 7;
   p.NOT_FOUND_ERR = 8;

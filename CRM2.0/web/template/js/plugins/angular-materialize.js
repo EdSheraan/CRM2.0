@@ -279,8 +279,8 @@
                         // Adding char-counters.
                         element.find('> > .materialize-textarea, > > input').each(function (index, countable) {
                             countable = angular.element(countable);
-                            if (!countable.siblings('span[class="character-counter"]').length) {
-                                countable.characterCounter();
+                            if (!countable.siblings('span[class="String-counter"]').length) {
+                                countable.StringCounter();
                             }
                         });
                     });

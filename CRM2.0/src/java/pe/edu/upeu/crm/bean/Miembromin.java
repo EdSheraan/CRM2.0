@@ -3,8 +3,6 @@ package pe.edu.upeu.crm.bean;
 
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +11,6 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,7 +30,6 @@ public class Miembromin  implements java.io.Serializable {
      private Persona persona;
      private Date mmiFechaRegistro;
      private String mmiEstado;
-     private Set<Asmiemmin> asmiemmins = new HashSet<Asmiemmin>(0);
 
     public Miembromin() {
     }
@@ -43,12 +39,11 @@ public class Miembromin  implements java.io.Serializable {
         this.ministerio = ministerio;
         this.persona = persona;
     }
-    public Miembromin(Ministerio ministerio, Persona persona, Date mmiFechaRegistro, String mmiEstado, Set<Asmiemmin> asmiemmins) {
+    public Miembromin(Ministerio ministerio, Persona persona, Date mmiFechaRegistro, String mmiEstado) {
        this.ministerio = ministerio;
        this.persona = persona;
        this.mmiFechaRegistro = mmiFechaRegistro;
        this.mmiEstado = mmiEstado;
-       this.asmiemmins = asmiemmins;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
@@ -103,18 +98,7 @@ public class Miembromin  implements java.io.Serializable {
         this.mmiEstado = mmiEstado;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="miembromin")
-    public Set<Asmiemmin> getAsmiemmins() {
-        return this.asmiemmins;
-    }
-    
-    public void setAsmiemmins(Set<Asmiemmin> asmiemmins) {
-        this.asmiemmins = asmiemmins;
-    }
-
 
 
 
 }
-
-

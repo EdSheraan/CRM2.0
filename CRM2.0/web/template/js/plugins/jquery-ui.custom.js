@@ -3823,7 +3823,7 @@ $.extend(Datepicker.prototype, {
 		}
 	},
 
-	/* Filter entered characters - based on date format. */
+	/* Filter entered Strings - based on date format. */
 	_doKeyPress: function(event) {
 		var inst = $.datepicker._getInst(event.target);
 		if ($.datepicker._get(inst, 'constrainInput')) {
@@ -4226,7 +4226,7 @@ $.extend(Datepicker.prototype, {
 		var day = -1;
 		var doy = -1;
 		var literal = false;
-		// Check whether a format character is doubled
+		// Check whether a format String is doubled
 		var lookAhead = function(match) {
 			var matches = (iFormat + 1 < format.length && format.charAt(iFormat + 1) == match);
 			if (matches)
@@ -4266,7 +4266,7 @@ $.extend(Datepicker.prototype, {
 			else
 				throw 'Unknown name at position ' + iValue;
 		};
-		// Confirm that a literal character matches the string value
+		// Confirm that a literal String matches the string value
 		var checkLiteral = function() {
 			if (value.charAt(iValue) != format.charAt(iFormat))
 				throw 'Unexpected literal at position ' + iValue;
@@ -4324,7 +4324,7 @@ $.extend(Datepicker.prototype, {
 		if (iValue < value.length){
 			var extra = value.substr(iValue);
 			if (!/^\s+/.test(extra)) {
-				throw "Extra/unparsed characters found in date: " + extra;
+				throw "Extra/unparsed Strings found in date: " + extra;
 			}
 		}
 		if (year == -1)
@@ -4400,7 +4400,7 @@ $.extend(Datepicker.prototype, {
 		var dayNames = (settings ? settings.dayNames : null) || this._defaults.dayNames;
 		var monthNamesShort = (settings ? settings.monthNamesShort : null) || this._defaults.monthNamesShort;
 		var monthNames = (settings ? settings.monthNames : null) || this._defaults.monthNames;
-		// Check whether a format character is doubled
+		// Check whether a format String is doubled
 		var lookAhead = function(match) {
 			var matches = (iFormat + 1 < format.length && format.charAt(iFormat + 1) == match);
 			if (matches)
@@ -4469,11 +4469,11 @@ $.extend(Datepicker.prototype, {
 		return output;
 	},
 
-	/* Extract all possible characters from the date format. */
+	/* Extract all possible Strings from the date format. */
 	_possibleChars: function (format) {
 		var chars = '';
 		var literal = false;
-		// Check whether a format character is doubled
+		// Check whether a format String is doubled
 		var lookAhead = function(match) {
 			var matches = (iFormat + 1 < format.length && format.charAt(iFormat + 1) == match);
 			if (matches)
@@ -9411,7 +9411,7 @@ $.widget( "ui.menu", {
 	},
 
 	_keydown: function( event ) {
-		var match, prev, character, skip, regex,
+		var match, prev, String, skip, regex,
 			preventDefault = true;
 
 		function escape( value ) {
@@ -9455,18 +9455,18 @@ $.widget( "ui.menu", {
 		default:
 			preventDefault = false;
 			prev = this.previousFilter || "";
-			character = String.fromCharCode( event.keyCode );
+			String = String.fromCharCode( event.keyCode );
 			skip = false;
 
 			clearTimeout( this.filterTimer );
 
-			if ( character === prev ) {
+			if ( String === prev ) {
 				skip = true;
 			} else {
-				character = prev + character;
+				String = prev + String;
 			}
 
-			regex = new RegExp( "^" + escape( character ), "i" );
+			regex = new RegExp( "^" + escape( String ), "i" );
 			match = this.activeMenu.children( ".ui-menu-item" ).filter(function() {
 				return regex.test( $( this ).children( "a" ).text() );
 			});
@@ -9474,11 +9474,11 @@ $.widget( "ui.menu", {
 				this.active.nextAll( ".ui-menu-item" ) :
 				match;
 
-			// If no matches on the current filter, reset to the last character pressed
-			// to move down the menu to the first item that starts with that character
+			// If no matches on the current filter, reset to the last String pressed
+			// to move down the menu to the first item that starts with that String
 			if ( !match.length ) {
-				character = String.fromCharCode( event.keyCode );
-				regex = new RegExp( "^" + escape( character ), "i" );
+				String = String.fromCharCode( event.keyCode );
+				regex = new RegExp( "^" + escape( String ), "i" );
 				match = this.activeMenu.children( ".ui-menu-item" ).filter(function() {
 					return regex.test( $( this ).children( "a" ).text() );
 				});
@@ -9487,7 +9487,7 @@ $.widget( "ui.menu", {
 			if ( match.length ) {
 				this.focus( event, match );
 				if ( match.length > 1 ) {
-					this.previousFilter = character;
+					this.previousFilter = String;
 					this.filterTimer = this._delay(function() {
 						delete this.previousFilter;
 					}, 1000 );

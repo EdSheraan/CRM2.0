@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import pe.edu.upeu.crm.bean.Asmiemgp;
-import pe.edu.upeu.crm.service.impl.AsmiemgpService;
+import pe.edu.upeu.crm.bean.Personaevento;
+import pe.edu.upeu.crm.service.impl.PersonaeventoService;
 
 /**
  *
@@ -24,47 +24,47 @@ import pe.edu.upeu.crm.service.impl.AsmiemgpService;
  */
 @Controller
 @Scope("request")
-@RequestMapping("asmiemgp")
-public class AsmiemgpController {
+@RequestMapping("personaevento")
+public class PersonaeventoController {
 
     @Autowired
-    private AsmiemgpService asmiemgpService;
+    private PersonaeventoService personaeventoService;
     private ModelAndView modelAndView;
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
-    public ModelAndView showJspAsmiemgp(ModelMap model) {
-        modelAndView = new ModelAndView("asmiemgp/jspAsmiemgpMain", model);
+    public ModelAndView showJspPersonaevento(ModelMap model) {
+        modelAndView = new ModelAndView("personaevento/jspPersonaeventoMain", model);
         return modelAndView;
     }
 
     @RequestMapping(value = "/addABC", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addAsmiemgp(@RequestBody Asmiemgp asmiemgp) {
-        return (Integer) asmiemgpService.add(asmiemgp);
+    Integer addPersonaevento(@RequestBody Personaevento personaevento) {
+        return (Integer) personaeventoService.add(personaevento);
     }
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addAsmiemgp(@RequestBody List<Asmiemgp> asmiemgp) {
-        return (Integer) asmiemgpService.addAsis(asmiemgp);
+    Integer addPersonaevento(@RequestBody List<Personaevento> personaevento) {
+        return (Integer) personaeventoService.addAsis(personaevento);
     }
 
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer updateAsmiemgp(@RequestBody Asmiemgp asmiemgp) {
-        return asmiemgpService.update(asmiemgp);
+    Integer updatePersonaevento(@RequestBody Personaevento personaevento) {
+        return personaeventoService.update(personaevento);
     }
 
     @RequestMapping(value = "/delete", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer deleteAsmiemgp(@RequestBody Asmiemgp asmiemgp) {
-        return asmiemgpService.delete(asmiemgp);
+    Integer deletePersonaevento(@RequestBody Personaevento personaevento) {
+        return personaeventoService.delete(personaevento);
     }
 
     @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Asmiemgp> listAsmiemgp() {
-        return asmiemgpService.list((Object[]) null);
+    List<Personaevento> listPersonaevento() {
+        return personaeventoService.list((Object[]) null);
     }
 
 }

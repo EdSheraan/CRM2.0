@@ -2,46 +2,46 @@ package pe.edu.upeu.crm.dao.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Repository;
-import pe.edu.upeu.crm.bean.Asmiemmin;
+import pe.edu.upeu.crm.bean.Personaevento;
 import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
-import pe.edu.upeu.crm.dao.HibernateParam;
+
 @Repository
-public class AsmiemminDAO extends CrudDAO<Asmiemmin>{
+public class PersonaeventoDAO extends CrudDAO<Personaevento> {
 
     @Override
-    public int delete(Asmiemmin bean) {
+    public int delete(Personaevento bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemmin> list(HibernateParam... param) {
-        return executeHQLQuery("From Asmiemmin");
+    public List<Personaevento> list(HibernateParam... param) {
+        return executeHQLQuery("From Personaevento");
     }
 
     @Override
-    public List<Asmiemmin> listEnabled(HibernateParam... param) {
+    public List<Personaevento> listEnabled(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemmin> listDisabled(HibernateParam... param) {
+    public List<Personaevento> listDisabled(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Asmiemmin> search(HibernateParam... param) {
+    public List<Personaevento> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Asmiemmin get(HibernateParam... param) {
+    public Personaevento get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Asmiemmin getByParent(HibernateParam... parentID) {
+    public Personaevento getByParent(HibernateParam... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
