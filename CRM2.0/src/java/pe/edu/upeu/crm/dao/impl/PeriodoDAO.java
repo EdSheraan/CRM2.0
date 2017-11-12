@@ -11,8 +11,8 @@ public class PeriodoDAO extends CrudDAO<Periodo>{
 
     @Override
     public int delete(Periodo bean) {
-        bean.setPrdEstado("0");
-        return update(bean);
+        return executeHQLUpdate("Update Periodo p set p.prdEstado ='0' where p.idPeriodo= :idPeriodo",
+                new HibernateParam("idPeriodo", bean.getIdPeriodo()));
     }
 
     @Override
@@ -22,24 +22,39 @@ public class PeriodoDAO extends CrudDAO<Periodo>{
 
     @Override
     public List<Periodo> listEnabled(HibernateParam... param) {
-        Object[] estado = {"estado", "1"};
-        return executeHQLQuery("From Periodo p where p.prdEstado = '1'");
+        String distrito =param[0].getValue().toString();
+        String iglesia =param[1].getValue().toString();
+        if(iglesia.equals("0")){
+            if(distrito.equals("0")){
+                return executeHQLQuery("From Periodo p where p.prdEstado = '1'");
+            }else{
+                return executeHQLQuery("From Periodo p where p.prdEstado = '1' "
+                        + "and p.prdDistrito = : prdDistrito", param[0]);
+            }
+        }else{
+            if(distrito.equals("0")){
+                return executeHQLQuery("From Periodo p where p.prdEstado = '1' "
+                        + "and p.prdIglesia = : prdIglesia", param[0]);
+            }else{
+                return executeHQLQuery("From Periodo p where p.prdEstado = '1' "
+                        + "and p.prdDistrito = :prdDistrito and p.prdIglesia = :prdIglesia", param);
+            }
+        }        
     }
 
     @Override
     public List<Periodo> listDisabled(HibernateParam... param) {
-        Object[] estado = {"estado", "0"};
-        return executeHQLQuery("From Periodo p where p.prdEstado = '1'");
+        return executeHQLQuery("From Periodo p where p.prdEstado = '0'");
     }
 
     @Override
     public List<Periodo> search(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return executeHQLQuery("From Periodo p where p.prdEstado = '1' and p.prdNombre = :prdNombre", param[0]);
     }
 
     @Override
     public Periodo get(HibernateParam... param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listUnique("From Periodo p where p.idPeriodo= :idPeriodo", param[0]);
     }
 
     @Override

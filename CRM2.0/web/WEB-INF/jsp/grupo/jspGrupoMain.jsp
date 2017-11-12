@@ -3,8 +3,8 @@
     Created on : 09/10/2017, 11:40:42 PM
     Author     : Leandro Burgos
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +12,7 @@
         <%@include file="../../jspf/general.jspf" %>
     </head>
     <body class="white">
+        
         <%@include file="../../jspf/header.jspf" %>
         <div id="main">
             <div class="wrapper">

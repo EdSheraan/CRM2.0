@@ -16,8 +16,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col s12 m12 l10 offset-l1" style="margin-top: 2%;">
-                                <h5>Gestion de Eventos</h5>
-                                <p>Administración de todos los eventos a realizarse del Distrito Misionero de ""</p>
+                                <h5>Gestion de Periodos de Trabajo</h5>
+                                <p>Administración de todos los periodos de trabajo <span id="title_periodo"></span></p>
                                 <table class="highlight light italic">
                                     <tbody id="list_body"></tbody>
                                 </table>
@@ -27,7 +27,13 @@
                 </section>            
             </div>
         </div>
-        <script src="<c:url value="/resources/js/service/jsEventoService.js"></c:url>" type="text/javascript"></script>
-        <script src="<c:url value="/resources/js/vista/jsEvento.js"></c:url>" type="text/javascript"></script>
+        <div class="modal">
+            <div class="modal-content">
+                
+            </div>
+        </div>
+
+        <script src="<c:url value="/resources/js/service/jsPeriodoService.js"></c:url>" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/vista/jsPeriodo.js"></c:url>" type="text/javascript"></script>
     </body>
 </html>
