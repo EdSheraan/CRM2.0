@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 05/10/2017 07:39:29 PM by Hibernate Tools 4.3.1
+// Generated 11/11/2017 08:16:09 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;

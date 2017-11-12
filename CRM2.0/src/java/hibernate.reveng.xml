@@ -40,27 +40,27 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-reverse-engineering>
-  <schema-selection match-catalog="dbcrm"/>
-  <table-filter match-name="asistenciaevt"/>
-  <table-filter match-name="persona"/>
-  <table-filter match-name="detprivilegio"/>
-  <table-filter match-name="usuario"/>
-  <table-filter match-name="asmiemgp"/>
-  <table-filter match-name="evento"/>
-  <table-filter match-name="documento"/>
-  <table-filter match-name="iglesia"/>
-  <table-filter match-name="ministerio"/>
-  <table-filter match-name="detrol"/>
-  <table-filter match-name="tipoevento"/>
-  <table-filter match-name="campo"/>
-  <table-filter match-name="miembromin"/>
-  <table-filter match-name="miembrogp"/>
-  <table-filter match-name="rol"/>
-  <table-filter match-name="unionp"/>
-  <table-filter match-name="escuela"/>
-  <table-filter match-name="privilegio"/>
-  <table-filter match-name="grupo"/>
-  <table-filter match-name="asmiemmin"/>
-  <table-filter match-name="distrito"/>
-  <table-filter match-name="periodo"/>
+    <schema-selection match-catalog="dbcrm"/>
+    <table-filter match-name="eventopersona"/>
+    <table-filter match-name="usuario"/>
+    <table-filter match-name="evento"/>
+    <table-filter match-name="documento"/>
+    <table-filter match-name="rol"/>
+    <table-filter match-name="eventogrupo"/>
+    <table-filter match-name="detrol"/>
+    <table-filter match-name="eventoministerio"/>
+    <table-filter match-name="escuela"/>
+    <table-filter match-name="grupo"/>
+    <table-filter match-name="tipoevento"/>
+    <table-filter match-name="unionp"/>
+    <table-filter match-name="persona"/>
+    <table-filter match-name="miembromin"/>
+    <table-filter match-name="iglesia"/>
+    <table-filter match-name="miembrogp"/>
+    <table-filter match-name="campo"/>
+    <table-filter match-name="distrito"/>
+    <table-filter match-name="privilegio"/>
+    <table-filter match-name="ministerio"/>
+    <table-filter match-name="detprivilegio"/>
+    <table-filter match-name="periodo"/>
 </hibernate-reverse-engineering>
