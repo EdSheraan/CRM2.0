@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 09/11/2017 08:15:47 PM by Hibernate Tools 4.3.1
+// Generated 11/11/2017 08:16:09 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -29,6 +29,7 @@ public class Eventoministerio  implements java.io.Serializable {
      private String evmDescripcion;
      private String evmLugar;
      private Date evmFechaRegistro;
+     private String evmEstado;
 
     public Eventoministerio() {
     }
@@ -37,7 +38,7 @@ public class Eventoministerio  implements java.io.Serializable {
     public Eventoministerio(EventoministerioId id) {
         this.id = id;
     }
-    public Eventoministerio(EventoministerioId id, Integer evmPresentes, Integer evmFaltas, Integer evmVisitas, String evmDescripcion, String evmLugar, Date evmFechaRegistro) {
+    public Eventoministerio(EventoministerioId id, Integer evmPresentes, Integer evmFaltas, Integer evmVisitas, String evmDescripcion, String evmLugar, Date evmFechaRegistro, String evmEstado) {
        this.id = id;
        this.evmPresentes = evmPresentes;
        this.evmFaltas = evmFaltas;
@@ -45,6 +46,7 @@ public class Eventoministerio  implements java.io.Serializable {
        this.evmDescripcion = evmDescripcion;
        this.evmLugar = evmLugar;
        this.evmFechaRegistro = evmFechaRegistro;
+       this.evmEstado = evmEstado;
     }
    
      @EmbeddedId
@@ -119,6 +121,16 @@ public class Eventoministerio  implements java.io.Serializable {
     
     public void setEvmFechaRegistro(Date evmFechaRegistro) {
         this.evmFechaRegistro = evmFechaRegistro;
+    }
+
+    
+    @Column(name="EVM_ESTADO", length=1)
+    public String getEvmEstado() {
+        return this.evmEstado;
+    }
+    
+    public void setEvmEstado(String evmEstado) {
+        this.evmEstado = evmEstado;
     }
 
 

@@ -1,5 +1,5 @@
 package pe.edu.upeu.crm.bean;
-// Generated 09/11/2017 08:15:47 PM by Hibernate Tools 4.3.1
+// Generated 11/11/2017 08:16:09 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;

@@ -7,7 +7,11 @@ var list_miembros;
 var idEventoG;
 
 $(document).ready(function () {
-    loadHeader();
+    var grupo = {idGrupo: $("#crm_idGrupo").val()};
+    evtService.listEventoActGroup(grupo,function(a){
+        console.log(a);
+    });
+    //loadHeader();
 });
 
 function loadHeader() {

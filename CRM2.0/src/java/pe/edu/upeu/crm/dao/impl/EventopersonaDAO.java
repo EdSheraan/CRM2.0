@@ -2,45 +2,45 @@ package pe.edu.upeu.crm.dao.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Repository;
-import pe.edu.upeu.crm.bean.Personaevento;
+import pe.edu.upeu.crm.bean.Eventopersona;
 import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
-public class PersonaeventoDAO extends CrudDAO<Personaevento> {
+public class EventopersonaDAO extends CrudDAO<Eventopersona> {
 
     @Override
-    public int delete(Personaevento bean) {
+    public int delete(Eventopersona bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Personaevento> list(HibernateParam... param) {
-        return executeHQLQuery("From Personaevento");
+    public List<Eventopersona> list(HibernateParam... param) {
+        return executeHQLQuery("From Eventopersona");
     }
 
     @Override
-    public List<Personaevento> listEnabled(HibernateParam... param) {
+    public List<Eventopersona> listEnabled(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Personaevento> listDisabled(HibernateParam... param) {
+    public List<Eventopersona> listDisabled(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Personaevento> search(HibernateParam... param) {
+    public List<Eventopersona> search(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Personaevento get(HibernateParam... param) {
+    public Eventopersona get(HibernateParam... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Personaevento getByParent(HibernateParam... parentID) {
+    public Eventopersona getByParent(HibernateParam... parentID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

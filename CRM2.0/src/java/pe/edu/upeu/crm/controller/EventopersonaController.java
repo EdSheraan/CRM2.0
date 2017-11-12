@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import pe.edu.upeu.crm.bean.Personaevento;
-import pe.edu.upeu.crm.service.impl.PersonaeventoService;
+import pe.edu.upeu.crm.bean.Eventopersona;
+import pe.edu.upeu.crm.service.impl.EventopersonaService;
 
 /**
  *
@@ -24,47 +24,47 @@ import pe.edu.upeu.crm.service.impl.PersonaeventoService;
  */
 @Controller
 @Scope("request")
-@RequestMapping("personaevento")
-public class PersonaeventoController {
+@RequestMapping("eventopersona")
+public class EventopersonaController {
 
     @Autowired
-    private PersonaeventoService personaeventoService;
+    private EventopersonaService eventopersonaService;
     private ModelAndView modelAndView;
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
-    public ModelAndView showJspPersonaevento(ModelMap model) {
-        modelAndView = new ModelAndView("personaevento/jspPersonaeventoMain", model);
+    public ModelAndView showJspEventopersona(ModelMap model) {
+        modelAndView = new ModelAndView("eventopersona/jspEventopersonaMain", model);
         return modelAndView;
     }
 
     @RequestMapping(value = "/addABC", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addPersonaevento(@RequestBody Personaevento personaevento) {
-        return (Integer) personaeventoService.add(personaevento);
+    Integer addEventopersona(@RequestBody Eventopersona eventopersona) {
+        return (Integer) eventopersonaService.add(eventopersona);
     }
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addPersonaevento(@RequestBody List<Personaevento> personaevento) {
-        return (Integer) personaeventoService.addAsis(personaevento);
+    Integer addEventopersona(@RequestBody List<Eventopersona> eventopersona) {
+        return (Integer) eventopersonaService.addAsis(eventopersona);
     }
 
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer updatePersonaevento(@RequestBody Personaevento personaevento) {
-        return personaeventoService.update(personaevento);
+    Integer updateEventopersona(@RequestBody Eventopersona eventopersona) {
+        return eventopersonaService.update(eventopersona);
     }
 
     @RequestMapping(value = "/delete", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer deletePersonaevento(@RequestBody Personaevento personaevento) {
-        return personaeventoService.delete(personaevento);
+    Integer deleteEventopersona(@RequestBody Eventopersona eventopersona) {
+        return eventopersonaService.delete(eventopersona);
     }
 
     @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Personaevento> listPersonaevento() {
-        return personaeventoService.list((Object[]) null);
+    List<Eventopersona> listEventopersona() {
+        return eventopersonaService.list((Object[]) null);
     }
 
 }
