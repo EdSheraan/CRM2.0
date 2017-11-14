@@ -1,18 +1,30 @@
-var aService = new asistenciaevtService();
+var aService = new eventogrupoService();
 var nMiembros = 0;
 var mgpService = new miembrogpService();
 var gpService = new grupoService();
 var evtService = new eventoService();
 var list_miembros;
 var idEventoG;
+idGrupo = $("#crm_idGrupo").val();
+var grupo = {idGrupo: idGrupo};
 
 $(document).ready(function () {
-    var grupo = {idGrupo: $("#crm_idGrupo").val()};
-    evtService.listEventoActGroup(grupo,function(a){
-        console.log(a);
-    });
+
+    /*evtService.listEventoActGroup(grupo,function(a){
+     console.log(a);
+     });*/
     //loadHeader();
 });
+
+//****************NEW CODE**********************//
+
+function getEventosAct() {
+    
+}
+
+//**********************************************//
+//*********OLD CODE*****************************//
+
 
 function loadHeader() {
     var periodo = {idPeriodo: 1};
@@ -29,7 +41,7 @@ function loadHeader() {
 }
 
 function testEnabled(idEvento) {//provisional
-    aService.listAsistenciaevt({idEvento: idEvento}, function (l) {
+    aService.listEventogrupo({idEvento: idEvento}, function (l) {
         if (l.length > 0) {//ya hay una asistencia de ese evento
             var texto = "Felicidades, ya ha registrado la asistencia al este evento. Debe esperar a que esté disponible el siguiente evento para poder registrar la asistencia de su Grupo Pequeño";
             $(".contAsis").empty();
@@ -85,10 +97,10 @@ function saveAsis() {
     confirmMessage({
         title: 'Registro de Asistencia',
         content: '¿Está seguro que desea registrar?'
-    }, addAsistenciaevt);
+    }, addEventogrupo);
 }
 
-function addAsistenciaevt() {
+function addEventogrupo() {
     var P = parseInt($(".valP").val());
     var F = parseInt($(".valF").val());
     var V = $("#nvisitas").val();
@@ -97,7 +109,7 @@ function addAsistenciaevt() {
         V = 0;
     }
     parseInt(V);
-    var asistenciaevt = {
+    var eventogrupo = {
         astPresentes: P,
         astFaltas: F,
         astVisitas: V,
@@ -107,7 +119,7 @@ function addAsistenciaevt() {
             idEvento: idEventoG
         }
     };
-    aService.addAsistenciaevt(asistenciaevt, addAsisMiemgp);
+    aService.addEventogrupo(eventogrupo, addAsisMiemgp);
 }
 
 function startPieChart() {

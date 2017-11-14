@@ -21,7 +21,7 @@ var url = {
         update: "/evento/update",
         delete: "/evento/delete",
         list: "/evento/list",
-        evtActGr: "/asistenciaevt/eventGroup"
+        evtActGr: "/eventogrupo/eventGroup"
     },
     asmiemgp: {
         add: "/asmiemgp/add",
@@ -65,11 +65,11 @@ var url = {
         delete: "/unionp/delete",
         list: "/unionp/list"
     },
-    asistenciaevt: {
-        add: "/asistenciaevt/add",
-        update: "/asistenciaevt/update",
-        delete: "/asistenciaevt/delete",
-        list: "/asistenciaevt/list"
+    eventogrupo: {
+        add: "/eventogrupo/add",
+        update: "/eventogrupo/update",
+        delete: "/eventogrupo/delete",
+        list: "/eventogrupo/list"
     },
     miembrogp: {
         add: "/miembrogp/add",
