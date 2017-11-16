@@ -64,9 +64,9 @@ function eventogrupoService() {
         }
     };
 
-    this.listEventogrupo = function (evento, _callback) {
+    this.getInfoEventogrupo = function (evento, _callback) {
         try {
-            connector.post(url.eventogrupo.list, JSON.stringify(evento), function (result) {
+            connector.post(url.eventogrupo.info, JSON.stringify(evento), function (result) {
                 _callback(result);
             });
         } catch (e) {

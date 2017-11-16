@@ -25,6 +25,11 @@ public class EventoDAO extends CrudDAO<pe.edu.upeu.crm.bean.Evento> {
         return executeHQLQuery("From Evento e where e.evtEstado = '1' and e.periodo.idPeriodo=:idPeriodo", param);
     }
 
+    public List<Evento> listActive(HibernateParam... param) {
+        String hql = "From Evento e where e.evtEstado = '1' and e.periodo.idPeriodo=:idPeriodo and e.evtDistrito=:idDistrito";
+        return executeHQLQuery(hql, param);
+    }
+
     @Override
     public List<Evento> listDisabled(HibernateParam... param) {
         Object[] estado = {"estado", "0"};

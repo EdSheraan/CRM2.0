@@ -21,6 +21,7 @@ var url = {
         update: "/evento/update",
         delete: "/evento/delete",
         list: "/evento/list",
+        active: "/evento/active",
         evtActGr: "/eventogrupo/eventGroup"
     },
     asmiemgp: {
@@ -69,7 +70,8 @@ var url = {
         add: "/eventogrupo/add",
         update: "/eventogrupo/update",
         delete: "/eventogrupo/delete",
-        list: "/eventogrupo/list"
+        list: "/eventogrupo/list",
+        info: "/eventogrupo/getinfo"
     },
     miembrogp: {
         add: "/miembrogp/add",

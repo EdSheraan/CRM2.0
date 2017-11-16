@@ -9,7 +9,7 @@ idGrupo = $("#crm_idGrupo").val();
 var grupo = {idGrupo: idGrupo};
 
 $(document).ready(function () {
-
+    getEventosAct();
     /*evtService.listEventoActGroup(grupo,function(a){
      console.log(a);
      });*/
@@ -19,29 +19,44 @@ $(document).ready(function () {
 //****************NEW CODE**********************//
 
 function getEventosAct() {
-    
-}
+    var dis = $("#crm_idDistrito").val();
+    //var igl = $("#crm_idIglesia").val();
+    var evento = {
+        evtDistrito: dis,
+        //evtIglesia: igl,
+        periodo: {
+            idPeriodo: 1
+        }
+    };
+    evtService.getEventoAct(evento, function (evts) {
+        if (evts.length > 1) {
 
-//**********************************************//
-//*********OLD CODE*****************************//
-
-
-function loadHeader() {
-    var periodo = {idPeriodo: 1};
-    evtService.listEvento(periodo, function (lista) {
-        idEventoG = lista[0].idEvento;
-        var s = '<li class="active">Evento n° ' + idEventoG + '</li>';
-        s += '<li class="active">' + lista[0].evtNombre + '</li>';
-        s += '<li class="active">' + getActualDateLong() + '</li>';
-        s += '<li class="active">Vence el ' + getDateLong(new Date(lista[0].evtFechaLimite)) + '</li>';
-        $(".conH").empty();
-        $(".conH").append(s);
-        testEnabled(idEventoG);
+        } else {
+            loadHeader(evts);
+        }
     });
 }
 
+//*********     OLD CODE     *******************//
+
+
+function loadHeader(lista) {
+    /*var periodo = {idPeriodo: 1};
+     evtService.listEvento(periodo, function (lista) {*/
+    idEventoG = lista[0].idEvento;
+    var s = '<li class="active">Evento n° ' + idEventoG + '</li>';
+    s += '<li class="active">' + lista[0].evtNombre + '</li>';
+    s += '<li class="active">' + getActualDateLong() + '</li>';
+    s += '<li class="active">Vence el ' + getDateLong(new Date(lista[0].evtFechaLimite)) + '</li>';
+    $(".conH").empty();
+    $(".conH").append(s);
+    testEnabled(idEventoG);
+    //});
+}
+
 function testEnabled(idEvento) {//provisional
-    aService.listEventogrupo({idEvento: idEvento}, function (l) {
+    console.log(idEvento);
+    aService.getInfoEventogrupo({idEvento: idEvento}, function (l) {
         if (l.length > 0) {//ya hay una asistencia de ese evento
             var texto = "Felicidades, ya ha registrado la asistencia al este evento. Debe esperar a que esté disponible el siguiente evento para poder registrar la asistencia de su Grupo Pequeño";
             $(".contAsis").empty();
