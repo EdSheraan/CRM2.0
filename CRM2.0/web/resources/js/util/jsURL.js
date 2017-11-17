@@ -73,6 +73,12 @@ var url = {
         list: "/eventogrupo/list",
         info: "/eventogrupo/getinfo"
     },
+    eventopersona: {
+        add: "/eventopersona/add",
+        update: "/eventopersona/update",
+        delete: "/eventopersona/delete",
+        list: "/eventopersona/list"
+    },
     miembrogp: {
         add: "/miembrogp/add",
         update: "/miembrogp/update",

@@ -42,8 +42,8 @@ public class EventogrupoController {
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addEventogrupo(@RequestBody Eventogrupo eventogrupo) {
-        return (Integer) eventogrupoService.add(eventogrupo);
+    Object addEventogrupo(@RequestBody Eventogrupo eventogrupo) {
+        return eventogrupoService.add(eventogrupo);
     }
 
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

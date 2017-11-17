@@ -185,7 +185,7 @@ var message = {
             empty: "Aún no hay Uniones registrados en el sistema"
         }
     },
-    asmiemgp: {
+    eventopersona: {
         title: "Registro de Asistencia de Miembro GP",
         error: "Hubo un error al momento de registrar la Asistencia de Miembro GP"
     },
@@ -399,7 +399,7 @@ var message = {
             empty: "Aún no hay Tipos de Roles registrados en el sistema"
         }
     },
-    asistenciaevt: {
+    eventogrupo: {
         add: {
             title: "Registrar Asistencia al Evento",
             success: "La Asistencia al Evento fue registrado con éxito.",

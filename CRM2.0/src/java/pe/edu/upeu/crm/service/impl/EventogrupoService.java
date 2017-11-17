@@ -29,7 +29,8 @@ public class EventogrupoService implements CRUDService<Eventogrupo> {
     @Override
     @Transactional
     public Object add(Eventogrupo bean) {
-        //bean.setAstFechaRegistro(new Date());
+        bean.setEvgFechaRegistro(new Date());
+        bean.setEvgEstado("1");
         Logger.info("Registrando Eventogrupo");
         return eventogrupoDAO.add(bean);
     }
@@ -59,7 +60,7 @@ public class EventogrupoService implements CRUDService<Eventogrupo> {
         //return eventogrupoDAO.listEnabled(new HibernateParam("idGrupo", param[0]));
         return eventogrupoDAO.list();
     }
-    
+
     @Transactional(readOnly = true)
     public List<Eventogrupo> getInfoEvento(Object... param) {
         Logger.info("buscando evento activo");

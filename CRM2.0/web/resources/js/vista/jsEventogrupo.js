@@ -88,13 +88,13 @@ function loadMiembros(list) {
         s += '<tr>';
         s += '<td style="width:38px;"><button class="btn-floating waves-effect waves-light ' + getColor() + '">' + r + '</button></td>';
         s += '<td class="ligth italic">' + list[i].persona.perNombres + ' ' + list[i].persona.perApellidos + '</td>';
-        s += '<td>';
-        s += '<span class="chart presente" data-percent="' + getRandomArbitrary(0, 100) + '">';
-        s += '<span class="percent"></span>';
-        s += '</span>';
-        s += '</td>';
-        s += '<td><input type="hidden" value="' + list[i].idMiembrogp + '"></td>';
-        s += '<td><p><input type="checkbox" class="checkO" onclick="changePF(this.id)" id="as' + list[i].idMiembrogp + '"><label for="as' + list[i].idMiembrogp + '"></label></p></td>';
+        /*s += '<td>';
+         s += '<span class="chart presente" data-percent="' + getRandomArbitrary(0, 100) + '">';
+         s += '<span class="percent"></span>';
+         s += '</span>';
+         s += '</td>';*/
+        s += '<td><input type="hidden" value="' + list[i].persona.idPersona + '"></td>';
+        s += '<td><p><input type="checkbox" class="checkO" onclick="changePF(this.id)" id="as' + list[i].persona.idPersona + '"><label for="as' + list[i].persona.idPersona + '"></label></p></td>';
         s += '</tr>';
 
     }
@@ -124,13 +124,14 @@ function addEventogrupo() {
     }
     parseInt(V);
     var eventogrupo = {
-        astPresentes: P,
-        astFaltas: F,
-        astVisitas: V,
-        astDescripcion: "",
-        astLugar: L,
-        evento: {
-            idEvento: idEventoG
+        evgPresentes: P,
+        evgFaltas: F,
+        evgVisitas: V,
+        evgDescripcion: "",
+        evgLugar: L,
+        id: {
+            idEvento: idEventoG,
+            idGrupo: idGrupo
         }
     };
     aService.addEventogrupo(eventogrupo, addAsisMiemgp);
