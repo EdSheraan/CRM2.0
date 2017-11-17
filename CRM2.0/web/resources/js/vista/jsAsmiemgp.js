@@ -12,7 +12,6 @@ function addAsisMiemgp(idAsistenciaevt) {
         }
         asistencia.push(createAsmiemgp(idAsistenciaevt, idMiembro, asis));
     }
-    console.log(asistencia);
     agService.addAsmiemgp(asistencia, function () {
         loadHeader();
     });
@@ -20,11 +19,14 @@ function addAsisMiemgp(idAsistenciaevt) {
 
 function createAsmiemgp(idAsevt, idMiembro, asistencia) {
     var asmiemgp = {
-        asistenciaevt: {
+        eventogrupo: {
             idAsistenciaevt: idAsevt
         },
-        miembrogp: {
-            idMiembrogp: idMiembro
+        eventopersona: {
+            EventopersonaId: {
+                idPersona: idMiembro,
+                idEvento: idAsevt
+            }
         },
         asgAsistencia: asistencia
     };

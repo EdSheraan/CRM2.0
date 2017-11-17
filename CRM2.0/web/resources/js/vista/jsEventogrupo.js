@@ -55,7 +55,6 @@ function loadHeader(lista) {
 }
 
 function testEnabled(idEvento) {//provisional
-    console.log(idEvento);
     aService.getInfoEventogrupo({idEvento: idEvento}, function (l) {
         if (l.length > 0) {//ya hay una asistencia de ese evento
             var texto = "Felicidades, ya ha registrado la asistencia al este evento. Debe esperar a que esté disponible el siguiente evento para poder registrar la asistencia de su Grupo Pequeño";
