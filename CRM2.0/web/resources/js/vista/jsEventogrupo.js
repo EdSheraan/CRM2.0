@@ -55,11 +55,18 @@ function loadHeader(lista) {
 }
 
 function testEnabled(idEvento) {//provisional
-    aService.getInfoEventogrupo({idEvento: idEvento}, function (l) {
+    var eventogrupo = {
+        id: {
+            idEvento: idEvento,
+            idGrupo: idGrupo
+        }
+    };
+    aService.getInfoEventogrupo(eventogrupo, function (l) {
         if (l.length > 0) {//ya hay una asistencia de ese evento
             var texto = "Felicidades, ya ha registrado la asistencia al este evento. Debe esperar a que esté disponible el siguiente evento para poder registrar la asistencia de su Grupo Pequeño";
             $(".contAsis").empty();
             $(".contAsis").append(createMessageAlert("green accent-3", texto));
+            //********************      MOSTRAR REGISTRO DISABLED      ***********************//
         } else {//puede registrar
             $(".contAsis").empty();
             $(".contAsis").append(createContextAsis());

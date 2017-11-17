@@ -65,7 +65,9 @@ public class EventogrupoService implements CRUDService<Eventogrupo> {
     public List<Eventogrupo> getInfoEvento(Object... param) {
         Logger.info("buscando evento activo");
         //return eventogrupoDAO.listEnabled(new HibernateParam("idGrupo", param[0]));
-        return eventogrupoDAO.list();
+        HibernateParam p1 = new HibernateParam("idEvento", param[0]);
+        HibernateParam p2 = new HibernateParam("idGrupo", param[1]);
+        return eventogrupoDAO.list(p1, p2);
     }
 
     @Override

@@ -66,8 +66,10 @@ public class EventogrupoController {
 
     @RequestMapping(value = "/getinfo", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Eventogrupo> getInfoEventogrupo(@RequestBody Evento evento) {
-        return eventogrupoService.listEnabled(evento.getIdEvento());
+    List<Eventogrupo> getInfoEventogrupo(@RequestBody Eventogrupo eventogrupo) {
+        int a = eventogrupo.getId().getIdEvento();
+        int b = eventogrupo.getId().getIdGrupo();
+        return eventogrupoService.getInfoEvento(a, b);
     }
 
 }
