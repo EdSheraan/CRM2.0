@@ -48,34 +48,6 @@ public class Ministerio  implements java.io.Serializable {
     public Ministerio() {
     }
 
-	
-    public Ministerio(Iglesia iglesia, String minNombre, String minNombreCorto, String minDiaTrabajo, String minEstado, Date minFechaCreacion, int minUsuAdd, Date minFechaAdd) {
-        this.iglesia = iglesia;
-        this.minNombre = minNombre;
-        this.minNombreCorto = minNombreCorto;
-        this.minDiaTrabajo = minDiaTrabajo;
-        this.minEstado = minEstado;
-        this.minFechaCreacion = minFechaCreacion;
-        this.minUsuAdd = minUsuAdd;
-        this.minFechaAdd = minFechaAdd;
-    }
-    public Ministerio(Iglesia iglesia, String minNombre, String minDescripcion, String minLugarReunion, String minNombreCorto, String minDiaTrabajo, String minEstado, Date minFechaCreacion, int minUsuAdd, Integer minUsuUpd, Integer minUsuDel, Date minFechaAdd, Date minFechaUpd, Date minFechaDel, Set<Miembromin> miembromins) {
-       this.iglesia = iglesia;
-       this.minNombre = minNombre;
-       this.minDescripcion = minDescripcion;
-       this.minLugarReunion = minLugarReunion;
-       this.minNombreCorto = minNombreCorto;
-       this.minDiaTrabajo = minDiaTrabajo;
-       this.minEstado = minEstado;
-       this.minFechaCreacion = minFechaCreacion;
-       this.minUsuAdd = minUsuAdd;
-       this.minUsuUpd = minUsuUpd;
-       this.minUsuDel = minUsuDel;
-       this.minFechaAdd = minFechaAdd;
-       this.minFechaUpd = minFechaUpd;
-       this.minFechaDel = minFechaDel;
-       this.miembromins = miembromins;
-    }
    
      @Id @GeneratedValue(strategy=IDENTITY)
 

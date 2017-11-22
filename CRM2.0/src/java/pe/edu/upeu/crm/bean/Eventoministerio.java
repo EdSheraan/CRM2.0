@@ -38,16 +38,6 @@ public class Eventoministerio  implements java.io.Serializable {
     public Eventoministerio(EventoministerioId id) {
         this.id = id;
     }
-    public Eventoministerio(EventoministerioId id, Integer evmPresentes, Integer evmFaltas, Integer evmVisitas, String evmDescripcion, String evmLugar, Date evmFechaRegistro, String evmEstado) {
-       this.id = id;
-       this.evmPresentes = evmPresentes;
-       this.evmFaltas = evmFaltas;
-       this.evmVisitas = evmVisitas;
-       this.evmDescripcion = evmDescripcion;
-       this.evmLugar = evmLugar;
-       this.evmFechaRegistro = evmFechaRegistro;
-       this.evmEstado = evmEstado;
-    }
    
      @EmbeddedId
 

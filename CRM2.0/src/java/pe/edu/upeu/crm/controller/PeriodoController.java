@@ -31,12 +31,9 @@ public class PeriodoController {
     @Autowired
     private PeriodoService periodoService;
 
-    private ModelAndView modelAndView;
-
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspDistrito(ModelMap model) {
-        modelAndView = new ModelAndView("periodo/jspPeriodoMain", model);
-        return modelAndView;
+        return new ModelAndView("periodo/jspPeriodoMain", model);
     }
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

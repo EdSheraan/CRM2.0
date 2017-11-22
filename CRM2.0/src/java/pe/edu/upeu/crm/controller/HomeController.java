@@ -11,7 +11,7 @@ import pe.edu.upeu.crm.util.SessionUtil;
 @Controller
 public class HomeController {
 
-    private ModelAndView modelAndView;
+    
     
     @RequestMapping("/main")
     public String main() {
@@ -21,11 +21,10 @@ public class HomeController {
     @RequestMapping("/menu")
     public ModelAndView menu(ModelMap model,HttpSession session) {
         if(session.getAttribute(SessionUtil.ROL_SELECTED) == null){
-            modelAndView = new ModelAndView("redirect:/rol/select", model);
+            return new ModelAndView("redirect:/rol/select", model);
         }else{
-            modelAndView = new ModelAndView("menu", model);
+            return new ModelAndView("menu", model);
         }
-        return modelAndView;
     }
 
 }

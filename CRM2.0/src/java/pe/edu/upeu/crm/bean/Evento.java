@@ -45,36 +45,6 @@ public class Evento  implements java.io.Serializable {
 
     public Evento() {
     }
-
-	
-    public Evento(Periodo periodo, Tipoevento tipoevento, String evtNombre, Date evtFecha, int evtDistrito, int evtIglesia, int evtUsuAdd, Date evtFechaAdd) {
-        this.periodo = periodo;
-        this.tipoevento = tipoevento;
-        this.evtNombre = evtNombre;
-        this.evtFecha = evtFecha;
-        this.evtDistrito = evtDistrito;
-        this.evtIglesia = evtIglesia;
-        this.evtUsuAdd = evtUsuAdd;
-        this.evtFechaAdd = evtFechaAdd;
-    }
-    public Evento(Periodo periodo, Tipoevento tipoevento, String evtNombre, String evtDescripcion, String evtLugar, Date evtFecha, Date evtFechaLimite, int evtDistrito, int evtIglesia, String evtEstado, int evtUsuAdd, Integer evtUsuUpd, Integer evtUsuEli, Date evtFechaAdd, Date evtFechaUpd, Date evtFechaEli) {
-       this.periodo = periodo;
-       this.tipoevento = tipoevento;
-       this.evtNombre = evtNombre;
-       this.evtDescripcion = evtDescripcion;
-       this.evtLugar = evtLugar;
-       this.evtFecha = evtFecha;
-       this.evtFechaLimite = evtFechaLimite;
-       this.evtDistrito = evtDistrito;
-       this.evtIglesia = evtIglesia;
-       this.evtEstado = evtEstado;
-       this.evtUsuAdd = evtUsuAdd;
-       this.evtUsuUpd = evtUsuUpd;
-       this.evtUsuEli = evtUsuEli;
-       this.evtFechaAdd = evtFechaAdd;
-       this.evtFechaUpd = evtFechaUpd;
-       this.evtFechaEli = evtFechaEli;
-    }
    
      @Id @GeneratedValue(strategy=IDENTITY)
 

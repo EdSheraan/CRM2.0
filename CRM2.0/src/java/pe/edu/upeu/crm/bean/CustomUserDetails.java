@@ -17,7 +17,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class CustomUserDetails implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
-    private String username, password, name, lastname;
+    private String username;
+    private String password;
+    private String name;
+    private String lastname;
     private int idPersona;
     private boolean accountNonExpired;
     private boolean accountNonLocked;

@@ -55,21 +55,6 @@ public class Iglesia  implements java.io.Serializable {
         this.iglUsuAdd = iglUsuAdd;
         this.iglFechaAdd = iglFechaAdd;
     }
-    public Iglesia(Distrito distrito, String iglNombre, Date iglFechaCreacion, String iglEstado, String iglDireccion, int iglUsuAdd, Integer iglUsuUpd, Integer iglUpdDel, Date iglFechaAdd, Date iglFechaUpd, Date iglFechaDel, Set<Ministerio> ministerios, Set<Escuela> escuelas) {
-       this.distrito = distrito;
-       this.iglNombre = iglNombre;
-       this.iglFechaCreacion = iglFechaCreacion;
-       this.iglEstado = iglEstado;
-       this.iglDireccion = iglDireccion;
-       this.iglUsuAdd = iglUsuAdd;
-       this.iglUsuUpd = iglUsuUpd;
-       this.iglUpdDel = iglUpdDel;
-       this.iglFechaAdd = iglFechaAdd;
-       this.iglFechaUpd = iglFechaUpd;
-       this.iglFechaDel = iglFechaDel;
-       this.ministerios = ministerios;
-       this.escuelas = escuelas;
-    }
    
      @Id @GeneratedValue(strategy=IDENTITY)
 

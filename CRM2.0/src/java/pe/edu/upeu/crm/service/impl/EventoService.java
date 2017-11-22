@@ -61,7 +61,6 @@ public class EventoService implements CRUDService<Evento> {
         Logger.info("Listando los eventos activos - grupo,distrito,iglesia");
         HibernateParam p1 = new HibernateParam("idPeriodo", param[0]);
         HibernateParam p2 = new HibernateParam("idDistrito", param[1]);
-        //HibernateParam p3 = new HibernateParam("idIglesia", param[2]);
         return eventoDAO.listActive(p1, p2);
     }
 

@@ -44,17 +44,6 @@ public class Privilegio implements java.io.Serializable {
         this.prvEstado = prvEstado;
     }
 
-    public Privilegio(String prvNombre, int prvOrden, int prvIdPadre, String prvIcono, String prvLink, String prvEstado, String prvColor, String prvDescripcion, Set<Rol> rols) {
-        this.prvNombre = prvNombre;
-        this.prvOrden = prvOrden;
-        this.prvIdPadre = prvIdPadre;
-        this.prvIcono = prvIcono;
-        this.prvLink = prvLink;
-        this.prvEstado = prvEstado;
-        this.prvColor = prvColor;
-        this.prvDescripcion = prvDescripcion;
-        this.rols = rols;
-    }
 
     @Id
     @GeneratedValue(strategy = IDENTITY)

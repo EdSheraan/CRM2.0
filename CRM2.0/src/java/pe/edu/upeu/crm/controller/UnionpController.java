@@ -29,12 +29,10 @@ public class UnionpController {
     
     @Autowired
     private UnionpService unionpService;
-    private ModelAndView modelAndView;
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspUnionp(ModelMap model) {
-        modelAndView = new ModelAndView("unionp/jspUnionpMain", model);
-        return modelAndView;
+        return new ModelAndView("unionp/jspUnionpMain", model);
     }
     
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

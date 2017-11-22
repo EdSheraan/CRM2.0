@@ -7,6 +7,7 @@ package pe.edu.upeu.crm.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import org.pmw.tinylog.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,8 +27,6 @@ import pe.edu.upeu.crm.util.SessionUtil;
 @RequestMapping("privilegio")
 public class PrivilegioController {
 
-    private ModelAndView modelAndView;
-
     @RequestMapping(value = "/main", method = RequestMethod.POST)
     public ModelAndView privilegioRol(ModelMap model, HttpServletRequest request, HttpSession session) {
         int opc = Integer.parseInt(request.getParameter("opc"));
@@ -40,9 +39,8 @@ public class PrivilegioController {
             }
             session.setAttribute(SessionUtil.MOD_ACT, opc);
         } catch (Exception e) {
-            System.out.println("error en privilegioController : " + e);
+            Logger.error(e.getMessage());
         }
-        modelAndView = new ModelAndView(vista, model);
-        return modelAndView;
+        return new ModelAndView(vista, model);
     }
 }

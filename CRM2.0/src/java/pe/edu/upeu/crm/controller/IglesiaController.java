@@ -31,12 +31,11 @@ public class IglesiaController {
 
     @Autowired
     private IglesiaService iglesiaService;
-    private ModelAndView modelAndView;
+    
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspIglesia(ModelMap model) {
-        modelAndView = new ModelAndView("iglesia/jspIglesiaMain", model);
-        return modelAndView;
+        return new ModelAndView("iglesia/jspIglesiaMain", model);
     }
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

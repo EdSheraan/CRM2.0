@@ -31,12 +31,10 @@ public class EscuelaController {
     
     @Autowired
     private EscuelaService escuelaService;
-    private ModelAndView modelAndView;
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspEscuela(ModelMap model) {
-        modelAndView = new ModelAndView("escuela/jspEscuelaMain", model);
-        return modelAndView;
+        return new ModelAndView("escuela/jspEscuelaMain", model);
     }
     
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

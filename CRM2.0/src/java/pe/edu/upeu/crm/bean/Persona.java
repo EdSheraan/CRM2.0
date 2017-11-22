@@ -54,43 +54,6 @@ public class Persona  implements java.io.Serializable {
 
     public Persona() {
     }
-
-	
-    public Persona(Documento documento, String perNombres, String perApellidos, String perDocumento, String perBautizado, String perSexo, String perEstado, int perUsuAdd, Date perFechaAdd) {
-        this.documento = documento;
-        this.perNombres = perNombres;
-        this.perApellidos = perApellidos;
-        this.perDocumento = perDocumento;
-        this.perBautizado = perBautizado;
-        this.perSexo = perSexo;
-        this.perEstado = perEstado;
-        this.perUsuAdd = perUsuAdd;
-        this.perFechaAdd = perFechaAdd;
-    }
-    public Persona(Documento documento, String perNombres, String perApellidos, String perDocumento, Date perFecNacimiento, String perCorreo, String perDireccion, String perTelefono, String perBautizado, String perSexo, Date perFechaBautismo, String perFoto, String perEstado, int perUsuAdd, Integer perUsuUpd, Integer perUsuDel, Date perFechaAdd, Date perFechaUpd, Date perFechaDel, Set<Miembromin> miembromins, Set<Usuario> usuarios, Set<Miembrogp> miembrogps) {
-       this.documento = documento;
-       this.perNombres = perNombres;
-       this.perApellidos = perApellidos;
-       this.perDocumento = perDocumento;
-       this.perFecNacimiento = perFecNacimiento;
-       this.perCorreo = perCorreo;
-       this.perDireccion = perDireccion;
-       this.perTelefono = perTelefono;
-       this.perBautizado = perBautizado;
-       this.perSexo = perSexo;
-       this.perFechaBautismo = perFechaBautismo;
-       this.perFoto = perFoto;
-       this.perEstado = perEstado;
-       this.perUsuAdd = perUsuAdd;
-       this.perUsuUpd = perUsuUpd;
-       this.perUsuDel = perUsuDel;
-       this.perFechaAdd = perFechaAdd;
-       this.perFechaUpd = perFechaUpd;
-       this.perFechaDel = perFechaDel;
-       this.miembromins = miembromins;
-       this.usuarios = usuarios;
-       this.miembrogps = miembrogps;
-    }
    
      @Id @GeneratedValue(strategy=IDENTITY)
 

@@ -32,12 +32,10 @@ public class EventogrupoController {
 
     @Autowired
     private EventogrupoService eventogrupoService;
-    private ModelAndView modelAndView;
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspEventogrupo(ModelMap model) {
-        modelAndView = new ModelAndView("eventogrupo/jspEventogrupoMain", model);
-        return modelAndView;
+        return new ModelAndView("eventogrupo/jspEventogrupoMain", model);
     }
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

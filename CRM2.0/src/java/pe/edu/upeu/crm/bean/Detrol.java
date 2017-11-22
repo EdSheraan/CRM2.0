@@ -47,17 +47,6 @@ public class Detrol  implements java.io.Serializable {
         this.drlFechaAdd = drlFechaAdd;
         this.drlUsuAdd = drlUsuAdd;
     }
-    public Detrol(Rol rol, Usuario usuario, String drlEstado, Date drlFechaAdd, Date drlFechaUpd, Date drlFechaDel, int drlUsuAdd, Integer drlUsuUpd, Integer drlUsuDel) {
-       this.rol = rol;
-       this.usuario = usuario;
-       this.drlEstado = drlEstado;
-       this.drlFechaAdd = drlFechaAdd;
-       this.drlFechaUpd = drlFechaUpd;
-       this.drlFechaDel = drlFechaDel;
-       this.drlUsuAdd = drlUsuAdd;
-       this.drlUsuUpd = drlUsuUpd;
-       this.drlUsuDel = drlUsuDel;
-    }
    
      @Id @GeneratedValue(strategy=IDENTITY)
 

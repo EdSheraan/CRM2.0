@@ -31,12 +31,10 @@ public class DistritoController {
     
     @Autowired
     private DistritoService distritoService;
-    private ModelAndView modelAndView;
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspDistrito(ModelMap model) {
-        modelAndView = new ModelAndView("distrito/jspDistritoMain", model);
-        return modelAndView;
+        return new ModelAndView("distrito/jspDistritoMain", model);
     }
     
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

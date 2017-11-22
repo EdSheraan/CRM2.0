@@ -127,7 +127,6 @@ public abstract class CrudDAO<T> {
         Session session = sessionFactory.openSession();
         T bean = null;
         try {
-            //session.beginTransaction();
             Query q = session.createQuery(query);
             if (params != null) {
                 for (HibernateParam p : params) {

@@ -53,20 +53,7 @@ public class Grupo  implements java.io.Serializable {
         this.gpoUsuAdd = gpoUsuAdd;
         this.gpoFechaAdd = gpoFechaAdd;
     }
-    public Grupo(Escuela escuela, String gpoNombre, String gpoLugarReunion, Date gpoFechaCreacion, String gpoEstado, int gpoUsuAdd, Integer gpoUsuUpd, Integer gpoUsuDel, Date gpoFechaAdd, Date gpoFechaUpd, Date gpoFechaDel, Set<Miembrogp> miembrogps) {
-       this.escuela = escuela;
-       this.gpoNombre = gpoNombre;
-       this.gpoLugarReunion = gpoLugarReunion;
-       this.gpoFechaCreacion = gpoFechaCreacion;
-       this.gpoEstado = gpoEstado;
-       this.gpoUsuAdd = gpoUsuAdd;
-       this.gpoUsuUpd = gpoUsuUpd;
-       this.gpoUsuDel = gpoUsuDel;
-       this.gpoFechaAdd = gpoFechaAdd;
-       this.gpoFechaUpd = gpoFechaUpd;
-       this.gpoFechaDel = gpoFechaDel;
-       this.miembrogps = miembrogps;
-    }
+
    
      @Id @GeneratedValue(strategy=IDENTITY)
 
