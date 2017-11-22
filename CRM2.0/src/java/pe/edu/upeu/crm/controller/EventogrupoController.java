@@ -42,8 +42,8 @@ public class EventogrupoController {
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    Integer addEventogrupo(@RequestBody Eventogrupo eventogrupo) {
-        return (Integer) eventogrupoService.add(eventogrupo);
+    Object addEventogrupo(@RequestBody Eventogrupo eventogrupo) {
+        return eventogrupoService.add(eventogrupo);
     }
 
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
@@ -60,8 +60,16 @@ public class EventogrupoController {
 
     @RequestMapping(value = "/list", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
-    List<Eventogrupo> listEventogrupo(@RequestBody Evento evento) {
-        return eventogrupoService.listEnabled(evento.getIdEvento());
+    List<Eventogrupo> listEventogrupo(@RequestBody Grupo grupo) {
+        return eventogrupoService.listEnabled(grupo.getIdGrupo());
+    }
+
+    @RequestMapping(value = "/getinfo", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
+    public @ResponseBody
+    List<Eventogrupo> getInfoEventogrupo(@RequestBody Eventogrupo eventogrupo) {
+        int a = eventogrupo.getId().getIdEvento();
+        int b = eventogrupo.getId().getIdGrupo();
+        return eventogrupoService.getInfoEvento(a, b);
     }
 
 }

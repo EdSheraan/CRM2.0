@@ -16,12 +16,12 @@ public class EventogrupoDAO extends CrudDAO<Eventogrupo> {
 
     @Override
     public List<Eventogrupo> list(HibernateParam... param) {
-        return executeHQLQuery("From Eventogrupo");
+        return executeHQLQuery("From Eventogrupo e where e.id.idEvento=:idEvento and e.id.idGrupo=:idGrupo", param);
     }
 
     @Override
     public List<Eventogrupo> listEnabled(HibernateParam... param) {
-        return executeHQLQuery("From Eventogrupo e where e.evento.idEvento=:idEvento", param);
+        return executeHQLQuery("From Eventogrupo e where e.id.idEvento=:idEvento", param);
     }
 
     @Override

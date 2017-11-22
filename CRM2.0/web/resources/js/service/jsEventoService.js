@@ -136,4 +136,21 @@ function eventoService() {
             console.log(e);
         }
     };
+
+    this.getEventoAct = function (evento, _callback) {
+        try {
+            connector.post(url.evento.active, JSON.stringify(evento), function (result) {
+                if (result !== undefined && result !== null && result.length > 0) {
+                    _callback(result);
+                } else {
+                    console.log("bla bla");
+                    //no eventos activos
+                }
+            });
+        } catch (e) {
+            console.log(e);
+        }
+
+    };
+
 }

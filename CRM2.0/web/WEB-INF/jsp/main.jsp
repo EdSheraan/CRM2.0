@@ -100,7 +100,9 @@
                     <h4><i class="mdi-action-home"></i>&nbsp;Grupos Pequeños</h4>
                     <br>
                     <p class="text-justify font-small">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        Piensa en un grupo de buenos amigos, que tienen un encuentro marcado un día a la semana. El lugar no es tan importante; puede ser en casa de alguno de ellos o incluso un parque bonita de la ciudad. Ahora, lo que no puede faltar es la alegría de compartir buenos momentos, experiencias y sonrisas junto a personas que se preocupan unas por otras. En esto consiste un Grupo Pequeño; es amistad, es relacionamiento, es conocer el amor de Jesús a través del amor de mis amigos, es llevar a más amigos a los pies de Jesús.
+
+                        Dentro de un Grupo Pequeño las personas también son motivadas a orar unas por las otras, estudiar detalladamente las verdades de la Biblia, compartir experiencias de la vida cristiana e invitar nuevo amigos a participar también.
                     </p>
                 </div>
                 <div class="container col l8 m6 s12 no-padding">

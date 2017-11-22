@@ -56,6 +56,15 @@ public class EventoService implements CRUDService<Evento> {
         return eventoDAO.listEnabled(new HibernateParam("idPeriodo", param[0]));
     }
 
+    @Transactional(readOnly = true)
+    public List<Evento> listActive(Object... param) {
+        Logger.info("Listando los eventos activos - grupo,distrito,iglesia");
+        HibernateParam p1 = new HibernateParam("idPeriodo", param[0]);
+        HibernateParam p2 = new HibernateParam("idDistrito", param[1]);
+        //HibernateParam p3 = new HibernateParam("idIglesia", param[2]);
+        return eventoDAO.listActive(p1, p2);
+    }
+
     @Override
     public List<Evento> listDisabled(Object... param) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

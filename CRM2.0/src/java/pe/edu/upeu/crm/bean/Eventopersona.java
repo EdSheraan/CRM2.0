@@ -17,7 +17,8 @@ import javax.persistence.Table;
 public class Eventopersona implements java.io.Serializable {
 
     private EventopersonaId id;
-    private String asistecia;
+    private String evpAsistencia;
+    private String evpEstado;
 
     public Eventopersona() {
     }
@@ -26,9 +27,10 @@ public class Eventopersona implements java.io.Serializable {
         this.id = id;
     }
 
-    public Eventopersona(EventopersonaId id, String asistecia) {
+    public Eventopersona(EventopersonaId id, String evpAsistencia, String evpEstado) {
         this.id = id;
-        this.asistecia = asistecia;
+        this.evpAsistencia = evpAsistencia;
+        this.evpEstado = evpEstado;
     }
 
     @EmbeddedId
@@ -44,13 +46,22 @@ public class Eventopersona implements java.io.Serializable {
         this.id = id;
     }
 
-    @Column(name = "ASISTECIA", length = 1)
-    public String getAsistecia() {
-        return this.asistecia;
+    @Column(name = "EVP_ASISTENCIA", length = 1)
+    public String getEvpAsistencia() {
+        return this.evpAsistencia;
     }
 
-    public void setAsistecia(String asistecia) {
-        this.asistecia = asistecia;
+    public void setEvpAsistencia(String evpAsistencia) {
+        this.evpAsistencia = evpAsistencia;
+    }
+
+    @Column(name = "EVP_ESTADO", length = 1)
+    public String getEvpEstado() {
+        return this.evpEstado;
+    }
+
+    public void setEvpEstado(String evpEstado) {
+        this.evpEstado = evpEstado;
     }
 
 }

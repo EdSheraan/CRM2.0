@@ -1,15 +1,15 @@
-function asmiemgpService() {
+function eventopersonaService() {
     var connector = new jsConnector();
 
-    this.addAsmiemgp = function (asistencia, _callback) {
+    this.addEventopersona = function (asistencia, _callback) {
         try {
-            connector.post(url.asmiemgp.add, JSON.stringify(asistencia), function (result) {
+            connector.post(url.eventopersona.add, JSON.stringify(asistencia), function (result) {
                 if (result !== undefined && result !== null) {
                     _callback(result);
                 } else {
                     errorMessage({
-                        title: message.asmiemgp.title,
-                        content: message.asmiemgp.error
+                        title: message.eventopersona.title,
+                        content: message.eventopersona.error
                     });
                 }
             });
@@ -18,17 +18,16 @@ function asmiemgpService() {
         }
     };
 
-    this.updateAsmiemgp = function (asmiemgp, _callback) {
+    this.updateEventopersona = function (eventopersona, _callback) {
 
     };
 
-    this.deleteAsmiemgp = function (asmiemgp, _callback) {
+    this.deleteEventopersona = function (eventopersona, _callback) {
 
     };
 
-    this.listAsmiemgp = function (_callback) {
-        var connectionUrl = "/asmiemgp/list";
-        var connector = new jsConnector();
+    this.listEventopersona = function (_callback) {
+        var connectionUrl = "/eventopersona/list";
         try {
             connector.post(connectionUrl, null, function (result) {
                 if (result !== undefined && result !== null && result.length > 0) {

@@ -27,6 +27,7 @@ import pe.edu.upeu.crm.service.impl.EventoService;
 @Scope("request")
 @RequestMapping("evento")
 public class EventoController {
+
     @Autowired
     private EventoService eventoService;
 
@@ -63,4 +64,14 @@ public class EventoController {
     List<Evento> listEvento(@RequestBody Periodo periodo) {
         return eventoService.listEnabled(periodo.getIdPeriodo());
     }
+
+    @RequestMapping(value = "/active", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
+    public @ResponseBody
+    List<Evento> listEventoActive(@RequestBody Evento evento) {
+        int a = evento.getPeriodo().getIdPeriodo();
+        int b = evento.getEvtDistrito();
+        //int c = evento.getEvtIglesia();
+        return eventoService.listActive(a, b);
+    }
+
 }

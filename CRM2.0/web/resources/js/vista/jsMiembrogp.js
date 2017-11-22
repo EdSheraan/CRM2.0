@@ -11,7 +11,6 @@ function load() {
 }
 
 function mostrar(list) {
-    console.log(list);
     var s = "";
     for (var i = 0, max = list.length; i < max; i++) {
         var r = getLetter(list[i].persona.perNombres);
@@ -65,7 +64,7 @@ function deleteMGP(idMiembrogp) {
     });
 }
 
-function inform(){
+function inform() {
     new PNotify({
         title: '<span class="blue-text">¡Hey!</span>',
         text: 'Estamos trabajando para tener habilitada esta opción pronto',

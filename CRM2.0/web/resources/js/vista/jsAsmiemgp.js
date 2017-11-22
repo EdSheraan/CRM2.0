@@ -1,64 +1,30 @@
-var agService = new asmiemgpService();
+var agService = new eventopersonaService();
 var asistencia = [];
 
 function addAsisMiemgp(idAsistenciaevt) {
     for (var i = 0, max = document.getElementById("list_miembros").rows.length; i < max; i++) {
-        var a = document.getElementById("list_miembros").rows[i].cells[3].innerHTML.split('value="');
+        var a = document.getElementById("list_miembros").rows[i].cells[2].innerHTML.split('value="');
         var b = a[1].split('"');
-        var idMiembro = b[0];
+        var idPersona = b[0];
         var asis = "0";
-        if ($("#as" + idMiembro).prop('checked')) {
+        if ($("#as" + idPersona).prop('checked')) {
             asis = "1";
         }
-        asistencia.push(createAsmiemgp(idAsistenciaevt, idMiembro, asis));
+        asistencia.push(createAsisPersona(idAsistenciaevt.idEvento, parseInt(idPersona), asis));
     }
-    console.log(asistencia);
-    agService.addAsmiemgp(asistencia, function () {
-        loadHeader();
+    agService.addEventopersona(asistencia, function (a) {
     });
+    getEventosAct();
 }
 
-function createAsmiemgp(idAsevt, idMiembro, asistencia) {
-    var asmiemgp = {
-        asistenciaevt: {
-            idAsistenciaevt: idAsevt
-        },
-        miembrogp: {
-            idMiembrogp: idMiembro
-        },
-        asgAsistencia: asistencia
+function createAsisPersona(idAsevt, idPersona, asistencia) {
+    var eventopersona = {
+        evpAsistencia: asistencia,
+        evpEstado: 1,
+        id: {
+            idPersona: idPersona,
+            idEvento: idAsevt
+        }
     };
-    return asmiemgp;
+    return eventopersona;
 }
-
-/*var agService = new asmiemgpService();
- 
- function addAsisMiemgp(idAsistenciaevt) {
- for (var i = 0, max = document.getElementById("list_miembros").rows.length; i < max; i++) {
- var a = document.getElementById("list_miembros").rows[i].cells[3].innerHTML.split('value="');
- var b = a[1].split('"');
- var idMiembro = b[0];
- var asis = "0";
- if ($("#as" + idMiembro).prop('checked')) {
- asis = "1";
- }
- agService.addAsmiemgp(createAsmiemgp(idAsistenciaevt, idMiembro, asis), function (rpta) {
- });
- loadHeader();
- }
- 
- }
- 
- function createAsmiemgp(idAsevt, idMiembro, asistencia) {
- var asmiemgp = {
- asistenciaevt: {
- idAsistenciaevt: idAsevt
- },
- miembrogp: {
- idMiembrogp: idMiembro
- },
- asgAsistencia: asistencia
- };
- return asmiemgp;
- }
- */

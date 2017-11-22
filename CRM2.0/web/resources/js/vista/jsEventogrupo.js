@@ -1,39 +1,72 @@
-var aService = new asistenciaevtService();
+var aService = new eventogrupoService();
 var nMiembros = 0;
 var mgpService = new miembrogpService();
 var gpService = new grupoService();
 var evtService = new eventoService();
 var list_miembros;
 var idEventoG;
+idGrupo = $("#crm_idGrupo").val();
+var grupo = {idGrupo: idGrupo};
 
 $(document).ready(function () {
-    var grupo = {idGrupo: $("#crm_idGrupo").val()};
-    evtService.listEventoActGroup(grupo,function(a){
-        console.log(a);
-    });
+    getEventosAct();
+    /*evtService.listEventoActGroup(grupo,function(a){
+     console.log(a);
+     });*/
     //loadHeader();
 });
 
-function loadHeader() {
-    var periodo = {idPeriodo: 1};
-    evtService.listEvento(periodo, function (lista) {
-        idEventoG = lista[0].idEvento;
-        var s = '<li class="active">Evento n° ' + idEventoG + '</li>';
-        s += '<li class="active">' + lista[0].evtNombre + '</li>';
-        s += '<li class="active">' + getActualDateLong() + '</li>';
-        s += '<li class="active">Vence el ' + getDateLong(new Date(lista[0].evtFechaLimite)) + '</li>';
-        $(".conH").empty();
-        $(".conH").append(s);
-        testEnabled(idEventoG);
+//****************NEW CODE**********************//
+
+function getEventosAct() {
+    var dis = $("#crm_idDistrito").val();
+    //var igl = $("#crm_idIglesia").val();
+    var evento = {
+        evtDistrito: dis,
+        //evtIglesia: igl,
+        periodo: {
+            idPeriodo: 1
+        }
+    };
+    evtService.getEventoAct(evento, function (evts) {
+        if (evts.length > 1) {
+
+        } else {
+            loadHeader(evts);
+        }
     });
 }
 
+//*********     OLD CODE     *******************//
+
+
+function loadHeader(lista) {
+    /*var periodo = {idPeriodo: 1};
+     evtService.listEvento(periodo, function (lista) {*/
+    idEventoG = lista[0].idEvento;
+    var s = '<li class="active">Evento n° ' + idEventoG + '</li>';
+    s += '<li class="active">' + lista[0].evtNombre + '</li>';
+    s += '<li class="active">' + getActualDateLong() + '</li>';
+    s += '<li class="active">Vence el ' + getDateLong(new Date(lista[0].evtFechaLimite)) + '</li>';
+    $(".conH").empty();
+    $(".conH").append(s);
+    testEnabled(idEventoG);
+    //});
+}
+
 function testEnabled(idEvento) {//provisional
-    aService.listAsistenciaevt({idEvento: idEvento}, function (l) {
+    var eventogrupo = {
+        id: {
+            idEvento: idEvento,
+            idGrupo: idGrupo
+        }
+    };
+    aService.getInfoEventogrupo(eventogrupo, function (l) {
         if (l.length > 0) {//ya hay una asistencia de ese evento
             var texto = "Felicidades, ya ha registrado la asistencia al este evento. Debe esperar a que esté disponible el siguiente evento para poder registrar la asistencia de su Grupo Pequeño";
             $(".contAsis").empty();
             $(".contAsis").append(createMessageAlert("green accent-3", texto));
+            //********************      MOSTRAR REGISTRO DISABLED      ***********************//
         } else {//puede registrar
             $(".contAsis").empty();
             $(".contAsis").append(createContextAsis());
@@ -62,13 +95,13 @@ function loadMiembros(list) {
         s += '<tr>';
         s += '<td style="width:38px;"><button class="btn-floating waves-effect waves-light ' + getColor() + '">' + r + '</button></td>';
         s += '<td class="ligth italic">' + list[i].persona.perNombres + ' ' + list[i].persona.perApellidos + '</td>';
-        s += '<td>';
-        s += '<span class="chart presente" data-percent="' + getRandomArbitrary(0, 100) + '">';
-        s += '<span class="percent"></span>';
-        s += '</span>';
-        s += '</td>';
-        s += '<td><input type="hidden" value="' + list[i].idMiembrogp + '"></td>';
-        s += '<td><p><input type="checkbox" class="checkO" onclick="changePF(this.id)" id="as' + list[i].idMiembrogp + '"><label for="as' + list[i].idMiembrogp + '"></label></p></td>';
+        /*s += '<td>';
+         s += '<span class="chart presente" data-percent="' + getRandomArbitrary(0, 100) + '">';
+         s += '<span class="percent"></span>';
+         s += '</span>';
+         s += '</td>';*/
+        s += '<td><input type="hidden" value="' + list[i].persona.idPersona + '"></td>';
+        s += '<td><p><input type="checkbox" class="checkO" onclick="changePF(this.id)" id="as' + list[i].persona.idPersona + '"><label for="as' + list[i].persona.idPersona + '"></label></p></td>';
         s += '</tr>';
 
     }
@@ -85,10 +118,10 @@ function saveAsis() {
     confirmMessage({
         title: 'Registro de Asistencia',
         content: '¿Está seguro que desea registrar?'
-    }, addAsistenciaevt);
+    }, addEventogrupo);
 }
 
-function addAsistenciaevt() {
+function addEventogrupo() {
     var P = parseInt($(".valP").val());
     var F = parseInt($(".valF").val());
     var V = $("#nvisitas").val();
@@ -97,17 +130,18 @@ function addAsistenciaevt() {
         V = 0;
     }
     parseInt(V);
-    var asistenciaevt = {
-        astPresentes: P,
-        astFaltas: F,
-        astVisitas: V,
-        astDescripcion: "",
-        astLugar: L,
-        evento: {
-            idEvento: idEventoG
+    var eventogrupo = {
+        evgPresentes: P,
+        evgFaltas: F,
+        evgVisitas: V,
+        evgDescripcion: "",
+        evgLugar: L,
+        id: {
+            idEvento: idEventoG,
+            idGrupo: idGrupo
         }
     };
-    aService.addAsistenciaevt(asistenciaevt, addAsisMiemgp);
+    aService.addEventogrupo(eventogrupo, addAsisMiemgp);
 }
 
 function startPieChart() {

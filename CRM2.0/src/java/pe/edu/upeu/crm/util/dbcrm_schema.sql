@@ -183,7 +183,8 @@ CREATE TABLE `eventoministerio` (
 CREATE TABLE `eventopersona` (
   `idPERSONA` int(11) NOT NULL,
   `idEVENTO` int(11) NOT NULL,
-  `ASISTECIA` char(1) DEFAULT NULL
+  `EVP_ASISTECIA` char(1) DEFAULT NULL,
+  `EVP_ESTADO` CHAR(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
