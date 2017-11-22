@@ -43,7 +43,7 @@ public class Ministerio  implements java.io.Serializable {
      private Date minFechaAdd;
      private Date minFechaUpd;
      private Date minFechaDel;
-     private Set<Miembromin> miembromins = new HashSet<Miembromin>(0);
+     private Set<Miembromin> miembromins = new HashSet<>(0);
 
     public Ministerio() {
     }

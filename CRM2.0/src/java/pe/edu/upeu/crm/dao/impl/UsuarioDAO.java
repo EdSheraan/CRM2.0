@@ -1,11 +1,9 @@
 package pe.edu.upeu.crm.dao.impl;
 
 import java.util.List;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Usuario;
 import pe.edu.upeu.crm.dao.CrudDAO;
-import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository

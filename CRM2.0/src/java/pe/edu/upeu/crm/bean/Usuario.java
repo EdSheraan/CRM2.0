@@ -38,7 +38,7 @@ public class Usuario  implements java.io.Serializable {
      private String usuClave;
      private String usuEstado;
      private String usuEstadoClave;
-     private Set<Detrol> detrols = new HashSet<Detrol>(0);
+     private Set<Detrol> detrols = new HashSet<>(0);
 
     public Usuario() {
     }

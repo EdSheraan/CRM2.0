@@ -48,9 +48,9 @@ public class Persona  implements java.io.Serializable {
      private Date perFechaAdd;
      private Date perFechaUpd;
      private Date perFechaDel;
-     private Set<Miembromin> miembromins = new HashSet<Miembromin>(0);
-     private Set<Usuario> usuarios = new HashSet<Usuario>(0);
-     private Set<Miembrogp> miembrogps = new HashSet<Miembrogp>(0);
+     private Set<Miembromin> miembromins = new HashSet<>(0);
+     private Set<Usuario> usuarios = new HashSet<>(0);
+     private Set<Miembrogp> miembrogps = new HashSet<>(0);
 
     public Persona() {
     }

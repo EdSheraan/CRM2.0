@@ -30,7 +30,7 @@ public class Privilegio implements java.io.Serializable {
     private String prvEstado;
     private String prvColor;
     private String prvDescripcion;
-    private Set<Rol> rols = new HashSet<Rol>(0);
+    private Set<Rol> rols = new HashSet<>(0);
 
     public Privilegio() {
     }

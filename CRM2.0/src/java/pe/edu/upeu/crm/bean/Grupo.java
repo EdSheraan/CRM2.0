@@ -40,7 +40,7 @@ public class Grupo  implements java.io.Serializable {
      private Date gpoFechaAdd;
      private Date gpoFechaUpd;
      private Date gpoFechaDel;
-     private Set<Miembrogp> miembrogps = new HashSet<Miembrogp>(0);
+     private Set<Miembrogp> miembrogps = new HashSet<>(0);
 
     public Grupo() {
     }

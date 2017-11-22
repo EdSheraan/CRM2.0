@@ -1,7 +1,6 @@
 package pe.edu.upeu.crm.controller;
 
 import javax.servlet.http.HttpSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,8 +10,6 @@ import pe.edu.upeu.crm.util.SessionUtil;
 @Controller
 public class HomeController {
 
-    
-    
     @RequestMapping("/main")
     public String main() {
         return "main";

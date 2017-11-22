@@ -31,8 +31,8 @@ public class Rol  implements java.io.Serializable {
      private String rolCodigo;
      private String rolEstado;
      private String rolDescripcion;
-     private Set<Privilegio> privilegios = new HashSet<Privilegio>(0);
-     private Set<Detrol> detrols = new HashSet<Detrol>(0);
+     private Set<Privilegio> privilegios = new HashSet<>(0);
+     private Set<Detrol> detrols = new HashSet<>(0);
 
     public Rol() {
     }

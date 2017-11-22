@@ -40,7 +40,7 @@ public class Escuela  implements java.io.Serializable {
      private Date escFechaAdd;
      private Date escFechaUpd;
      private Date escFechaDel;
-     private Set<Grupo> grupos = new HashSet<Grupo>(0);
+     private Set<Grupo> grupos = new HashSet<>(0);
 
     public Escuela() {
     }

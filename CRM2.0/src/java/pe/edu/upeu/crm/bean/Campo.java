@@ -33,7 +33,7 @@ public class Campo  implements java.io.Serializable {
      private String cmpNombre;
      private Date cmpFechaCreacion;
      private String cmpEstado;
-     private Set<Distrito> distritos = new HashSet<Distrito>(0);
+     private Set<Distrito> distritos = new HashSet<>(0);
 
     public Campo() {
     }

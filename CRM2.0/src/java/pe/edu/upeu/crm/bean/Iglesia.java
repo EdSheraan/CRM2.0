@@ -40,8 +40,8 @@ public class Iglesia  implements java.io.Serializable {
      private Date iglFechaAdd;
      private Date iglFechaUpd;
      private Date iglFechaDel;
-     private Set<Ministerio> ministerios = new HashSet<Ministerio>(0);
-     private Set<Escuela> escuelas = new HashSet<Escuela>(0);
+     private Set<Ministerio> ministerios = new HashSet<>(0);
+     private Set<Escuela> escuelas = new HashSet<>(0);
 
     public Iglesia() {
     }

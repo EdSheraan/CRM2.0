@@ -6,6 +6,7 @@
 package pe.edu.upeu.crm.util;
 
 import javax.servlet.http.HttpSession;
+import org.pmw.tinylog.Logger;
 
 /**
  *
@@ -22,7 +23,7 @@ public class SessionUtil {
         try {
             return session.getAttribute(key).toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         }
         return "";
     }
@@ -31,7 +32,7 @@ public class SessionUtil {
         try {
             return Integer.parseInt(session.getAttribute(key).toString());
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         }
         return -1;
     }

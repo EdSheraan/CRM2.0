@@ -2,5 +2,5 @@ projectKey=org.sonarqube:CRM2.0
 serverUrl=http://localhost:9000
 serverVersion=6.5.0.27846
 dashboardUrl=http://localhost:9000/dashboard/index/org.sonarqube:CRM2.0
-ceTaskId=AV_liRJLcn1g_bN5dWaa
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AV_liRJLcn1g_bN5dWaa
+ceTaskId=AV_lnk15cn1g_bN5dWac
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AV_lnk15cn1g_bN5dWac

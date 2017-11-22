@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Eventoministerio;
 import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;
-import pe.edu.upeu.crm.dao.HibernateParam;
 @Repository
 public class EventoministerioDAO extends CrudDAO<Eventoministerio>{
 

@@ -11,11 +11,9 @@ import org.pmw.tinylog.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import pe.edu.upeu.crm.bean.Privilegio;
 import pe.edu.upeu.crm.util.SessionUtil;
 
 /**

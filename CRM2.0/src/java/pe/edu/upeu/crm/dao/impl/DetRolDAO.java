@@ -6,10 +6,7 @@
 package pe.edu.upeu.crm.dao.impl;
 
 import java.util.List;
-import org.hibernate.annotations.Parent;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upeu.crm.bean.Detrol;
 import pe.edu.upeu.crm.dao.CrudDAO;
 import pe.edu.upeu.crm.dao.HibernateParam;

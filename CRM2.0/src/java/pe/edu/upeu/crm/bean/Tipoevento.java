@@ -27,7 +27,7 @@ public class Tipoevento  implements java.io.Serializable {
      private String tipNombre;
      private String tipCodigo;
      private String tipEstado;
-     private Set<Evento> eventos = new HashSet<Evento>(0);
+     private Set<Evento> eventos = new HashSet<>(0);
 
     public Tipoevento() {
     }
