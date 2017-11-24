@@ -40,7 +40,7 @@ public class Escuela  implements java.io.Serializable {
      private Date escFechaAdd;
      private Date escFechaUpd;
      private Date escFechaDel;
-     private Set<Grupo> grupos = new HashSet<Grupo>(0);
+     private Set<Grupo> grupos = new HashSet<>(0);
 
     public Escuela() {
     }
@@ -53,20 +53,6 @@ public class Escuela  implements java.io.Serializable {
         this.escEstado = escEstado;
         this.escUsuAdd = escUsuAdd;
         this.escFechaAdd = escFechaAdd;
-    }
-    public Escuela(Iglesia iglesia, String escNombre, Date escFechaCreacion, String escEstado, String escLugarReunion, int escUsuAdd, Integer escUsuUpd, Integer escUsuDel, Date escFechaAdd, Date escFechaUpd, Date escFechaDel, Set<Grupo> grupos) {
-       this.iglesia = iglesia;
-       this.escNombre = escNombre;
-       this.escFechaCreacion = escFechaCreacion;
-       this.escEstado = escEstado;
-       this.escLugarReunion = escLugarReunion;
-       this.escUsuAdd = escUsuAdd;
-       this.escUsuUpd = escUsuUpd;
-       this.escUsuDel = escUsuDel;
-       this.escFechaAdd = escFechaAdd;
-       this.escFechaUpd = escFechaUpd;
-       this.escFechaDel = escFechaDel;
-       this.grupos = grupos;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)

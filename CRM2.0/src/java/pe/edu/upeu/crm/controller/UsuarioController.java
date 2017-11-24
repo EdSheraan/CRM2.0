@@ -25,11 +25,10 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
-    private ModelAndView modelAndView;
+    
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspUsuario(ModelMap model) {
-        modelAndView = new ModelAndView("usuario/jspUsuarioMain", model);
-        return modelAndView;
+        return new ModelAndView("usuario/jspUsuarioMain", model);
     }
 }

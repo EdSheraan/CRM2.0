@@ -57,14 +57,12 @@ public class EventogrupoService implements CRUDService<Eventogrupo> {
     @Transactional(readOnly = true)
     public List<Eventogrupo> listEnabled(Object... param) {
         Logger.info("buscando evento activo");
-        //return eventogrupoDAO.listEnabled(new HibernateParam("idGrupo", param[0]));
         return eventogrupoDAO.list();
     }
 
     @Transactional(readOnly = true)
     public List<Eventogrupo> getInfoEvento(Object... param) {
-        Logger.info("buscando evento activo");
-        //return eventogrupoDAO.listEnabled(new HibernateParam("idGrupo", param[0]));
+        Logger.info("obteniendo información del evento");
         HibernateParam p1 = new HibernateParam("idEvento", param[0]);
         HibernateParam p2 = new HibernateParam("idGrupo", param[1]);
         return eventogrupoDAO.list(p1, p2);

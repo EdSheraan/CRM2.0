@@ -8,6 +8,7 @@ import pe.edu.upeu.crm.dao.HibernateParam;
 
 @Repository
 public class PeriodoDAO extends CrudDAO<Periodo>{
+    private static final String FROM_P_ESTADO="From Periodo p where p.prdEstado =";
 
     @Override
     public int delete(Periodo bean) {
@@ -26,17 +27,17 @@ public class PeriodoDAO extends CrudDAO<Periodo>{
         String iglesia =param[1].getValue().toString();
         if(iglesia.equals("0")){
             if(distrito.equals("0")){
-                return executeHQLQuery("From Periodo p where p.prdEstado = '1'");
+                return executeHQLQuery( FROM_P_ESTADO+"'1'");
             }else{
-                return executeHQLQuery("From Periodo p where p.prdEstado = '1' "
+                return executeHQLQuery(FROM_P_ESTADO+"'1' "
                         + "and p.prdDistrito = : prdDistrito", param[0]);
             }
         }else{
             if(distrito.equals("0")){
-                return executeHQLQuery("From Periodo p where p.prdEstado = '1' "
+                return executeHQLQuery(FROM_P_ESTADO+"'1' "
                         + "and p.prdIglesia = : prdIglesia", param[0]);
             }else{
-                return executeHQLQuery("From Periodo p where p.prdEstado = '1' "
+                return executeHQLQuery(FROM_P_ESTADO+ "'1' "
                         + "and p.prdDistrito = :prdDistrito and p.prdIglesia = :prdIglesia", param);
             }
         }        
@@ -44,12 +45,12 @@ public class PeriodoDAO extends CrudDAO<Periodo>{
 
     @Override
     public List<Periodo> listDisabled(HibernateParam... param) {
-        return executeHQLQuery("From Periodo p where p.prdEstado = '0'");
+        return executeHQLQuery(FROM_P_ESTADO+"'0'");
     }
 
     @Override
     public List<Periodo> search(HibernateParam... param) {
-        return executeHQLQuery("From Periodo p where p.prdEstado = '1' and p.prdNombre = :prdNombre", param[0]);
+        return executeHQLQuery(FROM_P_ESTADO+"'1' and p.prdNombre = :prdNombre", param[0]);
     }
 
     @Override

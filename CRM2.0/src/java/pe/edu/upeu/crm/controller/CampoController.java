@@ -29,12 +29,10 @@ public class CampoController {
     
     @Autowired
     private CampoService campoService;
-    private ModelAndView modelAndView;
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspCampo(ModelMap model) {
-        modelAndView = new ModelAndView("campo/jspCampoMain", model);
-        return modelAndView;
+        return new ModelAndView("campo/jspCampoMain", model);
     }
     
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

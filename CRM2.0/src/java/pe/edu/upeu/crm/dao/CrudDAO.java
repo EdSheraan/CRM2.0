@@ -9,8 +9,7 @@ import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
+import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -40,7 +39,7 @@ public abstract class CrudDAO<T> {
         } catch (Exception e) {
             r = null;
             session.getTransaction().rollback();
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         } finally {
             session.close();
         }
@@ -56,7 +55,7 @@ public abstract class CrudDAO<T> {
             return 1;
         } catch (Exception e) {
             session.getTransaction().rollback();
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         } finally {
             session.close();
         }
@@ -92,7 +91,7 @@ public abstract class CrudDAO<T> {
             }
             list = q.list();
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         } finally {
             session.close();
         }
@@ -116,7 +115,7 @@ public abstract class CrudDAO<T> {
             return r;
         } catch (Exception e) {
             session.getTransaction().rollback();
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         } finally {
             session.close();
         }
@@ -127,7 +126,6 @@ public abstract class CrudDAO<T> {
         Session session = sessionFactory.openSession();
         T bean = null;
         try {
-            //session.beginTransaction();
             Query q = session.createQuery(query);
             if (params != null) {
                 for (HibernateParam p : params) {
@@ -139,7 +137,7 @@ public abstract class CrudDAO<T> {
             q.setMaxResults(1);
             bean = (T) q.uniqueResult();
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         } finally {
             session.close();
         }
@@ -161,7 +159,7 @@ public abstract class CrudDAO<T> {
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             data = query.list();
         } catch (HibernateException e) {
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         }
         return data;
     }

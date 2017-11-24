@@ -6,17 +6,20 @@
 package pe.edu.upeu.crm.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.pmw.tinylog.Logger;
 
 /**
  *
  * @author Andres
  */
 public class JsonUtil {
+    
     public static String map(Object o){
         try {
             ObjectMapper mapper = new ObjectMapper();
             return mapper.writeValueAsString(o);
         } catch (Exception e) {
+            Logger.error(e.getMessage());
         }
         return "";
     }

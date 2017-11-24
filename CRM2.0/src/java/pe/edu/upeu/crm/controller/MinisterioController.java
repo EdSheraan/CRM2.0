@@ -29,12 +29,10 @@ public class MinisterioController {
     
     @Autowired
     private MinisterioService ministerioService;
-    private ModelAndView modelAndView;
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspMinisterio(ModelMap model) {
-        modelAndView = new ModelAndView("ministerio/jspMinisterioMain", model);
-        return modelAndView;
+        return new ModelAndView("ministerio/jspMinisterioMain", model);
     }
     
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

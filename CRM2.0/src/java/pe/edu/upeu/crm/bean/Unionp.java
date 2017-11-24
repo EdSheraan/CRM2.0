@@ -30,7 +30,7 @@ public class Unionp  implements java.io.Serializable {
      private String uniNombre;
      private Date uniFechaCreacion;
      private String uniEstado;
-     private Set<Campo> campos = new HashSet<Campo>(0);
+     private Set<Campo> campos = new HashSet<>(0);
 
     public Unionp() {
     }

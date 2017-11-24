@@ -33,7 +33,7 @@ public class Periodo  implements java.io.Serializable {
      private int prdDistrito;
      private int prdIglesia;
      private String prdEstado;
-     private Set<Evento> eventos = new HashSet<Evento>(0);
+     private Set<Evento> eventos = new HashSet<>(0);
 
     public Periodo() {
     }

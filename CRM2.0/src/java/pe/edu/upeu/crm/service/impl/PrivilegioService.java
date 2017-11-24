@@ -15,7 +15,6 @@ import pe.edu.upeu.crm.bean.PrivilegioGroup;
 import pe.edu.upeu.crm.dao.HibernateParam;
 import pe.edu.upeu.crm.dao.impl.PrivilegioDAO;
 import pe.edu.upeu.crm.service.CRUDService;
-import pe.edu.upeu.crm.util.JsonUtil;
 
 /**
  *

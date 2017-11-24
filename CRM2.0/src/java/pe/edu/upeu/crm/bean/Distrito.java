@@ -33,7 +33,7 @@ public class Distrito  implements java.io.Serializable {
      private String disNombre;
      private Date disFechaCreacion;
      private String disEstado;
-     private Set<Iglesia> iglesias = new HashSet<Iglesia>(0);
+     private Set<Iglesia> iglesias = new HashSet<>(0);
 
     public Distrito() {
     }

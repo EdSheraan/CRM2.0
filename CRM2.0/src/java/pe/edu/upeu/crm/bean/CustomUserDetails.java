@@ -7,7 +7,6 @@ package pe.edu.upeu.crm.bean;
 
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
@@ -17,7 +16,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class CustomUserDetails implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
-    private String username, password, name, lastname;
+    private String username;
+    private String password;
+    private String name;
+    private String lastname;
     private int idPersona;
     private boolean accountNonExpired;
     private boolean accountNonLocked;

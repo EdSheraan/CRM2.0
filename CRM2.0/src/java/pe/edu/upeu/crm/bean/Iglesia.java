@@ -40,8 +40,8 @@ public class Iglesia  implements java.io.Serializable {
      private Date iglFechaAdd;
      private Date iglFechaUpd;
      private Date iglFechaDel;
-     private Set<Ministerio> ministerios = new HashSet<Ministerio>(0);
-     private Set<Escuela> escuelas = new HashSet<Escuela>(0);
+     private Set<Ministerio> ministerios = new HashSet<>(0);
+     private Set<Escuela> escuelas = new HashSet<>(0);
 
     public Iglesia() {
     }
@@ -54,21 +54,6 @@ public class Iglesia  implements java.io.Serializable {
         this.iglEstado = iglEstado;
         this.iglUsuAdd = iglUsuAdd;
         this.iglFechaAdd = iglFechaAdd;
-    }
-    public Iglesia(Distrito distrito, String iglNombre, Date iglFechaCreacion, String iglEstado, String iglDireccion, int iglUsuAdd, Integer iglUsuUpd, Integer iglUpdDel, Date iglFechaAdd, Date iglFechaUpd, Date iglFechaDel, Set<Ministerio> ministerios, Set<Escuela> escuelas) {
-       this.distrito = distrito;
-       this.iglNombre = iglNombre;
-       this.iglFechaCreacion = iglFechaCreacion;
-       this.iglEstado = iglEstado;
-       this.iglDireccion = iglDireccion;
-       this.iglUsuAdd = iglUsuAdd;
-       this.iglUsuUpd = iglUsuUpd;
-       this.iglUpdDel = iglUpdDel;
-       this.iglFechaAdd = iglFechaAdd;
-       this.iglFechaUpd = iglFechaUpd;
-       this.iglFechaDel = iglFechaDel;
-       this.ministerios = ministerios;
-       this.escuelas = escuelas;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)

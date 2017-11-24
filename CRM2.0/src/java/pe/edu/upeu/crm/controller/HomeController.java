@@ -1,7 +1,6 @@
 package pe.edu.upeu.crm.controller;
 
 import javax.servlet.http.HttpSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,8 +10,6 @@ import pe.edu.upeu.crm.util.SessionUtil;
 @Controller
 public class HomeController {
 
-    private ModelAndView modelAndView;
-    
     @RequestMapping("/main")
     public String main() {
         return "main";
@@ -21,11 +18,10 @@ public class HomeController {
     @RequestMapping("/menu")
     public ModelAndView menu(ModelMap model,HttpSession session) {
         if(session.getAttribute(SessionUtil.ROL_SELECTED) == null){
-            modelAndView = new ModelAndView("redirect:/rol/select", model);
+            return new ModelAndView("redirect:/rol/select", model);
         }else{
-            modelAndView = new ModelAndView("menu", model);
+            return new ModelAndView("menu", model);
         }
-        return modelAndView;
     }
 
 }

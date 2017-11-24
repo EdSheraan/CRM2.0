@@ -31,13 +31,11 @@ public class GrupoController {
 
     @Autowired
     private GrupoService grupoService;
-    private ModelAndView modelAndView;
-
+    
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspGrupo(ModelMap model) {
         model.addAttribute("mensaje", "Hola mundo");
-        modelAndView = new ModelAndView("grupo/jspGrupoMain", model);
-        return modelAndView;
+        return new ModelAndView("grupo/jspGrupoMain", model);
     }
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
@@ -49,7 +47,6 @@ public class GrupoController {
     @RequestMapping(value = "/update", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
     public @ResponseBody
     Integer updateGrupo(@RequestBody Grupo grupo) {
-        System.out.println("llega");
         return grupoService.update(grupo);
     }
 

@@ -1,13 +1,6 @@
 package pe.edu.upeu.crm.dao.impl;
 
 import java.util.List;
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import pe.edu.upeu.crm.bean.Grupo;
 import pe.edu.upeu.crm.dao.CrudDAO;

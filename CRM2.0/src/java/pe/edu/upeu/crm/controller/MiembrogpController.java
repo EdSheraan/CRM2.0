@@ -31,12 +31,10 @@ public class MiembrogpController {
     
     @Autowired
     private MiembrogpService miembrogpService;
-    private ModelAndView modelAndView;
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspMiembrogp(ModelMap model) {
-        modelAndView = new ModelAndView("miembrogp/jspMiembrogpMain", model);
-        return modelAndView;
+        return new ModelAndView("miembrogp/jspMiembrogpMain", model);
     }
     
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

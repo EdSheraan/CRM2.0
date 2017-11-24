@@ -29,12 +29,10 @@ public class EventoministerioController {
     
     @Autowired
     private EventoministerioService eventoministerioService;
-    private ModelAndView modelAndView;
     
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspEventoministerio(ModelMap model) {
-        modelAndView = new ModelAndView("eventoministerio/jspEventoministerioMain", model);
-        return modelAndView;
+        return new ModelAndView("eventoministerio/jspEventoministerioMain", model);
     }
     
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

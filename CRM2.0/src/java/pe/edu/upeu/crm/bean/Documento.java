@@ -27,7 +27,7 @@ public class Documento  implements java.io.Serializable {
      private String docDescripcion;
      private String docNombreCorto;
      private String docEstado;
-     private Set<Persona> personas = new HashSet<Persona>(0);
+     private Set<Persona> personas = new HashSet<>(0);
 
     public Documento() {
     }

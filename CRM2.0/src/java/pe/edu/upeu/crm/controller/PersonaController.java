@@ -30,13 +30,10 @@ public class PersonaController {
     @Autowired
     private PersonaService personaService;
 
-    private ModelAndView modelAndView;
-
     //Aqui van los métodos que muestran las vistas
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspPersona(ModelMap model) {
-        modelAndView = new ModelAndView("persona/jspPersonaMain", model);
-        return modelAndView;
+        return new ModelAndView("persona/jspPersonaMain", model);
     }
 
     //Aqui van los métodos del CRUD.

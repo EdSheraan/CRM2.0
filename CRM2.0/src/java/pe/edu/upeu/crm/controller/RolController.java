@@ -10,10 +10,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.crm.bean.Rol;
 import pe.edu.upeu.crm.security.LoginService;
@@ -36,7 +34,7 @@ public class RolController {
     @Autowired
     private PrivilegioService privilegioService;
     
-    private ModelAndView modelAndView;
+    
     
     @RequestMapping("/select")
     public ModelAndView selectRols(HttpSession session) {
@@ -47,8 +45,7 @@ public class RolController {
                     privilegioService.group(privilegioService.listEnabled(rols.get(0).getIdRol())));
         }
         session.setAttribute(SessionUtil.ROL_LIST, rols);
-        modelAndView = new ModelAndView("roles");
-        return modelAndView;
+        return new ModelAndView("roles");
     }
     
     @RequestMapping("/select/r")
@@ -56,8 +53,7 @@ public class RolController {
         session.setAttribute(SessionUtil.ROL_SELECTED, rol);
         session.setAttribute(SessionUtil.PRV_ROL,
                 privilegioService.group(privilegioService.listEnabled(rol.getIdRol())));
-        modelAndView = new ModelAndView("redirect:/menu");
-        return modelAndView;
+        return new ModelAndView("redirect:/menu");
     }
     
 }

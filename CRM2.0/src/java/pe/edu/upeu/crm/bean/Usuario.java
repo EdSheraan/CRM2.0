@@ -38,7 +38,7 @@ public class Usuario  implements java.io.Serializable {
      private String usuClave;
      private String usuEstado;
      private String usuEstadoClave;
-     private Set<Detrol> detrols = new HashSet<Detrol>(0);
+     private Set<Detrol> detrols = new HashSet<>(0);
 
     public Usuario() {
     }
@@ -51,21 +51,7 @@ public class Usuario  implements java.io.Serializable {
         this.usuEstado = usuEstado;
         this.usuEstadoClave = usuEstadoClave;
     }
-    public Usuario(Persona persona, String usuUsuario, Integer usuUnion, Integer usuCampo, Integer usuDistrito, Integer usuIglesia, Integer usuEscuela, Integer usuMinisterio, Integer usuGrupo, String usuClave, String usuEstado, String usuEstadoClave, Set<Detrol> detrols) {
-       this.persona = persona;
-       this.usuUsuario = usuUsuario;
-       this.usuUnion = usuUnion;
-       this.usuCampo = usuCampo;
-       this.usuDistrito = usuDistrito;
-       this.usuIglesia = usuIglesia;
-       this.usuEscuela = usuEscuela;
-       this.usuMinisterio = usuMinisterio;
-       this.usuGrupo = usuGrupo;
-       this.usuClave = usuClave;
-       this.usuEstado = usuEstado;
-       this.usuEstadoClave = usuEstadoClave;
-       this.detrols = detrols;
-    }
+
    
      @Id @GeneratedValue(strategy=IDENTITY)
 

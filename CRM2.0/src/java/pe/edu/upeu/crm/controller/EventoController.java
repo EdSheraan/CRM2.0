@@ -31,13 +31,12 @@ public class EventoController {
     @Autowired
     private EventoService eventoService;
 
-    private ModelAndView modelAndView;
+    
 
     //Aqui van los métodos que muestran las vistas
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspEvento(ModelMap model) {
-        modelAndView = new ModelAndView("evento/jspEventoMain", model);
-        return modelAndView;
+        return new ModelAndView("evento/jspEventoMain", model);
     }
 
     //Aqui van los métodos del CRUD.
@@ -70,7 +69,6 @@ public class EventoController {
     List<Evento> listEventoActive(@RequestBody Evento evento) {
         int a = evento.getPeriodo().getIdPeriodo();
         int b = evento.getEvtDistrito();
-        //int c = evento.getEvtIglesia();
         return eventoService.listActive(a, b);
     }
 

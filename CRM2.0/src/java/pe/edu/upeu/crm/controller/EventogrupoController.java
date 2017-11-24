@@ -16,10 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.crm.bean.Eventogrupo;
-import pe.edu.upeu.crm.bean.Evento;
 import pe.edu.upeu.crm.bean.Grupo;
 import pe.edu.upeu.crm.service.impl.EventogrupoService;
-import pe.edu.upeu.crm.service.impl.EventoService;
 
 /**
  *
@@ -32,12 +30,10 @@ public class EventogrupoController {
 
     @Autowired
     private EventogrupoService eventogrupoService;
-    private ModelAndView modelAndView;
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public ModelAndView showJspEventogrupo(ModelMap model) {
-        modelAndView = new ModelAndView("eventogrupo/jspEventogrupoMain", model);
-        return modelAndView;
+        return new ModelAndView("eventogrupo/jspEventogrupoMain", model);
     }
 
     @RequestMapping(value = "/add", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)

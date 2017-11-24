@@ -39,7 +39,7 @@ public class Crypto {
             byte[] base64 = Base64.encodeBase64(encrypted);
             strData = new String(base64);
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         }
         return strData;
     }
@@ -54,7 +54,7 @@ public class Crypto {
             byte[] decrypted = cipher.doFinal(base64);
             strData = new String(decrypted);
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.error(e.getMessage());
         }
         return strData;
     }

@@ -38,16 +38,7 @@ public class Eventogrupo  implements java.io.Serializable {
     public Eventogrupo(EventogrupoId id) {
         this.id = id;
     }
-    public Eventogrupo(EventogrupoId id, Integer evgPresentes, Integer evgFaltas, Integer evgVisitas, String evgDescripcion, String evgLugar, Date evgFechaRegistro, String evgEstado) {
-       this.id = id;
-       this.evgPresentes = evgPresentes;
-       this.evgFaltas = evgFaltas;
-       this.evgVisitas = evgVisitas;
-       this.evgDescripcion = evgDescripcion;
-       this.evgLugar = evgLugar;
-       this.evgFechaRegistro = evgFechaRegistro;
-       this.evgEstado = evgEstado;
-    }
+
    
      @EmbeddedId
 
