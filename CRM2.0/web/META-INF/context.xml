@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/CRM2.0">
+<Context antiJARLocking="true" path="">
     <!--- Crear el usuario devcrm con esa clave-->
     <Resource name="jdbc/crmDB" 
               global="jdbc/crmDB" 
@@ -8,7 +8,7 @@
               driverClassName="com.mysql.jdbc.Driver" 
               url="jdbc:mysql://localhost:3306/dbcrm" 
               username="devmipes" 
-              password="12345678"       
+              password="peBjOmJP8ouWXNnz"       
               maxActive="100" 
               maxIdle="20" 
               minIdle="5" 

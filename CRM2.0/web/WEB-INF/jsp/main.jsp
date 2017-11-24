@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="container col s12 m6 l5 offset-l1">
                     <br>
-                    <c:url var="img_logo" value="/resources/images/crm_logo2_ligth_color.png"></c:url>
+                    <c:url var="img_logo" value="resources/images/crm_logo2_ligth_color.png"></c:url>
                     <img src="${img_logo}" width="80%" alt="crm_logo"/>
                     <h5 class="thin">Sistema de Gestión de las actividades del
                         Ministerio Personal y la Escuela Sabática</h5>
@@ -84,7 +84,7 @@
                     <br>
                     <h5 class="thin right">Nuestras metas CRM</h5>
                     <div class="card-image offset-l2">
-                        <img src="<c:url value="/resources/images/metas_crm.png"/>" alt="" style="width: 100%"/>
+                        <img src="<c:url value="resources/images/metas_crm.png"/>" alt="" style="width: 100%"/>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                     </p>
                 </div>
                 <div class="container col l8 m6 s12 no-padding">
-                    <c:url var="gp_image" value="/resources/images/gp_1.jpg"></c:url>
+                    <c:url var="gp_image" value="resources/images/gp_1.jpg"></c:url>
                     <img src="${gp_image}" width="100%" alt="gp_1"/>
                 </div>
 
@@ -138,7 +138,7 @@
         <div id="ministerio" class="red white-text" style="margin-top: -20px">
             <div class="row">
                 <div class="container col l8 m6 s12 no-padding">
-                    <c:url var="m_image" value="/resources/images/ministerio_1.jpg"></c:url>
+                    <c:url var="m_image" value="resources/images/ministerio_1.jpg"></c:url>
                     <img src="${m_image}" width="100%" alt="ministerio_1"/>
                 </div>
                 <div class="container col l4 m6 s12">
@@ -189,7 +189,7 @@
                     </p>
                 </div>
                 <div class="container col l8 m6 s12 no-padding">
-                    <c:url var="m_image" value="/resources/images/gp_2.jpg"></c:url>
+                    <c:url var="m_image" value="resources/images/gp_2.jpg"></c:url>
                     <img src="${m_image}" width="100%" alt="grupo_2"/>
                 </div>
 
@@ -222,7 +222,7 @@
         <div id="escuela" class="yellow darken-1 white-text" style="margin-top: -20px">
             <div class="row">
                 <div class="container col l8 m6 s12 no-padding">
-                    <c:url var="m_image" value="/resources/images/escuela_1.jpg"></c:url>
+                    <c:url var="m_image" value="resources/images/escuela_1.jpg"></c:url>
                     <img src="${m_image}" width="100%" alt="escuela_1"/>
                 </div>
                 <div class="container col l4 m6 s12">
@@ -293,7 +293,7 @@
                 <div class="row">
                     <div class="col l5 m6 s12 hide-on-small-only">
                         <br><br>
-                        <c:url var="img_login" value="/resources/images/crm_logo_ligth_color.png"></c:url>
+                        <c:url var="img_login" value="resources/images/crm_logo_ligth_color.png"></c:url>
                             <center>
                                 <img src="${img_login}" width="180px" alt="crm_logo"/>
                         </center>
@@ -331,6 +331,6 @@
             </div>
         </div>
         <!--Fin de modal LOGIN-->
-        <script src="<c:url value='/resources/js/vista/jsMain.js'></c:url>" type="text/javascript"></script>
+        <script src="http://crm.upeu.edu.pe/resources/js/vista/jsMain.js" type="text/javascript"></script>
     </body>
 </html>

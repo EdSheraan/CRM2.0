@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../jspf/general.jspf" %>
-        <link href="<c:url value='/resources/css/custom/menu.css'></c:url>" rel="stylesheet" type="text/css"/>
+        <link href="http://crm.upeu.edu.pe/resources/css/custom/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="white">
         <%@include file="../jspf/header.jspf" %> 
